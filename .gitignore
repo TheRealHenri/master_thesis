@@ -1,0 +1,11 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore IntelliJ Idea files
+.idea
+
+# Ignore temporary files
+.classpath
+.project
+.settings/
+target/
