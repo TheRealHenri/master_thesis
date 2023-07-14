@@ -29,7 +29,7 @@ public class DummyKafkaProducer {
 
         for (int i = 0; i < numberOfRecords; i++) {
 
-            String recordValue = "This is Mambo No. " + (i + 1);
+            String recordValue = Integer.toString(2 * i);
             ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, recordValue);
 
             producer.send(producerRecord, (recordMetadata, e) -> {
