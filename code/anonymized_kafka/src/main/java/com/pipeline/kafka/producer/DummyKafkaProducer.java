@@ -1,4 +1,4 @@
-package com.pipeline.kafka;
+package com.pipeline.kafka.producer;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -26,10 +26,11 @@ public class DummyKafkaProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         int numberOfRecords = 25;
+        int numberOfTopics = 1000;
 
         for (int i = 0; i < numberOfRecords; i++) {
 
-            String recordValue = Integer.toString(2 * i);
+            String recordValue = Integer.toString(numberOfTopics * i);
             ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic, recordValue);
 
             producer.send(producerRecord, (recordMetadata, e) -> {

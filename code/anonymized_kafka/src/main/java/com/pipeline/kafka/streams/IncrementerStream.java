@@ -1,4 +1,4 @@
-package com.pipeline.kafka;
+package com.pipeline.kafka.streams;
 
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
@@ -12,6 +12,8 @@ import java.util.concurrent.CountDownLatch;
 
 public class IncrementerStream {
 
+    private static final int numberOfTopics = 1000;
+
     public static void main(String[] args) {
         final StreamsBuilder builder = new StreamsBuilder();
 
@@ -23,8 +25,12 @@ public class IncrementerStream {
 
 
         KStream<String, String> source = builder.stream("no-filter");
-        source.mapValues(value -> Integer.toString(Integer.parseInt(value) + 1))
-                .to("no-filter-1");
+
+        for(int i = 1; i < numberOfTopics; i++) {
+            int finalI = i;
+            source.mapValues(value -> Integer.toString(Integer.parseInt(value) + finalI))
+                    .to("no-filter-" + i);
+        }
 
         final Topology topology = builder.build();
 
