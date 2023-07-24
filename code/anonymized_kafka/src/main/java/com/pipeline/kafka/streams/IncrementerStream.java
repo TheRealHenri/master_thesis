@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class IncrementerStream {
 
-    private static final int numberOfTopics = 1000;
+    private static final int numberOfTopics = 5;
 
     public static void main(String[] args) {
         final StreamsBuilder builder = new StreamsBuilder();

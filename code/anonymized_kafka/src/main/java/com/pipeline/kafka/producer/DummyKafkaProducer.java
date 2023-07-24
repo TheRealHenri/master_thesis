@@ -26,7 +26,7 @@ public class DummyKafkaProducer {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
 
         int numberOfRecords = 25;
-        int numberOfTopics = 1000;
+        int numberOfTopics = 5;
 
         for (int i = 0; i < numberOfRecords; i++) {
 

@@ -1,14 +1,11 @@
 package com.pipeline.kafka.zookeeper;
 
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
 import java.util.Arrays;
 
-public class DataMonitor {
+public class DataMonitor implements Watcher, AsyncCallback.StatCallback {
 
     ZooKeeper zooKeeper;
 
@@ -27,7 +24,7 @@ public class DataMonitor {
         this.znode = znode;
         this.chainedWatcher = chainedWatcher;
         this.listener = listener;
-        zooKeeper.exists(znode, true, null, null);
+        zooKeeper.exists(znode, true, this, null);
     }
 
     public interface DataMonitorListener {
@@ -42,12 +39,13 @@ public class DataMonitor {
          * @param rc
          * the ZooKeeper reason code
          */
-        void closing(KeeperException.Code rc);
+        void closing(int rc);
     }
 
-    public void processResult(KeeperException.Code rc, String path, Object ctx, Stat stat) {
+    public void processResult(int rc, String path, Object ctx, Stat stat) {
         boolean exists;
-        switch (rc) {
+
+        switch (KeeperException.Code.get(rc)) {
             case OK:
                 exists = true;
                 break;
@@ -55,13 +53,13 @@ public class DataMonitor {
                 exists = false;
                 break;
             case SESSIONEXPIRED:
-                case NOAUTH:
+            case NOAUTH:
                 dead = true;
                 listener.closing(rc);
                 return;
             default:
                 // retry
-                zooKeeper.exists(znode, true, null, null);
+                zooKeeper.exists(znode, true, this, null);
                 return;
         }
         byte[] b = null;
@@ -96,13 +94,13 @@ public class DataMonitor {
                 case Expired:
                     // Finito
                     dead = true;
-                    listener.closing(KeeperException.Code.SESSIONEXPIRED);
+                    listener.closing(KeeperException.Code.SESSIONEXPIRED.intValue());
                     break;
             }
         } else {
             if (path != null && path.equals(znode)) {
                 // something has changed on the node, let's find out
-                zooKeeper.exists(znode, true, null, null);
+                zooKeeper.exists(znode, true, this, null);
             }
         }
         if (chainedWatcher != null) {

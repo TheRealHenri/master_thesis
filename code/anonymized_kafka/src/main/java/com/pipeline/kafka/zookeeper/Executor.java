@@ -1,44 +1,48 @@
 package com.pipeline.kafka.zookeeper;
 
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListener {
-
-    String filename;
-
     DataMonitor dataMonitor;
 
     ZooKeeper zooKeeper;
 
-    String[] executable;
+    String znode;
+
+    String[] executable
 
     Process child;
 
 
-    public Executor(String hostPort, String znode, String filename, String[] executable) throws IOException {
-        this.filename = filename;
+    public Executor(String hostPort, String[] executable) throws IOException, InterruptedException, KeeperException {
+        String zNodeName = "/anonStream";
         this.executable = executable;
         this.zooKeeper = new ZooKeeper(hostPort, 3000, this);
+        Stat stat = zooKeeper.exists(zNodeName, false);
+        if (stat == null) {
+            this.znode = zooKeeper.create(zNodeName, new byte[0], ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
+        } else {
+            this.znode = zNodeName;
+        }
         this.dataMonitor = new DataMonitor(zooKeeper, znode, null, this);
     }
 
     public static void main(String[] args) {
-        if (args.length < 4) {
-            System.err.println("Usage: Executor <host> <port> <filename> <program> with [args ...]");
+        if (args.length < 3) {
+            System.err.println("Usage: Executor <hostPort> <program> with [args ...]");
             System.exit(2);
         }
         String hostPort = args[0];
-        String znode = args[1];
-        String filename = args[2];
-        String[] executable = new String [args.length - 3];
-        System.arraycopy(args, 3, executable, 0, executable.length);
+        String[] executable = new String [args.length - 1];
+        System.arraycopy(args, 1, executable, 0, executable.length);
         try {
-            new Executor(hostPort, znode, filename, executable).run();
+            new Executor(hostPort, executable).run();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -84,7 +88,7 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
                 }
             }
             try {
-                FileOutputStream fos = new FileOutputStream(filename);
+                FileOutputStream fos = new FileOutputStream("/tmp/zookeeper/anonStreamLog.txt");
                 fos.write(data);
                 fos.close();
             } catch (IOException e) {
@@ -102,7 +106,7 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
     }
 
     @Override
-    public void closing(KeeperException.Code rc) {
+    public void closing(int rc) {
         synchronized (this) {
             notifyAll();
         }
