@@ -15,7 +15,7 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
 
     String znode;
 
-    String[] executable
+    String[] executable;
 
     Process child;
 
