@@ -10,6 +10,9 @@ import org.apache.kafka.streams.kstream.KStream;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
+import static com.pipeline.kafka.utils.ConfigConstants.BOOTSTRAP_SERVER;
+import static com.pipeline.kafka.utils.ConfigConstants.DEFAULT_TOPIC;
+
 public class IncrementerStream {
 
     private static final int numberOfTopics = 5;
@@ -19,17 +22,17 @@ public class IncrementerStream {
 
         Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, "incrementer-stream");
-        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER);
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 
 
-        KStream<String, String> source = builder.stream("no-filter");
+        KStream<String, String> source = builder.stream(DEFAULT_TOPIC);
 
         for(int i = 1; i < numberOfTopics; i++) {
             int finalI = i;
             source.mapValues(value -> Integer.toString(Integer.parseInt(value) + finalI))
-                    .to("no-filter-" + i);
+                    .to(DEFAULT_TOPIC + "-" + i);
         }
 
         final Topology topology = builder.build();
