@@ -1,4 +1,4 @@
-package com.pipeline.kafka.consumer;
+package com.pipeline.kafka.consumers;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

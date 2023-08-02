@@ -34,7 +34,7 @@ public class Executor implements Watcher, Runnable, DataMonitor.DataMonitorListe
     }
 
     public static void main(String[] args) {
-        if (args.length < 3) {
+        if (args.length < 2) {
             System.err.println("Usage: Executor <hostPort> <program> with [args ...]");
             System.exit(2);
         }
