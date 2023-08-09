@@ -2,6 +2,7 @@ package com.pipeline.kafka.connectors;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.connect.data.Schema;
+import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.pipeline.kafka.utils.SchemaConstants.SYNTHETIC_DATA_CSV_SCHEMA;
+import static com.pipeline.kafka.utils.SchemaConstants.SYNTHETIC_DATA_CSV_TO_STRUCT_FOR;
 
 public class CSVSourceTask extends SourceTask {
 
@@ -34,7 +36,7 @@ public class CSVSourceTask extends SourceTask {
     private BufferedReader reader = null;
     private char[] buffer;
     private int offset = 0;
-    private Long streamOffSet;
+    private Long streamOffSet = 0L;
 
     @Override
     public String version() {
@@ -47,6 +49,7 @@ public class CSVSourceTask extends SourceTask {
         filePath = config.getString(CSVSourceConnector.FILE_CONFIG);
         topic = config.getString(CSVSourceConnector.TOPIC_CONFIG);
         batchSize = config.getInt(CSVSourceConnector.TASK_BATCH_SIZE_CONFIG);
+        buffer = new char[Math.min((int) Math.pow(2, batchSize), 1024)];
     }
 
     @Override
@@ -55,7 +58,9 @@ public class CSVSourceTask extends SourceTask {
         if (inputStream == null) {
             try {
                 inputStream = Files.newInputStream(Paths.get(filePath));
-                Map<String, Object> offset = context.offsetStorageReader().offset(Collections.singletonMap(FILENAME_FIELD, filePath));
+                Map<String, Object> offset = null;
+                // should be line below to continue reading from last offset, but we want to start reading anew every time
+                //context.offsetStorageReader().offset(Collections.singletonMap(FILENAME_FIELD, filePath));
                 // Not first time reading this file?
                 if (offset != null) {
                     Object lastOffset = offset.get(POSITION_FIELD);
@@ -99,20 +104,21 @@ public class CSVSourceTask extends SourceTask {
             int nread = 0;
             while (readerCopy.ready()) {
                 nread = readerCopy.read(buffer, offset, buffer.length - offset);
-                log.trace("Read {} bytes from {}", nread, filePath);
+                log.debug("Read {} bytes from {}", nread, filePath);
 
-                if (nread > 0) {
+                if (nread >= 0) {
                     offset += nread;
-                    String line;
+                    String stringLine;
                     boolean foundOneLine = false;
                     do {
-                        line = extractLine();
-                        if (line != null) {
+                        stringLine = extractLine();
+                        if (stringLine != null) {
                             foundOneLine = true;
                             if (!headerProcessed) {
                                 headerProcessed = true;
                                 continue;
                             }
+                            Struct structLine = SYNTHETIC_DATA_CSV_TO_STRUCT_FOR(stringLine);
                             if (records == null)
                                 records = new ArrayList<>();
                             records.add(new SourceRecord(
@@ -123,29 +129,30 @@ public class CSVSourceTask extends SourceTask {
                                     null,
                                     null,
                                     VALUE_SCHEMA,
-                                    line,
+                                    structLine,
                                     System.currentTimeMillis()
                             ));
                             if (records.size() >= batchSize) {
                                 return records;
                             }
                         }
-                    } while (line != null);
+                    } while (stringLine != null);
 
                     if (!foundOneLine && offset == buffer.length) {
                         char[] newBuffer = new char[buffer.length * 2];
                         System.arraycopy(buffer, 0, newBuffer, 0, buffer.length);
-                        log.info("Increasing buffer size to {} bytes", newBuffer.length);
+                        log.debug("Increasing buffer size to {} bytes", newBuffer.length);
                         buffer = newBuffer;
                     }
                 }
             }
-
             if (nread <= 0) {
                 synchronized (this) {
                     this.wait(1000);
                 }
             }
+            if (records != null)
+                log.debug("Returning {} records unbatched", records.size());
             return records;
         } catch (IOException e) {
             e.printStackTrace();
@@ -174,6 +181,7 @@ public class CSVSourceTask extends SourceTask {
         if (until != -1) {
             String result = new String (buffer, 0, until);
             System.arraycopy(buffer, newStart, buffer, 0, buffer.length - newStart);
+            log.info("Adapting offset from " + offset + " to " + (offset - newStart));
             offset = offset - newStart;
             if (streamOffSet != null) {
                 streamOffSet += newStart;
@@ -191,8 +199,13 @@ public class CSVSourceTask extends SourceTask {
             try {
                 if (inputStream != null) {
                     inputStream.close();
+                    inputStream = null;
                     log.info("Closed input stream");
                 }
+                reader = null;
+                buffer = new char[1024];
+                streamOffSet = 0L;
+                offset = 0;
             } catch (IOException e) {
                 log.info("Error while closing input stream");
                 e.printStackTrace();

@@ -1,7 +1,0 @@
-{
-  "name": "csv-source-connector",
-  "config": {
-    "connector.class": "com.pipeline.kafka.connectors.CsvSourceConnector",
-    "tasks.max": "1"
-  }
-}
