@@ -181,7 +181,6 @@ public class CSVSourceTask extends SourceTask {
         if (until != -1) {
             String result = new String (buffer, 0, until);
             System.arraycopy(buffer, newStart, buffer, 0, buffer.length - newStart);
-            log.info("Adapting offset from " + offset + " to " + (offset - newStart));
             offset = offset - newStart;
             if (streamOffSet != null) {
                 streamOffSet += newStart;
