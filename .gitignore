@@ -9,3 +9,6 @@
 .project
 .settings/
 target/
+
+# Ignore created data generator files
+.code/data_generator/datasets/ 
