@@ -17,7 +17,7 @@ public class MaskingFunctionsCatalog {
         this.functions.add(new BucketizeAge());
         this.functions.add(new GeneralizeDiagnosis());
     }
-//
+
 //    public void addToSchema(SchemaPlus schema){
 //        for (MaskingFunction function : functions) {
 //            schema.add(function.name, ScalarFunctionImpl.create(function.getClass(), "eval"));

@@ -5,7 +5,7 @@ services:
     networks:
       - kafka-network
     volumes: 
-      - /tmp/kafka-anonymized-logs:/root/.m2/repository/com/pipeline/kafka/anonymized_kafka/1.0-SNAPSHOT/
+      - kafka-anonymized-logs:/root/.m2/repository/com/pipeline/kafka/anonymized_kafka/1.0-SNAPSHOT
     command: install
 
   data_generator:
@@ -17,7 +17,7 @@ services:
     environment:
       JUPYTER_TOKEN: "docker"
     volumes:
-      - '/tmp/data_generator/syntheticData.csv:/project/syntheticData.csv'
+      - data-generator-datasets:/project/datasets
     
   zookeeper:
     image: 'bitnami/zookeeper:3.8.2'
@@ -28,7 +28,7 @@ services:
     environment: 
       - ALLOW_ANONYMOUS_LOGIN=yes
     volumes: 
-      - '/tmp/zookeeper-logs:/bitnami/zookeeper'
+      - zookeeper-logs:/bitnami/zookeeper
     
   kafka: 
     image: 'bitnami/kafka:3.5'
@@ -43,7 +43,7 @@ services:
       - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
     volumes: 
-      - '/tmp/kafka-logs:/bitnami/kafka'
+      - kafka-logs:/bitnami/kafka
     depends_on:
       - zookeeper
 
@@ -60,13 +60,22 @@ services:
         condition: service_started
       anonymized_kafka:
         condition: service_completed_successfully
+      data_generator:
+        condition: service_completed_successfully
     volumes:
-      - './kafka_connect_config/connect-standalone.properties:/opt/bitnami/kafka/config/connect-standalone.properties'
-      - './kafka_connect_config/CSVSourceConnector.properties:/opt/bitnami/kafka/config/CSVSourceConnector.properties'
-      - '/tmp/kafka-anonymized-logs/anonymized_kafka-1.0-SNAPSHOT-jar-with-dependencies.jar:/opt/bitnami/kafka/libs/anonymized_kafka-1.0-SNAPSHOT-jar-with-dependencies.jar'
-      - '/tmp/data_generator/syntheticData.csv:/tmp/syntheticData.csv'
-    command: /opt/bitnami/kafka/bin/connect-standalone.sh /opt/bitnami/kafka/config/connect-standalone.properties /opt/bitnami/kafka/config/CSVSourceConnector.properties
+      - ./kafka_connect_config/connect-standalone.properties:/opt/bitnami/kafka/config/connect-standalone.properties
+      - ./kafka_connect_config/CSVSourceConnector.properties:/opt/bitnami/kafka/config/CSVSourceConnector.properties
+      - ./kafka_connect_config/entry.sh:/entry.sh
+      - kafka-anonymized-logs:/custom-jars
+      - data-generator-datasets:/data-generator-datasets
+    command: /entry.sh
 
 networks: 
   kafka-network:
     driver: bridge
+
+volumes:
+  kafka-anonymized-logs:
+  data-generator-datasets:
+  zookeeper-logs:
+  kafka-logs:

@@ -8,11 +8,15 @@ RUN conda install \
     numpy \
     matplotlib \
     faker \
+    nbconvert \
     jupyterlab
 
 COPY ./dataGenerator.ipynb /project
 COPY ./datasets /project/datasets
-COPY ./lib /project/lib
-COPY ./syntheticData.csv /project/syntheticData.csv
+COPY ./entrypoint.sh /project
+COPY ./lib/ /project/lib
 
-CMD ["jupyter-lab", "--ip=0.0.0.0","--no-browser","--allow-root"]
+ENTRYPOINT ["/project/entrypoint.sh"]
+
+CMD ["jupyter", "nbconvert", "--execute", "--to", "notebook", "--inplace", "/project/dataGenerator.ipynb"]
+# CMD ["jupyter-lab", "--ip=0.0.0.0","--no-browser","--allow-root"]
