@@ -1,0 +1,111 @@
+{
+  "globalConfig": {
+    "kafkaServer": "kafka:9092",
+    "topic": "no-filter",
+    "schema": "default"
+  },
+  "streams": [
+    {
+      "name": "level_1",
+      "category": "value",
+      "anonymizers": [
+        {
+          "anonymizer": "suppression",
+          "parameters": [
+            {
+              "key": "diagnosis"
+            }
+          ]
+        },
+        {
+          "anonymizer": "substitution",
+          "parameters": [
+            {
+              "key": "name"
+            }
+          ]
+        },
+        {
+          "anonymizer": "bucketizing",
+          "parameters": [
+            {
+              "key": "age",
+              "buckets": [
+                {
+                  "1" : "0-20"
+                },
+                {
+                  "2" : "21-40"
+                },
+                {
+                  "3" : "41-60"
+                },
+                {
+                  "4" : "61-80"
+                },
+                {
+                  "5" : "80+"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "level_2",
+      "category": "attribute",
+      "anonymizers": [
+        {
+          "anonymizer": "aggregation",
+          "parameters": [
+            {
+              "windowSize": "1000",
+              "key": "age"
+            }
+          ]
+        },
+        {
+          "anonymizer": "averaging",
+          "parameters": [
+            {
+              "windowSize": "1000",
+              "key": "weight"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "level_3",
+      "category": "table",
+      "anonymizers": [
+        {
+          "anonymizer": "kAnonymization",
+          "parameters": [
+            {
+              "windowSize": "1000",
+              "k": "4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "level_4",
+      "category": "table",
+      "anonymizers": [
+        {
+          "anonymizer": "lDiversity",
+          "parameters": [
+            {
+              "windowSize": "1000",
+              "k": "4",
+              "l": "2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
