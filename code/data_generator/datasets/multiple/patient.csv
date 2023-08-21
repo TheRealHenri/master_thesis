@@ -1,0 +1,1501 @@
+id,name,diagnosis,phone
+1,Gerta Fritsch,C95.0,+49(0)6667 631366
+2,Frauke Förster,J74.4,(07657) 657266
+3,Dominic Neureuther B.A.,J33.6,+49(0)5348 58018
+4,Herr Leif Beyer,P26.5,+49(0) 275510602
+5,Engin Hentschel B.Sc.,B37.9,02743 901512
+6,Valeska Butte,K48.8,00120 31103
+7,Janos Margraf,H01.5,+49(0) 988067106
+8,Dr. Ingelore Adolph B.Sc.,Z95.0,+49(0) 173244820
+9,Jennifer Geisler,J36.9,+49 (0) 8203 282578
+10,Daniel Dörr MBA.,O11.1,(09729) 717747
+11,Elli Wähner-Herrmann,K76.9,08829 165095
+12,Tomas Weiß,C78.5,04230698734
+13,Anastasios Etzold MBA.,K76.7,+49(0) 809205391
+14,Helma Eberhardt,N26.4,+49 (0) 6951 726823
+15,Berta Boucsein,V49.1,08563 82975
+16,Herwig Hauffer,Q05.2,(06692) 124286
+17,Ing. Eugenie Junck B.Sc.,G39.1,+49(0) 975393299
+18,Univ.Prof. Andrei Austermühle,T34.0,+49(0)1614803825
+19,Jadwiga Baum-Kensy,S52.4,+49(0)7078 49767
+20,Prof. Ernst-Dieter Süßebier MBA.,S09.3,+49 (0) 6437 073453
+21,Sandro Seifert MBA.,S63.6,+49(0) 129139911
+22,Hanife Wirth,R35.5,+49(0)2448 908021
+23,Ing. Elly Reinhardt B.Eng.,H15.2,+49(0) 339978184
+24,Cäcilie Hiller-Hande,C61.2,+49(0) 911908759
+25,Senta Harloff,I31.3,03621 925171
+26,Univ.Prof. Patricia Geisler,P45.7,+49(0) 154483117
+27,Univ.Prof. Kurt Täsche B.Sc.,S11.7,0186118353
+28,H.-Dieter Heinz,E26.6,+49(0)0750 836353
+29,Romy Eimer-Wilmsen,K78.1,05536 927819
+30,Heinz-Günther Matthäi,B27.6,+49(0)1267 62022
+31,Utz Pechel MBA.,M41.5,09816 40896
+32,Galina Bauer-Mende,J91.0,+49 (0) 2884 242111
+33,Bernward Segebahn-Albers,Y83.1,+49(0) 655093057
+34,Alexei Trüb,M22.8,(00218) 03685
+35,Gilbert Jessel,Q75.4,+49 (0) 1202 347353
+36,Michaela Dussen van,P46.2,(06965) 926477
+37,Univ.Prof. Daniela Karge,A65.4,+49(0)6491 84749
+38,Jonas Walter,G77.9,+49(0)7355 95024
+39,Myriam Lachmann,A55.4,0907497134
+40,Pawel Stumpf,Q39.8,+49 (0) 2737 866164
+41,Erwin Ehlert B.Eng.,K82.7,01845077616
+42,Gereon Walter MBA.,S06.3,+49(0)0086 170830
+43,Violetta Linke,A00.4,(08577) 30601
+44,Joana Oderwald,I04.3,(07208) 401950
+45,Lilo Geißler,P89.9,+49(0)2969 71844
+46,Nicolaus Heser,V02.2,+49(0) 447208621
+47,Jens-Peter Fritsch,I62.3,(09154) 53658
+48,Marina Heinz-Lachmann,V03.0,(08368) 968547
+49,Univ.Prof. Karl-Werner Henk B.Sc.,M78.6,08141 75061
+50,Univ.Prof. Waldtraut Hendriks B.Sc.,B11.5,0785887504
+51,Nadeshda Tröst,F20.1,+49(0)5305022240
+52,Ing. Irma Heintze,A60.8,+49(0)6382 11872
+53,Univ.Prof. Undine Dussen van,Y04.2,+49 (0) 4200 157151
+54,Alexandra Etzler MBA.,I22.4,+49(0) 042601555
+55,Univ.Prof. Kunibert Pohl B.Eng.,D71.0,09688 38558
+56,Giesela Patberg B.Sc.,G98.8,+49(0)2625 132183
+57,Lilian Kuhl B.A.,D03.6,+49(0)2000 76498
+58,Ing. Lisbeth Heintze B.A.,J28.2,01232 468948
+59,Dr. Valentine Ernst B.A.,G50.5,05351 390013
+60,Mira Neureuther,L32.4,+49(0) 332168959
+61,Annelise Hänel,Z70.8,07620 83574
+62,Nico Mülichen,Z47.8,0534184981
+63,Angela Kreusel,H40.4,08619 04945
+64,Prof. Hans-Albert Ebert B.A.,B53.0,0730422536
+65,Stanislav Dowerg,R04.0,05412818692
+66,Herr Udo Sauer,G36.4,+49 (0) 3432 507799
+67,Bernt Sorgatz,E78.9,+49 (0) 3843 890194
+68,Uli Bohlander B.A.,K08.4,0592710360
+69,Univ.Prof. Bruni Speer,B12.3,0465637622
+70,Dietmar Gotthard-Weller,H07.5,02563 181122
+71,Liesa Kroker,P42.3,01772 632241
+72,Prof. Sieghard Christoph,T12.2,08512 93821
+73,Miriam Austermühle,N05.3,+49 (0) 2654 516003
+74,Zeynep Bloch B.Eng.,J53.1,+49(0)2282832793
+75,Nils Hecker B.A.,B62.1,0868654783
+76,Elenore Tlustek-Koch II,R37.3,+49 (0) 6032 880752
+77,Heinz-Dieter Steckel,A79.6,09487 002079
+78,Resi Siering,Q67.3,0201923423
+79,Piotr Trüb,C63.9,02930879436
+80,Philip Heuser,O81.6,+49(0)7417 288788
+81,Andrej Mosemann,P41.0,(01060) 51469
+82,Prof. Henrike Patberg,I67.9,+49(0)0113 402795
+83,Gretl Holzapfel,E09.2,01837230461
+84,Jost Hermann,K44.2,(07639) 221319
+85,Massimo Wieloch,C56.3,+49(0)5961696594
+86,Dr. Lorenzo Bien B.Sc.,A50.1,03835 96609
+87,Raissa Pölitz,B97.6,+49(0)6831512365
+88,Mikhail Wilms,J53.5,(06197) 85124
+89,Ing. Gretel Finke,E49.9,+49 (0) 6037 810582
+90,Ing. Gisa Adler B.Eng.,A09.2,03042 25632
+91,Marianne Reuter B.Eng.,O31.5,09866 47558
+92,Korinna Schwital B.Eng.,T21.4,09823 412601
+93,Siegried Staude,L48.0,+49 (0) 0338 126101
+94,Dipl.-Ing. Roswita Gorlitz,O28.1,+49(0)7194 355221
+95,Olena Kobelt,R15.7,+49(0)0633395420
+96,Karl-Heinrich Jäkel,F78.2,+49(0)8551742823
+97,Gerta Oderwald,R66.8,+49 (0) 7025 254921
+98,Luzie Dehmel,P22.3,0997079583
+99,Grzegorz Hauffer,C04.2,0667664241
+100,Malgorzata Holt,D95.9,0373931118
+101,Univ.Prof. Florence Junk B.Sc.,J08.7,+49(0)2262903127
+102,Daniele Graf,T98.5,03633047195
+103,Univ.Prof. Natalija Jüttner,B14.5,09264890447
+104,Grit Jäntsch,O72.0,+49(0) 051571221
+105,Hajo Winkler MBA.,J63.7,05715 480128
+106,Ruben Vogt,M47.5,06379603410
+107,Luitgard Dobes B.A.,T98.5,+49(0)0898 94798
+108,Violetta Hornig,T06.1,+49(0)2920864251
+109,Marko Lorch B.Eng.,N43.9,(02596) 180781
+110,Wolf-Rüdiger Bärer,P44.3,+49(0)4418663889
+111,Theobald Thies,D91.2,+49 (0) 4853 463637
+112,Christa-Maria Heß,P39.9,0673940370
+113,Heinz-Günter Schaaf-Fechner,M06.9,+49(0)8266 934124
+114,Tino Eigenwillig B.A.,K88.4,+49 (0) 9004 556977
+115,Mark Hofmann,C87.2,+49(0)7708 866432
+116,Hans-Günther Reising,F62.4,(01970) 43822
+117,Stjepan Birnbaum,Y89.1,04518 01929
+118,Juan Kitzmann B.A.,D70.9,01313 778293
+119,Krista van der Dussen-Boucsein,T87.1,03000 389162
+120,Hedy Eberhardt-Misicher,O98.4,+49(0) 731246187
+121,Sergei Metz,F31.8,(04523) 93582
+122,Henrik Tschentscher,G29.2,+49(0)5965 90332
+123,Gilbert Heidrich B.A.,O82.0,01859 78071
+124,Ing. Suse Vogt B.A.,N62.9,04353 436551
+125,Volker Heinz,R60.5,+49(0)5670 94799
+126,Manja Pieper,V57.5,(03487) 22663
+127,Darius Tschentscher,K70.5,08942 744738
+128,Prof. Pamela Flantz,V74.0,0220720111
+129,Paola Harloff,O87.2,+49(0)0187750392
+130,Antonios Renner,Z19.0,02329345110
+131,Annelore Wähner,R32.5,05802 23207
+132,Margret Scholz B.Eng.,P10.1,+49(0) 875698253
+133,Antonietta Schwital,K42.6,(02743) 090445
+134,Ottomar Striebitz,I19.0,0040164110
+135,Nicolaus Liebelt,V23.5,+49(0)8166163024
+136,Herr Apostolos Hornich B.Sc.,S49.1,(05630) 286989
+137,Gina Hermighausen,K97.7,(04693) 129635
+138,Margret Rust B.A.,G32.1,0699655886
+139,Ing. James Tschentscher,T32.7,03964 31903
+140,Kunigunde Tschentscher,A98.3,08092 72466
+141,Kristine Wulf,H87.7,(05326) 240197
+142,Bruni Kroker-Heß,Q66.7,+49(0)8042 44265
+143,Ljudmila van der Dussen,G31.9,(02738) 616979
+144,Katharine Herrmann MBA.,L59.5,02617 217500
+145,Dr. Krista Rogner B.Sc.,I48.5,+49(0)2699987913
+146,Ottfried Junck-Holzapfel,Q89.0,+49(0)2104 590491
+147,Monja Röhricht,Z98.3,06167 680474
+148,Isabel Patberg,G04.0,03208 77868
+149,Dipl.-Ing. Phillip Gerlach,S10.6,08641995861
+150,Caroline Lange,A00.7,+49 (0) 0739 633863
+151,Benjamin Juncken,G43.0,0563429246
+152,Dusan Jopich-Gorlitz,K79.0,05895410241
+153,Waltraud Neuschäfer B.Sc.,B34.9,+49(0)8229048668
+154,Dr. Marlies Hornig B.A.,F05.7,08043059603
+155,Herr Louis Benthin,V63.7,+49(0) 014006790
+156,Isa Wagenknecht B.Sc.,D36.6,01170 457877
+157,Sibylla Schulz B.Sc.,H58.7,+49(0)0126 964856
+158,Birgid Schuster,D47.8,+49(0)4141114224
+159,Luise Löffler,Q85.0,09681 16631
+160,Gundi Adolph,I66.0,+49(0)2913 237055
+161,Dipl.-Ing. Jens-Peter Klapp B.Eng.,Q38.3,+49(0)6547896118
+162,Mustafa Baum,K81.8,+49(0)3731 47478
+163,Helfried Neureuther-Graf,E14.7,(03249) 315612
+164,Berta Holt,I49.4,02376 900409
+165,Elena Kitzmann,Z38.9,+49 (0) 8391 229105
+166,Jonathan Ritter-Freudenberger,M62.8,+49(0)9834765997
+167,Dimitrios Schönland,H16.0,0081576819
+168,Henrik Kusch B.Sc.,R44.0,(06003) 32014
+169,Univ.Prof. Ditmar Anders B.A.,P57.4,+49(0)0094 18202
+170,Kläre Riehl,G12.4,+49 (0) 1352 239943
+171,Cristina Langern-Seifert,Y12.4,(01457) 68409
+172,Sylvia Scheel B.Sc.,I60.9,+49(0)0667987780
+173,Dipl.-Ing. Samir Hübel,D03.4,+49 (0) 2153 171086
+174,Dr. Micha Rudolph B.Sc.,V37.7,+49(0) 652597314
+175,Prof. Wilma Lindner,I38.9,+49 (0) 6274 930929
+176,Lilly Bärer,S45.6,+49 (0) 7924 733056
+177,Hans-J. Bruder,E59.9,05942 328709
+178,Nuray Biggen,I26.3,+49(0) 492846748
+179,Ing. Hedy Dörschner B.Sc.,C52.1,03987824115
+180,Sylvester Trapp-Jacob,I72.9,+49(0)7259531272
+181,Brigitte Eckbauer,B04.3,+49(0)2335113932
+182,Erik Rädel B.Sc.,L34.1,(00851) 329439
+183,Abraham Kraushaar,E07.3,00936 494269
+184,Vladimir Schottin-Schönland,I60.2,(01097) 818303
+185,Conny Gorlitz,G99.0,0115625499
+186,Dipl.-Ing. Mercedes Dussen van B.A.,G32.1,+49 (0) 4810 188859
+187,Frida Bolander,G01.1,09495 990310
+188,Prof. Mehdi Gunpf B.A.,C14.7,+49(0) 423695958
+189,Willi Schmiedecke,C51.6,+49(0)1049119731
+190,Univ.Prof. Lilli Heser B.Eng.,Z30.3,0663384484
+191,Torsten Wilmsen,A92.0,+49(0) 084767876
+192,Mina Barkholz,D35.2,+49(0)4142 012799
+193,Prof. Rosel Jäkel B.Eng.,R93.1,+49(0)9768342696
+194,Willi Pergande B.A.,Q91.7,(04663) 17541
+195,Holger Säuberlich MBA.,V36.4,(09822) 420468
+196,Univ.Prof. Senol Stroh B.Sc.,D82.2,0833540607
+197,Gisela Wagner,S57.4,+49(0)0622 874431
+198,Univ.Prof. Bekir Börner B.A.,Z37.7,+49 (0) 8906 133316
+199,Marga Jungfer-Bloch,F18.6,+49 (0) 3837 418587
+200,Meta Nerger,O22.4,05137 186879
+201,Sandy Knappe,P80.1,0090419768
+202,Moritz Klapp-Kitzmann,P29.8,01270 355164
+203,Walentina Weller,J43.8,09594552600
+204,Susanna Mosemann,H77.8,+49(0)3087 746450
+205,Herr Senol Schacht B.A.,I55.6,+49(0)5217 17404
+206,Britt Seidel,M01.9,(05307) 783747
+207,Maxim Dörschner,N00.7,04832534928
+208,Ing. Klaus-D. Etzold MBA.,K85.9,(08071) 48584
+209,Sabina Rose,V01.2,01840 309815
+210,Univ.Prof. Jan Fröhlich,T65.1,+49(0)1738 44333
+211,Svetlana Gerlach,I28.1,02810 04355
+212,Hans-Hinrich Langern,H72.7,(00899) 744107
+213,Rudolph Trupp,E92.1,+49(0) 086268431
+214,Fritz Bonbach,G69.1,+49(0) 744464534
+215,Antonia Adler,J55.7,+49(0)9451 94419
+216,Dietmar Atzler,Z24.1,+49(0)2760340895
+217,Ernestine Sauer,Z98.1,0653187318
+218,Dagobert Textor B.A.,V73.1,(08524) 00960
+219,Franka Wieloch,S33.4,(08655) 95135
+220,Miguel Otto-Hein,V64.1,+49(0)8542 375622
+221,Wenzel Krein B.Eng.,C90.8,+49 (0) 5868 882386
+222,Friedemann Kade B.A.,N56.5,+49(0) 650842896
+223,Kazim Schmiedecke B.A.,C42.6,08588 522441
+224,Stefano Ring,F01.8,0878101502
+225,Harro Jüttner-Nerger,B61.5,(06036) 77450
+226,Harri Hellwig-Finke,K33.5,(03272) 683726
+227,Gina Kraushaar MBA.,R72.5,+49(0)4722 791775
+228,Dr. Laurenz Dobes MBA.,M36.2,0583702759
+229,Prof. Jan-Peter Geißler B.Sc.,O50.6,+49(0)2380286608
+230,Hassan Ditschlerin,Y34.9,+49 (0) 7994 834081
+231,Frau Inna Hamann,I00.5,(09391) 716197
+232,Ing. Jobst Krein,O98.7,06445 912100
+233,Univ.Prof. Karola Siering B.Eng.,C99.4,+49 (0) 7922 742371
+234,Toralf Mude,Y59.2,+49(0)1786 310572
+235,Henry Schenk B.A.,D34.7,+49(0)7826087748
+236,Korinna Stumpf-Bolander,P51.1,08567 71860
+237,Nicolaus Pieper-Drub,M97.5,+49(0)1127603739
+238,Magnus Hecker,S19.9,0341782033
+239,Ing. Trudel Kuhl MBA.,D71.4,0358637389
+240,Gönül Schinke,Y08.8,+49(0)7734 441931
+241,Rolf-Dieter Trüb-Becker,J19.5,+49(0) 018268574
+242,Ante Dörschner,K48.9,+49(0)2760 83412
+243,Gerhardt Henck,T13.2,+49 (0) 1421 197738
+244,Kathi auch Schlauchin,N87.9,+49(0) 022062838
+245,Gerolf Barth B.Sc.,N73.2,(00280) 75799
+246,Dipl.-Ing. Bernard Scholtz B.Sc.,L97.3,07626903890
+247,Ferenc Seip-Kade,O41.1,+49(0)2928 343319
+248,Univ.Prof. Agathe Hande MBA.,R20.9,+49(0)3512 95300
+249,Klaus-Günter Beier,B03.3,+49(0)1199 906972
+250,Norman Täsche,L31.7,+49(0) 437464314
+251,Paul-Gerhard Blümel,Z37.5,06694 535648
+252,Klaus Dieter Wiek,Z51.9,(02005) 94946
+253,Ahmed Neureuther-Heydrich,H98.5,07283 573018
+254,Univ.Prof. Meinolf Spieß,P44.1,+49(0) 739968209
+255,Prof. Ayse Dobes B.Sc.,Y13.2,+49(0)4866710238
+256,Edmund Röhrdanz,S62.3,+49(0)5512228883
+257,Heiderose Ullmann-Schinke,Z53.1,(08936) 274054
+258,Franco Reinhardt MBA.,R73.4,+49(0)9627 914758
+259,Henrike Stolze,E44.6,+49 (0) 5417 632729
+260,Jorge Tröst,C61.9,(06326) 274806
+261,Ottilie Ortmann,R69.1,+49(0) 762382309
+262,Theres Römer B.Eng.,G00.2,03647442303
+263,Birgitta Wohlgemut B.A.,R58.9,01508 47358
+264,Remo Cichorius,O54.9,04848772754
+265,Janina Kranz B.Sc.,G46.1,+49(0)7304 377390
+266,Volker Wulf,H45.4,(05856) 68250
+267,Univ.Prof. Ortrud Pruschke,B97.4,(01671) 90400
+268,Eveline Keudel,M99.0,(02983) 46989
+269,Mechtild Bolnbach,G96.2,+49(0) 640947344
+270,Dr. Hans-Otto Pruschke,K79.5,09350 33121
+271,Dr. Renate Nette,O28.5,+49(0)2206 859357
+272,Cemal Bolzmann B.Eng.,C29.2,+49(0)5522 20714
+273,Jens-Peter Gunpf,P99.0,+49(0)2223821414
+274,Univ.Prof. Zdenka Pergande,Q06.9,(00067) 46200
+275,Sedat Schwital,O61.3,0432496802
+276,Kornelia Bolzmann,B83.9,(06935) 278745
+277,Luka Karz,Q09.5,(09938) 62879
+278,Dr. Isabell Kruschwitz,Q34.8,05751 53239
+279,Vitali Kruschwitz,E11.1,08475 388321
+280,Wolfram Wilmsen,V52.8,+49 (0) 2965 262692
+281,Lieschen Löwer,F88.5,0358548711
+282,Nikolai Fliegner-Jäkel,G00.7,+49 (0) 2026 173737
+283,Univ.Prof. Marten Bolzmann,F84.2,01489 93014
+284,Ernst-August Binner,J94.1,+49(0)6964 47605
+285,Ing. Wenke Meister B.Eng.,R50.2,(05936) 84492
+286,Heike Krebs B.A.,S56.0,0935591445
+287,Dipl.-Ing. Benedikt Ebert MBA.,C10.6,(06504) 00212
+288,Darko Ullmann,B76.3,+49 (0) 7717 309992
+289,Viktoria Mangold-Ullrich,E16.0,0287004611
+290,Janett Loos,S83.4,+49(0)8758667806
+291,Dietmar Thies B.A.,V45.4,+49 (0) 4363 291242
+292,Sevim Lange,Y94.3,(02770) 150613
+293,Carolina Krein,A17.6,+49(0)2693 15724
+294,Lissy Henck B.A.,F62.3,+49 (0) 0104 931109
+295,Luciano Mitschke B.Sc.,J23.2,+49(0)9584 102755
+296,Maria-Theresia Seifert B.Sc.,L40.2,(07585) 42702
+297,Irmengard Ullmann,D09.1,06504392120
+298,Maurice Döring,Y30.1,(00085) 490406
+299,Frank-Peter Patberg-Schaaf,K32.7,0598402891
+300,Isidor Rogge,H99.3,0135912095
+301,Lisa Hänel B.Eng.,H60.8,0330960724
+302,Udo Niemeier B.Sc.,P08.4,07786709950
+303,Dieter Wulff,C56.5,(03472) 832724
+304,Univ.Prof. Paulo Reinhardt,D56.1,+49 (0) 1153 989919
+305,Franz-Peter Holzapfel,N10.1,(08727) 121593
+306,Karl-Wilhelm Beyer,L06.2,+49(0)1969170590
+307,Zoltan Weiß MBA.,C24.3,(09156) 178837
+308,Hans-Henning Koch,M97.6,02818 00504
+309,Frau Lidija Pechel,T25.0,+49(0) 613248872
+310,Cilli Budig B.Eng.,R20.9,03770 752993
+311,Prof. Francis Jopich,I84.3,01172 484523
+312,Margot Tintzmann,P55.7,+49(0)8253564983
+313,Geraldine Neuschäfer,H38.8,(04676) 69495
+314,Martha Gude,G92.2,+49 (0) 5483 861930
+315,Arne Christoph,M00.8,+49(0) 401532848
+316,Prof. Maja Pölitz B.Eng.,O61.1,+49(0)7348 166618
+317,Dr. Fred Steckel,J36.8,(06807) 22700
+318,Univ.Prof. Silja Hauffer,H12.0,+49 (0) 6003 509212
+319,Julie Cichorius-Siering,J08.3,(04550) 766102
+320,Prof. Sigmar Krein,N46.9,03529 73635
+321,Constantin Heinz,B66.5,05715044245
+322,Hans-H. Hartung,O88.0,+49(0)8945 18330
+323,Prof. Steffen Eimer B.Eng.,P41.6,+49(0) 550229402
+324,Peter Graf,T16.1,+49(0)4671 761762
+325,Lore Tintzmann B.Eng.,O08.6,(04862) 485848
+326,Diana Beer,Q12.6,07816 192347
+327,Nurettin Löwer,E17.2,+49(0) 198552891
+328,Ing. Gundi Rogner,B81.1,09762 04089
+329,Anita Bolzmann-Eigenwillig,I67.9,(03339) 66785
+330,Dr. Sybille Schmiedecke,G20.3,0532348946
+331,Bartholomäus Heuser B.Eng.,K13.1,04925 26222
+332,Erdal Weihmann,O96.2,08662301722
+333,Elfi Junken,B29.8,+49(0) 118018001
+334,Univ.Prof. Lidia Sauer,K66.0,+49(0)3591 948319
+335,Niels Paffrath,K68.2,08268 182546
+336,Heinz-Günter Pohl,M79.9,0976957924
+337,Dipl.-Ing. Nicolai Finke,T64.2,+49(0)3700 007003
+338,Helene Lindner B.Eng.,E11.1,(09739) 05851
+339,Malgorzata Hettner,R61.0,03426935174
+340,Herr Piotr Bolzmann,S33.6,02748 402245
+341,Prof. Swantje Mälzer,O74.6,(04344) 840798
+342,Klaus-D. Loos,J87.0,+49(0)1167 26174
+343,Milka Zirme,A72.7,(03416) 75899
+344,Meinrad Gute,Y06.0,(04157) 676605
+345,Univ.Prof. Heidrun Hering,H92.3,+49(0)5760 456622
+346,Viola Scholl,Z35.3,0782978812
+347,Dipl.-Ing. Victor Misicher,N66.4,(05396) 10575
+348,Herr Hanni Franke B.Eng.,R48.1,+49(0) 664237597
+349,Brita Juncken,L49.7,05582410311
+350,Marika Stolze,C24.4,+49(0)3708 709492
+351,Hans-Friedrich Etzler,F55.6,(01311) 962795
+352,Roswita Hauffer,J91.0,+49(0) 046461685
+353,Gabriel Speer,I05.8,08529 86618
+354,Prof. Ulrike Benthin MBA.,I00.3,+49(0) 552960434
+355,Natascha Ruppersberger B.Sc.,J78.8,+49 (0) 5347 682522
+356,Dorle Lindau,L03.9,(04556) 18477
+357,Adriane Ruppert MBA.,O58.7,+49 (0) 1092 355815
+358,Norma Albers,P00.8,09993 464367
+359,Jeanette Thies B.A.,I51.8,04085 21868
+360,Gunnar Plath,O24.9,0974144042
+361,Ing. Carola Metz B.A.,J34.6,+49(0)2930718092
+362,Nathalie Mitschke,S01.7,(01124) 724050
+363,Siglinde Schleich,V39.7,(05691) 655811
+364,Darius Textor,F23.1,00652 234832
+365,Dipl.-Ing. Halil Seip,B76.5,03135344820
+366,Zlatko Staude,Q25.9,+49 (0) 4921 248103
+367,Evelin Müller,K23.7,02842 56395
+368,Heini Holt,D94.4,09893667892
+369,Ester Paffrath,N19.9,03709182284
+370,Dr. Anton Hübel B.Sc.,M97.5,03178 14088
+371,Henni Trommler,T23.4,+49(0)6659 83532
+372,Miriam Cichorius,Z07.9,+49(0)7091 68127
+373,Ansgar Hornich,O30.1,+49(0)0038427229
+374,Mato Lindner,D58.3,+49(0) 369943950
+375,Dipl.-Ing. Evelin Junken MBA.,Y30.3,00237 84803
+376,Berthold Weihmann,Z08.4,+49 (0) 3296 533416
+377,Ria Ackermann,R67.7,+49(0)8885 78852
+378,Univ.Prof. Hiltraud Jockel B.A.,B67.7,+49(0) 141164494
+379,Vassilios Heß,F86.5,09016 72446
+380,Henner Döring,J71.1,+49(0)2964796948
+381,Hans-Uwe Franke,C14.1,0725701053
+382,Willi Kallert,Y24.3,0008233727
+383,Bastian Harloff,G82.4,+49 (0) 4048 254855
+384,Petra Meister,A65.6,03718 776354
+385,Lilli Scholl,A89.2,05602 56963
+386,Dr. Aloisia Schuster B.A.,L12.1,+49(0)2389 538780
+387,Univ.Prof. Mariechen Winkler,Q36.9,+49(0)6142 527852
+388,Florentine Bohnbach,R78.8,+49(0)7536 15916
+389,Dipl.-Ing. Muzaffer Gumprich,M52.4,+49(0)3037 193906
+390,Jörg Heintze,E90.6,+49(0)8598160558
+391,Berthold Textor B.A.,H73.7,+49 (0) 8506 883013
+392,Kathy Rosenow-Lübs,P85.9,+49(0) 846598126
+393,Jennifer Kramer,V67.4,+49 (0) 9433 724312
+394,Susanne Liebelt,J78.2,(05899) 389998
+395,Sabine Bloch,R03.3,+49(0) 716449760
+396,Ing. Vitali Bruder MBA.,N53.5,+49(0)1794958749
+397,Irmtraud Röhricht,B08.3,0059421668
+398,Theodor Peukert,Y68.5,+49(0)8812485469
+399,Karen Zobel,Q62.4,0317778564
+400,Janusz Wagenknecht-Neuschäfer,L57.6,02264 97912
+401,Margitta Haase-Finke,C92.7,(02916) 35879
+402,Lilian Rohleder,A00.3,+49 (0) 1727 508769
+403,Steffi Kabus-Schüler,N72.1,+49(0)9811736062
+404,Marie-Luise Trapp,S98.8,+49(0)4091921904
+405,Theresia auch Schlauchin MBA.,K89.0,+49(0)9120 213409
+406,Dana Bärer,L14.3,07749 858156
+407,Dieter Löchel,K11.5,08939834902
+408,Günther Löchel,L81.8,0109061148
+409,Arnulf Dippel-Ullmann,C93.2,+49(0)8248828636
+410,Mehdi Rust MBA.,C46.3,+49 (0) 4903 699401
+411,Giuseppina Wiek,V81.7,+49(0) 550461036
+412,Karl-Peter Bloch,D09.2,00820104471
+413,Ing. Salvatore Kostolzin,M51.6,+49(0)3122 55011
+414,Sophia Meister B.A.,G13.4,09756 93129
+415,Marisa Speer,A94.1,(07207) 98893
+416,Madlen Mans-Hornich,F05.5,06854 165988
+417,Prof. Klaus Peter Tintzmann B.Eng.,R37.1,+49(0) 485259672
+418,Gilbert Nohlmans B.A.,H72.7,(02496) 409945
+419,Ing. Mirco Gunpf MBA.,R99.1,+49(0)6464 891718
+420,Elsa Bachmann,P58.1,(09923) 05897
+421,Ron Rädel,M86.0,+49(0)8309 352912
+422,Artur Mende,Q63.0,+49(0)4936 22336
+423,Dr. Alexei Gehringer,T59.5,(00060) 035541
+424,Irmtraud Thanel,E14.9,0716207269
+425,Karl-Jürgen Kroker,R90.3,(09621) 42351
+426,Dipl.-Ing. Gülsen Jäntsch,O90.8,(00716) 27103
+427,Prof. José Hermann,C63.5,+49(0)1288524745
+428,Achim Koch II,Q87.6,0117987950
+429,Dominic Atzler,Q46.5,+49 (0) 9421 411124
+430,Änne Scholz B.Eng.,A76.7,+49(0)5845 216215
+431,Annerose Lange,Q28.0,0261719621
+432,Dietlind Huhn,D68.9,0223535858
+433,Univ.Prof. Klaus-Peter Jockel,R31.2,(08350) 05475
+434,Univ.Prof. Tabea Neureuther,M44.4,+49(0) 017437301
+435,Silja Jäkel MBA.,D97.9,+49(0)6508 37602
+436,Dipl.-Ing. Darko Keudel MBA.,O31.5,+49(0) 818904436
+437,Roswita Zobel,D70.5,+49 (0) 9074 544103
+438,Guido Döhn,H33.1,(05635) 279908
+439,Adelgunde Spieß-Nette,P58.1,02726 316098
+440,Ing. Carlo Martin,A07.2,05247 88145
+441,Rebecca auch Schlauchin,L68.8,+49(0)2444035212
+442,Albert Bolzmann-Vogt,T96.6,+49(0)8970557624
+443,Constantin Steckel,B63.3,+49(0)9515616581
+444,Siegrun Hermann,J96.4,05963 878550
+445,Christoph Patberg,V97.1,0392886394
+446,Andrew Biggen,V60.6,+49(0)7280 52131
+447,Luise Killer,O92.7,0768690599
+448,Herr Hans-Georg Budig,O77.1,06396633373
+449,Agnes Bolzmann-Barkholz,N33.5,(08483) 705463
+450,Vladimir Patberg,P28.6,0268662635
+451,Dr. Cäcilia Caspar MBA.,T07.3,(03812) 489484
+452,Dorle Patberg-Naser,L48.6,(04540) 71164
+453,Willy Stroh,Z27.1,+49(0) 380217024
+454,Jadwiga Buchholz,N83.3,+49 (0) 7252 819798
+455,Blanka Kensy,O97.0,02664808942
+456,Gitte Losekann,M72.1,+49(0) 098131493
+457,Ercan Heydrich-Pieper,E84.7,+49(0) 662896174
+458,Edeltraud Rudolph-Roskoth,O72.8,+49 (0) 1191 055614
+459,Univ.Prof. Evi Kobelt,I50.3,(05608) 348509
+460,Edit Schmiedecke-Schaaf,F72.8,+49(0)6707785845
+461,Kreszenz Conradi,Q90.8,+49(0)2599 384914
+462,Ottmar Löwer,H66.7,(01694) 03574
+463,Gesine van der Dussen B.Sc.,G07.2,0652108913
+464,Prof. Britt Hänel,L46.6,(05109) 801231
+465,Wanda Kusch,S49.7,+49(0)2728474661
+466,Catherine Junck,K59.7,(02285) 95690
+467,Univ.Prof. Waltraud Höfig,Z83.5,+49(0) 695941512
+468,Selma Rosenow B.Sc.,M33.5,+49(0) 575557995
+469,Mirco Hövel B.Sc.,T63.5,+49(0)7507 345966
+470,Jochen Röhricht-Barkholz,Z54.2,0786587532
+471,Tatjana Ruppert,Z65.0,+49(0) 709011919
+472,Herr Ladislaus Jähn,V34.7,(00844) 812654
+473,Rolf-Dieter Scheel-Albers,I94.2,02933 788668
+474,Marc Jacob,B97.1,+49 (0) 8871 554701
+475,Kornelius Hecker,B06.7,(08840) 58084
+476,Ludmila Nohlmans,D73.2,05322939736
+477,Herr Roberto Mangold,D92.5,+49(0) 507202371
+478,Lucia Warmer,I50.1,(09060) 342369
+479,Kristin Bärer MBA.,P49.4,(07874) 862162
+480,Alwine Kramer,B15.4,01225937445
+481,Jennifer Jacobi Jäckel,J07.5,03718 937771
+482,Marijan Hahn-Seifert,E92.7,+49(0) 459840829
+483,Sabine Briemer B.Eng.,J41.6,(00357) 464158
+484,Minna Ullmann,I64.6,0746119309
+485,Joseph Scheibe-Schenk,C85.6,+49(0)8936 053586
+486,Herr Roderich Bonbach,V54.0,(00909) 701800
+487,Kristin Zahn,P08.9,0975693078
+488,Juliana Fechner,K64.0,(04388) 73098
+489,Agatha Christoph-Schuster,M01.0,+49(0)0944 82960
+490,Hubertus Oestrovsky-Fechner,K57.8,+49(0)0920691136
+491,Mehmet Reichmann,D12.2,04900 875418
+492,Rosa-Maria Bender,I11.4,07817723132
+493,Ing. Sophia Fritsch B.A.,S35.8,+49(0)1510 588128
+494,Nils Kruschwitz,M53.9,07589 654009
+495,Filippo Neureuther,D14.1,08253503120
+496,Dr. Bärbel Kroker,Z12.1,(09269) 91614
+497,Dr. Maxim Striebitz B.A.,D53.6,+49 (0) 6451 041874
+498,Julius Hellwig,Y99.2,+49(0) 998925283
+499,Marga Trapp,Q14.2,+49(0)6322 736310
+500,Xaver Eberth,Y10.2,07659 162556
+501,Iwona Hahn,T68.0,01321246754
+502,Herr Hans-Helmut Koch II,N68.3,(01171) 583075
+503,Univ.Prof. Robert Hofmann MBA.,D50.2,+49 (0) 2401 755984
+504,Lore Loos B.Eng.,Z52.1,0562265438
+505,Darko Stahr,Z04.9,+49(0)9714213228
+506,Georgine Trommler,L06.3,0891891257
+507,Mara Hermann,I48.5,06729053913
+508,Univ.Prof. Eveline Ortmann,I35.7,0839556140
+509,Susanna Geisel,D95.9,+49(0)3968 799635
+510,Ottmar Losekann-Naser,D36.2,(03131) 867852
+511,Univ.Prof. Annaliese Krein,O63.7,05689206195
+512,Frau Ludmilla Wagenknecht,O57.6,+49(0)7361 703828
+513,Dr. Tibor Gotthard,P17.3,0722360018
+514,Florence Römer,T12.6,09708186730
+515,Herr Klaus-D. Rose,L29.5,+49(0) 392684595
+516,Zlatko Beyer-Römer,Z64.6,(00779) 90456
+517,Ernst Gehringer,F60.4,07565 662279
+518,Grazyna Rust B.Sc.,O86.2,+49 (0) 9439 672306
+519,Univ.Prof. Hulda Weimer,Q90.0,+49(0)4588885085
+520,Annelene van der Dussen,E39.7,+49 (0) 7480 078043
+521,Wiltrud Kaul,Q54.7,+49(0)0212 212430
+522,Herbert Hettner,J18.2,+49 (0) 9002 697437
+523,Bianka Kohl MBA.,J05.1,(01227) 810379
+524,Dorota Klemm,Y90.2,+49 (0) 5777 569768
+525,Tilo Metz,T91.0,+49(0)9850 99257
+526,Dr. Edda Hellwig,M69.8,0398574335
+527,Linda Hande,H97.9,+49(0)3771 839335
+528,Karolin Geisler,G59.3,01451 65101
+529,Univ.Prof. Mirjana Mude B.Eng.,O77.3,04042 648293
+530,Susi Hänel,K07.9,(06633) 45266
+531,Michel Hande-Hörle,P21.9,+49(0)5430848252
+532,Frau Kirsten Spieß,P43.6,0867007443
+533,Prof. Yvette Ring B.Sc.,A38.2,01035 46333
+534,Utz Oderwald,V75.1,(01521) 07663
+535,Viktor Wulf B.Sc.,E32.8,01078 45659
+536,Pascal Mans,Q11.9,08067 25349
+537,Stjepan Wagenknecht MBA.,Z01.0,01901281003
+538,Ahmet Hamann-Junck,L50.2,+49(0)3937 00375
+539,Dipl.-Ing. Ahmet van der Dussen,G57.7,07676 285831
+540,Rosalie Salz-Wiek,N46.4,01756 614914
+541,Bartholomäus Nohlmans,I80.9,+49(0) 319968621
+542,Prof. Bernhard Zorbach,G05.5,02645172283
+543,Ing. Lidija Wieloch B.Sc.,L48.1,+49(0)9750 11107
+544,Mira Ditschlerin,Q24.0,05849 90464
+545,Carl Stoll,F55.9,(05985) 21299
+546,Ruthild Stadelmann,F91.4,+49(0)5401 28606
+547,Ljiljana Buchholz,Q28.0,06729 117299
+548,Ing. Volkhard Hörle,R94.7,+49(0)2843 021651
+549,Univ.Prof. Werner Schaaf,D18.0,+49 (0) 4718 026899
+550,Romana Siering,L74.2,+49(0) 191264041
+551,Univ.Prof. Irmengard Bähr B.Eng.,T83.2,+49(0)1682 54341
+552,Niels Häring,K15.5,+49(0)9693484839
+553,Rotraut Naser,Z68.8,0176053430
+554,Helene Graf-Ditschlerin,V64.3,(06777) 55757
+555,Jurij Schmiedt,D70.5,+49(0)2437 664656
+556,Larissa Ring,F08.0,+49(0)6134 16749
+557,Dr. Desiree Reinhardt,A64.7,09852432374
+558,Ing. Tilmann Wilms,Q37.6,+49(0)2734 447072
+559,Ivan Speer,K26.3,(05682) 601160
+560,Hatice Dörr,Q13.6,0492034206
+561,Ing. Eckard Junck,O18.7,+49(0) 264796461
+562,Gundolf Herrmann,D26.8,+49(0)1725 29267
+563,Claus-Dieter Seifert,Q98.3,03814 60422
+564,Heidemarie Fliegner,M87.4,06879969146
+565,Dipl.-Ing. Arnim Koch,G30.9,06114 069981
+566,Jessica Süßebier,L11.6,03566968007
+567,Nermin Schuchhardt,R19.9,+49(0)9459 53094
+568,Frau Waltrud Linke,Y75.7,0585436534
+569,Hans-Ulrich Lindner,A37.2,02475055445
+570,Arnulf Schomber-Bolnbach,M80.2,+49(0)2488128524
+571,Kazim Davids,G93.5,03796 33580
+572,Evi Wilmsen,F78.8,09799 94210
+573,Margareta Adolph,T20.4,+49(0)4962467030
+574,Georg Bonbach,P71.6,+49(0)9451682000
+575,Gülsen Ullrich B.Sc.,O07.0,+49(0)5518 88348
+576,Dr. Elise Dehmel MBA.,A28.2,+49 (0) 2245 231665
+577,Romuald Herrmann B.Sc.,H33.3,+49(0) 062887436
+578,Dunja Jungfer,D79.5,+49(0)0801574177
+579,Dr. Gregor Hermann B.Sc.,Y52.6,+49(0) 996341346
+580,Prof. Michelle Warmer B.A.,V97.0,+49(0)6895 68927
+581,Franka Salz,N29.9,+49 (0) 1176 006198
+582,Dipl.-Ing. Sibylla Paffrath B.Sc.,T57.3,02684 889767
+583,Prof. Rosina Wulff B.Sc.,R44.4,+49(0) 782163108
+584,Univ.Prof. Siglinde Wirth,B79.7,(09816) 99855
+585,Dr. Brit Löchel B.Eng.,V68.0,+49(0)1192 74971
+586,Goran Junck,J21.9,(08368) 47461
+587,Grete Pieper,L44.7,+49(0) 655607017
+588,Marcel Lange,P67.5,+49(0)3353 921295
+589,Veronique Holsten,F36.6,(05536) 460266
+590,Univ.Prof. Henrike Grein Groth,Z49.8,+49(0)1522 481641
+591,Gertraude Drub,R51.4,+49(0)9193 63290
+592,Resi Ring,R90.5,(08186) 012904
+593,Cecilia Dobes,V79.2,09877 159306
+594,Univ.Prof. Helmuth Fischer B.A.,Q80.7,+49(0)3617 34611
+595,Resi Franke,C62.4,(03061) 34894
+596,Univ.Prof. Nicolas Bolander,O36.3,+49(0) 002165800
+597,Freya Rohleder,B45.5,+49 (0) 8570 966976
+598,Frau Gülten Hartmann B.Eng.,A87.3,+49(0)1227 655432
+599,Gerd Weinhage B.Sc.,B43.9,0621308059
+600,Grazyna Mohaupt,G56.6,+49(0)8061 44157
+601,Joachim Weinhage B.Sc.,H41.8,(09694) 161651
+602,Günter Ullrich MBA.,Q86.4,+49 (0) 8994 331168
+603,Hanspeter Bohnbach,P81.4,(09958) 54822
+604,Katarina Wilms-Jüttner,G10.7,(00888) 541091
+605,Mahmut Adler,R44.0,00602 49661
+606,Romy Mude-Thanel,L26.0,(03402) 118208
+607,Boris Lachmann-Dietz,G61.0,+49(0)4068 42181
+608,Karola Dussen van,R73.1,01391 76860
+609,Brian Pölitz B.A.,I09.5,+49 (0) 3841 312702
+610,Sepp Wilmsen,M15.0,0511639863
+611,Prof. Heimo Weiß MBA.,P37.1,+49(0)5996574771
+612,Svetlana Conradi,O23.0,(04903) 51220
+613,Filippo Ehlert,J93.0,0280618803
+614,Oscar Pergande-Mans,D93.9,0007875588
+615,Jaqueline Heuser,K18.7,(08435) 51402
+616,Bastian Spieß,B68.2,+49(0)7882697050
+617,Hannchen Gude,S03.8,0311932194
+618,Domenico Lehmann,S37.3,02611649192
+619,Frau Waltrud Flantz MBA.,F11.4,+49(0)9297613139
+620,Evamaria Langern,P72.4,+49(0)9316 458688
+621,Etta Freudenberger,T01.7,00903136708
+622,Evamaria Stey,L39.7,+49(0)6605848473
+623,Univ.Prof. Annamaria Steinberg,P14.4,+49(0)4757904822
+624,Zlatko Schottin-Wähner,G91.1,(04808) 926657
+625,Denise Beyer,D37.7,00811 30031
+626,Otmar Junck,T16.1,+49 (0) 4005 803298
+627,Dr. Astrid Oderwald,B42.2,(09538) 45497
+628,Univ.Prof. Bernward Bloch B.A.,G16.8,(04233) 70961
+629,Alan Meyer,F70.1,+49(0)1650645524
+630,Urban Ditschlerin-Hertrampf,D41.4,08538 310410
+631,Frau Margarete Neuschäfer MBA.,R14.2,+49(0) 740518977
+632,Jonas Haase,B30.6,06553385861
+633,Polina Schmiedecke,V57.6,+49(0) 147008409
+634,Ignatz Flantz,S60.1,06164967681
+635,Olivia Klapp,Q09.1,+49(0)5551 64083
+636,Siglinde Ernst,Z65.7,07269 689062
+637,Dr. Lara Bähr MBA.,E15.4,0831276199
+638,Harro Faust,A13.1,06117877946
+639,Juan Dowerg,F66.4,+49(0)1711 81596
+640,Dierk Lorch,T44.3,+49(0)2956 014360
+641,Sigmar Caspar,G07.6,07891143562
+642,Catrin Geisler,J47.9,(08200) 54581
+643,Horst-Günter Dehmel,A62.1,03525 70035
+644,Sybille Köster-Röhrdanz,V97.0,08668 607904
+645,Hanno Warmer-Hellwig,Y00.1,03317 171099
+646,Helen Etzler,T62.4,0887918451
+647,Margarethe Heinrich-Kohl,M77.8,(04250) 397090
+648,Paul Plath,E46.9,0340827079
+649,Prof. Ina Kuhl MBA.,M80.1,(01625) 14802
+650,Robby Hande,H19.1,+49(0) 510874736
+651,Salih Kitzmann,Y15.0,(08977) 31794
+652,Univ.Prof. Eckhart Misicher B.A.,O98.3,(03723) 305193
+653,Beatrix Mende-Weiß,L07.1,05974 88442
+654,Univ.Prof. Kai-Uwe Jäntsch MBA.,I10.7,00253555082
+655,Ismail Schmiedt,F60.2,01720 75391
+656,Giuseppina Hermighausen,T01.2,+49(0)1422 34826
+657,Dr. Sigrun Fechner,T61.8,+49(0)4901 84410
+658,Käte Biggen-Naser,F17.2,(00806) 436319
+659,Pascale Jopich,J34.0,+49(0)9666 099720
+660,Aleksandra Drub,G60.8,(09804) 030931
+661,Lissy Noack-Paffrath,J60.8,+49(0) 125869182
+662,Michael Loos,P75.6,+49(0) 058966533
+663,Annamaria Bruder,S26.8,(09641) 963752
+664,Annie Ullmann-Gertz,H89.8,01283 270019
+665,Karl-Hans Säuberlich,V69.7,(08429) 36248
+666,Tilo Käster-Schaaf,B33.5,05596 330304
+667,Eric Mangold B.Sc.,V48.9,+49(0)8992 32161
+668,Frau Ella Wulf,S81.8,02473 04884
+669,Dipl.-Ing. Fedor Atzler,M53.0,(07548) 66868
+670,Anne-Kathrin Dörschner MBA.,K89.8,0210649889
+671,Anneliese Albers-Holzapfel,C86.4,05606 53294
+672,Amanda Rohleder,A92.1,09258 91241
+673,Mahmut Beyer,N94.2,05495858470
+674,Ingried Freudenberger-Thies,Q72.4,+49(0) 428518549
+675,Dipl.-Ing. Anni Schuchhardt B.A.,G38.3,+49 (0) 2514 992921
+676,Dipl.-Ing. Inken Matthäi,O34.2,+49(0)3307 13552
+677,Selma Hellwig,S75.0,06908 08398
+678,Ing. Sahin Köhler,T36.2,+49(0)1147236378
+679,Rebecca Nohlmans,A14.6,+49 (0) 6931 181242
+680,Herr Hajo Heß B.Sc.,G41.7,05637240580
+681,Korinna Misicher,O11.6,06020980595
+682,Kazim Fischer,F96.1,+49 (0) 2330 067623
+683,Liselotte Trommler,D62.6,0883726491
+684,Harald Steinberg-Heuser,P89.1,05142314682
+685,Dieter Staude,S02.3,(09792) 394751
+686,Alessandro Junck,G69.4,02715 48473
+687,Dan Langern-Salz,I73.6,(06738) 993822
+688,Renate Mude-Etzler,V43.6,+49(0) 502870507
+689,Annamaria Gute,D90.7,+49(0)8620 801918
+690,Hans-Henning Ullmann,F38.1,+49 (0) 4606 737691
+691,Hubertus Reising B.Sc.,G03.5,01123 567703
+692,Dipl.-Ing. Faruk Kranz B.Sc.,Q89.0,01615 051903
+693,Arne Atzler-Pergande,R31.4,0993754327
+694,Fatma Lehmann,H45.0,+49 (0) 5847 804844
+695,Reinhardt Wagner,R35.9,08529 88435
+696,Evi Rose,I30.3,00523 44104
+697,Ing. Hilde auch Schlauchin,Q14.0,08368018824
+698,Drago Bonbach,T35.1,00678 74860
+699,Ing. Klaus-Günter Heser,J53.0,02842 294038
+700,Univ.Prof. Orhan Dussen van B.A.,B18.7,0710317026
+701,David Schuster,I64.5,01641 00649
+702,Nils Beckmann-Weinhage,K65.8,(03534) 57999
+703,Marie Tlustek,H02.4,08077 025275
+704,Margareta Wirth,O18.5,+49 (0) 7904 250669
+705,Marietta Gieß,Z08.2,+49(0)7631094017
+706,Bernard Hiller,L83.7,(04088) 64461
+707,Andrei Sölzer,V62.0,07554 63382
+708,Dr. Henning Lange B.Eng.,L17.3,(06571) 393790
+709,Karl-Dieter Jacob,S99.4,00356420173
+710,Prof. Wiltrud Henschel B.Sc.,R23.1,+49 (0) 0831 483649
+711,Hilda Paffrath,Z65.7,+49(0) 753413692
+712,Univ.Prof. Svetlana Hermighausen B.A.,J31.4,09610 39436
+713,Wladimir Langern,J61.1,+49(0)1301 853058
+714,Christel Klingelhöfer,O58.8,+49 (0) 1501 953409
+715,Isidor Beier,V04.4,02286 274329
+716,Alida Staude,P49.3,(04235) 519148
+717,Klaus Dieter Ritter,K59.6,06020929151
+718,Jasmin Gröttner,S96.4,+49(0)6173515758
+719,Sükrü Kallert,T76.4,+49(0) 821460703
+720,Hasso Ruppersberger,T12.3,08147780150
+721,Hansjörg Weitzel,Z30.6,+49(0)7780509971
+722,Wilma Schönland B.Eng.,M14.2,(01829) 86746
+723,Gilbert Gnatz B.Sc.,Y04.0,+49 (0) 2471 807520
+724,Leonore Müller-Dobes,N62.5,+49(0)4659667672
+725,Rosmarie Plath,T41.4,+49 (0) 1530 371704
+726,Dipl.-Ing. Slobodan Häring,Q94.0,+49(0) 299442130
+727,Vadim Junken-Barkholz,E96.9,07486 737243
+728,Tülay Höfig,J08.9,09928190726
+729,Arzu Kade-Bauer,S45.2,+49 (0) 8251 710997
+730,Otmar Wende,F93.1,03429000231
+731,Gordon Buchholz-Kitzmann,Z33.2,01171509757
+732,Ilija Plath,G19.3,+49(0) 231300944
+733,Traute Krebs B.A.,C17.4,+49(0)6907165838
+734,Ing. Wenke Hesse B.Sc.,Q14.2,09134 93210
+735,Igor Köster,K67.2,+49(0)5422 57101
+736,Univ.Prof. Alois Gude B.Eng.,J10.6,+49(0)7702208722
+737,Margarete Rose,S68.9,+49(0) 187538019
+738,Antonius Gieß,M76.6,+49(0)1465 006047
+739,Frau Käte Hesse B.A.,E94.8,05766 13360
+740,Ing. Cynthia Gröttner,Y06.3,05533 196547
+741,Lydia Barth,P55.0,0254145026
+742,Prof. Remo Ullmann,P76.3,08287 59779
+743,Ing. Christina Holt B.Sc.,H54.4,+49(0)5146918870
+744,Annelene Cichorius-Röhrdanz,L10.4,(02102) 95501
+745,Rupert Jessel-Finke,J25.8,09563 768762
+746,Prof. Brunhilde Hornich,R59.3,0565292196
+747,Mariana Kramer B.Eng.,L17.9,+49(0)9408 11156
+748,Fedor Segebahn B.Eng.,V61.6,+49(0)2837215101
+749,Helmar Boucsein,K55.0,0464818357
+750,Sylvia Tröst,G18.4,00002 17505
+751,Gottfried Haering,N10.2,+49(0) 694141316
+752,Gusti Jüttner-Möchlichen,H16.8,00382167740
+753,Dr. Dana Wernecke,Y63.2,+49(0) 553166117
+754,Denny Geisler,R73.9,0238453601
+755,Serpil Henk,I48.7,+49(0) 294747921
+756,Ralf-Peter Oderwald,N84.2,+49(0)1458705945
+757,Dennis Stiebitz B.Sc.,Y36.5,+49(0) 196918216
+758,Dipl.-Ing. Gerold Eimer MBA.,V09.0,07924547033
+759,Herr Nikolaus Dippel MBA.,E82.3,+49 (0) 2906 702577
+760,Polina Henschel-Heintze,N79.4,05951 428442
+761,Remo Förster B.A.,Y54.1,01194 88316
+762,Simone Warmer,V96.9,+49(0)7908 90499
+763,Hans-Karl Mans,C77.1,07590152502
+764,Dipl.-Ing. Hans-Wolfgang Thies,F96.2,(04082) 534497
+765,Theodoros Krebs-Kaul,K10.0,+49(0) 644852804
+766,Dipl.-Ing. Bernd-Dieter Walter B.Sc.,M21.7,+49(0)6822 61023
+767,Janin Knappe-Karz,A15.5,00331 221750
+768,Leonore Patberg-Finke,H61.0,01064979612
+769,Ortwin Kitzmann,L29.1,02557 00297
+770,Juergen Mende,Z31.9,08138 19796
+771,Magarete Keudel-Eigenwillig,O68.2,+49(0) 447301858
+772,Dagobert Köhler,Q00.3,(08934) 06926
+773,Harald Dietz,D97.6,+49(0)7488 56438
+774,Michaela Trupp,J83.4,+49(0)1208 893987
+775,Christof Boucsein,E68.3,(02344) 363578
+776,Ortrun Geisel,K91.3,0671852356
+777,Jennifer Kohl-Schuchhardt,F95.0,07183 46185
+778,Magret Buchholz,V83.9,01618480051
+779,Stefanie Striebitz B.Eng.,E23.9,+49 (0) 0871 739573
+780,Heinz-Joachim Reising,P56.3,+49(0) 505460184
+781,Univ.Prof. Miguel Kobelt,J10.4,04150 939246
+782,Hanne Dussen van-Drewes,J88.2,0243379820
+783,Maxim Gotthard B.A.,A01.4,+49 (0) 5499 649196
+784,Anne-Katrin Weller-Patberg,H44.0,+49(0) 599748210
+785,Steve Henschel,A18.2,+49(0)7079581868
+786,Hedwig Rose,B24.0,(00226) 560244
+787,Ingolf Davids,R91.1,02168 55715
+788,Kaspar Meyer,E24.9,+49(0) 018085429
+789,Leif Weihmann,M22.9,+49 (0) 9134 867363
+790,Therese Oderwald,N44.5,09477 23881
+791,Herr Heinz-Willi Kaul,M44.8,+49 (0) 0076 291710
+792,Karl Heinz Niemeier-Hering,I04.7,+49(0) 348280197
+793,Herr Klaus-Dieter Bauer B.Sc.,T73.7,+49(0) 572156589
+794,Ing. Tomas Gorlitz MBA.,V82.6,+49(0)3442801521
+795,Rebekka Schenk,H91.7,+49 (0) 3329 594862
+796,Liesbeth Davids,E17.1,05905 25647
+797,Dr. Gloria Stumpf,J37.3,+49(0) 069343428
+798,Giuseppina Kallert,A86.7,0385891670
+799,Manja Süßebier B.A.,D14.4,(06632) 60880
+800,Dr. Leszek Holzapfel B.Sc.,H76.3,(06380) 751150
+801,Willi Gieß,Y36.8,05377 048534
+802,Prof. Claus Stoll,M64.1,+49 (0) 7385 706176
+803,Dr. Elly Rörricht,T90.1,+49(0)8326 652037
+804,Dr. Theda Siering MBA.,H44.7,+49(0)8200 195172
+805,Ing. Andy Weller,Z56.0,+49(0)8990845045
+806,Dipl.-Ing. Konstantin Schinke,B36.1,+49 (0) 4415 183212
+807,Katja Eckbauer-Reising,O13.4,+49(0)2660723342
+808,Dipl.-Ing. Rocco Kruschwitz,E83.2,+49(0)2333952513
+809,Ekrem Liebelt-Hethur,Z50.4,+49 (0) 8034 961428
+810,Irene Schacht-Girschner,Q10.0,+49(0)7972 66226
+811,Mirko Mude B.A.,O62.0,+49(0)4316 306722
+812,Burkhard Rosenow,S09.1,0872321535
+813,Orhan Gutknecht,P23.5,+49 (0) 5309 365742
+814,Wanda Roht,Q62.2,06328 619377
+815,Dorle Wagner-Tlustek,B42.6,0440929557
+816,Birgit Kobelt,Y40.2,+49(0)8972 14535
+817,Rotraud Siering,P67.7,+49(0)8683 497900
+818,Sylvester Nette,B04.5,(01573) 20911
+819,Silja Graf,R56.1,+49(0)6836 72813
+820,Tanja Werner,D98.2,0358496546
+821,Dr. Zeki Lindner,Y34.7,+49(0)5952367166
+822,Ing. Annamaria Koch,T88.7,(02740) 012062
+823,Sandro Holzapfel,N66.2,+49(0) 225691375
+824,Edeltrud Zänker-Pölitz,L15.2,08172 042761
+825,Berta Trommler,T77.0,(01509) 253561
+826,Univ.Prof. Clemens Eberth,K98.7,+49(0)2741 929030
+827,Sevim Karge,A69.9,07391 034953
+828,Horst-Peter Meyer,G11.0,05963720976
+829,Univ.Prof. Horst-Dieter Wagenknecht,Q36.3,+49(0)4514432657
+830,Ing. Marie Heydrich B.Eng.,K07.1,(05938) 69021
+831,Witold Steckel,N45.7,04873 637572
+832,Miodrag Hecker,R88.5,+49(0)1189 810202
+833,Dipl.-Ing. Vesna Sölzer B.Eng.,O31.5,00530 84153
+834,Winfried Bolzmann,M06.2,+49 (0) 0656 522631
+835,Univ.Prof. Mechtild Jacobi Jäckel,I45.1,+49(0) 326589671
+836,Marica Hermann,M09.5,+49 (0) 3539 022473
+837,Marlies Pölitz MBA.,A40.0,(04302) 298746
+838,Mara Rosemann,Q31.8,+49(0)4998 425629
+839,Ottmar Seifert,J46.3,+49(0)7307 76545
+840,Dragan Löwer,Y67.2,00889276842
+841,Dipl.-Ing. Maja Haase,H22.8,+49 (0) 4778 079781
+842,Nevenka Kade,L07.2,+49(0)3247381988
+843,Dipl.-Ing. Olivia Mentzel B.A.,M39.4,+49(0)0662 53140
+844,Gerald Tlustek,C88.7,+49(0) 081787524
+845,Anke Gieß,J18.7,+49(0)3373 30951
+846,Nadja Blümel,Y62.6,+49 (0) 0336 124145
+847,Magdalena Wulff B.Eng.,Y64.4,02966 797037
+848,William Oestrovsky,S61.8,+49 (0) 5765 548766
+849,Dr. Czeslaw Kuhl B.Sc.,J92.5,(06602) 28778
+850,Ortrud Hesse,L45.6,02406690473
+851,Frank Mohaupt-Dussen van,N57.5,06177 26245
+852,Andrei Kusch,B90.1,+49 (0) 8619 399325
+853,Hans-Uwe Weller,I12.7,+49(0) 458984549
+854,Philip Wagner,D16.4,+49(0)2406 99567
+855,Arndt Ortmann,E91.8,+49(0) 182039381
+856,Sarina Pieper,I56.3,0826231713
+857,Ing. Agatha Möchlichen,H90.1,06756 888056
+858,Heike Schaaf,K84.4,+49(0) 521144169
+859,Prof. Esther Reichmann,K43.2,+49(0)8098 93130
+860,Prof. Siegmar Klapp B.Sc.,Q22.6,+49(0)1559 539863
+861,Franziska Schleich,K00.7,(03392) 270560
+862,Ariane Scheuermann B.Sc.,S01.8,+49(0)1771823605
+863,Hans-Detlef Barth,Z06.0,08480 08356
+864,Gunter Briemer,C06.8,(08226) 54477
+865,Prof. Hans-Karl Trommler,Q72.1,00723 992027
+866,Frau Selma Striebitz B.A.,I73.5,+49(0)3738 344062
+867,Dipl.-Ing. Korinna Buchholz B.Eng.,E33.0,01990 63801
+868,Louis Weihmann,P30.3,(06911) 60915
+869,Ing. Isa Rudolph,B30.8,+49 (0) 4654 187491
+870,Joachim Butte-Heinrich,T86.1,01750222735
+871,Dr. Karl-Werner Thies B.Sc.,G33.6,(06428) 04022
+872,Ingmar Schomber,S49.2,03921033443
+873,Giorgio Bauer,C90.1,(09076) 00653
+874,Univ.Prof. Suse Ring,G51.4,09062 367626
+875,Gülsen Möchlichen-Reising,N20.3,+49(0) 519999171
+876,Caren Eberhardt,C39.3,+49(0) 560543620
+877,Dipl.-Ing. Ria Täsche B.Eng.,P63.2,+49(0)8720 51590
+878,Heinz-Günter Schüler,O77.7,(08151) 047567
+879,Sieglinde Franke,Z49.1,+49(0)1525741330
+880,Markus Juncken-Trommler,D20.6,+49 (0) 1808 013506
+881,Francisco Birnbaum,Z43.2,(02818) 54146
+882,Frau Cilli Kranz B.Sc.,I54.2,(00758) 47312
+883,Dipl.-Ing. Reimer Blümel MBA.,P50.3,(07125) 43437
+884,Univ.Prof. Gordon Walter B.Eng.,P57.4,(01058) 01400
+885,Antonios Langern,P49.1,+49(0) 072961910
+886,Isabella Pergande-Junken,A86.9,(04352) 802168
+887,Saban Adler,Y13.5,02761793511
+888,Univ.Prof. Luzia Reuter B.Eng.,K76.6,+49(0)9908 66829
+889,Univ.Prof. Lieselotte Heinrich,M40.7,03694 30667
+890,Rotraud Gerlach-Sorgatz,Z35.6,(08318) 68515
+891,Rena Keudel,T87.6,+49(0)9524 32755
+892,Mira Heinz,O47.5,05232 718607
+893,Mechtild Förster,O43.0,05661318454
+894,Prof. Ines Bauer,G15.4,+49(0)5124 811720
+895,Rigo Fiebig,B73.0,+49(0)3635694764
+896,Claudio Beckmann,D98.4,+49(0)1533 423107
+897,Frithjof Junken-Hauffer,I64.1,08799 471850
+898,Erna Dehmel,G43.7,+49(0) 363978630
+899,Univ.Prof. Sevim Hesse MBA.,Q34.7,+49(0)7263 352749
+900,Alexandre Mude-Henschel,J74.3,+49(0)7335 803432
+901,Gunhild Süßebier-Fritsch,L48.6,08008596349
+902,Dr. Justine Hering,Z61.3,(06129) 546558
+903,Guenther Söding,I97.5,06045 146880
+904,Eckhart Graf,I08.1,(05513) 496104
+905,Siegfried Berger B.Eng.,Y12.2,03264 04773
+906,Therese Herrmann,C56.5,+49 (0) 0709 848759
+907,Ingolf Benthin-Trapp,E83.2,00979678849
+908,Kunigunda Scholz,T13.1,+49(0) 834399760
+909,Genoveva Stadelmann B.Sc.,Q41.9,0680210453
+910,Bastian Fechner,S29.7,+49(0) 165139175
+911,Paul Herrmann,Y99.4,+49(0)6405 210556
+912,Annemie Hermann-Wilmsen,O39.7,+49 (0) 0039 384806
+913,Teresa Hering,C66.6,(00060) 39095
+914,Maja Stiebitz,T10.6,(08132) 015734
+915,Univ.Prof. Mirella Döring,V45.6,06404959160
+916,Zoltan Nohlmans,P41.9,+49(0)7442 59288
+917,John Steinberg,M87.3,01826 26330
+918,Sibille Geisler,H89.9,+49 (0) 3216 003773
+919,Luisa Dietz,L90.5,01334238880
+920,Kuno Liebelt,P97.3,(09430) 934211
+921,Melitta Wesack,B22.8,+49(0)4201252184
+922,Walfried Bachmann B.Eng.,D08.1,(09297) 692477
+923,Hildburg Putz,F08.1,+49(0)4989 923567
+924,Rosemarie Ladeck,D91.8,02414779214
+925,Ing. Bernd Nohlmans,B68.7,+49 (0) 3079 271265
+926,Gerhard Zahn B.Eng.,O10.0,0973926865
+927,Ante Wilms,C13.8,(01182) 34563
+928,Marliese Bähr,O20.8,03626044861
+929,Paola Grein Groth,M04.2,+49 (0) 2506 360186
+930,Nevenka Kuhl,Q69.4,09418 537447
+931,Mariele Kreusel B.Eng.,C77.1,+49(0) 072600003
+932,Ing. Baldur Seidel,E93.5,08128 978875
+933,Fabienne Heser,C38.4,(08813) 197282
+934,Freia Eberth,P78.0,0322537600
+935,Friedlinde Heinz-Trubin,O39.9,09517 616063
+936,Almut Trub,I15.5,01531527030
+937,Frau Evi Noack,H28.6,01827 902329
+938,Yvonne Bien,G57.9,06555997665
+939,Univ.Prof. Bernd Eberth,O74.0,+49(0)5572 352574
+940,Rosalinde Röhrdanz,E85.0,+49(0) 679680010
+941,Miriam Beer-Gunpf,Q88.5,04090773128
+942,Justina Girschner,C16.2,+49(0) 285254994
+943,Karl-Wilhelm Ziegert B.Eng.,Q65.8,+49(0) 814707991
+944,Hans-Detlef Henschel-Metz,L60.0,03316885171
+945,Guenther Vollbrecht B.Sc.,J46.0,(06745) 26721
+946,Max Zobel B.Sc.,H21.7,(09344) 01158
+947,Hugo Drewes,B53.4,+49(0)7002740399
+948,Ingetraud Nohlmans,M55.6,03252 181578
+949,Prof. Dennis Spieß B.Eng.,G43.0,(06928) 635871
+950,Marlis Bärer-Schmiedecke,A88.2,(04753) 35274
+951,Wally Mühle B.Eng.,E47.1,+49(0) 291841547
+952,Frau Meike Hornig,Q77.1,(08180) 56063
+953,Frau Stefani Gumprich,N27.3,08344 346208
+954,Barbara Klemt-Hentschel,O08.4,0290190022
+955,Jutta Dowerg,Z23.6,+49(0)7398685558
+956,Felix Heidrich,I82.2,00046513765
+957,Osman Schuchhardt-Geisler,A10.8,(08448) 008849
+958,Angelica Krebs B.Sc.,Y83.4,02313809345
+959,Ewa Geisel,K57.7,03360 492822
+960,Veronica Rose-Dörschner,R00.4,+49(0)5924584849
+961,Jens-Peter Weihmann MBA.,C97.1,+49(0)2733 94050
+962,Alexej van der Dussen,B64.1,+49(0) 610646034
+963,Ingmar Weinhold,D92.6,+49 (0) 4555 474389
+964,Christiana Hesse,A76.3,+49(0) 454022464
+965,Raphaela Weinhold,J02.9,+49(0)7294 580919
+966,Univ.Prof. Svetlana Tlustek,S54.8,+49(0)7431555518
+967,Marlis Martin,S39.1,06071 184077
+968,Ursula Häring,B75.3,08228884670
+969,Dr. Miodrag Ring B.Sc.,Q18.3,+49(0)7609 815953
+970,Annerose Heintze,M01.7,+49 (0) 5278 895350
+971,Herr Carmelo Wulff,C83.9,+49 (0) 0758 261720
+972,Univ.Prof. Anett Rörricht B.Eng.,Y24.6,09908776770
+973,Ing. Friedrich-Wilhelm Lindner B.Eng.,D17.8,06476 773945
+974,Ingbert Wulf MBA.,K06.8,+49(0)7395 722599
+975,Romuald Wieloch,Q01.3,(08370) 498095
+976,Harriet Rädel,K07.5,+49 (0) 3450 317952
+977,Hans-Willi Gunpf,A13.8,00850652978
+978,Liane Fiebig-Geisler,P97.5,05558 907527
+979,Irmhild Nerger,K91.1,(08539) 501569
+980,Kilian Wiek,K74.4,+49 (0) 0399 216323
+981,Dipl.-Ing. Athanasios Döhn,A35.3,+49 (0) 4761 465166
+982,Nevenka Putz,K40.6,00717428869
+983,Philip Zänker,L29.7,(00780) 878937
+984,Detlef Briemer,C04.2,0638016372
+985,Erna Rogge B.Sc.,Z57.4,0937883014
+986,Pawel Jacob-Hermann,Y07.3,+49 (0) 2877 648380
+987,Herr Diedrich Bolander B.A.,B57.3,09865 442684
+988,Urte Schmidt,D65.5,+49 (0) 1606 653977
+989,Carmelo Dörr,B53.2,08222 45122
+990,Annerose Wilms-Mielcarek,I17.3,07623 12573
+991,Prof. Käthe Römer,A30.8,+49(0) 404539912
+992,Karl-Hermann Kaul,F99.1,+49(0) 234744053
+993,Sibel Adler,K97.7,+49(0)1441 69151
+994,Ivana Thies,E65.5,03616 482467
+995,Sybille Henk MBA.,H43.7,+49(0)4014332071
+996,Meik Walter,D90.0,(04583) 709236
+997,Dr. Valerie Berger MBA.,I64.4,+49 (0) 8780 117217
+998,Hassan Hörle B.A.,F50.3,+49(0)2545 38302
+999,Regina Linke-Boucsein,Q48.1,(03089) 660556
+1000,Mohammad Lübs,T16.1,(07278) 27866
+1001,Joachim Hörle-Kraushaar,N04.6,+49 (0) 6983 230193
+1002,Kriemhild Kuhl B.Sc.,T55.4,+49(0) 482051668
+1003,Annerose Mälzer,B67.3,+49(0)8951 299342
+1004,Gertrude Heydrich,I22.2,05602 658670
+1005,Felicia Biggen,L88.2,+49(0)1999108091
+1006,Friedl Wernecke-Pruschke,A89.3,+49(0)3026 591944
+1007,Ing. Ortrud Nerger B.A.,S50.5,04915 03631
+1008,Marcella Möchlichen-Drub,B15.0,+49(0)1839 782107
+1009,Waltraud Becker,J52.6,01793 94992
+1010,Raissa Rosenow,I86.5,(06426) 82699
+1011,Henriette Textor-Holsten,H44.0,02282 15688
+1012,Aenne Wirth-Beyer,Y83.6,+49(0)8478395120
+1013,Rebekka Vogt,I65.6,+49(0)0572 823010
+1014,Iris Hoffmann,G96.9,00970325368
+1015,Steffen Gröttner-Meister,V83.7,(04628) 435064
+1016,Kunibert Finke B.Sc.,P71.7,+49(0) 293969263
+1017,Marko Heidrich,Z17.3,+49(0)5689090097
+1018,Telse Weitzel,M69.3,+49(0)4580 258022
+1019,Luka Bruder,G12.7,04752 350422
+1020,Cilly Knappe,A89.8,+49(0)4941 65593
+1021,Ingetraut Tröst,Q94.8,(03744) 627129
+1022,Dipl.-Ing. Hans-Heinrich Mangold B.Sc.,D81.3,0429195732
+1023,Dorothe Hauffer,B15.7,+49 (0) 3734 686225
+1024,Veronika Kohl,G90.7,+49(0) 817004478
+1025,Sibylle Sager MBA.,N10.0,03905 62727
+1026,Friedbert Drub,F29.2,0803791314
+1027,Ing. Valeria Ziegert,R12.3,0946774347
+1028,Sönke Heser,N83.2,(06920) 31198
+1029,Univ.Prof. Lotti Tröst,K52.4,02404198266
+1030,Lia Stumpf-Dörr,H26.7,(01345) 50315
+1031,Janin Juncken,A22.6,(02932) 320709
+1032,Mareile Blümel,L87.1,+49(0)6162 14007
+1033,Gitta Heidrich MBA.,N42.5,+49(0) 442693259
+1034,Theodor Bärer,Y93.4,03279 162024
+1035,Ing. Gudula Reising,T46.3,0173760914
+1036,Frau Reingard Geißler B.Sc.,S42.6,0100670413
+1037,Magda Neuschäfer,Y84.3,+49(0)5724 27415
+1038,Wigbert Kruschwitz,D59.3,+49(0)8827 00100
+1039,Yvette Röhrdanz,G86.7,+49 (0) 2610 250570
+1040,Beate Hornig,H23.0,(04802) 70460
+1041,Goran Hölzenbecher B.Eng.,N50.0,(08282) 538587
+1042,Ing. Klaus-Werner Ehlert,A83.8,(07714) 429518
+1043,Bela Hartmann B.A.,O46.2,+49(0)5171233694
+1044,Alexander Junck,N08.8,+49(0)9256 36667
+1045,Prof. Waltrud Hartung,R91.0,0534961937
+1046,Dipl.-Ing. Rotraud Rogge B.Eng.,O64.0,+49(0) 903120850
+1047,Kreszenz Ruppersberger B.Sc.,E67.3,05645 39029
+1048,Raisa Conradi-Lachmann,D22.3,+49(0)3363 14347
+1049,Serpil Gierschner-Bauer,D61.5,09173 770048
+1050,Prof. Elise Siering,R95.5,+49(0)9849 643061
+1051,Dino Reuter,T50.0,02040 042438
+1052,Dipl.-Ing. Ehrhard Zahn B.A.,F01.3,+49 (0) 9214 799650
+1053,Rebekka Wirth,T12.5,+49(0)3137 978718
+1054,Bernadette Gutknecht,E64.9,0373967899
+1055,Prof. Kathrin Girschner,N74.6,+49(0) 799385280
+1056,Danilo Heidrich,H70.7,+49(0)0335351363
+1057,Donald Schleich,I37.6,+49(0)1519307697
+1058,Prof. Belinda Mitschke,J83.9,+49(0)2174532582
+1059,Slobodan Pergande,J00.6,0103788729
+1060,Urte Stroh,R10.8,+49(0)6889 295063
+1061,Univ.Prof. Victoria Paffrath B.Sc.,A58.6,(05330) 74680
+1062,Hülya Hänel-Schomber,Z20.8,(00539) 35408
+1063,Helena Geisel,H94.8,0077897414
+1064,Frederic Gröttner,E04.7,08619 716433
+1065,Edeltraud Gröttner,Y70.6,+49 (0) 8574 689244
+1066,Hans-Helmut Beier,V21.1,+49(0)6551991900
+1067,Georgia Zimmer,B39.5,06618823170
+1068,Emmi Seifert,H07.8,+49 (0) 2865 447092
+1069,Kuno Köhler,Q04.8,03231652293
+1070,Aysel Gröttner-Geißler,L56.6,0467417561
+1071,Ing. Amalie Meister,E86.7,+49(0)1868577828
+1072,Arnd Hübel-Hermann,F63.0,(00941) 642277
+1073,Herr Ryszard Schottin B.Sc.,P44.1,+49(0) 228886046
+1074,Martha Reuter-Henck,M44.7,00861 05732
+1075,Janett Seifert-Pärtzelt,Q81.8,01963 54020
+1076,Ing. Kata Reichmann,F27.1,+49(0) 627923817
+1077,Agathe Jessel,D93.1,03045 214744
+1078,Betty Süßebier,N71.2,(08893) 26177
+1079,Ante Kreusel B.A.,J95.9,04771 891802
+1080,Betti Jockel,Y15.8,+49(0)7008 925221
+1081,Traudl Jacob,M97.0,(00605) 89273
+1082,Istvan Löwer B.Eng.,H13.1,(07718) 024885
+1083,Erica Rohleder B.A.,Q39.7,+49(0) 158125788
+1084,Reiner Förster,J69.0,00894 05774
+1085,Dr. Agnes Römer MBA.,F30.8,+49(0)7826 427708
+1086,Amir Flantz-Trommler,G97.3,(05388) 263989
+1087,Heidelinde Koch MBA.,A12.2,+49(0)4638644852
+1088,Prof. Heinz-Gerd Buchholz B.A.,P52.5,+49(0)8877128921
+1089,Dr. Theresa Adler,M49.8,08353 127452
+1090,Änne Ruppersberger B.Sc.,J26.7,+49(0)2616 06369
+1091,Jost Hövel,H53.5,04100 881965
+1092,Heinz-Peter Seidel-Pärtzelt,Y84.1,+49(0) 038745059
+1093,Ing. Karolin Lorch,N47.7,+49 (0) 5236 712158
+1094,Sofia Reising-Hörle,G35.8,+49 (0) 8976 077805
+1095,Heinz-Otto Gotthard,R40.3,03377935542
+1096,Gerlind Karz,E98.4,+49(0)2491 296331
+1097,Ljiljana Juncken B.Eng.,E35.5,+49(0)2683 66896
+1098,Friedericke Flantz-Adler,O18.8,04689 954778
+1099,Xaver Bolander,O55.0,00662023063
+1100,Dr. Lucia Riehl B.Eng.,T95.6,(01785) 236861
+1101,Birgitt Hethur,D60.0,+49 (0) 1099 747790
+1102,Walther Textor,S00.3,+49(0)6864123368
+1103,Torsten Koch,C42.5,+49 (0) 1661 816964
+1104,Laurenz Stiffel,L96.8,0300620067
+1105,Ing. Gitta Döring,R54.4,0128198148
+1106,Ilse Butte,G01.6,06012 023075
+1107,Franz Wieloch B.A.,N72.4,(01299) 754934
+1108,Raphaela Haase,P70.8,(04390) 484400
+1109,Klaus-D. Roskoth,J84.8,+49 (0) 3294 442469
+1110,Lieselotte Heydrich-Drubin,T62.5,04124928361
+1111,Hans-Henning Hendriks,H67.5,05874881786
+1112,Severin Striebitz,D51.1,+49(0)1184 488707
+1113,Prof. Klaus-D. Oestrovsky B.Sc.,K48.7,+49(0)6190729781
+1114,Gilbert Möchlichen,K82.9,06489 08931
+1115,Nuri Rörricht,P31.5,+49(0)8582 28181
+1116,Agatha Krein B.A.,V55.7,+49(0) 682770909
+1117,Dr. Enrico Finke B.Sc.,J53.3,03004396463
+1118,Kerstin Steckel,P88.3,+49 (0) 9932 620530
+1119,Univ.Prof. Erna Winkler MBA.,Q01.7,+49(0) 245652993
+1120,Gert Koch II,G35.0,+49(0) 283334287
+1121,Luis Renner,Y58.5,00074 64348
+1122,Elwira Etzler,F50.1,+49(0) 515721457
+1123,Aziz Gude,S49.3,+49(0)3145 204920
+1124,Luzie Salz,K19.8,0255624366
+1125,Univ.Prof. Antonina Krause B.Sc.,V45.3,(05451) 218020
+1126,Kristina Cichorius,O79.0,+49(0)4270 171213
+1127,Erich Keudel B.Sc.,R28.3,+49(0) 912726168
+1128,Lena Barth,I70.4,+49(0)9362876918
+1129,Dursun Rogge,Y03.0,+49(0)3310304035
+1130,Sophia Atzler,L07.4,+49(0)8872295611
+1131,Univ.Prof. Hans-Bernd Kohl MBA.,F47.5,+49(0) 060325275
+1132,Emmi Scheel-Klingelhöfer,O56.1,+49(0) 117846206
+1133,Cläre Sölzer,C75.5,+49(0) 450369660
+1134,Eugenie Stumpf B.Sc.,I09.3,00801 99580
+1135,Kunibert Höfig,H99.8,(02318) 16816
+1136,Hilmar Bachmann-Pergande,D87.3,+49(0)4228361008
+1137,Gerolf Benthin-Stumpf,K29.3,+49(0)9450 560182
+1138,Anita Kuhl,K87.4,+49(0)5694822140
+1139,Josip Lorch,D64.4,05995 10073
+1140,Alice Wieloch-Bolnbach,K99.3,08867190744
+1141,Karl-Wilhelm Vogt,O75.3,+49(0)8125 22223
+1142,Harro Berger,Z44.6,+49(0)0818 801931
+1143,Veronique Hermann,S64.6,+49(0)1078 08489
+1144,Gabor Mentzel,O43.5,+49(0) 693759740
+1145,Dr. Ingeburg Klapp MBA.,M72.2,0873285135
+1146,Dipl.-Ing. Adriane Gieß,C45.7,0442163312
+1147,Prof. Franz Gerlach,H00.5,+49(0) 860172796
+1148,Rosina Werner,H44.5,03377 213587
+1149,Joana Hiller,E96.0,(04957) 211055
+1150,Ann Staude,C42.7,+49 (0) 8245 873306
+1151,Susann Rohleder-Barkholz,C24.1,(06097) 87836
+1152,Saskia Hornich B.Eng.,O31.0,02965 030956
+1153,Julia Kruschwitz B.Sc.,Y85.6,07102892561
+1154,Rosa Wagenknecht,F65.8,04459 59216
+1155,Helene Kitzmann,O22.9,(05404) 20008
+1156,Erdmute Gorlitz,K20.4,+49(0) 746551524
+1157,Klaus-Michael Patberg,V26.0,(01140) 525399
+1158,Lorenz Trüb,L10.1,+49 (0) 4385 588096
+1159,Ing. Gotthold Ackermann,O07.4,00149606684
+1160,Leni Liebelt B.A.,S05.2,(05731) 87365
+1161,Zofia Oestrovsky-Stey,Q70.8,+49 (0) 6989 640673
+1162,Willibert Oestrovsky,A46.2,00459 917120
+1163,Dipl.-Ing. Gustav Herrmann,B98.2,05231 79519
+1164,Herr Tilmann Hethur B.Eng.,L67.7,+49(0)7138 013472
+1165,Annedore Werner,H13.1,(08231) 821314
+1166,Ursel Loos,L89.4,+49(0)1877764899
+1167,Hans-Bernd Junck,A02.8,+49(0)5014370283
+1168,Hassan Förster,K60.1,(05722) 69506
+1169,Wilfriede Pechel,H96.5,+49(0)9990 792558
+1170,Edelgard Bärer,L47.4,06490 11773
+1171,Ryszard Pergande,K83.9,00774 06988
+1172,Hans-Hinrich Cichorius,Z44.2,(01697) 62080
+1173,Jana Mangold-Langern,P61.9,+49(0)4197 24602
+1174,Cornelius Haase,C01.7,+49(0)5878 102606
+1175,Dipl.-Ing. Christl Fiebig B.Eng.,Z04.8,06917 098678
+1176,Viktoria Schmidt,L00.8,(00779) 67713
+1177,Ing. Gülsen Renner B.Eng.,H38.3,+49(0)3010 349802
+1178,Curt Warmer,F04.8,+49(0)9893 570330
+1179,Prof. Herlinde Täsche,E46.6,(05896) 602813
+1180,Irmi Löffler,H21.6,03489 575916
+1181,Univ.Prof. Sigurd Fiebig B.Sc.,F98.6,0986704203
+1182,Jost Reuter,H52.3,+49(0) 420973604
+1183,Paulina Schwital,L19.3,00193 154337
+1184,Diethard Drubin,K01.6,+49(0)8645 69430
+1185,Roderich Henck,M07.7,+49(0)0063070615
+1186,Ferenc Karz,H84.6,+49 (0) 7365 697596
+1187,Filippo Mühle B.A.,E28.2,(04180) 098982
+1188,Dr. Sibille Dobes,F17.3,0228740706
+1189,Lore Winkler,T52.6,07415620806
+1190,Annelise Cichorius,J04.0,06565 975599
+1191,Urs Krause,P81.8,0333383129
+1192,Hugo Döring,C08.5,+49(0)4050 764731
+1193,Enrico Jungfer,D57.1,+49(0)5677711459
+1194,Otfried Lindner,N02.4,(01205) 291274
+1195,Björn Killer,J80.6,+49 (0) 7505 264366
+1196,Remo Gnatz,M63.5,+49(0)7734 367747
+1197,Agnes Sontag-Thies,B69.9,+49 (0) 2065 437264
+1198,Prof. Erika Cichorius,L35.1,(08813) 76056
+1199,Valeria Steinberg,F47.5,+49(0)1239 152991
+1200,Frau Verena Sölzer MBA.,P23.2,+49(0)1010 24268
+1201,Herr Horst-Peter Trupp B.A.,S34.0,(02288) 62559
+1202,Miguel Gehringer B.Eng.,J99.2,01133585426
+1203,Marten Börner,I32.2,+49 (0) 0479 530497
+1204,Hanne-Lore Nohlmans-Beckmann,Q71.8,+49 (0) 5761 635523
+1205,Prof. Manfred Stumpf B.Eng.,G07.7,01086561966
+1206,Hannes Trubin,E43.2,+49(0)1644 638057
+1207,Augusta Eigenwillig,J06.3,07837 45235
+1208,Dr. Annamaria Vollbrecht MBA.,D91.0,+49 (0) 7879 105640
+1209,Dipl.-Ing. Jörn Vollbrecht,O79.8,08650 070375
+1210,Leander Kade,I93.6,+49 (0) 5351 976514
+1211,Herr Roger Rohleder,G21.1,03333 718297
+1212,Joana Kabus,N70.9,(05772) 179041
+1213,Anja Karz B.A.,V87.2,(07169) 912860
+1214,Dipl.-Ing. Hildegund Hettner MBA.,S81.1,+49(0)7254468138
+1215,Univ.Prof. Heinz-Wilhelm Austermühle,I94.5,+49(0)7650 468074
+1216,Ljudmila Dippel,S03.5,08998614937
+1217,Irmela Trupp-Wilms,Q56.9,+49(0)0603 89052
+1218,Dr. Roderich Kensy B.Sc.,K42.7,08908122435
+1219,Dipl.-Ing. Christof Schweitzer B.A.,Q21.8,+49(0)6986 33184
+1220,Ljubica Heydrich,H62.2,+49 (0) 6624 427398
+1221,Ludwig Margraf B.Eng.,Q52.0,05219 557199
+1222,Evi Dippel,V60.5,(02026) 85427
+1223,Moritz Schmiedecke,R05.1,+49 (0) 0158 862192
+1224,Univ.Prof. Robert Stahr,H58.5,02273 49416
+1225,Thomas Schinke B.A.,V90.4,+49(0)6334 91007
+1226,Andree Benthin,Q02.7,01218 489051
+1227,Daria Vogt-Mühle,T77.3,+49 (0) 7593 224604
+1228,Hans-Peter Naser-Ruppersberger,G78.4,+49(0)9040038441
+1229,Hellmut Adler,O34.5,+49 (0) 9793 321252
+1230,Mahmut Seip,S01.1,(02194) 647316
+1231,Ralf Wohlgemut,J16.1,05411 62635
+1232,Siegmar Hövel B.A.,A25.9,+49(0)2996 010035
+1233,Ekkehard Matthäi,I03.5,(06201) 449914
+1234,Janett Drub,O21.6,05074164777
+1235,Wolfgang Wilms-Wähner,Q85.7,+49(0)7884 50667
+1236,Eckhard Jäkel,L11.0,+49(0)5724385808
+1237,Dorothe Birnbaum-Gertz,F19.7,+49(0)5026 20267
+1238,Frau Leyla Briemer B.Eng.,O35.4,00692644617
+1239,Dr. Alena Kohl,V91.1,(04075) 613949
+1240,Ralf-Peter Pieper,R56.7,+49(0)3688 207378
+1241,Prof. Gebhard Girschner B.Eng.,L07.2,+49(0)0514870903
+1242,Valeska Langern B.Sc.,B79.8,(03356) 344670
+1243,Vera Heinrich,G11.9,0513427913
+1244,Philippe Tlustek,R34.0,05873460687
+1245,Ana Hethur-Hofmann,Y77.9,+49(0)2537 499545
+1246,Ing. Wolf Trapp B.Sc.,T14.4,+49(0)9513812099
+1247,Gottlob Wagenknecht,N92.0,02816 166722
+1248,Ismet Ladeck,F70.9,+49(0) 810415137
+1249,Stephan Finke,O18.7,+49(0)8347172111
+1250,Wladimir Süßebier,O53.9,(00169) 207573
+1251,Cornelius Hermann,T52.1,+49(0)8269 666836
+1252,Gertraut Löchel,E34.3,(09230) 71104
+1253,Genoveva Hande-Segebahn,L44.1,+49(0)2456571031
+1254,Anatoli Krein,F28.4,+49(0)1097 88492
+1255,Ilona Riehl MBA.,G30.9,(02615) 591335
+1256,Ben Wiek,E35.7,+49(0)9690948678
+1257,Dagobert Textor B.Eng.,B29.2,+49 (0) 5037 038375
+1258,Gudrun Mühle,E83.3,00622 55478
+1259,Murat Hering-Vollbrecht,F80.2,(00066) 92983
+1260,Siegrun Peukert,T22.0,(00599) 16923
+1261,Hedi Dippel,R86.1,+49(0) 951655425
+1262,Elvira Beckmann MBA.,E02.6,04608 897447
+1263,Stefano Trapp,J51.4,+49 (0) 2179 070299
+1264,Jolanda Beyer B.Eng.,P72.9,07799 14143
+1265,Ing. Petros Rosemann,E57.8,01911 54615
+1266,Hans Dieter Otto,T94.8,(02436) 97931
+1267,Ing. Hanne-Lore Steinberg B.A.,N67.1,0062110564
+1268,Dr. Reiner Rosemann MBA.,L06.2,+49(0)1836 255985
+1269,Sylwia Haering,N27.0,+49(0)0549 76929
+1270,Univ.Prof. Rudolph Adolph B.Sc.,V35.8,(06332) 998552
+1271,Frau Lotte Albers B.Sc.,B28.2,(07814) 03144
+1272,Iris Dörschner,J27.1,+49(0) 009775177
+1273,Walther Hande-Girschner,F11.4,+49(0) 568392783
+1274,Frau Loretta Noack B.A.,M37.2,(02075) 56581
+1275,Alois Bolander,F63.1,+49(0)8458764868
+1276,Hannelore Mies B.A.,O65.8,+49(0)7313785296
+1277,Annett Junk B.Sc.,Q86.6,+49(0)6945 73037
+1278,Herr Tomislav Schleich,D99.5,0660166204
+1279,Susanna Wulff-Zänker,R83.9,01494 99356
+1280,Ing. Lidwina Kreusel B.Eng.,Q80.3,07975 61758
+1281,Dr. Rene Gutknecht B.A.,S88.5,+49(0)3831076719
+1282,Cemil Kaul-Rose,L20.2,+49(0) 999230210
+1283,Sylvio Margraf,F21.6,(01862) 11277
+1284,Dariusz Gotthard-Löffler,R30.2,+49(0)6720 215966
+1285,Stanislaus Otto,Q72.0,+49(0)3214378915
+1286,Reinhardt Wulff,Q15.8,+49(0) 076170995
+1287,Bernd-Dieter Adler,M15.3,+49(0)9066 318282
+1288,Ing. Pascale Caspar B.Eng.,R05.2,(07737) 33991
+1289,Irmengard Mohaupt,D52.0,+49(0)2261761331
+1290,Marko Jockel,F84.9,(07084) 416314
+1291,Silke Weihmann,T90.1,+49(0) 705784856
+1292,Inge Gunpf,Q30.4,+49 (0) 0602 661963
+1293,Mira Kusch,S77.5,0059786891
+1294,Rebekka Wende,D86.5,08173 55122
+1295,Marina Rörricht,C47.2,+49(0) 115833646
+1296,Joana Segebahn,K80.7,+49(0)5993 13519
+1297,Giesela Holt,F43.9,+49(0)3170 880009
+1298,Brunhilde Holt,F47.0,+49(0)8383 290992
+1299,Laszlo Geißler,V03.6,+49 (0) 0732 399487
+1300,Maximilian Pölitz,R74.6,+49(0) 574515901
+1301,Horst Misicher B.Sc.,Z94.7,04775 958461
+1302,Antonino Vogt,E38.7,+49 (0) 8593 687330
+1303,Ing. Adriana Kusch,L39.4,(09445) 04214
+1304,Stefania Lehmann,C94.7,0968885405
+1305,Ercan Hertrampf,C29.3,+49(0)9682 79546
+1306,Ricarda Hermighausen,J43.1,+49(0) 180179723
+1307,Jeanette Mies,Y36.3,0368157846
+1308,Bert Sauer,I33.0,+49(0) 579307065
+1309,Prof. Anna-Maria Jähn B.Eng.,P42.3,+49(0)6193354969
+1310,Univ.Prof. Yvonne Neuschäfer B.Sc.,J36.5,0802492470
+1311,Adelheid Liebelt,Y16.6,+49 (0) 2890 297688
+1312,Slavko Förster,E86.3,+49 (0) 6271 972460
+1313,Ayten Seifert,E95.5,+49(0)3380931792
+1314,Ibrahim Eberhardt,B64.2,(03695) 12064
+1315,Dr. Hans-Ludwig Birnbaum MBA.,S09.6,0879740220
+1316,Herr Friedbert Karge MBA.,F93.1,(03205) 351856
+1317,Hans-Günter Schaaf,L09.1,03723 689244
+1318,Univ.Prof. Josip Langern,Q17.7,(04858) 203489
+1319,Monica Beyer B.A.,P12.7,+49(0)4433 572033
+1320,Univ.Prof. Marko Mans MBA.,B27.4,+49(0)4612 70118
+1321,Ljubica Hermann,Y86.0,0474900096
+1322,Orhan Junken,O47.5,+49(0)1792 05282
+1323,Friedrich-Wilhelm Blümel,F11.3,+49(0)5589 24197
+1324,Mesut Mohaupt,P64.2,(05423) 38386
+1325,Univ.Prof. Annemie Hesse MBA.,E81.1,+49(0)2999681257
+1326,Dipl.-Ing. Rüdiger Hänel,S28.5,+49(0)7441232043
+1327,Bozena Jäntsch B.Sc.,S21.4,(04116) 96106
+1328,Hans-Adolf Dehmel,B66.4,(07544) 78675
+1329,Jann Hentschel,C79.7,(00067) 59114
+1330,Univ.Prof. Willibert Fischer B.Sc.,G39.8,01100 117593
+1331,Dr. Marie-Theres Zorbach B.Sc.,N69.7,(03560) 028951
+1332,Eleonore Trupp,V79.0,(06388) 510382
+1333,Univ.Prof. Giorgio Thies,I89.4,05332132261
+1334,Adelgunde auch Schlauchin-Hahn,F60.6,+49(0)0490 62170
+1335,Herr Hans-Jörg Bolnbach,L37.1,+49(0) 023843840
+1336,Betti Hölzenbecher-Vogt,V29.3,+49(0)4127 50160
+1337,Kunigunde Hentschel,I26.7,01578 94248
+1338,Ioannis Mälzer,A89.6,(09142) 937959
+1339,Ludwig Stoll,P32.6,09865154889
+1340,Ada Weimer B.Sc.,T24.3,(00301) 53135
+1341,Eva-Maria Heß,N76.5,+49(0)9303 83031
+1342,Gernot Holt,J19.8,(01997) 363744
+1343,Magda Rohleder-Johann,S03.1,+49 (0) 7230 475673
+1344,Dr. Alfons Lübs B.Sc.,F38.2,02018 40387
+1345,Louise Jäntsch B.Sc.,C37.2,+49(0)2225 645007
+1346,Almuth Junck-Fritsch,L56.5,06567 60294
+1347,Abram Schüler,C63.0,01892 549492
+1348,Ing. Alban Hesse B.Eng.,T41.5,+49 (0) 4077 690652
+1349,Heidemarie Kallert-Bolander,F92.9,+49(0)5610 29413
+1350,Annegrete Juncken-Koch,T89.4,05501 50980
+1351,Dr. Zoran Geißler B.Sc.,B62.6,06383 44134
+1352,Klaus-Peter Salz,M62.7,(06879) 80003
+1353,Oscar Scholl-Tschentscher,R40.0,09426206251
+1354,Sibylla Wende-Möchlichen,O05.4,04124 48277
+1355,Annemarie Bonbach,E58.1,0323492966
+1356,Winfried Eigenwillig-Schottin,J75.2,+49(0)4265 79469
+1357,Univ.Prof. Theodora Schuchhardt B.Sc.,I58.3,+49(0)6024 42166
+1358,Univ.Prof. Raymond Tintzmann,Q55.0,+49(0)7261 95103
+1359,Dr. Ida Eimer MBA.,V52.3,04541811989
+1360,Holger Krebs,J41.4,(08296) 374498
+1361,Tobias Löchel,M14.0,0556843350
+1362,Dipl.-Ing. Frithjof Steinberg B.Sc.,J37.2,02749 251908
+1363,Erdmute Tschentscher-Salz,Z49.5,00593536996
+1364,Fadime Weller,T62.0,+49(0)0472 36111
+1365,Leonid Ortmann-Hornig,I10.7,(03030) 062095
+1366,Lisette Schweitzer,Q92.2,+49(0)2252 01623
+1367,Rüdiger Fliegner,O17.5,0555738104
+1368,Herr Aleksandr Mohaupt,P77.0,(04927) 22813
+1369,Zeynep Paffrath,Q02.2,02112 27488
+1370,Dietrich Mielcarek,P15.4,(08706) 05242
+1371,Edda Ebert B.A.,J36.7,05818305351
+1372,Imke Renner,L03.8,(02786) 36220
+1373,Frau Mariechen Johann B.Sc.,J45.2,0995933810
+1374,Josef Harloff,G89.3,+49(0)9078 79570
+1375,Raymond Drub,L34.5,+49(0)2390993780
+1376,Ioannis Johann-Barkholz,T80.2,05841142142
+1377,Delia Hartmann,Y94.1,(03513) 441159
+1378,Nuray Seifert,V73.3,(04148) 72885
+1379,Danilo Tröst,Q79.9,+49(0)9180 790456
+1380,Sebastian Stahr,P28.3,(04643) 430281
+1381,Kasimir Wernecke,O23.3,+49(0) 530183326
+1382,Andre Ebert,J75.7,0534970037
+1383,Karoline Reinhardt,S14.7,(09146) 86859
+1384,Frau Angelina Gröttner B.A.,L80.8,09938067882
+1385,Prof. Lissy Pölitz,M31.6,(08255) 24755
+1386,Dipl.-Ing. Heinz-Walter Fritsch B.Eng.,L21.6,02157940720
+1387,Carmela Zänker MBA.,N66.2,01992 88914
+1388,Geert Ziegert-Beier,P95.1,+49(0)4978 03292
+1389,Prof. Traude Jessel B.Sc.,Q71.6,05996 11385
+1390,Dipl.-Ing. Alberto Holzapfel,E59.7,+49(0)0807 658934
+1391,Berend Metz,O76.7,+49(0)6779 62178
+1392,Lidia Jockel-Hecker,G85.6,05572753585
+1393,Sigurd Wende,V72.2,+49(0)2197 033700
+1394,Carla Biggen B.Eng.,E25.2,02762 195441
+1395,Hajo Noack B.A.,B08.6,03984 85371
+1396,Univ.Prof. Karl Schmidt B.Sc.,L03.0,00330690540
+1397,Traudel Eimer,N35.6,09991766655
+1398,Minna Gude,C35.0,+49 (0) 0796 168545
+1399,Severin Fritsch-Trub,V30.8,01183 30758
+1400,Diedrich Beyer-Wernecke,K35.6,02676 259794
+1401,Carmine Hendriks,K17.9,(00166) 19241
+1402,Manuel Zobel,R85.2,09825 17747
+1403,Luka Hamann,A02.0,0538939531
+1404,Univ.Prof. Constance Becker,S44.9,(05232) 07633
+1405,Marlies Trubin,O72.6,0398190887
+1406,Dipl.-Ing. Nicole Briemer B.Eng.,Z99.7,+49(0)0994 173915
+1407,Hajo Bähr MBA.,F14.5,+49(0)3682149552
+1408,Karen Börner MBA.,F98.5,+49(0) 705561219
+1409,Dipl.-Ing. Geza Dussen van,Q44.7,00242 386034
+1410,Hans-Helmut Pohl,N42.2,06673 85139
+1411,Dipl.-Ing. Mira Wende B.Sc.,C95.3,+49(0)1856 98953
+1412,Ing. Oswin Krebs B.Eng.,P17.3,+49(0)9743675515
+1413,German Noack,P94.3,07404 501704
+1414,Univ.Prof. Sibilla Klemt B.Sc.,B16.2,03408136911
+1415,Dörthe Putz,B15.8,06453006133
+1416,Peter Zänker-Budig,M73.3,03958 023670
+1417,Marius Lehmann,R81.1,+49(0)7393 224598
+1418,Prof. Erich Hahn,C61.6,+49(0)0693 114041
+1419,Univ.Prof. Annemarie Salz MBA.,L47.3,09311162075
+1420,Lidia Anders,N12.8,+49(0)1907 435464
+1421,Folkert Eberhardt,G12.5,+49 (0) 9420 031624
+1422,Karl-Ernst Flantz,H38.6,+49 (0) 6911 919276
+1423,Ingo Trupp-Köster,C38.6,+49(0) 123484771
+1424,Iris Segebahn-Gertz,I01.2,+49(0)2185 449124
+1425,Arnulf Mosemann,K04.3,+49(0)3932404215
+1426,Thorben Seifert,I51.0,0565783043
+1427,Iwona Höfig,A09.0,+49(0)9219889628
+1428,Hellmut Rädel B.Eng.,N66.2,07521694151
+1429,Prof. Benno Rust B.A.,D83.9,+49(0)0569916030
+1430,Univ.Prof. Bernhard Möchlichen,E26.8,07839200191
+1431,Hans-Bernd Heydrich,I00.7,00563 50292
+1432,Heinz-Wilhelm Eigenwillig,R97.3,+49(0) 257680912
+1433,Gabriel Ebert,T04.7,+49 (0) 3492 976188
+1434,Univ.Prof. Heinz-Dieter Junitz MBA.,L15.0,+49(0) 099491241
+1435,Gerfried Jacobi Jäckel,I93.0,06745 791003
+1436,Nikolai Sauer,R95.5,(05708) 42741
+1437,Achim Freudenberger,N92.2,03371708536
+1438,Veli Söding-Sager,D09.4,+49(0)5922 842861
+1439,Dipl.-Ing. Ada Baum B.A.,F76.5,+49(0)6178 91137
+1440,Anastasios Roht,B92.8,09430 126605
+1441,Angela Staude-Dowerg,R54.1,0817082402
+1442,Dana Hartmann,N59.6,+49 (0) 9683 909306
+1443,Rebekka Matthäi,I33.7,07941354205
+1444,Baldur Drub B.Sc.,S22.7,+49(0)0459 353398
+1445,Janos Weinhage,S84.6,09019 28130
+1446,Mesut Eimer B.A.,G64.7,+49(0) 075585052
+1447,Univ.Prof. Albertine Losekann B.Eng.,B28.9,0483092530
+1448,Jaroslav Franke,F86.1,+49(0)9651742736
+1449,Miguel Schönland,E63.2,+49 (0) 6559 600178
+1450,Darko Biggen,B85.4,04217 601939
+1451,Prof. Ernst-Dieter Albers,N33.5,03083 487695
+1452,Antonino Wilmsen,G18.9,0061330517
+1453,Hans-Joachim Hartmann B.Sc.,R78.1,(05120) 993371
+1454,Katja Schulz,R61.7,+49(0)0884 948865
+1455,Undine Caspar,A54.7,+49(0)6794 05675
+1456,Univ.Prof. Gert Weiß,G76.6,06418573523
+1457,Aynur Koch II,N35.2,05758 496345
+1458,Gabi Trub,B69.9,(02179) 61349
+1459,Guido Martin B.Eng.,L05.2,+49 (0) 0394 710427
+1460,Miroslawa Christoph-Bruder,M53.4,08845 16784
+1461,Sybilla Beckmann-Budig,M14.8,08271 630801
+1462,Kreszenz Bähr,M01.6,+49 (0) 5818 874307
+1463,Gabriele Baum-Patberg,B00.5,+49(0)1838 179222
+1464,Cynthia Walter,I91.0,0087812221
+1465,Kerstin Gnatz,H86.4,05613 63961
+1466,Anneli Dippel,Q19.9,0617852482
+1467,Frau Ludmilla Weiß,V09.8,08696715448
+1468,Ing. Ernst-Dieter Gertz B.A.,A92.2,06633 382964
+1469,Ing. Reimar Hellwig MBA.,A32.0,+49(0)5478880111
+1470,Ing. Theo Keudel MBA.,I55.6,09083 139350
+1471,Milos Girschner,J60.5,01292 97651
+1472,Dr. Suse Ziegert,C96.4,(06225) 552878
+1473,Sibille Drubin,C01.5,+49 (0) 5385 374962
+1474,Halina Koch II,Z84.3,00967 334371
+1475,Vincenzo Speer,M60.9,(05610) 294434
+1476,Sabrina Peukert,D54.0,+49(0) 984462225
+1477,Hans-Helmut Baum,P08.3,0520031719
+1478,Margita Tintzmann B.Sc.,H48.4,(03853) 84000
+1479,Anneli Kühnert MBA.,P44.5,(04926) 30411
+1480,Eugenie Knappe,N47.8,+49(0)6842 315782
+1481,Univ.Prof. Heinz-Jürgen Gieß,I10.1,+49 (0) 0130 194269
+1482,Dogan Lindau,I03.1,+49(0)3986 477918
+1483,Dr. Volkhard Neuschäfer,E01.9,+49 (0) 9394 870351
+1484,Univ.Prof. Stephanie Stroh B.A.,P82.2,08119 72154
+1485,Dipl.-Ing. Karola Hethur B.Eng.,S86.1,+49 (0) 5388 400750
+1486,Hendrik Wohlgemut,N64.8,+49(0)5725 229776
+1487,Univ.Prof. Sigismund Sager B.Eng.,K17.7,(02001) 00560
+1488,Inna Stroh,G15.0,+49 (0) 2785 688440
+1489,Sophia Nerger,C87.3,+49(0)5112321805
+1490,Theodor Bruder,V05.8,04647875518
+1491,Lili Trub MBA.,J83.4,(07905) 51019
+1492,Sarah Lindner,L57.5,0070064124
+1493,Peter-Michael Schacht,Y42.9,+49(0) 933973141
+1494,Heinz Kallert B.A.,G36.6,+49(0)3928 327894
+1495,Änne Hänel,C25.1,+49 (0) 2767 222556
+1496,Ing. Valerij Jopich,M01.8,02611 36240
+1497,Dipl.-Ing. Evelin Gumprich,Y20.1,(01602) 42760
+1498,Magarete van der Dussen,R69.4,+49(0)1619 02955
+1499,Ing. Giovanna Dietz,H85.0,(03813) 69965
+1500,Antje Mende B.A.,G80.0,0099085305

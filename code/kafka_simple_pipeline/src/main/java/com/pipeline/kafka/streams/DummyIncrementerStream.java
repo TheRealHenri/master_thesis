@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 import static com.pipeline.kafka.utils.ConfigConstants.BOOTSTRAP_SERVER;
 import static com.pipeline.kafka.utils.ConfigConstants.DEFAULT_TOPIC;
 
-public class IncrementerStream {
+public class DummyIncrementerStream {
 
     private static final int numberOfTopics = 5;
 

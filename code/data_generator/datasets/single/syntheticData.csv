@@ -1,0 +1,1501 @@
+id,name,gender,age,height,weight,diagnosis,address,zip,phone
+1,Gerta Fritsch,Female,28,156,75,C95.0,Birgitt-Neureuther-Weg 7,19328,+49(0)6667 631366
+2,Frauke Förster,Female,83,163,75,J74.4,Antonie-Naser-Ring 5,04933,(07657) 657266
+3,Dominic Neureuther B.A.,Male,29,173,90,J33.6,Hübelplatz 0/1,04731,+49(0)5348 58018
+4,Herr Leif Beyer,Male,93,186,79,P26.5,Heckerstr. 7/0,06817,+49(0) 275510602
+5,Engin Hentschel B.Sc.,Male,40,179,84,B37.9,Beerstraße 81,98420,02743 901512
+6,Valeska Butte,Female,38,164,68,K48.8,Evelyn-Segebahn-Ring 253,29678,00120 31103
+7,Janos Margraf,Male,52,177,79,H01.5,Mielcarekstraße 00,58456,+49(0) 988067106
+8,Dr. Ingelore Adolph B.Sc.,Female,69,162,59,Z95.0,Ottokar-Förster-Weg 261,28462,+49(0) 173244820
+9,Jennifer Geisler,Female,62,165,69,J36.9,Kirstin-Lorch-Straße 8,72588,+49 (0) 8203 282578
+10,Daniel Dörr MBA.,Male,72,186,80,O11.1,Ron-Trommler-Allee 2,04669,(09729) 717747
+11,Elli Wähner-Herrmann,Female,82,165,53,K76.9,Stiffelring 83,57554,08829 165095
+12,Tomas Weiß,Male,36,180,57,C78.5,Mudeplatz 6,46930,04230698734
+13,Anastasios Etzold MBA.,Male,93,178,74,K76.7,Gesche-Scheel-Ring 5/3,07174,+49(0) 809205391
+14,Helma Eberhardt,Female,67,168,44,N26.4,Wolf-Rüdiger-Anders-Straße 2,69989,+49 (0) 6951 726823
+15,Berta Boucsein,Female,62,169,57,V49.1,Beyergasse 9,32341,08563 82975
+16,Herwig Hauffer,Male,87,176,90,Q05.2,Dragan-Rosenow-Platz 824,12446,(06692) 124286
+17,Ing. Eugenie Junck B.Sc.,Female,39,177,69,G39.1,Röhrichtring 628,39374,+49(0) 975393299
+18,Univ.Prof. Andrei Austermühle,Male,50,170,48,T34.0,Silja-Wirth-Weg 39,97550,+49(0)1614803825
+19,Jadwiga Baum-Kensy,Female,62,176,45,S52.4,Ladeckgasse 55,26423,+49(0)7078 49767
+20,Prof. Ernst-Dieter Süßebier MBA.,Male,55,179,67,S09.3,Langeallee 489,13498,+49 (0) 6437 073453
+21,Sandro Seifert MBA.,Male,67,190,79,S63.6,Hartungstr. 45,28956,+49(0) 129139911
+22,Hanife Wirth,Female,40,170,71,R35.5,Dietzstr. 2/5,02527,+49(0)2448 908021
+23,Ing. Elly Reinhardt B.Eng.,Female,47,170,75,H15.2,Ernststraße 27,26288,+49(0) 339978184
+24,Cäcilie Hiller-Hande,Female,61,179,56,C61.2,Gretl-Schinke-Platz 73,76988,+49(0) 911908759
+25,Senta Harloff,Female,42,175,53,I31.3,Knappeallee 3,93842,03621 925171
+26,Univ.Prof. Patricia Geisler,Female,63,173,56,P45.7,Wiekplatz 5,19824,+49(0) 154483117
+27,Univ.Prof. Kurt Täsche B.Sc.,Male,100,163,88,S11.7,Wirthring 2/5,40424,0186118353
+28,H.-Dieter Heinz,Male,50,196,67,E26.6,Ringstraße 96,06135,+49(0)0750 836353
+29,Romy Eimer-Wilmsen,Female,40,163,49,K78.1,Kargestr. 64,84583,05536 927819
+30,Heinz-Günther Matthäi,Male,56,177,73,B27.6,Kruschwitzgasse 84,03097,+49(0)1267 62022
+31,Utz Pechel MBA.,Male,92,191,62,M41.5,Hans-Helmut-Stiebitz-Platz 9/3,78488,09816 40896
+32,Galina Bauer-Mende,Female,88,171,63,J91.0,Wilfried-Lehmann-Platz 943,21821,+49 (0) 2884 242111
+33,Bernward Segebahn-Albers,Male,59,185,71,Y83.1,Rörrichtplatz 09,09543,+49(0) 655093057
+34,Alexei Trüb,Male,83,182,80,M22.8,Lorchring 7,60822,(00218) 03685
+35,Gilbert Jessel,Male,63,183,87,Q75.4,Klotzallee 89,78120,+49 (0) 1202 347353
+36,Michaela Dussen van,Female,66,160,67,P46.2,Jüttnerstraße 8,48647,(06965) 926477
+37,Univ.Prof. Daniela Karge,Female,66,173,51,A65.4,Jeannine-Fröhlich-Allee 1,32869,+49(0)6491 84749
+38,Jonas Walter,Male,80,180,69,G77.9,Ella-Gute-Straße 4,20256,+49(0)7355 95024
+39,Myriam Lachmann,Female,51,164,60,A55.4,Bergerweg 34,13459,0907497134
+40,Pawel Stumpf,Male,65,192,77,Q39.8,Hans-Heinrich-Löwer-Straße 9,73753,+49 (0) 2737 866164
+41,Erwin Ehlert B.Eng.,Male,58,181,68,K82.7,Janine-Oestrovsky-Allee 110,24287,01845077616
+42,Gereon Walter MBA.,Male,49,177,94,S06.3,Rosenowgasse 822,41153,+49(0)0086 170830
+43,Violetta Linke,Female,55,167,70,A00.4,Schmiedeckegasse 5/5,29593,(08577) 30601
+44,Joana Oderwald,Female,76,166,63,I04.3,Heßring 427,59257,(07208) 401950
+45,Lilo Geißler,Female,81,170,55,P89.9,Janine-Spieß-Allee 6,37044,+49(0)2969 71844
+46,Nicolaus Heser,Male,64,174,68,V02.2,Döhnweg 1/1,85879,+49(0) 447208621
+47,Jens-Peter Fritsch,Male,48,179,76,I62.3,Schollplatz 8/0,07821,(09154) 53658
+48,Marina Heinz-Lachmann,Female,54,171,67,V03.0,Severin-Dippel-Ring 7/1,70264,(08368) 968547
+49,Univ.Prof. Karl-Werner Henk B.Sc.,Male,63,184,61,M78.6,Götz-Langern-Gasse 8,97609,08141 75061
+50,Univ.Prof. Waldtraut Hendriks B.Sc.,Female,80,165,62,B11.5,Bährallee 5/3,21542,0785887504
+51,Nadeshda Tröst,Female,90,170,50,F20.1,Bohnbachplatz 5,68932,+49(0)5305022240
+52,Ing. Irma Heintze,Female,82,171,66,A60.8,Vlado-van der Dussen-Ring 9,75270,+49(0)6382 11872
+53,Univ.Prof. Undine Dussen van,Female,42,166,59,Y04.2,Speerweg 48,08297,+49 (0) 4200 157151
+54,Alexandra Etzler MBA.,Female,62,165,59,I22.4,Junitzallee 359,00657,+49(0) 042601555
+55,Univ.Prof. Kunibert Pohl B.Eng.,Male,53,168,79,D71.0,Francesco-Gute-Platz 4,98685,09688 38558
+56,Giesela Patberg B.Sc.,Female,65,164,53,G98.8,Mark-Carsten-Gasse 9/7,00865,+49(0)2625 132183
+57,Lilian Kuhl B.A.,Female,56,155,55,D03.6,Heßring 11,42024,+49(0)2000 76498
+58,Ing. Lisbeth Heintze B.A.,Female,63,164,57,J28.2,Loosstr. 0,52222,01232 468948
+59,Dr. Valentine Ernst B.A.,Female,70,164,61,G50.5,Josip-Gude-Straße 3,59527,05351 390013
+60,Mira Neureuther,Female,54,161,54,L32.4,Aleksandr-Bauer-Ring 5,14087,+49(0) 332168959
+61,Annelise Hänel,Female,61,173,49,Z70.8,Zahnplatz 4,32593,07620 83574
+62,Nico Mülichen,Male,57,173,78,Z47.8,Schombergasse 3/4,12579,0534184981
+63,Angela Kreusel,Female,58,163,46,H40.4,Tschentscherstr. 879,20699,08619 04945
+64,Prof. Hans-Albert Ebert B.A.,Male,50,169,90,B53.0,Ullmannallee 59,32853,0730422536
+65,Stanislav Dowerg,Male,57,171,79,R04.0,Lore-Biggen-Gasse 63,47791,05412818692
+66,Herr Udo Sauer,Male,29,187,76,G36.4,Hassan-Warmer-Platz 28,21287,+49 (0) 3432 507799
+67,Bernt Sorgatz,Male,75,198,92,E78.9,Harloffgasse 068,99190,+49 (0) 3843 890194
+68,Uli Bohlander B.A.,Male,56,188,73,K08.4,Amir-Hofmann-Weg 73,89704,0592710360
+69,Univ.Prof. Bruni Speer,Female,69,175,52,B12.3,Huhnallee 06,82439,0465637622
+70,Dietmar Gotthard-Weller,Male,60,187,82,H07.5,Henkgasse 50,79589,02563 181122
+71,Liesa Kroker,Female,64,168,61,P42.3,Benderallee 35,21136,01772 632241
+72,Prof. Sieghard Christoph,Male,85,192,88,T12.2,Hövelallee 6/8,18256,08512 93821
+73,Miriam Austermühle,Female,75,165,57,N05.3,Hartmannweg 2,06152,+49 (0) 2654 516003
+74,Zeynep Bloch B.Eng.,Female,27,167,54,J53.1,Schachtgasse 1,15369,+49(0)2282832793
+75,Nils Hecker B.A.,Male,83,179,82,B62.1,Hertrampfgasse 4/9,37321,0868654783
+76,Elenore Tlustek-Koch II,Female,34,164,50,R37.3,Annita-Kranz-Ring 261,19111,+49 (0) 6032 880752
+77,Heinz-Dieter Steckel,Male,62,185,94,A79.6,Diether-Schlosser-Gasse 6/1,52790,09487 002079
+78,Resi Siering,Female,47,171,69,Q67.3,Ada-Benthin-Straße 16,42314,0201923423
+79,Piotr Trüb,Male,41,186,83,C63.9,Junkengasse 7,77896,02930879436
+80,Philip Heuser,Male,60,177,77,O81.6,Hofmannstr. 452,83467,+49(0)7417 288788
+81,Andrej Mosemann,Male,56,177,66,P41.0,Löchelallee 1,15832,(01060) 51469
+82,Prof. Henrike Patberg,Female,81,173,72,I67.9,Rico-Rädel-Ring 3/8,21008,+49(0)0113 402795
+83,Gretl Holzapfel,Female,88,170,72,E09.2,Jurij-Junck-Gasse 29,38937,01837230461
+84,Jost Hermann,Male,24,188,82,K44.2,Hartungallee 2/2,55835,(07639) 221319
+85,Massimo Wieloch,Male,69,172,83,C56.3,Walterring 464,26265,+49(0)5961696594
+86,Dr. Lorenzo Bien B.Sc.,Male,43,178,45,A50.1,Christophplatz 8,21747,03835 96609
+87,Raissa Pölitz,Female,72,166,64,B97.6,Jäntschgasse 953,27059,+49(0)6831512365
+88,Mikhail Wilms,Male,61,175,91,J53.5,Beckmannallee 2,05170,(06197) 85124
+89,Ing. Gretel Finke,Female,55,160,59,E49.9,Bährstraße 4/2,46450,+49 (0) 6037 810582
+90,Ing. Gisa Adler B.Eng.,Female,38,170,54,A09.2,Weinhageweg 22,45693,03042 25632
+91,Marianne Reuter B.Eng.,Female,50,165,60,O31.5,Angelica-Karge-Platz 2,20609,09866 47558
+92,Korinna Schwital B.Eng.,Female,55,162,61,T21.4,Dussen vangasse 04,18394,09823 412601
+93,Siegried Staude,Female,49,168,69,L48.0,Mentzelring 5/4,72904,+49 (0) 0338 126101
+94,Dipl.-Ing. Roswita Gorlitz,Female,71,167,64,O28.1,Etzlerstr. 4/1,62027,+49(0)7194 355221
+95,Olena Kobelt,Female,73,172,59,R15.7,Kruschwitzallee 1,22187,+49(0)0633395420
+96,Karl-Heinrich Jäkel,Male,42,180,64,F78.2,Lehmannweg 81,39302,+49(0)8551742823
+97,Gerta Oderwald,Female,79,159,57,R66.8,Susi-Geißler-Straße 2,57844,+49 (0) 7025 254921
+98,Luzie Dehmel,Female,69,166,56,P22.3,Frieder-Segebahn-Straße 7,04742,0997079583
+99,Grzegorz Hauffer,Male,76,169,58,C04.2,Amelie-Henschel-Gasse 48,40038,0667664241
+100,Malgorzata Holt,Female,79,166,70,D95.9,Hartwig-Rust-Weg 63,27862,0373931118
+101,Univ.Prof. Florence Junk B.Sc.,Female,64,163,60,J08.7,Fischerplatz 5,75360,+49(0)2262903127
+102,Daniele Graf,Male,37,164,82,T98.5,Niklas-Tintzmann-Ring 693,56114,03633047195
+103,Univ.Prof. Natalija Jüttner,Female,45,159,50,B14.5,Karola-Tschentscher-Platz 2/2,25525,09264890447
+104,Grit Jäntsch,Female,56,165,49,O72.0,Dörrgasse 66,21253,+49(0) 051571221
+105,Hajo Winkler MBA.,Male,89,168,83,J63.7,Zahnring 375,23291,05715 480128
+106,Ruben Vogt,Male,56,168,72,M47.5,Klaus-Peter-Kabus-Platz 58,80383,06379603410
+107,Luitgard Dobes B.A.,Female,49,169,60,T98.5,Amanda-auch Schlauchin-Ring 4/2,80284,+49(0)0898 94798
+108,Violetta Hornig,Female,66,163,52,T06.1,Niemeierweg 687,07082,+49(0)2920864251
+109,Marko Lorch B.Eng.,Male,72,178,82,N43.9,Traute-Henschel-Allee 280,60083,(02596) 180781
+110,Wolf-Rüdiger Bärer,Male,62,181,79,P44.3,Hagen-Blümel-Ring 861,22650,+49(0)4418663889
+111,Theobald Thies,Male,44,169,67,D91.2,Martin-Hornich-Weg 580,21164,+49 (0) 4853 463637
+112,Christa-Maria Heß,Female,65,166,71,P39.9,Gretl-Schmiedt-Allee 1,08516,0673940370
+113,Heinz-Günter Schaaf-Fechner,Male,61,175,81,M06.9,Nettering 56,09002,+49(0)8266 934124
+114,Tino Eigenwillig B.A.,Male,62,162,80,K88.4,Heckerstraße 8/5,55040,+49 (0) 9004 556977
+115,Mark Hofmann,Male,91,172,53,C87.2,Rörrichtgasse 061,89007,+49(0)7708 866432
+116,Hans-Günther Reising,Male,60,197,81,F62.4,Sorgatzweg 6,64337,(01970) 43822
+117,Stjepan Birnbaum,Male,64,192,86,Y89.1,Koch IIallee 48,64883,04518 01929
+118,Juan Kitzmann B.A.,Male,73,188,76,D70.9,Ahmet-Jockel-Allee 8/4,52345,01313 778293
+119,Krista van der Dussen-Boucsein,Female,59,171,64,T87.1,Kensystr. 8,79972,03000 389162
+120,Hedy Eberhardt-Misicher,Non-Binary,73,180,54,O98.4,Joana-Steckel-Allee 207,96562,+49(0) 731246187
+121,Sergei Metz,Male,100,176,73,F31.8,Kreuselplatz 6,22239,(04523) 93582
+122,Henrik Tschentscher,Male,56,182,82,G29.2,Thiesring 392,99818,+49(0)5965 90332
+123,Gilbert Heidrich B.A.,Male,49,188,74,O82.0,Francesca-Kabus-Weg 415,52467,01859 78071
+124,Ing. Suse Vogt B.A.,Female,60,164,65,N62.9,Schleichstr. 9/8,09472,04353 436551
+125,Volker Heinz,Male,51,173,99,R60.5,Lindnerplatz 2,03130,+49(0)5670 94799
+126,Manja Pieper,Female,56,167,62,V57.5,Löfflerweg 3/4,62501,(03487) 22663
+127,Darius Tschentscher,Male,48,190,79,K70.5,Lissi-Hofmann-Weg 7,45747,08942 744738
+128,Prof. Pamela Flantz,Female,56,169,62,V74.0,Benderplatz 362,40626,0220720111
+129,Paola Harloff,Female,83,172,64,O87.2,Wohlgemutplatz 731,93276,+49(0)0187750392
+130,Antonios Renner,Male,42,173,76,Z19.0,Alice-Kroker-Weg 0/8,79168,02329345110
+131,Annelore Wähner,Female,86,162,64,R32.5,Hoffmanngasse 134,09669,05802 23207
+132,Margret Scholz B.Eng.,Female,45,166,64,P10.1,Stefan-Scholz-Gasse 9/7,29860,+49(0) 875698253
+133,Antonietta Schwital,Female,97,171,63,K42.6,Reisingallee 876,21414,(02743) 090445
+134,Ottomar Striebitz,Male,22,184,88,I19.0,Möchlichengasse 5,60350,0040164110
+135,Nicolaus Liebelt,Male,70,192,76,V23.5,Kramerstraße 939,28686,+49(0)8166163024
+136,Herr Apostolos Hornich B.Sc.,Male,29,171,75,S49.1,Anne-Kathrin-Biggen-Platz 1,66906,(05630) 286989
+137,Gina Hermighausen,Female,49,164,72,K97.7,Truppring 7/6,22750,(04693) 129635
+138,Margret Rust B.A.,Non-Binary,54,177,58,G32.1,Dussen vanweg 8/4,66118,0699655886
+139,Ing. James Tschentscher,Male,49,166,89,T32.7,Carstengasse 9,95360,03964 31903
+140,Kunigunde Tschentscher,Female,83,161,63,A98.3,Vollbrechtplatz 4,84268,08092 72466
+141,Kristine Wulf,Female,79,163,61,H87.7,Kostolzinallee 6,48084,(05326) 240197
+142,Bruni Kroker-Heß,Female,44,166,56,Q66.7,Jopichring 12,46224,+49(0)8042 44265
+143,Ljudmila van der Dussen,Female,57,167,46,G31.9,Kadeweg 65,77222,(02738) 616979
+144,Katharine Herrmann MBA.,Female,79,172,55,L59.5,Pruschkestr. 568,33094,02617 217500
+145,Dr. Krista Rogner B.Sc.,Female,74,166,56,I48.5,Johannes-Kambs-Platz 734,96803,+49(0)2699987913
+146,Ottfried Junck-Holzapfel,Male,93,178,84,Q89.0,Gundel-Ullrich-Allee 5,92024,+49(0)2104 590491
+147,Monja Röhricht,Female,33,165,48,Z98.3,Kraushaarring 090,42529,06167 680474
+148,Isabel Patberg,Female,43,170,61,G04.0,Steinbergallee 1/1,53860,03208 77868
+149,Dipl.-Ing. Phillip Gerlach,Male,64,172,89,S10.6,Viktor-Schäfer-Ring 58,81649,08641995861
+150,Caroline Lange,Female,89,165,52,A00.7,Franz-Etzold-Ring 807,00022,+49 (0) 0739 633863
+151,Benjamin Juncken,Male,86,171,92,G43.0,Oderwaldweg 8,66539,0563429246
+152,Dusan Jopich-Gorlitz,Male,45,197,102,K79.0,Cornelia-Weinhold-Gasse 6,26511,05895410241
+153,Waltraud Neuschäfer B.Sc.,Female,51,171,57,B34.9,Kallertallee 9,50042,+49(0)8229048668
+154,Dr. Marlies Hornig B.A.,Non-Binary,87,180,67,F05.7,Amalia-Hertrampf-Gasse 3/0,30822,08043059603
+155,Herr Louis Benthin,Male,67,184,96,V63.7,Heiner-Albers-Straße 67,94032,+49(0) 014006790
+156,Isa Wagenknecht B.Sc.,Female,73,162,60,D36.6,Striebitzweg 41,16752,01170 457877
+157,Sibylla Schulz B.Sc.,Female,29,168,47,H58.7,Peter-Römer-Gasse 0,61290,+49(0)0126 964856
+158,Birgid Schuster,Female,41,172,61,D47.8,Alicia-Weinhage-Weg 2/7,79962,+49(0)4141114224
+159,Luise Löffler,Female,65,154,61,Q85.0,Trübweg 5,09086,09681 16631
+160,Gundi Adolph,Female,100,159,66,I66.0,Margrafallee 50,29204,+49(0)2913 237055
+161,Dipl.-Ing. Jens-Peter Klapp B.Eng.,Male,27,185,79,Q38.3,Anni-Kusch-Allee 0/4,67577,+49(0)6547896118
+162,Mustafa Baum,Male,89,185,75,K81.8,Mitschkeallee 782,36021,+49(0)3731 47478
+163,Helfried Neureuther-Graf,Male,59,181,74,E14.7,Helmuth-Löchel-Ring 897,46091,(03249) 315612
+164,Berta Holt,Female,53,165,61,I49.4,Thiesstr. 779,69686,02376 900409
+165,Elena Kitzmann,Female,58,168,56,Z38.9,Hans-Peter-Sontag-Straße 6/5,35388,+49 (0) 8391 229105
+166,Jonathan Ritter-Freudenberger,Male,76,171,90,M62.8,Rudolf-Schüler-Weg 9,69485,+49(0)9834765997
+167,Dimitrios Schönland,Male,76,194,81,H16.0,Adam-Wesack-Straße 7/8,78207,0081576819
+168,Henrik Kusch B.Sc.,Male,88,184,79,R44.0,Schaafring 54,58898,(06003) 32014
+169,Univ.Prof. Ditmar Anders B.A.,Male,46,174,81,P57.4,Schweitzerring 232,94262,+49(0)0094 18202
+170,Kläre Riehl,Female,95,152,58,G12.4,Gröttnerplatz 73,16829,+49 (0) 1352 239943
+171,Cristina Langern-Seifert,Female,73,164,54,Y12.4,Louis-Kostolzin-Gasse 83,22234,(01457) 68409
+172,Sylvia Scheel B.Sc.,Female,57,161,63,I60.9,Evi-Fischer-Straße 3/2,72829,+49(0)0667987780
+173,Dipl.-Ing. Samir Hübel,Male,71,180,88,D03.4,Eugen-Schuster-Gasse 5,64630,+49 (0) 2153 171086
+174,Dr. Micha Rudolph B.Sc.,Male,31,177,76,V37.7,Jessika-Haering-Weg 802,69938,+49(0) 652597314
+175,Prof. Wilma Lindner,Female,77,169,55,I38.9,Jörgen-Hentschel-Gasse 873,96809,+49 (0) 6274 930929
+176,Lilly Bärer,Female,77,164,63,S45.6,Jäntschring 9/2,54136,+49 (0) 7924 733056
+177,Hans-J. Bruder,Male,50,187,88,E59.9,Wendering 64,47487,05942 328709
+178,Nuray Biggen,Female,62,164,55,I26.3,Ernstweg 90,44109,+49(0) 492846748
+179,Ing. Hedy Dörschner B.Sc.,Female,51,180,45,C52.1,Baumstraße 160,51644,03987824115
+180,Sylvester Trapp-Jacob,Male,52,192,97,I72.9,Paola-Loos-Allee 4,96734,+49(0)7259531272
+181,Brigitte Eckbauer,Non-Binary,56,179,68,B04.3,Götz-Hesse-Allee 80,29445,+49(0)2335113932
+182,Erik Rädel B.Sc.,Male,55,175,84,L34.1,Reichmannring 2,34114,(00851) 329439
+183,Abraham Kraushaar,Male,81,177,89,E07.3,Klemtring 1,60675,00936 494269
+184,Vladimir Schottin-Schönland,Male,19,175,80,I60.2,Jäntschallee 7/6,33332,(01097) 818303
+185,Conny Gorlitz,Female,60,172,68,G99.0,Margrit-Lachmann-Platz 81,08079,0115625499
+186,Dipl.-Ing. Mercedes Dussen van B.A.,Female,61,162,69,G32.1,Fechnerring 4/2,11616,+49 (0) 4810 188859
+187,Frida Bolander,Female,78,162,49,G01.1,Weitzelstraße 7,26225,09495 990310
+188,Prof. Mehdi Gunpf B.A.,Male,62,180,74,C14.7,Roderich-Anders-Allee 3/2,76963,+49(0) 423695958
+189,Willi Schmiedecke,Male,31,179,78,C51.6,Vogtstr. 372,11474,+49(0)1049119731
+190,Univ.Prof. Lilli Heser B.Eng.,Female,79,170,55,Z30.3,Wielochring 42,07387,0663384484
+191,Torsten Wilmsen,Male,69,181,75,A92.0,Bergerring 047,13081,+49(0) 084767876
+192,Mina Barkholz,Female,75,163,48,D35.2,Wilmsweg 015,07021,+49(0)4142 012799
+193,Prof. Rosel Jäkel B.Eng.,Female,43,165,63,R93.1,Bohnbachweg 3,67264,+49(0)9768342696
+194,Willi Pergande B.A.,Male,61,186,70,Q91.7,Ewa-Heidrich-Weg 3/1,00156,(04663) 17541
+195,Holger Säuberlich MBA.,Male,65,189,76,V36.4,Butteweg 110,69049,(09822) 420468
+196,Univ.Prof. Senol Stroh B.Sc.,Male,56,181,84,D82.2,Rörrichtring 4/4,49343,0833540607
+197,Gisela Wagner,Non-Binary,94,180,66,S57.4,Herta-Carsten-Weg 2/0,47177,+49(0)0622 874431
+198,Univ.Prof. Bekir Börner B.A.,Male,50,187,78,Z37.7,Bolnbachallee 9/9,37419,+49 (0) 8906 133316
+199,Marga Jungfer-Bloch,Female,77,163,49,F18.6,Hans-Josef-Herrmann-Straße 508,82508,+49 (0) 3837 418587
+200,Meta Nerger,Female,78,170,63,O22.4,Francis-Dobes-Allee 4,45520,05137 186879
+201,Sandy Knappe,Female,41,176,54,P80.1,Kuschallee 212,09733,0090419768
+202,Moritz Klapp-Kitzmann,Male,48,180,90,P29.8,Erica-Trupp-Gasse 7,10061,01270 355164
+203,Walentina Weller,Female,46,162,55,J43.8,Christine-Linke-Allee 61,06293,09594552600
+204,Susanna Mosemann,Female,38,159,53,H77.8,Wieland-Rogner-Ring 317,65758,+49(0)3087 746450
+205,Herr Senol Schacht B.A.,Male,57,182,86,I55.6,Lindnerweg 5,35218,+49(0)5217 17404
+206,Britt Seidel,Female,63,171,48,M01.9,Schinkeallee 6,79282,(05307) 783747
+207,Maxim Dörschner,Male,32,173,83,N00.7,Alf-Oestrovsky-Straße 560,45919,04832534928
+208,Ing. Klaus-D. Etzold MBA.,Male,56,187,81,K85.9,Rosestr. 494,54702,(08071) 48584
+209,Sabina Rose,Female,42,167,54,V01.2,Sagerplatz 4/6,72546,01840 309815
+210,Univ.Prof. Jan Fröhlich,Male,61,177,81,T65.1,Malte-Trubin-Allee 68,69587,+49(0)1738 44333
+211,Svetlana Gerlach,Female,74,169,51,I28.1,Speerallee 7/5,04210,02810 04355
+212,Hans-Hinrich Langern,Male,60,174,76,H72.7,Willibert-Heydrich-Platz 4/4,11982,(00899) 744107
+213,Rudolph Trupp,Male,59,168,86,E92.1,Ina-Tintzmann-Ring 91,84902,+49(0) 086268431
+214,Fritz Bonbach,Male,66,179,85,G69.1,Beyerallee 1/4,72716,+49(0) 744464534
+215,Antonia Adler,Female,24,173,55,J55.7,Albin-Rogner-Allee 6,42551,+49(0)9451 94419
+216,Dietmar Atzler,Male,56,182,83,Z24.1,Carl-Heinz-Käster-Straße 38,90536,+49(0)2760340895
+217,Ernestine Sauer,Female,79,173,56,Z98.1,Finkestraße 426,31370,0653187318
+218,Dagobert Textor B.A.,Male,19,183,90,V73.1,Stadelmannplatz 1/4,42565,(08524) 00960
+219,Franka Wieloch,Female,50,171,53,S33.4,Dorothe-Gröttner-Ring 5,76237,(08655) 95135
+220,Miguel Otto-Hein,Male,57,179,76,V64.1,Dörschnerstr. 773,34334,+49(0)8542 375622
+221,Wenzel Krein B.Eng.,Male,44,175,72,C90.8,Ottomar-Ring-Allee 11,94839,+49 (0) 5868 882386
+222,Friedemann Kade B.A.,Male,36,186,95,N56.5,Bienallee 8,01499,+49(0) 650842896
+223,Kazim Schmiedecke B.A.,Male,50,177,81,C42.6,Jolanthe-Stumpf-Ring 17,92340,08588 522441
+224,Stefano Ring,Male,61,176,92,F01.8,Etzoldring 498,22755,0878101502
+225,Harro Jüttner-Nerger,Male,35,176,82,B61.5,Christophstraße 5/5,98139,(06036) 77450
+226,Harri Hellwig-Finke,Male,70,188,78,K33.5,Albersring 6,47066,(03272) 683726
+227,Gina Kraushaar MBA.,Female,47,164,51,R72.5,Vollbrechtallee 87,04133,+49(0)4722 791775
+228,Dr. Laurenz Dobes MBA.,Male,23,173,80,M36.2,Benthinring 143,95090,0583702759
+229,Prof. Jan-Peter Geißler B.Sc.,Male,51,182,80,O50.6,Karl-Ernst-Wulf-Gasse 89,12691,+49(0)2380286608
+230,Hassan Ditschlerin,Male,94,183,76,Y34.9,Eva-auch Schlauchin-Allee 67,94179,+49 (0) 7994 834081
+231,Frau Inna Hamann,Female,49,162,54,I00.5,Liesbeth-Hahn-Straße 4,09426,(09391) 716197
+232,Ing. Jobst Krein,Male,33,171,104,O98.7,Inge-Bärer-Weg 8,05790,06445 912100
+233,Univ.Prof. Karola Siering B.Eng.,Female,65,164,51,C99.4,Kadering 406,87624,+49 (0) 7922 742371
+234,Toralf Mude,Male,62,183,71,Y59.2,Bernt-Zirme-Platz 74,12102,+49(0)1786 310572
+235,Henry Schenk B.A.,Male,19,188,87,D34.7,Wibke-Eigenwillig-Ring 994,98198,+49(0)7826087748
+236,Korinna Stumpf-Bolander,Female,72,160,67,P51.1,Karzgasse 6,69453,08567 71860
+237,Nicolaus Pieper-Drub,Male,72,164,69,M97.5,Wellerstr. 600,14421,+49(0)1127603739
+238,Magnus Hecker,Male,65,170,91,S19.9,Stanislaus-Schuchhardt-Gasse 07,17135,0341782033
+239,Ing. Trudel Kuhl MBA.,Female,62,167,61,D71.4,Kobeltallee 40,62405,0358637389
+240,Gönül Schinke,Female,30,166,52,Y08.8,Dippelweg 6/7,72675,+49(0)7734 441931
+241,Rolf-Dieter Trüb-Becker,Male,44,176,82,J19.5,Pölitzstraße 0,16051,+49(0) 018268574
+242,Ante Dörschner,Male,76,200,70,K48.9,Vladimir-Lehmann-Platz 8,80762,+49(0)2760 83412
+243,Gerhardt Henck,Male,46,178,83,T13.2,Aline-Geisler-Ring 2,07572,+49 (0) 1421 197738
+244,Kathi auch Schlauchin,Female,72,177,52,N87.9,Heiderose-Jacob-Platz 8/5,60131,+49(0) 022062838
+245,Gerolf Barth B.Sc.,Male,83,186,81,N73.2,Lara-Kensy-Weg 78,08133,(00280) 75799
+246,Dipl.-Ing. Bernard Scholtz B.Sc.,Male,41,174,54,L97.3,Hillerring 37,12837,07626903890
+247,Ferenc Seip-Kade,Male,45,185,82,O41.1,Ottoplatz 41,35185,+49(0)2928 343319
+248,Univ.Prof. Agathe Hande MBA.,Female,98,168,57,R20.9,Bodo-Jessel-Weg 5/2,30339,+49(0)3512 95300
+249,Klaus-Günter Beier,Male,30,180,79,B03.3,Maria-Luise-Kruschwitz-Ring 90,40378,+49(0)1199 906972
+250,Norman Täsche,Male,67,161,90,L31.7,Wulfallee 26,85395,+49(0) 437464314
+251,Paul-Gerhard Blümel,Male,61,186,61,Z37.5,Sölzergasse 2/3,92753,06694 535648
+252,Klaus Dieter Wiek,Male,51,177,79,Z51.9,Hans Georg-Junck-Gasse 3,17018,(02005) 94946
+253,Ahmed Neureuther-Heydrich,Male,47,177,90,H98.5,Gnatzallee 4/1,08127,07283 573018
+254,Univ.Prof. Meinolf Spieß,Male,33,177,81,P44.1,Pamela-Radisch-Platz 6/7,64691,+49(0) 739968209
+255,Prof. Ayse Dobes B.Sc.,Female,91,174,65,Y13.2,Boucseinweg 92,35372,+49(0)4866710238
+256,Edmund Röhrdanz,Male,75,171,94,S62.3,Kambsallee 1/5,64246,+49(0)5512228883
+257,Heiderose Ullmann-Schinke,Female,42,170,45,Z53.1,Zlatko-Wernecke-Gasse 9,19802,(08936) 274054
+258,Franco Reinhardt MBA.,Male,85,183,81,R73.4,Felix-Rosenow-Allee 71,87289,+49(0)9627 914758
+259,Henrike Stolze,Female,30,167,60,E44.6,Julia-Gieß-Gasse 522,76559,+49 (0) 5417 632729
+260,Jorge Tröst,Male,64,179,77,C61.9,Gottlieb-Haase-Weg 042,94561,(06326) 274806
+261,Ottilie Ortmann,Female,65,164,56,R69.1,Zobelweg 296,60661,+49(0) 762382309
+262,Theres Römer B.Eng.,Female,61,173,56,G00.2,Nikolai-Linke-Allee 5/9,63943,03647442303
+263,Birgitta Wohlgemut B.A.,Female,54,177,55,R58.9,Polina-Ritter-Weg 8/8,65826,01508 47358
+264,Remo Cichorius,Male,45,184,90,O54.9,Schinkeplatz 0/4,87034,04848772754
+265,Janina Kranz B.Sc.,Female,73,173,60,G46.1,Bruderweg 41,81335,+49(0)7304 377390
+266,Volker Wulf,Male,81,185,68,H45.4,Hans-Christian-Förster-Gasse 0,38792,(05856) 68250
+267,Univ.Prof. Ortrud Pruschke,Female,78,166,66,B97.4,Irmengard-Wulf-Platz 8,78420,(01671) 90400
+268,Eveline Keudel,Female,36,165,46,M99.0,Kobeltallee 5/6,45096,(02983) 46989
+269,Mechtild Bolnbach,Female,51,155,50,G96.2,Rupert-Becker-Gasse 494,43304,+49(0) 640947344
+270,Dr. Hans-Otto Pruschke,Male,56,170,72,K79.5,Mandy-Davids-Straße 109,31752,09350 33121
+271,Dr. Renate Nette,Female,53,163,53,O28.5,Richard-Römer-Gasse 49,59343,+49(0)2206 859357
+272,Cemal Bolzmann B.Eng.,Male,28,192,95,C29.2,Alexandros-Bohlander-Straße 6,10661,+49(0)5522 20714
+273,Jens-Peter Gunpf,Male,55,198,73,P99.0,Falk-Harloff-Allee 7,47406,+49(0)2223821414
+274,Univ.Prof. Zdenka Pergande,Female,66,172,65,Q06.9,Caroline-Misicher-Ring 9,29063,(00067) 46200
+275,Sedat Schwital,Male,72,177,76,O61.3,Ekaterina-Ring-Platz 0,86396,0432496802
+276,Kornelia Bolzmann,Female,66,167,65,B83.9,Alwina-Ebert-Weg 405,87407,(06935) 278745
+277,Luka Karz,Female,65,175,57,Q09.5,Carmen-Graf-Gasse 16,45729,(09938) 62879
+278,Dr. Isabell Kruschwitz,Female,63,161,58,Q34.8,Leyla-Bauer-Straße 25,53777,05751 53239
+279,Vitali Kruschwitz,Male,79,177,81,E11.1,Nurettin-Kreusel-Ring 28,29797,08475 388321
+280,Wolfram Wilmsen,Male,64,182,89,V52.8,Alla-Linke-Straße 621,75877,+49 (0) 2965 262692
+281,Lieschen Löwer,Female,77,163,62,F88.5,Anna-Lena-Hethur-Straße 51,55054,0358548711
+282,Nikolai Fliegner-Jäkel,Male,71,182,84,G00.7,Martine-Mohaupt-Gasse 67,13602,+49 (0) 2026 173737
+283,Univ.Prof. Marten Bolzmann,Male,51,172,84,F84.2,Oestrovskystraße 4/6,91494,01489 93014
+284,Ernst-August Binner,Male,29,188,83,J94.1,Kreinallee 6/9,83025,+49(0)6964 47605
+285,Ing. Wenke Meister B.Eng.,Female,72,167,68,R50.2,Mentzelstraße 44,43346,(05936) 84492
+286,Heike Krebs B.A.,Female,93,167,60,S56.0,Zobelstr. 2/8,66864,0935591445
+287,Dipl.-Ing. Benedikt Ebert MBA.,Male,67,176,88,C10.6,Henrike-Niemeier-Ring 7/3,75095,(06504) 00212
+288,Darko Ullmann,Male,59,184,78,B76.3,Gierschnergasse 5,77937,+49 (0) 7717 309992
+289,Viktoria Mangold-Ullrich,Female,38,167,61,E16.0,Oswin-Junck-Ring 03,52931,0287004611
+290,Janett Loos,Female,90,164,56,S83.4,Anica-Schlosser-Weg 2,13654,+49(0)8758667806
+291,Dietmar Thies B.A.,Male,46,174,77,V45.4,Romana-Naser-Platz 9,40988,+49 (0) 4363 291242
+292,Sevim Lange,Female,73,162,65,Y94.3,Beatrice-Gertz-Ring 95,50987,(02770) 150613
+293,Carolina Krein,Female,75,165,63,A17.6,Sauerstraße 4,81733,+49(0)2693 15724
+294,Lissy Henck B.A.,Female,72,169,52,F62.3,Klaus-Günter-Lindau-Weg 1,14551,+49 (0) 0104 931109
+295,Luciano Mitschke B.Sc.,Male,66,178,86,J23.2,Erhard-Salz-Weg 5/9,28628,+49(0)9584 102755
+296,Maria-Theresia Seifert B.Sc.,Female,48,165,64,L40.2,Ziegertring 12,05983,(07585) 42702
+297,Irmengard Ullmann,Female,39,155,62,D09.1,Miroslawa-Nerger-Platz 93,59998,06504392120
+298,Maurice Döring,Male,45,190,75,Y30.1,Anna-Schlosser-Gasse 99,45714,(00085) 490406
+299,Frank-Peter Patberg-Schaaf,Male,66,178,83,K32.7,Vincenzo-van der Dussen-Gasse 32,43220,0598402891
+300,Isidor Rogge,Male,46,171,61,H99.3,Roggeplatz 371,80327,0135912095
+301,Lisa Hänel B.Eng.,Female,57,153,65,H60.8,Benderstraße 620,75358,0330960724
+302,Udo Niemeier B.Sc.,Male,70,172,98,P08.4,Hildegund-Kabus-Straße 35,08422,07786709950
+303,Dieter Wulff,Male,55,177,67,C56.5,Ingo-Steckel-Gasse 576,69247,(03472) 832724
+304,Univ.Prof. Paulo Reinhardt,Male,52,188,84,D56.1,Schomberweg 0/9,62264,+49 (0) 1153 989919
+305,Franz-Peter Holzapfel,Male,74,174,93,N10.1,Fröhlichplatz 7/9,09193,(08727) 121593
+306,Karl-Wilhelm Beyer,Male,46,171,57,L06.2,Annegret-Kobelt-Straße 6,37360,+49(0)1969170590
+307,Zoltan Weiß MBA.,Male,52,179,86,C24.3,Sofie-Seifert-Platz 381,25894,(09156) 178837
+308,Hans-Henning Koch,Male,62,183,79,M97.6,Tadeusz-Kramer-Allee 5,33087,02818 00504
+309,Frau Lidija Pechel,Female,41,165,56,T25.0,Hans-Wilhelm-Käster-Allee 8,80228,+49(0) 613248872
+310,Cilli Budig B.Eng.,Female,31,173,65,R20.9,Knud-Preiß-Allee 8,31688,03770 752993
+311,Prof. Francis Jopich,Male,81,184,83,I84.3,Yasmin-Mühle-Allee 4/3,36422,01172 484523
+312,Margot Tintzmann,Female,52,162,64,P55.7,Schulzplatz 28,36040,+49(0)8253564983
+313,Geraldine Neuschäfer,Female,41,169,71,H38.8,Eckbauerweg 85,71347,(04676) 69495
+314,Martha Gude,Female,63,163,61,G92.2,Heringring 86,22165,+49 (0) 5483 861930
+315,Arne Christoph,Male,71,169,74,M00.8,Faustweg 86,43564,+49(0) 401532848
+316,Prof. Maja Pölitz B.Eng.,Female,72,163,64,O61.1,Lehmannweg 6,37907,+49(0)7348 166618
+317,Dr. Fred Steckel,Male,61,177,88,J36.8,Fechnerstr. 19,36911,(06807) 22700
+318,Univ.Prof. Silja Hauffer,Female,88,166,64,H12.0,Dörschnerstr. 07,55319,+49 (0) 6003 509212
+319,Julie Cichorius-Siering,Female,77,165,74,J08.3,Zimmerweg 02,11419,(04550) 766102
+320,Prof. Sigmar Krein,Non-Binary,68,174,58,N46.9,Weißallee 370,57311,03529 73635
+321,Constantin Heinz,Male,50,176,80,B66.5,Börnerstr. 0/7,69335,05715044245
+322,Hans-H. Hartung,Male,59,173,78,O88.0,Lindnerplatz 478,60780,+49(0)8945 18330
+323,Prof. Steffen Eimer B.Eng.,Male,68,176,87,P41.6,Schombergasse 28,04931,+49(0) 550229402
+324,Peter Graf,Male,78,170,76,T16.1,Birger-Beckmann-Weg 640,72851,+49(0)4671 761762
+325,Lore Tintzmann B.Eng.,Female,27,171,51,O08.6,André-Sager-Straße 9,65776,(04862) 485848
+326,Diana Beer,Female,48,168,69,Q12.6,Paolo-Lindner-Allee 258,23866,07816 192347
+327,Nurettin Löwer,Male,32,185,65,E17.2,Bernard-Beier-Straße 3,04333,+49(0) 198552891
+328,Ing. Gundi Rogner,Female,18,162,59,B81.1,Kabusstraße 809,02220,09762 04089
+329,Anita Bolzmann-Eigenwillig,Female,74,170,53,I67.9,Hermighausenstr. 624,42698,(03339) 66785
+330,Dr. Sybille Schmiedecke,Female,75,177,52,G20.3,Fechnerring 6,32910,0532348946
+331,Bartholomäus Heuser B.Eng.,Male,75,179,73,K13.1,Krokerring 130,95180,04925 26222
+332,Erdal Weihmann,Male,57,180,74,O96.2,Scheibering 704,18469,08662301722
+333,Elfi Junken,Female,39,172,56,B29.8,Harloffweg 4/9,14882,+49(0) 118018001
+334,Univ.Prof. Lidia Sauer,Female,69,168,55,K66.0,Ruppersbergerplatz 8/7,67296,+49(0)3591 948319
+335,Niels Paffrath,Male,52,178,89,K68.2,Bonbachstraße 1/4,20796,08268 182546
+336,Heinz-Günter Pohl,Male,68,175,68,M79.9,Müllerplatz 665,93256,0976957924
+337,Dipl.-Ing. Nicolai Finke,Male,46,190,79,T64.2,Mülichengasse 4,91460,+49(0)3700 007003
+338,Helene Lindner B.Eng.,Female,76,167,64,E11.1,Rohtweg 4/2,64086,(09739) 05851
+339,Malgorzata Hettner,Female,86,167,64,R61.0,Heiko-Kaul-Allee 71,16323,03426935174
+340,Herr Piotr Bolzmann,Male,53,193,85,S33.6,Heidrichgasse 51,86691,02748 402245
+341,Prof. Swantje Mälzer,Female,75,163,64,O74.6,Kuhlstr. 4/9,18304,(04344) 840798
+342,Klaus-D. Loos,Male,62,172,81,J87.0,Rudolph-Nohlmans-Allee 006,14790,+49(0)1167 26174
+343,Milka Zirme,Female,53,165,65,A72.7,Kai-Uwe-Grein Groth-Weg 8,57685,(03416) 75899
+344,Meinrad Gute,Male,72,177,73,Y06.0,Dobesstr. 9/4,04764,(04157) 676605
+345,Univ.Prof. Heidrun Hering,Female,53,161,65,H92.3,Binnerring 67,46284,+49(0)5760 456622
+346,Viola Scholl,Female,79,177,65,Z35.3,Silke-Kobelt-Weg 85,09900,0782978812
+347,Dipl.-Ing. Victor Misicher,Male,90,175,78,N66.4,Jüttnerallee 4/2,69409,(05396) 10575
+348,Herr Hanni Franke B.Eng.,Male,88,187,71,R48.1,Fröhlichplatz 476,24869,+49(0) 664237597
+349,Brita Juncken,Female,40,164,56,L49.7,Leszek-Holzapfel-Straße 71,57322,05582410311
+350,Marika Stolze,Female,35,162,72,C24.4,Bärerring 6/0,97745,+49(0)3708 709492
+351,Hans-Friedrich Etzler,Male,81,177,58,F55.6,Pärtzeltgasse 2,15523,(01311) 962795
+352,Roswita Hauffer,Female,89,161,59,J91.0,Kuschstraße 752,45162,+49(0) 046461685
+353,Gabriel Speer,Male,59,174,105,I05.8,Vittorio-Vollbrecht-Ring 343,17677,08529 86618
+354,Prof. Ulrike Benthin MBA.,Female,71,158,64,I00.3,Ivana-Geißler-Straße 6/8,55888,+49(0) 552960434
+355,Natascha Ruppersberger B.Sc.,Female,58,172,59,J78.8,Benthinstr. 2,45087,+49 (0) 5347 682522
+356,Dorle Lindau,Female,79,166,53,L03.9,Junkenring 79,74196,(04556) 18477
+357,Adriane Ruppert MBA.,Female,64,162,51,O58.7,Mohauptstr. 552,18073,+49 (0) 1092 355815
+358,Norma Albers,Female,85,164,66,P00.8,Marie-Theres-Dobes-Platz 2/8,08630,09993 464367
+359,Jeanette Thies B.A.,Female,42,153,71,I51.8,Roderich-Beer-Straße 87,77334,04085 21868
+360,Gunnar Plath,Male,60,192,82,O24.9,Wesackstraße 40,34556,0974144042
+361,Ing. Carola Metz B.A.,Female,45,172,52,J34.6,Irmgard-Salz-Straße 609,02044,+49(0)2930718092
+362,Nathalie Mitschke,Female,72,170,63,S01.7,Sina-Krause-Straße 74,98287,(01124) 724050
+363,Siglinde Schleich,Female,88,170,64,V39.7,Fanny-Knappe-Gasse 029,40727,(05691) 655811
+364,Darius Textor,Male,44,179,87,F23.1,Zeljko-Warmer-Gasse 2/6,40445,00652 234832
+365,Dipl.-Ing. Halil Seip,Male,68,177,86,B76.5,Margitta-Wirth-Allee 88,56204,03135344820
+366,Zlatko Staude,Male,40,178,75,Q25.9,Hornichgasse 111,06926,+49 (0) 4921 248103
+367,Evelin Müller,Female,56,176,55,K23.7,Folkert-Niemeier-Straße 87,74575,02842 56395
+368,Heini Holt,Male,70,189,77,D94.4,Rittergasse 825,02162,09893667892
+369,Ester Paffrath,Female,80,168,53,N19.9,Karl-August-Bärer-Ring 22,14880,03709182284
+370,Dr. Anton Hübel B.Sc.,Male,78,173,66,M97.5,Antonio-Schweitzer-Platz 839,78762,03178 14088
+371,Henni Trommler,Female,69,169,57,T23.4,Harloffgasse 793,53241,+49(0)6659 83532
+372,Miriam Cichorius,Female,75,163,62,Z07.9,Hanni-Mans-Weg 678,57338,+49(0)7091 68127
+373,Ansgar Hornich,Male,27,178,76,O30.1,Eckbauerweg 80,51614,+49(0)0038427229
+374,Mato Lindner,Male,40,190,75,D58.3,Heidelore-Krein-Platz 749,93361,+49(0) 369943950
+375,Dipl.-Ing. Evelin Junken MBA.,Female,64,170,51,Y30.3,Bolandergasse 9/5,70999,00237 84803
+376,Berthold Weihmann,Male,70,168,76,Z08.4,Wolf-Dieter-Köhler-Allee 7/1,94741,+49 (0) 3296 533416
+377,Ria Ackermann,Female,60,166,64,R67.7,Ritterplatz 5/8,73406,+49(0)8885 78852
+378,Univ.Prof. Hiltraud Jockel B.A.,Female,96,171,62,B67.7,Pechelallee 1,72674,+49(0) 141164494
+379,Vassilios Heß,Non-Binary,87,169,68,F86.5,Ortmannstraße 041,12618,09016 72446
+380,Henner Döring,Male,37,179,76,J71.1,Gnatzstr. 659,29905,+49(0)2964796948
+381,Hans-Uwe Franke,Male,40,193,103,C14.1,Toni-Schönland-Weg 373,01693,0725701053
+382,Willi Kallert,Male,51,177,74,Y24.3,Waldemar-Stahr-Straße 691,63709,0008233727
+383,Bastian Harloff,Male,33,162,88,G82.4,Roy-Gierschner-Straße 3/1,99648,+49 (0) 4048 254855
+384,Petra Meister,Female,35,167,60,A65.6,Inken-Schomber-Ring 780,96246,03718 776354
+385,Lilli Scholl,Female,68,159,72,A89.2,Vollbrechtgasse 694,26323,05602 56963
+386,Dr. Aloisia Schuster B.A.,Female,38,172,55,L12.1,Birnbaumgasse 004,96012,+49(0)2389 538780
+387,Univ.Prof. Mariechen Winkler,Female,62,168,49,Q36.9,Plathgasse 432,24279,+49(0)6142 527852
+388,Florentine Bohnbach,Female,39,165,51,R78.8,Dennis-Wieloch-Platz 9,22698,+49(0)7536 15916
+389,Dipl.-Ing. Muzaffer Gumprich,Male,85,172,77,M52.4,Fiebigring 1,98037,+49(0)3037 193906
+390,Jörg Heintze,Male,46,187,76,E90.6,Wirthplatz 3/4,75755,+49(0)8598160558
+391,Berthold Textor B.A.,Male,36,190,79,H73.7,Harloffring 19,94883,+49 (0) 8506 883013
+392,Kathy Rosenow-Lübs,Female,91,163,50,P85.9,Freudenbergerring 86,60825,+49(0) 846598126
+393,Jennifer Kramer,Female,57,162,61,V67.4,Ehlertstraße 3,00904,+49 (0) 9433 724312
+394,Susanne Liebelt,Female,60,155,53,J78.2,Jiri-Stadelmann-Gasse 4/0,55470,(05899) 389998
+395,Sabine Bloch,Female,78,165,67,R03.3,Gotthilf-Textor-Ring 3/4,71948,+49(0) 716449760
+396,Ing. Vitali Bruder MBA.,Male,52,193,96,N53.5,Weißring 0,84409,+49(0)1794958749
+397,Irmtraud Röhricht,Female,85,162,76,B08.3,Severin-Köhler-Allee 939,46950,0059421668
+398,Theodor Peukert,Male,64,181,80,Y68.5,Theda-Eimer-Weg 999,27073,+49(0)8812485469
+399,Karen Zobel,Female,39,161,63,Q62.4,Randolf-Grein Groth-Ring 8/6,36189,0317778564
+400,Janusz Wagenknecht-Neuschäfer,Male,47,193,105,L57.6,Conradistr. 898,65479,02264 97912
+401,Margitta Haase-Finke,Female,42,161,47,C92.7,Pergandeweg 1/1,57945,(02916) 35879
+402,Lilian Rohleder,Female,77,159,70,A00.3,Jasmin-Süßebier-Weg 7,79302,+49 (0) 1727 508769
+403,Steffi Kabus-Schüler,Female,50,164,47,N72.1,Beckerweg 469,53352,+49(0)9811736062
+404,Marie-Luise Trapp,Female,68,166,53,S98.8,Mansgasse 855,52081,+49(0)4091921904
+405,Theresia auch Schlauchin MBA.,Female,42,171,50,K89.0,Urte-Eigenwillig-Straße 45,54934,+49(0)9120 213409
+406,Dana Bärer,Female,41,178,72,L14.3,Wähnerstraße 22,72603,07749 858156
+407,Dieter Löchel,Male,41,186,89,K11.5,Röhrdanzgasse 552,91130,08939834902
+408,Günther Löchel,Male,65,165,89,L81.8,Margita-Johann-Platz 6/4,76611,0109061148
+409,Arnulf Dippel-Ullmann,Male,74,187,78,C93.2,Bachmanngasse 7/4,02799,+49(0)8248828636
+410,Mehdi Rust MBA.,Male,47,176,80,C46.3,Peggy-Hethur-Weg 93,72027,+49 (0) 4903 699401
+411,Giuseppina Wiek,Female,77,170,71,V81.7,Irmtraud-Klingelhöfer-Weg 162,27740,+49(0) 550461036
+412,Karl-Peter Bloch,Male,80,180,71,D09.2,Ritterplatz 6/6,40160,00820104471
+413,Ing. Salvatore Kostolzin,Male,42,194,94,M51.6,Schenkstr. 91,22836,+49(0)3122 55011
+414,Sophia Meister B.A.,Female,74,173,54,G13.4,Ullmannstr. 7,09558,09756 93129
+415,Marisa Speer,Female,82,163,65,A94.1,Bernt-Zahn-Allee 02,13635,(07207) 98893
+416,Madlen Mans-Hornich,Female,62,162,47,F05.5,Grafstr. 6/2,78288,06854 165988
+417,Prof. Klaus Peter Tintzmann B.Eng.,Male,60,177,80,R37.1,Meinhard-Stadelmann-Ring 5,24447,+49(0) 485259672
+418,Gilbert Nohlmans B.A.,Male,44,187,89,H72.7,Löfflerallee 2/2,74419,(02496) 409945
+419,Ing. Mirco Gunpf MBA.,Male,30,189,72,R99.1,Marek-Bähr-Weg 7/4,89820,+49(0)6464 891718
+420,Elsa Bachmann,Female,68,171,73,P58.1,Hentschelallee 27,37681,(09923) 05897
+421,Ron Rädel,Male,62,173,75,M86.0,Lisette-Flantz-Ring 4,28826,+49(0)8309 352912
+422,Artur Mende,Male,47,174,80,Q63.0,Solveig-Dörr-Gasse 7,58874,+49(0)4936 22336
+423,Dr. Alexei Gehringer,Male,95,173,88,T59.5,Alban-Döhn-Platz 5/4,60760,(00060) 035541
+424,Irmtraud Thanel,Female,43,174,61,E14.9,Henkring 29,09368,0716207269
+425,Karl-Jürgen Kroker,Male,67,197,67,R90.3,Baptist-Weiß-Gasse 9,72657,(09621) 42351
+426,Dipl.-Ing. Gülsen Jäntsch,Female,25,158,75,O90.8,Stollstraße 966,30412,(00716) 27103
+427,Prof. José Hermann,Male,31,195,80,C63.5,Emmi-Schweitzer-Straße 6/5,32279,+49(0)1288524745
+428,Achim Koch II,Male,99,187,78,Q87.6,Janna-Preiß-Gasse 5,21372,0117987950
+429,Dominic Atzler,Male,67,168,83,Q46.5,Fiebigstr. 660,69709,+49 (0) 9421 411124
+430,Änne Scholz B.Eng.,Female,19,168,61,A76.7,Clarissa-Krause-Ring 8/1,75743,+49(0)5845 216215
+431,Annerose Lange,Female,33,165,59,Q28.0,Scholzallee 915,14309,0261719621
+432,Dietlind Huhn,Female,79,169,51,D68.9,Jan-Vollbrecht-Platz 136,21642,0223535858
+433,Univ.Prof. Klaus-Peter Jockel,Male,65,173,87,R31.2,Reichmannplatz 645,16793,(08350) 05475
+434,Univ.Prof. Tabea Neureuther,Female,83,169,55,M44.4,Seifertring 65,79448,+49(0) 017437301
+435,Silja Jäkel MBA.,Female,86,160,65,D97.9,Karl-Hans-Otto-Weg 4,66845,+49(0)6508 37602
+436,Dipl.-Ing. Darko Keudel MBA.,Male,55,173,65,O31.5,Trüballee 2/1,76678,+49(0) 818904436
+437,Roswita Zobel,Female,75,174,65,D70.5,Sevim-Wiek-Platz 7,26376,+49 (0) 9074 544103
+438,Guido Döhn,Male,48,185,85,H33.1,Pruschkeplatz 822,58432,(05635) 279908
+439,Adelgunde Spieß-Nette,Female,50,164,64,P58.1,Adolphplatz 8,33475,02726 316098
+440,Ing. Carlo Martin,Male,70,180,73,A07.2,Etzlerplatz 83,23010,05247 88145
+441,Rebecca auch Schlauchin,Female,90,167,59,L68.8,Rognerstr. 9,77590,+49(0)2444035212
+442,Albert Bolzmann-Vogt,Male,74,187,70,T96.6,Krokerring 5/8,38614,+49(0)8970557624
+443,Constantin Steckel,Male,68,175,83,B63.3,Nergerplatz 852,83593,+49(0)9515616581
+444,Siegrun Hermann,Female,56,171,49,J96.4,Zänkerstraße 5,94664,05963 878550
+445,Christoph Patberg,Male,36,176,93,V97.1,Corina-Schleich-Ring 777,95165,0392886394
+446,Andrew Biggen,Male,56,173,77,V60.6,Helena-Trupp-Ring 05,75089,+49(0)7280 52131
+447,Luise Killer,Female,32,173,69,O92.7,Rohtring 381,39368,0768690599
+448,Herr Hans-Georg Budig,Male,34,190,88,O77.1,Hölzenbecherring 28,39134,06396633373
+449,Agnes Bolzmann-Barkholz,Female,30,170,63,N33.5,Wernerstraße 95,34240,(08483) 705463
+450,Vladimir Patberg,Male,29,178,89,P28.6,Jost-Caspar-Allee 745,04724,0268662635
+451,Dr. Cäcilia Caspar MBA.,Female,64,172,71,T07.3,Zimmerring 14,71068,(03812) 489484
+452,Dorle Patberg-Naser,Female,38,170,62,L48.6,Benthinweg 22,87264,(04540) 71164
+453,Willy Stroh,Male,29,170,66,Z27.1,Budigallee 0,42623,+49(0) 380217024
+454,Jadwiga Buchholz,Female,50,164,63,N83.3,Baldur-Sager-Gasse 90,86224,+49 (0) 7252 819798
+455,Blanka Kensy,Female,62,170,58,O97.0,Sonia-Keudel-Ring 9/4,26226,02664808942
+456,Gitte Losekann,Female,60,161,52,M72.1,Ellen-Täsche-Weg 20,89990,+49(0) 098131493
+457,Ercan Heydrich-Pieper,Male,88,162,77,E84.7,Maya-Heinz-Platz 9/5,19469,+49(0) 662896174
+458,Edeltraud Rudolph-Roskoth,Female,83,176,52,O72.8,Hilmar-Rust-Allee 869,03276,+49 (0) 1191 055614
+459,Univ.Prof. Evi Kobelt,Female,46,169,52,I50.3,Zänkerstr. 7/1,08159,(05608) 348509
+460,Edit Schmiedecke-Schaaf,Female,77,166,49,F72.8,Dorina-Wesack-Ring 05,77157,+49(0)6707785845
+461,Kreszenz Conradi,Female,66,168,62,Q90.8,Lilo-Wieloch-Platz 85,73840,+49(0)2599 384914
+462,Ottmar Löwer,Male,59,178,74,H66.7,Frederik-Bohnbach-Platz 302,49191,(01694) 03574
+463,Gesine van der Dussen B.Sc.,Female,74,168,68,G07.2,Conradistraße 14,56727,0652108913
+464,Prof. Britt Hänel,Female,36,175,49,L46.6,Anto-Wulf-Straße 93,95808,(05109) 801231
+465,Wanda Kusch,Female,97,158,45,S49.7,Wielochgasse 18,40764,+49(0)2728474661
+466,Catherine Junck,Female,69,166,56,K59.7,Bernfried-Schuchhardt-Weg 21,71907,(02285) 95690
+467,Univ.Prof. Waltraud Höfig,Female,79,161,61,Z83.5,Bruderstr. 775,26640,+49(0) 695941512
+468,Selma Rosenow B.Sc.,Female,65,160,47,M33.5,Thiesplatz 5,13267,+49(0) 575557995
+469,Mirco Hövel B.Sc.,Male,39,184,80,T63.5,Wulfstr. 282,45149,+49(0)7507 345966
+470,Jochen Röhricht-Barkholz,Male,64,170,89,Z54.2,Junkstr. 8,17946,0786587532
+471,Tatjana Ruppert,Female,66,162,53,Z65.0,Attila-Trüb-Straße 4,86120,+49(0) 709011919
+472,Herr Ladislaus Jähn,Male,86,189,94,V34.7,Jüttnerweg 8,34894,(00844) 812654
+473,Rolf-Dieter Scheel-Albers,Male,56,180,77,I94.2,Johanngasse 060,51011,02933 788668
+474,Marc Jacob,Male,38,173,96,B97.1,Birnbaumgasse 8,94283,+49 (0) 8871 554701
+475,Kornelius Hecker,Male,57,182,86,B06.7,Mirko-Schmiedt-Gasse 5/7,47501,(08840) 58084
+476,Ludmila Nohlmans,Female,63,167,63,D73.2,Sahin-Geisler-Allee 7/4,83461,05322939736
+477,Herr Roberto Mangold,Male,69,179,74,D92.5,Dorothee-Schottin-Platz 8/4,52893,+49(0) 507202371
+478,Lucia Warmer,Female,46,172,49,I50.1,Steinbergweg 8/5,05497,(09060) 342369
+479,Kristin Bärer MBA.,Female,89,166,63,P49.4,Hethurplatz 182,96575,(07874) 862162
+480,Alwine Kramer,Female,44,165,58,B15.4,Danuta-Putz-Ring 876,54758,01225937445
+481,Jennifer Jacobi Jäckel,Female,76,170,65,J07.5,Konstantin-Scheel-Weg 3/0,12096,03718 937771
+482,Marijan Hahn-Seifert,Male,72,180,71,E92.7,Ringweg 85,52951,+49(0) 459840829
+483,Sabine Briemer B.Eng.,Female,61,169,67,J41.6,Monique-Radisch-Allee 90,65998,(00357) 464158
+484,Minna Ullmann,Female,88,166,64,I64.6,Robert-Spieß-Allee 314,92402,0746119309
+485,Joseph Scheibe-Schenk,Male,35,184,101,C85.6,Biengasse 5/4,99551,+49(0)8936 053586
+486,Herr Roderich Bonbach,Male,63,186,87,V54.0,Antonios-Krause-Gasse 02,15550,(00909) 701800
+487,Kristin Zahn,Female,94,168,56,P08.9,Kochplatz 09,75699,0975693078
+488,Juliana Fechner,Female,41,157,78,K64.0,Annemie-Wagner-Allee 314,57789,(04388) 73098
+489,Agatha Christoph-Schuster,Female,61,167,64,M01.0,Staudeallee 9,13834,+49(0)0944 82960
+490,Hubertus Oestrovsky-Fechner,Male,71,185,82,K57.8,Elisabeth-Rosenow-Weg 235,71615,+49(0)0920691136
+491,Mehmet Reichmann,Male,60,177,72,D12.2,Flantzgasse 6/1,61284,04900 875418
+492,Rosa-Maria Bender,Female,86,169,58,I11.4,Magarete-Kroker-Weg 50,33684,07817723132
+493,Ing. Sophia Fritsch B.A.,Female,32,164,57,S35.8,Jäntschstraße 375,71915,+49(0)1510 588128
+494,Nils Kruschwitz,Male,79,189,63,M53.9,Hans-Wolfgang-Stumpf-Allee 25,78547,07589 654009
+495,Filippo Neureuther,Male,39,176,66,D14.1,Peter-Michael-Oderwald-Ring 3,94070,08253503120
+496,Dr. Bärbel Kroker,Female,58,171,62,Z12.1,Jorge-Holzapfel-Ring 32,38940,(09269) 91614
+497,Dr. Maxim Striebitz B.A.,Male,73,183,83,D53.6,Drewesstraße 8/2,49515,+49 (0) 6451 041874
+498,Julius Hellwig,Male,68,178,89,Y99.2,Swetlana-Holt-Platz 5/8,48143,+49(0) 998925283
+499,Marga Trapp,Female,54,162,64,Q14.2,Röhrichtweg 266,96228,+49(0)6322 736310
+500,Xaver Eberth,Non-Binary,90,183,61,Y10.2,Liebeltstraße 965,23121,07659 162556
+501,Iwona Hahn,Female,34,163,75,T68.0,Annette-Spieß-Gasse 5,15263,01321246754
+502,Herr Hans-Helmut Koch II,Male,63,172,68,N68.3,Roggegasse 64,22253,(01171) 583075
+503,Univ.Prof. Robert Hofmann MBA.,Male,68,177,89,D50.2,Barkholzstr. 4,42193,+49 (0) 2401 755984
+504,Lore Loos B.Eng.,Female,50,169,55,Z52.1,Binnerstr. 4,78500,0562265438
+505,Darko Stahr,Male,66,173,86,Z04.9,Bernadette-Neuschäfer-Weg 53,36152,+49(0)9714213228
+506,Georgine Trommler,Female,43,168,69,L06.3,Johanna-Vogt-Ring 3/6,43874,0891891257
+507,Mara Hermann,Female,30,175,54,I48.5,Hermighausenstraße 6/6,51395,06729053913
+508,Univ.Prof. Eveline Ortmann,Female,26,166,62,I35.7,Egon-Adler-Gasse 01,30848,0839556140
+509,Susanna Geisel,Female,68,161,55,D95.9,Sabine-Albers-Platz 667,00387,+49(0)3968 799635
+510,Ottmar Losekann-Naser,Male,97,183,79,D36.2,Stahrgasse 778,23231,(03131) 867852
+511,Univ.Prof. Annaliese Krein,Female,77,173,47,O63.7,Rädelstraße 73,16570,05689206195
+512,Frau Ludmilla Wagenknecht,Female,70,175,61,O57.6,Hendriksweg 771,00300,+49(0)7361 703828
+513,Dr. Tibor Gotthard,Male,79,177,68,P17.3,Tintzmannallee 0,94406,0722360018
+514,Florence Römer,Female,81,170,64,T12.6,Vera-Schüler-Allee 857,85870,09708186730
+515,Herr Klaus-D. Rose,Male,45,174,67,L29.5,Kilian-Harloff-Straße 2/3,21049,+49(0) 392684595
+516,Zlatko Beyer-Römer,Male,73,171,73,Z64.6,Stadelmannstraße 927,51668,(00779) 90456
+517,Ernst Gehringer,Male,61,183,68,F60.4,Annedore-Pechel-Gasse 0/4,63795,07565 662279
+518,Grazyna Rust B.Sc.,Female,82,164,62,O86.2,Ortmannstraße 0/4,95927,+49 (0) 9439 672306
+519,Univ.Prof. Hulda Weimer,Female,56,155,59,Q90.0,Waltrud-Seifert-Gasse 8/4,29005,+49(0)4588885085
+520,Annelene van der Dussen,Female,23,170,62,E39.7,Johannallee 1/6,50617,+49 (0) 7480 078043
+521,Wiltrud Kaul,Female,61,162,66,Q54.7,Schmidtkeweg 383,56722,+49(0)0212 212430
+522,Herbert Hettner,Male,62,170,80,J18.2,Udo-Wilmsen-Platz 3,66911,+49 (0) 9002 697437
+523,Bianka Kohl MBA.,Female,37,163,62,J05.1,Wojciech-Löchel-Weg 3,08068,(01227) 810379
+524,Dorota Klemm,Female,39,168,63,Y90.2,Danny-Rogner-Weg 8,70828,+49 (0) 5777 569768
+525,Tilo Metz,Male,53,175,82,T91.0,Amanda-Langern-Straße 241,97281,+49(0)9850 99257
+526,Dr. Edda Hellwig,Female,59,172,62,M69.8,Anna-Beier-Ring 83,58950,0398574335
+527,Linda Hande,Female,96,171,66,H97.9,Linda-Rosenow-Gasse 5,43400,+49(0)3771 839335
+528,Karolin Geisler,Female,88,177,67,G59.3,Fritschring 23,98412,01451 65101
+529,Univ.Prof. Mirjana Mude B.Eng.,Female,65,165,66,O77.3,Hentschelring 24,65237,04042 648293
+530,Susi Hänel,Female,52,164,63,K07.9,Aleksandra-Junken-Weg 7,73040,(06633) 45266
+531,Michel Hande-Hörle,Male,55,166,103,P21.9,Warmerstr. 759,08017,+49(0)5430848252
+532,Frau Kirsten Spieß,Female,65,166,58,P43.6,Linkeallee 7,15616,0867007443
+533,Prof. Yvette Ring B.Sc.,Female,84,156,56,A38.2,Ralph-Eberhardt-Platz 405,54626,01035 46333
+534,Utz Oderwald,Male,66,183,83,V75.1,Hübelring 042,23024,(01521) 07663
+535,Viktor Wulf B.Sc.,Male,78,165,71,E32.8,Hans-Birnbaum-Allee 09,03828,01078 45659
+536,Pascal Mans,Male,77,179,64,Q11.9,Ina-Gieß-Gasse 3,71630,08067 25349
+537,Stjepan Wagenknecht MBA.,Male,79,180,83,Z01.0,Friedhelm-Thanel-Platz 088,67479,01901281003
+538,Ahmet Hamann-Junck,Male,64,183,67,L50.2,Swantje-Ernst-Ring 3/6,22760,+49(0)3937 00375
+539,Dipl.-Ing. Ahmet van der Dussen,Male,92,187,81,G57.7,Putzring 1/1,95442,07676 285831
+540,Rosalie Salz-Wiek,Female,59,175,60,N46.4,Filippo-Weinhold-Straße 26,04560,01756 614914
+541,Bartholomäus Nohlmans,Male,69,180,57,I80.9,Harry-Beyer-Platz 4/0,39973,+49(0) 319968621
+542,Prof. Bernhard Zorbach,Male,60,178,88,G05.5,Siegward-Heß-Straße 149,72923,02645172283
+543,Ing. Lidija Wieloch B.Sc.,Female,64,161,59,L48.1,Matthäiweg 5/3,16342,+49(0)9750 11107
+544,Mira Ditschlerin,Female,42,165,49,Q24.0,Täschestr. 5/8,28347,05849 90464
+545,Carl Stoll,Male,66,187,85,F55.9,Rochus-Kranz-Allee 5,50611,(05985) 21299
+546,Ruthild Stadelmann,Female,76,171,73,F91.4,Silvia-Hornig-Ring 393,22166,+49(0)5401 28606
+547,Ljiljana Buchholz,Female,72,165,59,Q28.0,Otto-Gude-Straße 4/9,78128,06729 117299
+548,Ing. Volkhard Hörle,Male,51,195,64,R94.7,Adolphstr. 6,86423,+49(0)2843 021651
+549,Univ.Prof. Werner Schaaf,Male,58,168,70,D18.0,Polina-Meyer-Ring 4,34931,+49 (0) 4718 026899
+550,Romana Siering,Female,68,169,62,L74.2,Henschelallee 95,90816,+49(0) 191264041
+551,Univ.Prof. Irmengard Bähr B.Eng.,Female,84,164,54,T83.2,Britta-Bohnbach-Weg 520,77871,+49(0)1682 54341
+552,Niels Häring,Male,79,185,71,K15.5,Schäferstr. 4,41118,+49(0)9693484839
+553,Rotraut Naser,Female,78,170,53,Z68.8,Scheuermannallee 942,04926,0176053430
+554,Helene Graf-Ditschlerin,Female,34,165,66,V64.3,Julia-Hentschel-Straße 8,60871,(06777) 55757
+555,Jurij Schmiedt,Male,69,167,73,D70.5,Sükrü-Mies-Ring 794,06822,+49(0)2437 664656
+556,Larissa Ring,Female,66,163,53,F08.0,Yasemin-Dobes-Weg 0/7,51326,+49(0)6134 16749
+557,Dr. Desiree Reinhardt,Female,53,162,47,A64.7,Schweitzerstraße 179,39705,09852432374
+558,Ing. Tilmann Wilms,Male,80,164,79,Q37.6,Anne-Jacobi Jäckel-Ring 0/6,19065,+49(0)2734 447072
+559,Ivan Speer,Male,61,175,64,K26.3,Strohweg 99,72026,(05682) 601160
+560,Hatice Dörr,Female,79,171,69,Q13.6,Luigi-Thanel-Platz 68,96586,0492034206
+561,Ing. Eckard Junck,Male,57,175,66,O18.7,Salzstraße 879,61164,+49(0) 264796461
+562,Gundolf Herrmann,Male,59,183,75,D26.8,Etzlerstr. 5/8,37480,+49(0)1725 29267
+563,Claus-Dieter Seifert,Male,82,186,101,Q98.3,Sibylle-Ernst-Allee 511,54525,03814 60422
+564,Heidemarie Fliegner,Female,56,167,69,M87.4,Danilo-Zimmer-Weg 71,50418,06879969146
+565,Dipl.-Ing. Arnim Koch,Male,76,186,81,G30.9,Brigitte-Meister-Gasse 6/4,79862,06114 069981
+566,Jessica Süßebier,Female,54,161,55,L11.6,Stollgasse 804,50218,03566968007
+567,Nermin Schuchhardt,Female,76,165,53,R19.9,Wernerallee 40,55323,+49(0)9459 53094
+568,Frau Waltrud Linke,Female,57,168,58,Y75.7,Kochstr. 140,64075,0585436534
+569,Hans-Ulrich Lindner,Male,18,177,90,A37.2,Victor-Christoph-Platz 1/6,78229,02475055445
+570,Arnulf Schomber-Bolnbach,Male,40,176,68,M80.2,Hans-Erich-Schuchhardt-Straße 494,69404,+49(0)2488128524
+571,Kazim Davids,Male,77,183,83,G93.5,Margrafgasse 3,95102,03796 33580
+572,Evi Wilmsen,Female,66,161,64,F78.8,Frankegasse 652,96086,09799 94210
+573,Margareta Adolph,Female,39,162,54,T20.4,Dehmelstr. 9,32757,+49(0)4962467030
+574,Georg Bonbach,Male,74,173,76,P71.6,Jacobweg 771,63253,+49(0)9451682000
+575,Gülsen Ullrich B.Sc.,Female,81,174,56,O07.0,Samir-Dippel-Weg 6,14527,+49(0)5518 88348
+576,Dr. Elise Dehmel MBA.,Female,65,167,64,A28.2,Walther-Karz-Straße 4/7,21864,+49 (0) 2245 231665
+577,Romuald Herrmann B.Sc.,Male,19,177,79,H33.3,Gumprichplatz 2,49378,+49(0) 062887436
+578,Dunja Jungfer,Female,43,165,50,D79.5,Kirsten-Geisel-Ring 8,36442,+49(0)0801574177
+579,Dr. Gregor Hermann B.Sc.,Male,44,175,66,Y52.6,Sebastiano-Buchholz-Weg 1/1,38724,+49(0) 996341346
+580,Prof. Michelle Warmer B.A.,Female,91,170,57,V97.0,Vogtring 2,28947,+49(0)6895 68927
+581,Franka Salz,Female,100,169,62,N29.9,Leyla-Dietz-Straße 7/3,85753,+49 (0) 1176 006198
+582,Dipl.-Ing. Sibylla Paffrath B.Sc.,Female,36,167,60,T57.3,Heinz-Peter-Thanel-Platz 6,01507,02684 889767
+583,Prof. Rosina Wulff B.Sc.,Female,28,158,60,R44.4,Hübelallee 0/5,00104,+49(0) 782163108
+584,Univ.Prof. Siglinde Wirth,Female,85,176,46,B79.7,Anto-Hornich-Straße 2,01444,(09816) 99855
+585,Dr. Brit Löchel B.Eng.,Female,56,164,52,V68.0,Wielochring 67,35504,+49(0)1192 74971
+586,Goran Junck,Male,56,172,88,J21.9,Ansgar-Caspar-Weg 9/3,90105,(08368) 47461
+587,Grete Pieper,Female,60,167,56,L44.7,Rörrichtplatz 36,21615,+49(0) 655607017
+588,Marcel Lange,Male,63,184,72,P67.5,Urs-Meyer-Gasse 035,15336,+49(0)3353 921295
+589,Veronique Holsten,Female,49,174,53,F36.6,Gülay-Gutknecht-Gasse 445,33175,(05536) 460266
+590,Univ.Prof. Henrike Grein Groth,Female,88,160,78,Z49.8,Aumannstr. 4/6,22567,+49(0)1522 481641
+591,Gertraude Drub,Female,42,174,68,R51.4,Bährring 389,05727,+49(0)9193 63290
+592,Resi Ring,Female,44,171,59,R90.5,Wiekplatz 64,53723,(08186) 012904
+593,Cecilia Dobes,Female,65,165,50,V79.2,Erhard-Metz-Weg 4/4,81400,09877 159306
+594,Univ.Prof. Helmuth Fischer B.A.,Male,92,179,67,Q80.7,Röhrdanzring 38,74902,+49(0)3617 34611
+595,Resi Franke,Female,47,169,63,C62.4,Zeki-Gertz-Gasse 0,47050,(03061) 34894
+596,Univ.Prof. Nicolas Bolander,Male,50,172,69,O36.3,Annaliese-Riehl-Straße 7,77615,+49(0) 002165800
+597,Freya Rohleder,Female,18,162,49,B45.5,Heydrichstr. 1/2,73228,+49 (0) 8570 966976
+598,Frau Gülten Hartmann B.Eng.,Female,54,164,68,A87.3,Rotraut-Ruppert-Straße 0,72440,+49(0)1227 655432
+599,Gerd Weinhage B.Sc.,Male,72,190,71,B43.9,Drago-Trupp-Weg 845,99751,0621308059
+600,Grazyna Mohaupt,Female,33,162,59,G56.6,Erol-Mangold-Gasse 292,60188,+49(0)8061 44157
+601,Joachim Weinhage B.Sc.,Male,52,178,82,H41.8,van der Dussenplatz 715,83657,(09694) 161651
+602,Günter Ullrich MBA.,Male,64,185,74,Q86.4,Reinhardtring 0/9,53685,+49 (0) 8994 331168
+603,Hanspeter Bohnbach,Male,22,160,73,P81.4,Arthur-Riehl-Allee 2/6,37440,(09958) 54822
+604,Katarina Wilms-Jüttner,Female,81,167,46,G10.7,Schwitalgasse 6/7,92635,(00888) 541091
+605,Mahmut Adler,Male,22,166,81,R44.0,Neureuthergasse 630,63312,00602 49661
+606,Romy Mude-Thanel,Female,61,177,70,L26.0,Silva-Dietz-Allee 264,60209,(03402) 118208
+607,Boris Lachmann-Dietz,Male,68,185,82,G61.0,Zoran-Junken-Gasse 5/9,46738,+49(0)4068 42181
+608,Karola Dussen van,Female,73,165,63,R73.1,Jacobring 9/1,88568,01391 76860
+609,Brian Pölitz B.A.,Male,43,185,97,I09.5,Heinz-Joachim-Bien-Allee 1,02864,+49 (0) 3841 312702
+610,Sepp Wilmsen,Male,55,193,75,M15.0,Mathias-Renner-Ring 3/4,21430,0511639863
+611,Prof. Heimo Weiß MBA.,Male,48,195,82,P37.1,Zorbachgasse 1,83970,+49(0)5996574771
+612,Svetlana Conradi,Female,48,160,62,O23.0,Burkhard-Matthäi-Platz 7/8,46510,(04903) 51220
+613,Filippo Ehlert,Male,70,186,70,J93.0,Grafgasse 8/6,44852,0280618803
+614,Oscar Pergande-Mans,Male,53,169,72,D93.9,Ehlertweg 9,27457,0007875588
+615,Jaqueline Heuser,Female,58,163,62,K18.7,Andrei-Etzold-Straße 219,48048,(08435) 51402
+616,Bastian Spieß,Male,98,185,63,B68.2,Hans-Henning-Säuberlich-Allee 6/9,63080,+49(0)7882697050
+617,Hannchen Gude,Female,52,162,60,S03.8,Dowergstr. 712,92922,0311932194
+618,Domenico Lehmann,Male,70,181,103,S37.3,Ilonka-Lindau-Platz 01,02958,02611649192
+619,Frau Waltrud Flantz MBA.,Female,44,159,60,F11.4,Kostolzinplatz 930,55243,+49(0)9297613139
+620,Evamaria Langern,Female,60,170,68,P72.4,Bolzmannring 619,01677,+49(0)9316 458688
+621,Etta Freudenberger,Female,69,165,63,T01.7,Gnatzgasse 251,57288,00903136708
+622,Evamaria Stey,Female,79,169,76,L39.7,Hildegunde-Drewes-Straße 02,31172,+49(0)6605848473
+623,Univ.Prof. Annamaria Steinberg,Non-Binary,74,169,70,P14.4,Bienallee 53,61050,+49(0)4757904822
+624,Zlatko Schottin-Wähner,Male,69,176,78,G91.1,Junkenplatz 19,41549,(04808) 926657
+625,Denise Beyer,Female,64,163,70,D37.7,Sölzerstr. 17,04208,00811 30031
+626,Otmar Junck,Male,71,184,76,T16.1,Hatice-Schenk-Gasse 390,35932,+49 (0) 4005 803298
+627,Dr. Astrid Oderwald,Female,18,168,64,B42.2,Margareta-Harloff-Gasse 3,40844,(09538) 45497
+628,Univ.Prof. Bernward Bloch B.A.,Male,60,179,74,G16.8,Erdal-Scholz-Weg 273,29830,(04233) 70961
+629,Alan Meyer,Male,57,177,90,F70.1,Cristina-Kuhl-Weg 75,97833,+49(0)1650645524
+630,Urban Ditschlerin-Hertrampf,Male,74,189,88,D41.4,Trommlerring 3,61445,08538 310410
+631,Frau Margarete Neuschäfer MBA.,Female,92,166,55,R14.2,Röhrichtgasse 8/0,01939,+49(0) 740518977
+632,Jonas Haase,Male,95,176,86,B30.6,Reinhold-Rohleder-Gasse 394,73736,06553385861
+633,Polina Schmiedecke,Female,46,171,61,V57.6,Kata-Benthin-Ring 6,32214,+49(0) 147008409
+634,Ignatz Flantz,Male,40,186,83,S60.1,Sven-Pölitz-Ring 90,55361,06164967681
+635,Olivia Klapp,Female,75,157,52,Q09.1,Ackermannweg 9,21730,+49(0)5551 64083
+636,Siglinde Ernst,Female,38,171,47,Z65.7,Christophweg 668,37817,07269 689062
+637,Dr. Lara Bähr MBA.,Female,22,164,53,E15.4,Denis-Juncken-Allee 12,79745,0831276199
+638,Harro Faust,Male,59,185,76,A13.1,Wulfweg 125,57728,06117877946
+639,Juan Dowerg,Male,71,176,89,F66.4,Martinstraße 3,11146,+49(0)1711 81596
+640,Dierk Lorch,Male,36,172,85,T44.3,Oskar-Margraf-Ring 18,96383,+49(0)2956 014360
+641,Sigmar Caspar,Male,46,184,73,G07.6,Holzapfelallee 0,52361,07891143562
+642,Catrin Geisler,Female,54,163,57,J47.9,Maria-Sorgatz-Weg 90,86965,(08200) 54581
+643,Horst-Günter Dehmel,Male,33,176,74,A62.1,Kenan-Schmiedecke-Weg 1,56671,03525 70035
+644,Sybille Köster-Röhrdanz,Female,48,159,55,V97.0,Tania-Hein-Allee 5/2,43467,08668 607904
+645,Hanno Warmer-Hellwig,Male,84,200,84,Y00.1,Cilli-Ortmann-Straße 53,71965,03317 171099
+646,Helen Etzler,Female,91,168,62,T62.4,Wigbert-Dussen van-Ring 0,17932,0887918451
+647,Margarethe Heinrich-Kohl,Female,42,168,61,M77.8,Gotthold-Kohl-Ring 5/8,37797,(04250) 397090
+648,Paul Plath,Male,60,175,79,E46.9,Häringweg 32,21689,0340827079
+649,Prof. Ina Kuhl MBA.,Female,34,170,65,M80.1,Bachmannring 43,57152,(01625) 14802
+650,Robby Hande,Male,89,192,72,H19.1,Kaulgasse 67,48263,+49(0) 510874736
+651,Salih Kitzmann,Male,55,182,94,Y15.0,Ursel-Ebert-Platz 4,43612,(08977) 31794
+652,Univ.Prof. Eckhart Misicher B.A.,Male,43,178,90,O98.3,Angelo-Stumpf-Ring 086,35261,(03723) 305193
+653,Beatrix Mende-Weiß,Female,58,167,59,L07.1,Hanne-Lore-Flantz-Straße 06,91480,05974 88442
+654,Univ.Prof. Kai-Uwe Jäntsch MBA.,Male,62,177,65,I10.7,Sevim-Hesse-Platz 8/8,12462,00253555082
+655,Ismail Schmiedt,Male,80,187,92,F60.2,Boucseingasse 18,61315,01720 75391
+656,Giuseppina Hermighausen,Female,57,170,64,T01.2,Austermühleallee 3,75403,+49(0)1422 34826
+657,Dr. Sigrun Fechner,Female,83,171,54,T61.8,Gehringerstraße 8/2,18745,+49(0)4901 84410
+658,Käte Biggen-Naser,Female,88,151,68,F17.2,Jo-Pruschke-Weg 0/3,55345,(00806) 436319
+659,Pascale Jopich,Female,42,157,51,J34.0,Klappstr. 8,95331,+49(0)9666 099720
+660,Aleksandra Drub,Female,69,170,49,G60.8,Paffrathplatz 23,09907,(09804) 030931
+661,Lissy Noack-Paffrath,Female,71,168,58,J60.8,Häringgasse 8,79695,+49(0) 125869182
+662,Michael Loos,Male,38,179,89,P75.6,Steve-Jähn-Ring 8,65608,+49(0) 058966533
+663,Annamaria Bruder,Female,94,170,47,S26.8,Hövelgasse 525,06503,(09641) 963752
+664,Annie Ullmann-Gertz,Female,50,169,56,H89.8,Heinrichweg 3,15933,01283 270019
+665,Karl-Hans Säuberlich,Male,93,193,72,V69.7,Hesergasse 5/5,82921,(08429) 36248
+666,Tilo Käster-Schaaf,Male,73,179,68,B33.5,Bergerring 1,12251,05596 330304
+667,Eric Mangold B.Sc.,Male,68,172,68,V48.9,Ercan-Sontag-Allee 6/4,75909,+49(0)8992 32161
+668,Frau Ella Wulf,Female,32,159,74,S81.8,Rene-Hein-Weg 7,04305,02473 04884
+669,Dipl.-Ing. Fedor Atzler,Male,61,178,84,M53.0,Ralf-Johann-Ring 521,37556,(07548) 66868
+670,Anne-Kathrin Dörschner MBA.,Female,29,167,68,K89.8,Fiebigstr. 103,31315,0210649889
+671,Anneliese Albers-Holzapfel,Female,69,162,73,C86.4,Jacoballee 2/0,41819,05606 53294
+672,Amanda Rohleder,Female,59,167,61,A92.1,Pirmin-Striebitz-Platz 107,64572,09258 91241
+673,Mahmut Beyer,Male,73,184,82,N94.2,Gertrud-Trupp-Weg 292,03313,05495858470
+674,Ingried Freudenberger-Thies,Female,86,176,71,Q72.4,Margrafallee 0/9,96669,+49(0) 428518549
+675,Dipl.-Ing. Anni Schuchhardt B.A.,Female,78,170,44,G38.3,Steffi-Hein-Straße 65,45084,+49 (0) 2514 992921
+676,Dipl.-Ing. Inken Matthäi,Female,61,169,55,O34.2,Nikolaj-Margraf-Straße 1,86107,+49(0)3307 13552
+677,Selma Hellwig,Female,46,168,67,S75.0,Wolfram-Weinhold-Gasse 0,49559,06908 08398
+678,Ing. Sahin Köhler,Male,61,188,81,T36.2,Klaudia-Jessel-Ring 73,55123,+49(0)1147236378
+679,Rebecca Nohlmans,Female,66,161,67,A14.6,Rognerplatz 1/5,06427,+49 (0) 6931 181242
+680,Herr Hajo Heß B.Sc.,Male,35,194,69,G41.7,Edelgard-Sager-Straße 7/3,31250,05637240580
+681,Korinna Misicher,Female,64,170,47,O11.6,Oestrovskyring 33,40711,06020980595
+682,Kazim Fischer,Male,43,170,82,F96.1,Ottmar-Jacobi Jäckel-Weg 3/3,24819,+49 (0) 2330 067623
+683,Liselotte Trommler,Female,30,169,72,D62.6,Willibald-Pohl-Allee 8/6,77769,0883726491
+684,Harald Steinberg-Heuser,Male,82,183,85,P89.1,Ilja-Bohnbach-Weg 87,62909,05142314682
+685,Dieter Staude,Male,47,181,78,S02.3,Wiekweg 587,11801,(09792) 394751
+686,Alessandro Junck,Male,95,188,83,G69.4,Henry-Klemt-Gasse 2,54320,02715 48473
+687,Dan Langern-Salz,Male,39,179,92,I73.6,Ehlertplatz 0,55622,(06738) 993822
+688,Renate Mude-Etzler,Female,66,170,56,V43.6,Schottinring 6/9,13634,+49(0) 502870507
+689,Annamaria Gute,Female,65,162,58,D90.7,Hübelallee 7,33193,+49(0)8620 801918
+690,Hans-Henning Ullmann,Male,47,178,84,F38.1,Jacobi Jäckelstr. 9/4,52989,+49 (0) 4606 737691
+691,Hubertus Reising B.Sc.,Male,92,181,98,G03.5,Stiffelweg 073,49274,01123 567703
+692,Dipl.-Ing. Faruk Kranz B.Sc.,Male,33,186,59,Q89.0,Hans Jürgen-Kobelt-Straße 3,47736,01615 051903
+693,Arne Atzler-Pergande,Male,59,183,87,R31.4,Junkstr. 43,53598,0993754327
+694,Fatma Lehmann,Female,55,175,60,H45.0,Larissa-Röhricht-Weg 126,99148,+49 (0) 5847 804844
+695,Reinhardt Wagner,Male,51,188,77,R35.9,Hertrampfstraße 4,72300,08529 88435
+696,Evi Rose,Female,77,166,55,I30.3,Elzbieta-Hering-Allee 7/3,75664,00523 44104
+697,Ing. Hilde auch Schlauchin,Female,55,166,50,Q14.0,Claus-Dieter-Eigenwillig-Allee 14,26370,08368018824
+698,Drago Bonbach,Male,44,185,81,T35.1,Conny-Seifert-Allee 614,50807,00678 74860
+699,Ing. Klaus-Günter Heser,Male,51,187,72,J53.0,Marco-Pohl-Weg 8/9,73722,02842 294038
+700,Univ.Prof. Orhan Dussen van B.A.,Male,73,174,81,B18.7,Kaspar-Schottin-Allee 63,47477,0710317026
+701,David Schuster,Male,61,180,62,I64.5,Hedy-Ullmann-Ring 5,91852,01641 00649
+702,Nils Beckmann-Weinhage,Male,47,187,73,K65.8,Riehlgasse 5/9,15613,(03534) 57999
+703,Marie Tlustek,Female,89,163,58,H02.4,Hornigweg 8,41972,08077 025275
+704,Margareta Wirth,Female,84,163,75,O18.5,Jozef-Boucsein-Straße 1/0,84281,+49 (0) 7904 250669
+705,Marietta Gieß,Female,68,169,64,Z08.2,Zenon-Zirme-Platz 7/2,83413,+49(0)7631094017
+706,Bernard Hiller,Male,71,181,74,L83.7,Aneta-Langern-Gasse 893,38814,(04088) 64461
+707,Andrei Sölzer,Male,19,184,94,V62.0,Jäkelweg 74,52498,07554 63382
+708,Dr. Henning Lange B.Eng.,Male,64,174,76,L17.3,Rädelring 3/7,76549,(06571) 393790
+709,Karl-Dieter Jacob,Male,56,182,69,S99.4,Frithjof-Rust-Platz 29,49172,00356420173
+710,Prof. Wiltrud Henschel B.Sc.,Female,59,159,63,R23.1,Rörrichtring 2,04645,+49 (0) 0831 483649
+711,Hilda Paffrath,Non-Binary,50,177,90,Z65.7,Cathrin-Jopich-Gasse 33,83483,+49(0) 753413692
+712,Univ.Prof. Svetlana Hermighausen B.A.,Female,89,171,59,J31.4,Loosstraße 920,03417,09610 39436
+713,Wladimir Langern,Male,71,196,79,J61.1,Norman-Schleich-Allee 51,83954,+49(0)1301 853058
+714,Christel Klingelhöfer,Female,46,172,63,O58.8,Frankestr. 3,77591,+49 (0) 1501 953409
+715,Isidor Beier,Male,61,169,73,V04.4,Bruderstr. 274,62580,02286 274329
+716,Alida Staude,Female,72,162,53,P49.3,Fernando-Metz-Straße 581,25267,(04235) 519148
+717,Klaus Dieter Ritter,Male,75,173,88,K59.6,Beckmannplatz 5,45335,06020929151
+718,Jasmin Gröttner,Female,78,156,68,S96.4,Kohlallee 59,13264,+49(0)6173515758
+719,Sükrü Kallert,Male,62,187,79,T76.4,Fatih-Kensy-Weg 0,08987,+49(0) 821460703
+720,Hasso Ruppersberger,Male,68,183,65,T12.3,Hentschelplatz 88,76717,08147780150
+721,Hansjörg Weitzel,Male,74,186,90,Z30.6,Marvin-Kusch-Allee 9,17426,+49(0)7780509971
+722,Wilma Schönland B.Eng.,Female,68,164,53,M14.2,Aziz-Rosemann-Platz 83,06204,(01829) 86746
+723,Gilbert Gnatz B.Sc.,Male,80,174,79,Y04.0,Isolde-Lindau-Ring 97,32773,+49 (0) 2471 807520
+724,Leonore Müller-Dobes,Female,68,163,49,N62.5,Zorbachstraße 87,14853,+49(0)4659667672
+725,Rosmarie Plath,Female,54,173,58,T41.4,Gerd-Häring-Platz 5/8,01710,+49 (0) 1530 371704
+726,Dipl.-Ing. Slobodan Häring,Male,67,180,90,Q94.0,Jesselring 4,13505,+49(0) 299442130
+727,Vadim Junken-Barkholz,Male,35,187,83,E96.9,Fischerstraße 3/5,42488,07486 737243
+728,Tülay Höfig,Female,74,165,64,J08.9,Süßebierring 3,28042,09928190726
+729,Arzu Kade-Bauer,Female,67,160,60,S45.2,Haaseplatz 38,82748,+49 (0) 8251 710997
+730,Otmar Wende,Male,69,177,89,F93.1,Vollbrechtplatz 91,54559,03429000231
+731,Gordon Buchholz-Kitzmann,Male,70,165,85,Z33.2,Michail-Steckel-Ring 1/9,11484,01171509757
+732,Ilija Plath,Male,56,173,74,G19.3,Felicia-Niemeier-Ring 25,49767,+49(0) 231300944
+733,Traute Krebs B.A.,Female,41,160,58,C17.4,Schaafweg 5/1,07025,+49(0)6907165838
+734,Ing. Wenke Hesse B.Sc.,Female,78,177,36,Q14.2,Manuela-Adolph-Straße 9/8,24790,09134 93210
+735,Igor Köster,Male,77,170,85,K67.2,Rosina-Pruschke-Weg 405,97661,+49(0)5422 57101
+736,Univ.Prof. Alois Gude B.Eng.,Male,56,177,88,J10.6,Döhnstraße 13,93046,+49(0)7702208722
+737,Margarete Rose,Female,60,163,58,S68.9,Heckerstr. 59,61396,+49(0) 187538019
+738,Antonius Gieß,Non-Binary,30,164,77,M76.6,Claus-Peter-Süßebier-Straße 33,68090,+49(0)1465 006047
+739,Frau Käte Hesse B.A.,Female,61,167,57,E94.8,Kochstraße 628,27241,05766 13360
+740,Ing. Cynthia Gröttner,Female,83,162,64,Y06.3,Fatih-Kabus-Gasse 7,95363,05533 196547
+741,Lydia Barth,Female,87,162,69,P55.0,Albersstraße 22,61835,0254145026
+742,Prof. Remo Ullmann,Male,41,185,72,P76.3,Karl-Rosenow-Straße 37,58625,08287 59779
+743,Ing. Christina Holt B.Sc.,Female,84,165,52,H54.4,Cosima-Drewes-Allee 0,48080,+49(0)5146918870
+744,Annelene Cichorius-Röhrdanz,Female,72,162,53,L10.4,Steve-Koch-Allee 158,09926,(02102) 95501
+745,Rupert Jessel-Finke,Male,60,185,88,J25.8,Wilmsallee 22,23839,09563 768762
+746,Prof. Brunhilde Hornich,Female,35,170,76,R59.3,Kallertstraße 885,47823,0565292196
+747,Mariana Kramer B.Eng.,Female,67,168,67,L17.9,Leon-Mans-Gasse 2,93386,+49(0)9408 11156
+748,Fedor Segebahn B.Eng.,Male,89,165,45,V61.6,Alida-Atzler-Ring 56,88054,+49(0)2837215101
+749,Helmar Boucsein,Male,49,174,92,K55.0,Geißlerstraße 5/2,46800,0464818357
+750,Sylvia Tröst,Female,62,159,56,G18.4,Hermannstr. 56,95925,00002 17505
+751,Gottfried Haering,Male,31,182,49,N10.2,Julie-Herrmann-Platz 2/4,94415,+49(0) 694141316
+752,Gusti Jüttner-Möchlichen,Female,80,169,43,H16.8,Lidwina-Pohl-Straße 1,79157,00382167740
+753,Dr. Dana Wernecke,Female,74,161,28,Y63.2,Lotti-Hartung-Ring 78,96605,+49(0) 553166117
+754,Denny Geisler,Male,89,188,78,R73.9,Günther-Schuchhardt-Straße 0/8,77321,0238453601
+755,Serpil Henk,Female,58,169,55,I48.7,Melanie-Barkholz-Ring 19,21918,+49(0) 294747921
+756,Ralf-Peter Oderwald,Male,79,182,89,N84.2,Säuberlichring 35,41217,+49(0)1458705945
+757,Dennis Stiebitz B.Sc.,Male,49,179,66,Y36.5,Truppring 516,88745,+49(0) 196918216
+758,Dipl.-Ing. Gerold Eimer MBA.,Male,59,174,84,V09.0,Beckerstr. 954,04326,07924547033
+759,Herr Nikolaus Dippel MBA.,Male,40,182,70,E82.3,Hessegasse 35,41708,+49 (0) 2906 702577
+760,Polina Henschel-Heintze,Female,92,167,56,N79.4,Daniela-Budig-Weg 840,19404,05951 428442
+761,Remo Förster B.A.,Male,42,181,88,Y54.1,Ehrenfried-Martin-Weg 53,86958,01194 88316
+762,Simone Warmer,Female,55,169,58,V96.9,Annamaria-Jüttner-Platz 3,19959,+49(0)7908 90499
+763,Hans-Karl Mans,Male,60,190,68,C77.1,Dino-Mitschke-Weg 4/2,92790,07590152502
+764,Dipl.-Ing. Hans-Wolfgang Thies,Male,64,180,78,F96.2,Sigmund-Warmer-Gasse 493,51243,(04082) 534497
+765,Theodoros Krebs-Kaul,Male,64,176,77,K10.0,Henning-Trub-Gasse 00,55336,+49(0) 644852804
+766,Dipl.-Ing. Bernd-Dieter Walter B.Sc.,Non-Binary,53,170,79,M21.7,Albrecht-Ditschlerin-Allee 8/3,43766,+49(0)6822 61023
+767,Janin Knappe-Karz,Female,74,160,47,A15.5,Riehlring 3,38488,00331 221750
+768,Leonore Patberg-Finke,Female,97,175,52,H61.0,Giorgio-Pechel-Platz 15,19292,01064979612
+769,Ortwin Kitzmann,Male,31,167,81,L29.1,Rita-Heydrich-Ring 074,47959,02557 00297
+770,Juergen Mende,Male,67,178,91,Z31.9,Davidsallee 8,76313,08138 19796
+771,Magarete Keudel-Eigenwillig,Female,20,171,52,O68.2,Helga-Hermann-Straße 119,45166,+49(0) 447301858
+772,Dagobert Köhler,Male,79,178,66,Q00.3,Bohnbachplatz 24,60985,(08934) 06926
+773,Harald Dietz,Male,57,182,74,D97.6,Juliane-Trüb-Platz 2/8,73727,+49(0)7488 56438
+774,Michaela Trupp,Female,80,163,64,J83.4,Schinkestraße 8,76896,+49(0)1208 893987
+775,Christof Boucsein,Male,51,172,90,E68.3,Steckelweg 63,50295,(02344) 363578
+776,Ortrun Geisel,Female,69,165,56,K91.3,Karolin-Bauer-Weg 4,25945,0671852356
+777,Jennifer Kohl-Schuchhardt,Female,71,166,55,F95.0,Markus-Schinke-Allee 65,59547,07183 46185
+778,Magret Buchholz,Female,68,175,60,V83.9,Zobelgasse 50,14017,01618480051
+779,Stefanie Striebitz B.Eng.,Female,69,165,67,E23.9,Eigenwilligstr. 5/1,89363,+49 (0) 0871 739573
+780,Heinz-Joachim Reising,Male,46,174,80,P56.3,Kreuselstr. 949,71302,+49(0) 505460184
+781,Univ.Prof. Miguel Kobelt,Male,70,180,72,J10.4,Kallertweg 582,29858,04150 939246
+782,Hanne Dussen van-Drewes,Female,44,171,66,J88.2,Franca-Christoph-Platz 2/4,00849,0243379820
+783,Maxim Gotthard B.A.,Male,74,177,76,A01.4,auch Schlauchinstr. 017,77782,+49 (0) 5499 649196
+784,Anne-Katrin Weller-Patberg,Female,64,164,74,H44.0,Beckerstr. 3/7,96585,+49(0) 599748210
+785,Steve Henschel,Male,60,179,89,A18.2,Kästerstr. 6/6,57778,+49(0)7079581868
+786,Hedwig Rose,Female,49,153,55,B24.0,Briemerallee 6,47828,(00226) 560244
+787,Ingolf Davids,Male,37,176,65,R91.1,Jacqueline-Junitz-Platz 4,69432,02168 55715
+788,Kaspar Meyer,Male,66,188,70,E24.9,Schuchhardtgasse 9,94037,+49(0) 018085429
+789,Leif Weihmann,Male,91,184,91,M22.9,Karoline-Gieß-Platz 4/7,89203,+49 (0) 9134 867363
+790,Therese Oderwald,Female,66,168,67,N44.5,Rohtallee 5,15846,09477 23881
+791,Herr Heinz-Willi Kaul,Male,88,177,73,M44.8,Kösterweg 8/1,17457,+49 (0) 0076 291710
+792,Karl Heinz Niemeier-Hering,Male,85,188,92,I04.7,Kallertstr. 128,95405,+49(0) 348280197
+793,Herr Klaus-Dieter Bauer B.Sc.,Male,41,181,88,T73.7,Zeljko-Oestrovsky-Weg 7/8,72875,+49(0) 572156589
+794,Ing. Tomas Gorlitz MBA.,Male,62,179,75,V82.6,Lehmannallee 393,16656,+49(0)3442801521
+795,Rebekka Schenk,Female,30,170,53,H91.7,Bährstr. 6,05637,+49 (0) 3329 594862
+796,Liesbeth Davids,Female,62,173,47,E17.1,Säuberlichstraße 46,34537,05905 25647
+797,Dr. Gloria Stumpf,Female,93,164,57,J37.3,Marius-Zahn-Straße 06,22770,+49(0) 069343428
+798,Giuseppina Kallert,Female,71,170,60,A86.7,Lindnerstr. 147,27078,0385891670
+799,Manja Süßebier B.A.,Female,45,167,62,D14.4,Weimerring 046,21607,(06632) 60880
+800,Dr. Leszek Holzapfel B.Sc.,Male,63,171,86,H76.3,Mirja-Löwer-Straße 5,10494,(06380) 751150
+801,Willi Gieß,Male,41,181,82,Y36.8,Dippelallee 83,11900,05377 048534
+802,Prof. Claus Stoll,Male,62,171,111,M64.1,Geraldine-Eigenwillig-Weg 4,86069,+49 (0) 7385 706176
+803,Dr. Elly Rörricht,Female,90,165,61,T90.1,Franziska-Benthin-Gasse 51,93270,+49(0)8326 652037
+804,Dr. Theda Siering MBA.,Female,73,173,56,H44.7,Liebeltweg 23,94722,+49(0)8200 195172
+805,Ing. Andy Weller,Male,53,175,80,Z56.0,Severin-Biggen-Straße 7,55128,+49(0)8990845045
+806,Dipl.-Ing. Konstantin Schinke,Male,45,183,86,B36.1,Hasan-Rohleder-Weg 394,93717,+49 (0) 4415 183212
+807,Katja Eckbauer-Reising,Female,64,158,53,O13.4,Hubertus-Jockel-Gasse 4,22451,+49(0)2660723342
+808,Dipl.-Ing. Rocco Kruschwitz,Male,63,180,91,E83.2,Teresa-Lorch-Straße 1,10097,+49(0)2333952513
+809,Ekrem Liebelt-Hethur,Male,42,183,80,Z50.4,Ladeckring 75,05063,+49 (0) 8034 961428
+810,Irene Schacht-Girschner,Female,58,164,50,Q10.0,Kathy-Walter-Weg 3,91878,+49(0)7972 66226
+811,Mirko Mude B.A.,Male,40,187,93,O62.0,Trappstr. 2,96809,+49(0)4316 306722
+812,Burkhard Rosenow,Male,95,192,92,S09.1,Mansstr. 47,44428,0872321535
+813,Orhan Gutknecht,Male,67,176,93,P23.5,Ernest-Kraushaar-Gasse 3/9,97358,+49 (0) 5309 365742
+814,Wanda Roht,Female,41,168,58,Q62.2,Cilly-Cichorius-Allee 5,52761,06328 619377
+815,Dorle Wagner-Tlustek,Female,47,169,58,B42.6,Tania-Weimer-Gasse 7/9,25345,0440929557
+816,Birgit Kobelt,Female,31,154,63,Y40.2,Kobeltstr. 15,71889,+49(0)8972 14535
+817,Rotraud Siering,Female,44,166,67,P67.7,Ullmanngasse 18,24166,+49(0)8683 497900
+818,Sylvester Nette,Male,83,182,83,B04.5,Faustgasse 0,67120,(01573) 20911
+819,Silja Graf,Female,68,173,56,R56.1,Alexandra-Haering-Ring 0,15795,+49(0)6836 72813
+820,Tanja Werner,Female,78,169,60,D98.2,Melanie-Gude-Ring 683,88718,0358496546
+821,Dr. Zeki Lindner,Male,67,179,80,Y34.7,Zimmerplatz 090,83107,+49(0)5952367166
+822,Ing. Annamaria Koch,Female,85,168,58,T88.7,Anneliese-Girschner-Straße 2,69990,(02740) 012062
+823,Sandro Holzapfel,Male,56,182,82,N66.2,Fischerstr. 63,10964,+49(0) 225691375
+824,Edeltrud Zänker-Pölitz,Female,72,165,58,L15.2,Mielcarekgasse 1/7,53220,08172 042761
+825,Berta Trommler,Female,58,164,67,T77.0,Blochgasse 0,68519,(01509) 253561
+826,Univ.Prof. Clemens Eberth,Male,71,178,74,K98.7,Apollonia-Losekann-Platz 04,96325,+49(0)2741 929030
+827,Sevim Karge,Female,73,173,72,A69.9,Ringring 5,13979,07391 034953
+828,Horst-Peter Meyer,Male,64,190,70,G11.0,Schweitzergasse 6,11441,05963720976
+829,Univ.Prof. Horst-Dieter Wagenknecht,Male,56,184,80,Q36.3,Mirko-Scheibe-Ring 07,73584,+49(0)4514432657
+830,Ing. Marie Heydrich B.Eng.,Female,72,165,67,K07.1,Niels-Wulff-Allee 0/3,58628,(05938) 69021
+831,Witold Steckel,Male,48,171,80,N45.7,Reichmannring 5,13661,04873 637572
+832,Miodrag Hecker,Male,88,185,76,R88.5,Ullmannweg 19,44060,+49(0)1189 810202
+833,Dipl.-Ing. Vesna Sölzer B.Eng.,Female,30,164,56,O31.5,Bernt-Hübel-Gasse 5,82772,00530 84153
+834,Winfried Bolzmann,Male,78,181,91,M06.2,Scheuermannstraße 753,27368,+49 (0) 0656 522631
+835,Univ.Prof. Mechtild Jacobi Jäckel,Female,49,169,71,I45.1,Guiseppe-Klapp-Gasse 480,20142,+49(0) 326589671
+836,Marica Hermann,Female,71,172,53,M09.5,Wally-Kallert-Straße 81,19827,+49 (0) 3539 022473
+837,Marlies Pölitz MBA.,Female,62,161,62,A40.0,Hövelallee 722,53375,(04302) 298746
+838,Mara Rosemann,Female,41,161,54,Q31.8,Carla-Steinberg-Gasse 084,19868,+49(0)4998 425629
+839,Ottmar Seifert,Male,33,174,96,J46.3,Kuschstraße 4/8,39333,+49(0)7307 76545
+840,Dragan Löwer,Male,49,170,76,Y67.2,Kadeallee 54,76928,00889276842
+841,Dipl.-Ing. Maja Haase,Female,62,163,71,H22.8,Anna-Anders-Weg 1/8,67498,+49 (0) 4778 079781
+842,Nevenka Kade,Female,49,164,44,L07.2,Trubring 7,91432,+49(0)3247381988
+843,Dipl.-Ing. Olivia Mentzel B.A.,Female,61,162,56,M39.4,Zoltan-Austermühle-Gasse 7/3,31957,+49(0)0662 53140
+844,Gerald Tlustek,Male,86,169,63,C88.7,Kuschgasse 0/2,73432,+49(0) 081787524
+845,Anke Gieß,Female,67,165,50,J18.7,Schleichgasse 5,59017,+49(0)3373 30951
+846,Nadja Blümel,Female,40,167,57,Y62.6,Liane-Säuberlich-Allee 9,57968,+49 (0) 0336 124145
+847,Magdalena Wulff B.Eng.,Female,71,172,65,Y64.4,Wähnerweg 108,21539,02966 797037
+848,William Oestrovsky,Male,42,183,61,S61.8,Martinstr. 40,25583,+49 (0) 5765 548766
+849,Dr. Czeslaw Kuhl B.Sc.,Male,80,179,88,J92.5,Eckbauerweg 14,13519,(06602) 28778
+850,Ortrud Hesse,Female,48,163,71,L45.6,Wilhelm-Hande-Platz 6,56980,02406690473
+851,Frank Mohaupt-Dussen van,Male,82,178,82,N57.5,Biggengasse 282,10586,06177 26245
+852,Andrei Kusch,Male,59,176,70,B90.1,Binnergasse 346,01873,+49 (0) 8619 399325
+853,Hans-Uwe Weller,Male,73,176,76,I12.7,Viktoria-Scheibe-Weg 80,64450,+49(0) 458984549
+854,Philip Wagner,Male,25,175,62,D16.4,Miesstr. 6/1,53160,+49(0)2406 99567
+855,Arndt Ortmann,Male,71,171,81,E91.8,Eva-Marie-Schuchhardt-Weg 782,88200,+49(0) 182039381
+856,Sarina Pieper,Female,73,166,65,I56.3,Krausestr. 46,87586,0826231713
+857,Ing. Agatha Möchlichen,Female,53,167,63,H90.1,Köhlerstraße 2/0,05433,06756 888056
+858,Heike Schaaf,Female,62,176,65,K84.4,Ahmet-Junk-Platz 080,06430,+49(0) 521144169
+859,Prof. Esther Reichmann,Female,85,169,63,K43.2,Heinz-Werner-Striebitz-Straße 465,73094,+49(0)8098 93130
+860,Prof. Siegmar Klapp B.Sc.,Male,62,181,84,Q22.6,Mariele-Hesse-Platz 1,14613,+49(0)1559 539863
+861,Franziska Schleich,Female,48,158,55,K00.7,Gloria-Schwital-Gasse 8,36256,(03392) 270560
+862,Ariane Scheuermann B.Sc.,Female,57,167,54,S01.8,Gordana-Säuberlich-Gasse 262,80500,+49(0)1771823605
+863,Hans-Detlef Barth,Male,64,180,75,Z06.0,Ilonka-Langern-Weg 9/9,83482,08480 08356
+864,Gunter Briemer,Male,90,175,85,C06.8,Dowergplatz 567,55148,(08226) 54477
+865,Prof. Hans-Karl Trommler,Male,48,190,83,Q72.1,Wulfring 319,82494,00723 992027
+866,Frau Selma Striebitz B.A.,Female,74,170,67,I73.5,Klappring 9,52754,+49(0)3738 344062
+867,Dipl.-Ing. Korinna Buchholz B.Eng.,Female,43,161,61,E33.0,Holtallee 9/3,84657,01990 63801
+868,Louis Weihmann,Male,69,195,79,P30.3,Leo-Gröttner-Straße 001,06237,(06911) 60915
+869,Ing. Isa Rudolph,Female,38,168,53,B30.8,Margarita-Schaaf-Platz 6,93645,+49 (0) 4654 187491
+870,Joachim Butte-Heinrich,Male,32,191,90,T86.1,Ladeckstraße 2/6,04477,01750222735
+871,Dr. Karl-Werner Thies B.Sc.,Male,63,186,78,G33.6,Cord-Berger-Platz 03,58085,(06428) 04022
+872,Ingmar Schomber,Male,58,184,92,S49.2,Sonja-Misicher-Platz 5,65844,03921033443
+873,Giorgio Bauer,Male,53,175,79,C90.1,Patbergweg 20,98362,(09076) 00653
+874,Univ.Prof. Suse Ring,Female,72,164,52,G51.4,Ulrike-Hänel-Ring 3,94201,09062 367626
+875,Gülsen Möchlichen-Reising,Female,61,173,67,N20.3,Alexandre-Finke-Ring 0,02893,+49(0) 519999171
+876,Caren Eberhardt,Female,46,160,62,C39.3,Krebsring 8,71418,+49(0) 560543620
+877,Dipl.-Ing. Ria Täsche B.Eng.,Female,71,162,59,P63.2,Hildburg-Krause-Weg 1/2,11147,+49(0)8720 51590
+878,Heinz-Günter Schüler,Male,61,197,64,O77.7,Marie-Luise-Schweitzer-Weg 3,90982,(08151) 047567
+879,Sieglinde Franke,Female,60,172,75,Z49.1,Reinhilde-Kaul-Ring 72,82491,+49(0)1525741330
+880,Markus Juncken-Trommler,Male,57,183,67,D20.6,Wolf-Carsten-Ring 2,84451,+49 (0) 1808 013506
+881,Francisco Birnbaum,Male,67,183,72,Z43.2,Hans Jürgen-Döring-Allee 3/3,06051,(02818) 54146
+882,Frau Cilli Kranz B.Sc.,Female,66,164,59,I54.2,Bärerring 52,28298,(00758) 47312
+883,Dipl.-Ing. Reimer Blümel MBA.,Male,49,177,100,P50.3,Beerweg 463,48393,(07125) 43437
+884,Univ.Prof. Gordon Walter B.Eng.,Male,87,190,71,P57.4,Pohlallee 11,02373,(01058) 01400
+885,Antonios Langern,Male,63,193,73,P49.1,Mara-Haase-Platz 5,01174,+49(0) 072961910
+886,Isabella Pergande-Junken,Female,77,169,71,A86.9,Annie-Klapp-Platz 592,65232,(04352) 802168
+887,Saban Adler,Male,40,183,79,Y13.5,Constance-Förster-Weg 0,93562,02761793511
+888,Univ.Prof. Luzia Reuter B.Eng.,Female,35,162,61,K76.6,Mareike-Seifert-Gasse 4,96921,+49(0)9908 66829
+889,Univ.Prof. Lieselotte Heinrich,Female,67,161,59,M40.7,Albersallee 455,58784,03694 30667
+890,Rotraud Gerlach-Sorgatz,Female,21,171,66,Z35.6,Folker-Mälzer-Platz 6,78880,(08318) 68515
+891,Rena Keudel,Female,68,172,64,T87.6,Scholtzplatz 091,12668,+49(0)9524 32755
+892,Mira Heinz,Female,54,179,61,O47.5,Brit-Preiß-Ring 006,52583,05232 718607
+893,Mechtild Förster,Female,82,165,52,O43.0,Wagnergasse 622,12863,05661318454
+894,Prof. Ines Bauer,Female,19,171,46,G15.4,Kargestr. 0/2,12325,+49(0)5124 811720
+895,Rigo Fiebig,Male,64,196,74,B73.0,Marga-Adolph-Platz 0,67137,+49(0)3635694764
+896,Claudio Beckmann,Male,78,178,94,D98.4,Freudenbergerweg 3,53650,+49(0)1533 423107
+897,Frithjof Junken-Hauffer,Male,48,178,71,I64.1,Veit-Bien-Weg 78,92752,08799 471850
+898,Erna Dehmel,Female,80,170,62,G43.7,Steinbergweg 51,17242,+49(0) 363978630
+899,Univ.Prof. Sevim Hesse MBA.,Female,42,166,46,Q34.7,Anita-Mentzel-Weg 8/8,63141,+49(0)7263 352749
+900,Alexandre Mude-Henschel,Male,31,188,98,J74.3,Köhlerweg 2,11638,+49(0)7335 803432
+901,Gunhild Süßebier-Fritsch,Female,47,156,60,L48.6,Adriane-Heinz-Ring 5,64386,08008596349
+902,Dr. Justine Hering,Female,84,178,61,Z61.3,Olena-Börner-Platz 9,42951,(06129) 546558
+903,Guenther Söding,Male,94,175,88,I97.5,Hoffmannweg 0/1,71489,06045 146880
+904,Eckhart Graf,Male,55,175,71,I08.1,Hermann Josef-Löchel-Straße 6,38283,(05513) 496104
+905,Siegfried Berger B.Eng.,Male,57,189,77,Y12.2,Tülay-Sager-Weg 6/6,98204,03264 04773
+906,Therese Herrmann,Female,34,163,57,C56.5,Häringstraße 9/1,29169,+49 (0) 0709 848759
+907,Ingolf Benthin-Trapp,Male,73,167,70,E83.2,Jacobplatz 13,59514,00979678849
+908,Kunigunda Scholz,Female,59,174,42,T13.1,Emine-Caspar-Platz 096,18148,+49(0) 834399760
+909,Genoveva Stadelmann B.Sc.,Female,48,174,58,Q41.9,Emma-Wulf-Ring 377,95583,0680210453
+910,Bastian Fechner,Male,53,190,91,S29.7,Kambsring 09,52598,+49(0) 165139175
+911,Paul Herrmann,Male,57,173,100,Y99.4,Heinz-Gerd-Thanel-Platz 6/9,86029,+49(0)6405 210556
+912,Annemie Hermann-Wilmsen,Female,94,170,65,O39.7,Hartungstr. 8/0,93598,+49 (0) 0039 384806
+913,Teresa Hering,Female,60,167,62,C66.6,Bienplatz 1,16469,(00060) 39095
+914,Maja Stiebitz,Female,76,172,53,T10.6,Heike-Thanel-Ring 09,14808,(08132) 015734
+915,Univ.Prof. Mirella Döring,Female,74,166,57,V45.6,Neureutherweg 027,82086,06404959160
+916,Zoltan Nohlmans,Male,65,171,61,P41.9,Dirk-Mielcarek-Allee 096,80425,+49(0)7442 59288
+917,John Steinberg,Male,94,169,81,M87.3,Benjamin-Ullrich-Straße 817,78631,01826 26330
+918,Sibille Geisler,Female,55,174,52,H89.9,Eva-Marie-Conradi-Allee 444,19773,+49 (0) 3216 003773
+919,Luisa Dietz,Female,61,169,56,L90.5,Matthias-Hartung-Ring 7/1,63520,01334238880
+920,Kuno Liebelt,Male,38,183,60,P97.3,Herrmannring 060,51069,(09430) 934211
+921,Melitta Wesack,Female,52,169,48,B22.8,Löfflerallee 02,92967,+49(0)4201252184
+922,Walfried Bachmann B.Eng.,Male,43,185,79,D08.1,Schottinstraße 40,62570,(09297) 692477
+923,Hildburg Putz,Female,76,169,46,F08.1,Langernplatz 0,98577,+49(0)4989 923567
+924,Rosemarie Ladeck,Female,36,171,61,D91.8,Drubinstraße 9/1,33270,02414779214
+925,Ing. Bernd Nohlmans,Male,58,185,102,B68.7,Friedrich-Karl-Gumprich-Platz 9,24754,+49 (0) 3079 271265
+926,Gerhard Zahn B.Eng.,Non-Binary,91,174,59,O10.0,Marco-Otto-Straße 7/3,86115,0973926865
+927,Ante Wilms,Male,61,186,90,C13.8,Elfriede-Heinz-Weg 7/6,86463,(01182) 34563
+928,Marliese Bähr,Female,58,166,68,O20.8,Andersallee 66,09740,03626044861
+929,Paola Grein Groth,Female,83,170,63,M04.2,Edith-Kranz-Straße 3/5,78861,+49 (0) 2506 360186
+930,Nevenka Kuhl,Female,39,171,54,Q69.4,Mangoldstraße 5/1,52924,09418 537447
+931,Mariele Kreusel B.Eng.,Female,40,168,54,C77.1,Kreinplatz 644,46192,+49(0) 072600003
+932,Ing. Baldur Seidel,Male,46,175,68,E93.5,Gießallee 7/9,30541,08128 978875
+933,Fabienne Heser,Female,68,165,57,C38.4,Telse-Dörr-Allee 408,64541,(08813) 197282
+934,Freia Eberth,Female,55,169,62,P78.0,Jungferstr. 679,99024,0322537600
+935,Friedlinde Heinz-Trubin,Female,38,170,70,O39.9,Kühnertstr. 5/0,74407,09517 616063
+936,Almut Trub,Female,32,164,71,I15.5,Karen-Scheel-Allee 2,52494,01531527030
+937,Frau Evi Noack,Female,57,168,58,H28.6,Alfredo-Rose-Ring 7/9,34319,01827 902329
+938,Yvonne Bien,Female,76,167,61,G57.9,Katja-Mühle-Platz 887,51596,06555997665
+939,Univ.Prof. Bernd Eberth,Male,51,178,81,O74.0,Dragica-Trupp-Weg 854,25326,+49(0)5572 352574
+940,Rosalinde Röhrdanz,Female,39,166,59,E85.0,Hansjörg-Klingelhöfer-Straße 973,66593,+49(0) 679680010
+941,Miriam Beer-Gunpf,Female,63,172,62,Q88.5,Kargering 6,40436,04090773128
+942,Justina Girschner,Female,87,177,55,C16.2,Silvio-Pohl-Gasse 0/7,81201,+49(0) 285254994
+943,Karl-Wilhelm Ziegert B.Eng.,Male,64,175,76,Q65.8,Schollgasse 284,39208,+49(0) 814707991
+944,Hans-Detlef Henschel-Metz,Male,45,174,88,L60.0,Evangelia-Hörle-Allee 78,12657,03316885171
+945,Guenther Vollbrecht B.Sc.,Male,93,171,69,J46.0,Ruben-Wiek-Allee 71,48683,(06745) 26721
+946,Max Zobel B.Sc.,Male,75,172,85,H21.7,Ingbert-Trubin-Gasse 8/4,48863,(09344) 01158
+947,Hugo Drewes,Male,66,193,59,B53.4,Sagerstr. 5,06227,+49(0)7002740399
+948,Ingetraud Nohlmans,Female,55,164,71,M55.6,Pieperplatz 55,63338,03252 181578
+949,Prof. Dennis Spieß B.Eng.,Male,39,186,78,G43.0,Gnatzstraße 9,10598,(06928) 635871
+950,Marlis Bärer-Schmiedecke,Female,76,165,49,A88.2,Gunnar-Schenk-Ring 1,87583,(04753) 35274
+951,Wally Mühle B.Eng.,Female,83,164,67,E47.1,Boris-Dörr-Platz 2,13800,+49(0) 291841547
+952,Frau Meike Hornig,Female,57,161,63,Q77.1,Denis-Flantz-Platz 365,84616,(08180) 56063
+953,Frau Stefani Gumprich,Female,66,172,51,N27.3,Lilian-Dobes-Platz 941,32886,08344 346208
+954,Barbara Klemt-Hentschel,Female,47,166,61,O08.4,Fröhlichgasse 838,66419,0290190022
+955,Jutta Dowerg,Female,68,164,62,Z23.6,Wendering 243,92187,+49(0)7398685558
+956,Felix Heidrich,Male,42,186,59,I82.2,Beckmanngasse 50,20178,00046513765
+957,Osman Schuchhardt-Geisler,Male,80,182,92,A10.8,Marjan-Jockel-Gasse 5,49809,(08448) 008849
+958,Angelica Krebs B.Sc.,Female,68,168,67,Y83.4,Eberhardtstr. 778,68413,02313809345
+959,Ewa Geisel,Female,57,163,61,K57.7,Gerd-Albers-Weg 6/3,08005,03360 492822
+960,Veronica Rose-Dörschner,Female,48,169,52,R00.4,Heßring 109,48773,+49(0)5924584849
+961,Jens-Peter Weihmann MBA.,Male,22,176,77,C97.1,Amanda-Heß-Straße 18,46106,+49(0)2733 94050
+962,Alexej van der Dussen,Male,63,180,103,B64.1,Ilias-Weihmann-Straße 5/8,12831,+49(0) 610646034
+963,Ingmar Weinhold,Male,89,184,76,D92.6,Gröttnerstraße 410,39944,+49 (0) 4555 474389
+964,Christiana Hesse,Female,59,168,66,A76.3,Franka-Kambs-Weg 6,16789,+49(0) 454022464
+965,Raphaela Weinhold,Female,29,162,51,J02.9,Martha-Rogner-Platz 727,25217,+49(0)7294 580919
+966,Univ.Prof. Svetlana Tlustek,Female,97,173,61,S54.8,Irmhild-Paffrath-Allee 2,83262,+49(0)7431555518
+967,Marlis Martin,Female,85,170,62,S39.1,Müllerweg 9,97335,06071 184077
+968,Ursula Häring,Female,71,163,68,B75.3,Wesackallee 95,64699,08228884670
+969,Dr. Miodrag Ring B.Sc.,Male,47,184,86,Q18.3,Berit-Otto-Platz 2,65313,+49(0)7609 815953
+970,Annerose Heintze,Female,75,159,64,M01.7,Thanelring 6,81252,+49 (0) 5278 895350
+971,Herr Carmelo Wulff,Male,78,188,82,C83.9,Klaudia-Budig-Gasse 8,56041,+49 (0) 0758 261720
+972,Univ.Prof. Anett Rörricht B.Eng.,Female,73,161,59,Y24.6,Oskar-Noack-Ring 9/9,75581,09908776770
+973,Ing. Friedrich-Wilhelm Lindner B.Eng.,Non-Binary,84,176,60,D17.8,Isabell-Kaul-Ring 4,58869,06476 773945
+974,Ingbert Wulf MBA.,Male,90,186,85,K06.8,Alois-Gierschner-Straße 79,30132,+49(0)7395 722599
+975,Romuald Wieloch,Male,88,182,70,Q01.3,Lucie-Zimmer-Gasse 89,39805,(08370) 498095
+976,Harriet Rädel,Female,80,166,44,K07.5,Roswitha-Nohlmans-Weg 83,51107,+49 (0) 3450 317952
+977,Hans-Willi Gunpf,Male,55,185,84,A13.8,Stumpfstraße 6,68166,00850652978
+978,Liane Fiebig-Geisler,Female,37,169,65,P97.5,Wagenknechtallee 6/8,72283,05558 907527
+979,Irmhild Nerger,Female,53,174,64,K91.1,Karl-Otto-Kabus-Ring 565,33451,(08539) 501569
+980,Kilian Wiek,Male,71,180,87,K74.4,Catrin-Berger-Straße 9/9,14383,+49 (0) 0399 216323
+981,Dipl.-Ing. Athanasios Döhn,Male,54,188,69,A35.3,Yasmin-Mitschke-Platz 5/6,87695,+49 (0) 4761 465166
+982,Nevenka Putz,Female,77,166,55,K40.6,Tröststraße 86,11775,00717428869
+983,Philip Zänker,Male,64,184,84,L29.7,Marie-Therese-Klemm-Allee 68,06400,(00780) 878937
+984,Detlef Briemer,Male,47,184,92,C04.2,Diane-Gnatz-Straße 89,83613,0638016372
+985,Erna Rogge B.Sc.,Female,92,164,70,Z57.4,Schweitzerstraße 2,81813,0937883014
+986,Pawel Jacob-Hermann,Male,92,169,83,Y07.3,Bolzmannallee 6,91683,+49 (0) 2877 648380
+987,Herr Diedrich Bolander B.A.,Male,91,168,72,B57.3,Trüballee 4,06868,09865 442684
+988,Urte Schmidt,Female,48,158,59,D65.5,Fliegnergasse 143,54492,+49 (0) 1606 653977
+989,Carmelo Dörr,Male,78,189,63,B53.2,Adrian-Scholtz-Platz 98,24229,08222 45122
+990,Annerose Wilms-Mielcarek,Female,52,165,66,I17.3,Stadelmannplatz 4/9,90300,07623 12573
+991,Prof. Käthe Römer,Female,90,162,51,A30.8,Gunpfstraße 48,28922,+49(0) 404539912
+992,Karl-Hermann Kaul,Male,79,179,78,F99.1,Hans-Dieter-Stolze-Weg 63,76908,+49(0) 234744053
+993,Sibel Adler,Female,61,171,65,K97.7,Hans-Henning-Eckbauer-Straße 88,88519,+49(0)1441 69151
+994,Ivana Thies,Female,57,170,57,E65.5,Mülichenring 30,74092,03616 482467
+995,Sybille Henk MBA.,Female,63,167,48,H43.7,Sandro-Jacobi Jäckel-Straße 9/6,14870,+49(0)4014332071
+996,Meik Walter,Male,55,191,82,D90.0,Dagobert-Hein-Straße 1,92414,(04583) 709236
+997,Dr. Valerie Berger MBA.,Female,52,164,63,I64.4,Nevenka-Eckbauer-Weg 40,42919,+49 (0) 8780 117217
+998,Hassan Hörle B.A.,Male,63,179,70,F50.3,Heusergasse 9/1,13629,+49(0)2545 38302
+999,Regina Linke-Boucsein,Female,85,166,58,Q48.1,Seifertring 625,50238,(03089) 660556
+1000,Mohammad Lübs,Male,36,174,68,T16.1,Leopoldine-Dobes-Weg 767,00883,(07278) 27866
+1001,Joachim Hörle-Kraushaar,Male,55,165,74,N04.6,Reisingplatz 18,01944,+49 (0) 6983 230193
+1002,Kriemhild Kuhl B.Sc.,Female,79,173,56,T55.4,Schmiedtweg 8/4,74158,+49(0) 482051668
+1003,Annerose Mälzer,Female,21,162,61,B67.3,Holtgasse 60,93337,+49(0)8951 299342
+1004,Gertrude Heydrich,Female,75,164,64,I22.2,Lilo-Harloff-Gasse 6/4,47148,05602 658670
+1005,Felicia Biggen,Female,64,164,44,L88.2,Neuschäferweg 66,90932,+49(0)1999108091
+1006,Friedl Wernecke-Pruschke,Female,41,169,64,A89.3,Albertine-Beckmann-Ring 1/5,46345,+49(0)3026 591944
+1007,Ing. Ortrud Nerger B.A.,Female,76,163,66,S50.5,Wagenknechtplatz 9,48462,04915 03631
+1008,Marcella Möchlichen-Drub,Female,65,156,85,B15.0,Hildegund-Gunpf-Gasse 16,44681,+49(0)1839 782107
+1009,Waltraud Becker,Female,64,168,58,J52.6,Sina-Köhler-Allee 4,99029,01793 94992
+1010,Raissa Rosenow,Female,72,165,57,I86.5,Bauerweg 13,18361,(06426) 82699
+1011,Henriette Textor-Holsten,Non-Binary,21,181,83,H44.0,Nohlmansring 7/7,17492,02282 15688
+1012,Aenne Wirth-Beyer,Female,70,159,53,Y83.6,Erica-Fröhlich-Straße 37,56911,+49(0)8478395120
+1013,Rebekka Vogt,Female,65,165,54,I65.6,Wesackring 770,63063,+49(0)0572 823010
+1014,Iris Hoffmann,Female,70,171,76,G96.9,Tom-Staude-Weg 1/4,41451,00970325368
+1015,Steffen Gröttner-Meister,Male,77,179,83,V83.7,Hans-Karl-Haase-Gasse 257,43574,(04628) 435064
+1016,Kunibert Finke B.Sc.,Male,87,181,75,P71.7,Kai-Uwe-Söding-Weg 73,73083,+49(0) 293969263
+1017,Marko Heidrich,Male,43,187,91,Z17.3,Hedi-Beckmann-Allee 8/3,73682,+49(0)5689090097
+1018,Telse Weitzel,Female,47,165,59,M69.3,Lieselotte-Ziegert-Ring 821,52798,+49(0)4580 258022
+1019,Luka Bruder,Female,69,159,49,G12.7,Reisingweg 0,16954,04752 350422
+1020,Cilly Knappe,Female,97,156,62,A89.8,Betina-Huhn-Gasse 065,63904,+49(0)4941 65593
+1021,Ingetraut Tröst,Female,47,176,60,Q94.8,Stiffelweg 2/2,86309,(03744) 627129
+1022,Dipl.-Ing. Hans-Heinrich Mangold B.Sc.,Male,81,189,77,D81.3,Silvana-Becker-Weg 69,40890,0429195732
+1023,Dorothe Hauffer,Female,70,156,68,B15.7,Pieperplatz 2/0,70192,+49 (0) 3734 686225
+1024,Veronika Kohl,Female,74,170,50,G90.7,Cornelius-Haering-Platz 8,36270,+49(0) 817004478
+1025,Sibylle Sager MBA.,Female,58,165,59,N10.0,Mitschkestr. 2/9,48211,03905 62727
+1026,Friedbert Drub,Male,66,185,72,F29.2,Austermühleweg 58,19813,0803791314
+1027,Ing. Valeria Ziegert,Female,66,168,56,R12.3,Müllergasse 230,93967,0946774347
+1028,Sönke Heser,Male,70,174,72,N83.2,Freia-Kitzmann-Straße 761,08223,(06920) 31198
+1029,Univ.Prof. Lotti Tröst,Female,54,165,64,K52.4,Klotzstraße 9/8,59657,02404198266
+1030,Lia Stumpf-Dörr,Female,53,162,69,H26.7,Margret-Rogge-Weg 14,27144,(01345) 50315
+1031,Janin Juncken,Female,84,164,58,A22.6,Lisa-Caspar-Ring 2/1,67782,(02932) 320709
+1032,Mareile Blümel,Female,36,171,58,L87.1,Bernadette-Schenk-Ring 8,51400,+49(0)6162 14007
+1033,Gitta Heidrich MBA.,Female,36,162,50,N42.5,Hans-Martin-Ditschlerin-Gasse 5/4,85651,+49(0) 442693259
+1034,Theodor Bärer,Male,49,177,70,Y93.4,Freudenbergerallee 598,66801,03279 162024
+1035,Ing. Gudula Reising,Female,86,168,54,T46.3,Paula-Thanel-Ring 168,22146,0173760914
+1036,Frau Reingard Geißler B.Sc.,Female,71,169,54,S42.6,Pieperstraße 458,14899,0100670413
+1037,Magda Neuschäfer,Female,75,166,62,Y84.3,Friedrich-Wilhelm-Wende-Allee 3,17985,+49(0)5724 27415
+1038,Wigbert Kruschwitz,Male,89,195,69,D59.3,Mangoldstraße 5/3,50723,+49(0)8827 00100
+1039,Yvette Röhrdanz,Female,36,175,63,G86.7,Mühlering 0/8,56277,+49 (0) 2610 250570
+1040,Beate Hornig,Female,55,164,56,H23.0,Isolde-Bachmann-Weg 723,31825,(04802) 70460
+1041,Goran Hölzenbecher B.Eng.,Male,40,176,85,N50.0,Wulfgasse 763,15669,(08282) 538587
+1042,Ing. Klaus-Werner Ehlert,Male,24,187,79,A83.8,Carola-Krebs-Gasse 78,35293,(07714) 429518
+1043,Bela Hartmann B.A.,Male,33,180,76,O46.2,Yusuf-Meyer-Ring 3/4,54772,+49(0)5171233694
+1044,Alexander Junck,Male,71,178,83,N08.8,Striebitzweg 6/3,10111,+49(0)9256 36667
+1045,Prof. Waltrud Hartung,Female,75,173,59,R91.0,Ivan-Wulf-Gasse 7/7,88196,0534961937
+1046,Dipl.-Ing. Rotraud Rogge B.Eng.,Female,81,178,60,O64.0,Pruschkegasse 2/6,51271,+49(0) 903120850
+1047,Kreszenz Ruppersberger B.Sc.,Female,36,166,63,E67.3,Scholtzstr. 7,23563,05645 39029
+1048,Raisa Conradi-Lachmann,Female,70,170,53,D22.3,Zimmerallee 962,53288,+49(0)3363 14347
+1049,Serpil Gierschner-Bauer,Female,55,172,58,D61.5,Lehmannstr. 27,12771,09173 770048
+1050,Prof. Elise Siering,Female,67,171,73,R95.5,Stefania-Wiek-Ring 48,79474,+49(0)9849 643061
+1051,Dino Reuter,Male,65,175,93,T50.0,Kadestraße 9,40671,02040 042438
+1052,Dipl.-Ing. Ehrhard Zahn B.A.,Male,18,182,71,F01.3,Gerti-Trupp-Straße 2/0,71318,+49 (0) 9214 799650
+1053,Rebekka Wirth,Female,39,173,61,T12.5,Korinna-Pohl-Gasse 750,18967,+49(0)3137 978718
+1054,Bernadette Gutknecht,Female,86,173,59,E64.9,Kohlweg 150,98307,0373967899
+1055,Prof. Kathrin Girschner,Female,46,176,58,N74.6,Katy-Römer-Weg 1,54068,+49(0) 799385280
+1056,Danilo Heidrich,Male,53,174,73,H70.7,Adina-Gutknecht-Allee 94,07093,+49(0)0335351363
+1057,Donald Schleich,Male,41,184,86,I37.6,Otmar-Söding-Gasse 6,36203,+49(0)1519307697
+1058,Prof. Belinda Mitschke,Female,54,175,60,J83.9,Fechnerallee 4/8,44681,+49(0)2174532582
+1059,Slobodan Pergande,Male,69,177,92,J00.6,Gerald-Dippel-Ring 91,28174,0103788729
+1060,Urte Stroh,Female,52,162,50,R10.8,Marlene-Klemt-Platz 4/5,52562,+49(0)6889 295063
+1061,Univ.Prof. Victoria Paffrath B.Sc.,Non-Binary,35,172,93,A58.6,Hessestr. 3,26776,(05330) 74680
+1062,Hülya Hänel-Schomber,Female,24,164,63,Z20.8,Junckengasse 62,27174,(00539) 35408
+1063,Helena Geisel,Female,39,168,74,H94.8,Krebsstr. 105,85922,0077897414
+1064,Frederic Gröttner,Male,69,184,87,E04.7,Aenne-Jüttner-Weg 8/8,20521,08619 716433
+1065,Edeltraud Gröttner,Female,47,175,53,Y70.6,Klotzstr. 411,34208,+49 (0) 8574 689244
+1066,Hans-Helmut Beier,Male,53,184,75,V21.1,Stefania-Köster-Platz 7,27062,+49(0)6551991900
+1067,Georgia Zimmer,Female,83,170,53,B39.5,Södingallee 7,70806,06618823170
+1068,Emmi Seifert,Female,33,165,56,H07.8,Theobald-Herrmann-Ring 845,64535,+49 (0) 2865 447092
+1069,Kuno Köhler,Male,39,179,68,Q04.8,Edeltraut-Huhn-Weg 3,17354,03231652293
+1070,Aysel Gröttner-Geißler,Female,33,164,60,L56.6,Häringstr. 9,92994,0467417561
+1071,Ing. Amalie Meister,Female,57,172,49,E86.7,Ahmed-Juncken-Ring 96,38602,+49(0)1868577828
+1072,Arnd Hübel-Hermann,Male,48,170,92,F63.0,Joana-Blümel-Straße 50,28694,(00941) 642277
+1073,Herr Ryszard Schottin B.Sc.,Male,87,174,90,P44.1,Jopichring 6,72342,+49(0) 228886046
+1074,Martha Reuter-Henck,Female,62,173,64,M44.7,Margrafweg 05,84283,00861 05732
+1075,Janett Seifert-Pärtzelt,Female,72,177,43,Q81.8,Junkengasse 5/1,58668,01963 54020
+1076,Ing. Kata Reichmann,Female,48,181,57,F27.1,Rosemannstr. 85,31551,+49(0) 627923817
+1077,Agathe Jessel,Female,31,174,49,D93.1,Henriette-Matthäi-Ring 6/2,99122,03045 214744
+1078,Betty Süßebier,Female,43,159,47,N71.2,Wellerplatz 79,03248,(08893) 26177
+1079,Ante Kreusel B.A.,Male,74,176,89,J95.9,Scheuermannplatz 80,21427,04771 891802
+1080,Betti Jockel,Female,60,163,67,Y15.8,Zänkerweg 67,26113,+49(0)7008 925221
+1081,Traudl Jacob,Female,71,177,65,M97.0,Ansgar-Söding-Ring 38,13218,(00605) 89273
+1082,Istvan Löwer B.Eng.,Male,41,164,93,H13.1,Leonhard-Köhler-Weg 6/1,01791,(07718) 024885
+1083,Erica Rohleder B.A.,Female,92,162,54,Q39.7,Luise-Köhler-Gasse 59,47885,+49(0) 158125788
+1084,Reiner Förster,Male,56,166,99,J69.0,Beerstraße 58,15608,00894 05774
+1085,Dr. Agnes Römer MBA.,Female,88,169,69,F30.8,Lutz-Stiebitz-Weg 63,31292,+49(0)7826 427708
+1086,Amir Flantz-Trommler,Male,85,174,79,G97.3,Wiltrud-Stey-Straße 91,97199,(05388) 263989
+1087,Heidelinde Koch MBA.,Female,46,163,65,A12.2,Catherine-Losekann-Straße 544,10418,+49(0)4638644852
+1088,Prof. Heinz-Gerd Buchholz B.A.,Male,74,176,69,P52.5,Juri-Müller-Weg 380,60269,+49(0)8877128921
+1089,Dr. Theresa Adler,Female,71,168,53,M49.8,Bachmannplatz 7/1,94567,08353 127452
+1090,Änne Ruppersberger B.Sc.,Female,57,161,59,J26.7,Austermühleplatz 73,64444,+49(0)2616 06369
+1091,Jost Hövel,Male,44,185,83,H53.5,Hildburg-Klotz-Weg 542,93920,04100 881965
+1092,Heinz-Peter Seidel-Pärtzelt,Male,48,191,75,Y84.1,Hartmannring 98,36696,+49(0) 038745059
+1093,Ing. Karolin Lorch,Female,63,163,40,N47.7,Cäcilie-Hahn-Allee 619,08550,+49 (0) 5236 712158
+1094,Sofia Reising-Hörle,Female,88,165,51,G35.8,Klaus Peter-Kraushaar-Platz 3/0,92250,+49 (0) 8976 077805
+1095,Heinz-Otto Gotthard,Male,57,174,89,R40.3,Elfriede-Zänker-Platz 5/4,19582,03377935542
+1096,Gerlind Karz,Female,65,167,58,E98.4,Hübelgasse 0,84833,+49(0)2491 296331
+1097,Ljiljana Juncken B.Eng.,Female,40,174,54,E35.5,Försterstraße 20,01104,+49(0)2683 66896
+1098,Friedericke Flantz-Adler,Female,91,162,66,O18.8,Junkenplatz 873,00032,04689 954778
+1099,Xaver Bolander,Male,49,167,78,O55.0,Faustallee 25,62741,00662023063
+1100,Dr. Lucia Riehl B.Eng.,Female,72,170,57,T95.6,Alexandre-Rosenow-Platz 3,78931,(01785) 236861
+1101,Birgitt Hethur,Female,91,165,60,D60.0,Ullrichstraße 4,16675,+49 (0) 1099 747790
+1102,Walther Textor,Male,35,177,88,S00.3,Gerlachallee 22,80459,+49(0)6864123368
+1103,Torsten Koch,Male,62,175,89,C42.5,Zeynep-Mude-Ring 9,39507,+49 (0) 1661 816964
+1104,Laurenz Stiffel,Male,49,174,71,L96.8,Wielochstr. 354,78256,0300620067
+1105,Ing. Gitta Döring,Female,54,159,50,R54.4,Heini-Mies-Gasse 883,55736,0128198148
+1106,Ilse Butte,Female,68,155,57,G01.6,Hermighausenstr. 96,07058,06012 023075
+1107,Franz Wieloch B.A.,Male,43,183,88,N72.4,Metzplatz 3/2,63406,(01299) 754934
+1108,Raphaela Haase,Female,51,164,64,P70.8,Vogtplatz 6,45878,(04390) 484400
+1109,Klaus-D. Roskoth,Male,40,185,87,J84.8,Krokerring 1,73780,+49 (0) 3294 442469
+1110,Lieselotte Heydrich-Drubin,Female,41,161,60,T62.5,Bärerweg 6/6,55919,04124928361
+1111,Hans-Henning Hendriks,Male,70,174,80,H67.5,Hedda-Schmidtke-Straße 26,70013,05874881786
+1112,Severin Striebitz,Male,88,192,80,D51.1,Mara-Gieß-Weg 315,13235,+49(0)1184 488707
+1113,Prof. Klaus-D. Oestrovsky B.Sc.,Male,42,178,88,K48.7,Ahmed-Butte-Allee 30,88381,+49(0)6190729781
+1114,Gilbert Möchlichen,Male,93,171,80,K82.9,Naserplatz 118,36063,06489 08931
+1115,Nuri Rörricht,Male,48,179,81,P31.5,auch Schlauchinring 38,14444,+49(0)8582 28181
+1116,Agatha Krein B.A.,Female,48,172,64,V55.7,Försterplatz 1,13977,+49(0) 682770909
+1117,Dr. Enrico Finke B.Sc.,Male,47,191,78,J53.3,Isabella-Peukert-Allee 0,72499,03004396463
+1118,Kerstin Steckel,Female,52,175,53,P88.3,Tintzmannplatz 360,22684,+49 (0) 9932 620530
+1119,Univ.Prof. Erna Winkler MBA.,Female,72,164,48,Q01.7,Grete-Hölzenbecher-Straße 5,12515,+49(0) 245652993
+1120,Gert Koch II,Male,45,194,79,G35.0,Hagen-Kruschwitz-Ring 419,78876,+49(0) 283334287
+1121,Luis Renner,Male,86,185,74,Y58.5,Binnergasse 33,74683,00074 64348
+1122,Elwira Etzler,Female,88,173,53,F50.1,Jockelgasse 14,85629,+49(0) 515721457
+1123,Aziz Gude,Male,45,192,61,S49.3,Leonard-Adolph-Platz 5/4,56074,+49(0)3145 204920
+1124,Luzie Salz,Female,58,172,64,K19.8,Rustplatz 970,89286,0255624366
+1125,Univ.Prof. Antonina Krause B.Sc.,Female,33,169,61,V45.3,Lorchplatz 66,40336,(05451) 218020
+1126,Kristina Cichorius,Female,66,171,43,O79.0,Schmiedtring 7,36323,+49(0)4270 171213
+1127,Erich Keudel B.Sc.,Male,76,174,56,R28.3,Marie-Theres-Kensy-Allee 38,41517,+49(0) 912726168
+1128,Lena Barth,Female,72,171,69,I70.4,Krzysztof-Fliegner-Ring 42,98975,+49(0)9362876918
+1129,Dursun Rogge,Male,65,201,71,Y03.0,Schlosserweg 8/0,46459,+49(0)3310304035
+1130,Sophia Atzler,Female,40,171,60,L07.4,Sölzergasse 0/9,10541,+49(0)8872295611
+1131,Univ.Prof. Hans-Bernd Kohl MBA.,Male,33,174,87,F47.5,Schaafstraße 1,88918,+49(0) 060325275
+1132,Emmi Scheel-Klingelhöfer,Female,43,164,57,O56.1,Kargeallee 9,58933,+49(0) 117846206
+1133,Cläre Sölzer,Female,47,163,53,C75.5,Lili-Mitschke-Weg 9/3,98128,+49(0) 450369660
+1134,Eugenie Stumpf B.Sc.,Female,71,171,65,I09.3,Buchholzring 4,10094,00801 99580
+1135,Kunibert Höfig,Male,54,177,85,H99.8,Hanne-Misicher-Ring 7/4,50664,(02318) 16816
+1136,Hilmar Bachmann-Pergande,Male,65,180,81,D87.3,Keudelring 6,83556,+49(0)4228361008
+1137,Gerolf Benthin-Stumpf,Male,26,179,91,K29.3,van der Dussenring 7/7,19733,+49(0)9450 560182
+1138,Anita Kuhl,Non-Binary,72,175,79,K87.4,Hörlestr. 99,53948,+49(0)5694822140
+1139,Josip Lorch,Male,69,182,75,D64.4,Hans-Karl-Stumpf-Ring 8/9,23203,05995 10073
+1140,Alice Wieloch-Bolnbach,Female,32,174,59,K99.3,Schaafweg 235,18787,08867190744
+1141,Karl-Wilhelm Vogt,Male,43,179,94,O75.3,Jan-Renner-Weg 5,59092,+49(0)8125 22223
+1142,Harro Berger,Male,27,169,81,Z44.6,Salzallee 264,88466,+49(0)0818 801931
+1143,Veronique Hermann,Female,67,166,56,S64.6,Bauerstr. 1/3,48828,+49(0)1078 08489
+1144,Gabor Mentzel,Male,60,170,73,O43.5,Lili-Mude-Platz 9,19006,+49(0) 693759740
+1145,Dr. Ingeburg Klapp MBA.,Female,55,173,67,M72.2,Pruschkeallee 73,89115,0873285135
+1146,Dipl.-Ing. Adriane Gieß,Female,37,170,51,C45.7,Laszlo-Schleich-Weg 2,42830,0442163312
+1147,Prof. Franz Gerlach,Male,27,169,83,H00.5,Mansallee 7,54212,+49(0) 860172796
+1148,Rosina Werner,Female,38,175,53,H44.5,Andrey-Mentzel-Straße 0,92091,03377 213587
+1149,Joana Hiller,Female,96,180,77,E96.0,Marieluise-Wilmsen-Ring 7/2,80247,(04957) 211055
+1150,Ann Staude,Female,19,166,53,C42.7,Spießring 97,60362,+49 (0) 8245 873306
+1151,Susann Rohleder-Barkholz,Female,60,165,62,C24.1,Oderwaldgasse 605,52418,(06097) 87836
+1152,Saskia Hornich B.Eng.,Female,58,174,60,O31.0,Margarethe-Kabus-Gasse 6/4,89442,02965 030956
+1153,Julia Kruschwitz B.Sc.,Female,38,171,58,Y85.6,Beyerweg 509,33911,07102892561
+1154,Rosa Wagenknecht,Female,57,167,62,F65.8,Schachtweg 3/4,68204,04459 59216
+1155,Helene Kitzmann,Female,44,163,51,O22.9,Gorlitzstr. 716,29890,(05404) 20008
+1156,Erdmute Gorlitz,Female,84,167,59,K20.4,Müllerring 02,44845,+49(0) 746551524
+1157,Klaus-Michael Patberg,Male,72,189,75,V26.0,Klingelhöferring 89,55292,(01140) 525399
+1158,Lorenz Trüb,Male,18,173,72,L10.1,Andrew-Schacht-Gasse 43,89455,+49 (0) 4385 588096
+1159,Ing. Gotthold Ackermann,Male,19,182,82,O07.4,Zobelweg 92,58246,00149606684
+1160,Leni Liebelt B.A.,Female,100,180,61,S05.2,Paulo-Schwital-Straße 625,71272,(05731) 87365
+1161,Zofia Oestrovsky-Stey,Female,71,171,60,Q70.8,Zlatko-Etzler-Platz 197,16362,+49 (0) 6989 640673
+1162,Willibert Oestrovsky,Male,23,183,64,A46.2,Heinallee 14,52616,00459 917120
+1163,Dipl.-Ing. Gustav Herrmann,Male,62,189,75,B98.2,Bolnbachstr. 0,05199,05231 79519
+1164,Herr Tilmann Hethur B.Eng.,Male,52,175,74,L67.7,Leo-Klapp-Straße 609,51065,+49(0)7138 013472
+1165,Annedore Werner,Female,29,162,60,H13.1,Brita-Röhrdanz-Platz 260,33384,(08231) 821314
+1166,Ursel Loos,Female,20,169,71,L89.4,Gerolf-Wagner-Allee 81,87124,+49(0)1877764899
+1167,Hans-Bernd Junck,Male,36,189,95,A02.8,Stefania-Naser-Allee 7/3,18497,+49(0)5014370283
+1168,Hassan Förster,Male,78,176,67,K60.1,Eimergasse 18,13193,(05722) 69506
+1169,Wilfriede Pechel,Female,33,174,50,H96.5,René-Heydrich-Platz 333,55311,+49(0)9990 792558
+1170,Edelgard Bärer,Female,53,169,66,L47.4,Jolanta-Schmidtke-Straße 5/7,86120,06490 11773
+1171,Ryszard Pergande,Male,63,188,69,K83.9,Friedericke-Margraf-Ring 931,43105,00774 06988
+1172,Hans-Hinrich Cichorius,Male,41,193,73,Z44.2,Eckbauerstraße 2,05153,(01697) 62080
+1173,Jana Mangold-Langern,Female,47,171,69,P61.9,Adolphplatz 7/9,68948,+49(0)4197 24602
+1174,Cornelius Haase,Male,96,177,70,C01.7,Gönül-Ritter-Ring 651,12732,+49(0)5878 102606
+1175,Dipl.-Ing. Christl Fiebig B.Eng.,Female,86,169,58,Z04.8,Toni-Bruder-Platz 04,12406,06917 098678
+1176,Viktoria Schmidt,Female,60,164,61,L00.8,Heringring 2/4,02631,(00779) 67713
+1177,Ing. Gülsen Renner B.Eng.,Non-Binary,66,178,69,H38.3,Sarah-Jüttner-Allee 328,93790,+49(0)3010 349802
+1178,Curt Warmer,Non-Binary,43,172,85,F04.8,Eckart-Conradi-Weg 182,50969,+49(0)9893 570330
+1179,Prof. Herlinde Täsche,Female,48,157,53,E46.6,Dussen vanweg 8,85493,(05896) 602813
+1180,Irmi Löffler,Female,81,166,63,H21.6,Pergandeallee 2,04007,03489 575916
+1181,Univ.Prof. Sigurd Fiebig B.Sc.,Male,84,191,77,F98.6,Walterplatz 2,46343,0986704203
+1182,Jost Reuter,Male,72,187,77,H52.3,Janos-Haering-Straße 72,09932,+49(0) 420973604
+1183,Paulina Schwital,Female,60,162,69,L19.3,Henryk-Drubin-Platz 923,97570,00193 154337
+1184,Diethard Drubin,Male,67,183,93,K01.6,Antoinette-Junitz-Ring 24,20078,+49(0)8645 69430
+1185,Roderich Henck,Male,35,178,75,M07.7,Matthäus-Hermighausen-Platz 6,71577,+49(0)0063070615
+1186,Ferenc Karz,Male,54,189,77,H84.6,Heidrichstraße 21,59653,+49 (0) 7365 697596
+1187,Filippo Mühle B.A.,Male,39,170,68,E28.2,Torsten-Albers-Gasse 12,41066,(04180) 098982
+1188,Dr. Sibille Dobes,Non-Binary,60,172,80,F17.3,Lehmannstr. 62,43641,0228740706
+1189,Lore Winkler,Female,76,168,47,T52.6,Theresia-Ortmann-Platz 6,68666,07415620806
+1190,Annelise Cichorius,Female,66,173,62,J04.0,Emilia-Ring-Weg 892,97425,06565 975599
+1191,Urs Krause,Male,56,175,97,P81.8,Hans-Erich-Trub-Gasse 34,45111,0333383129
+1192,Hugo Döring,Male,69,178,90,C08.5,Lutz-Scholz-Platz 873,76068,+49(0)4050 764731
+1193,Enrico Jungfer,Male,25,181,70,D57.1,Aysel-Misicher-Gasse 4/8,03835,+49(0)5677711459
+1194,Otfried Lindner,Male,54,186,71,N02.4,Atzlerplatz 15,52151,(01205) 291274
+1195,Björn Killer,Male,77,176,76,J80.6,Dietzgasse 915,34407,+49 (0) 7505 264366
+1196,Remo Gnatz,Male,70,168,93,M63.5,Köhlerring 9/0,35680,+49(0)7734 367747
+1197,Agnes Sontag-Thies,Female,83,170,65,B69.9,Alice-Henschel-Straße 3,24941,+49 (0) 2065 437264
+1198,Prof. Erika Cichorius,Female,48,175,71,L35.1,Ricarda-Roht-Straße 1/8,22072,(08813) 76056
+1199,Valeria Steinberg,Female,84,162,54,F47.5,Striebitzallee 9,42770,+49(0)1239 152991
+1200,Frau Verena Sölzer MBA.,Female,69,175,58,P23.2,Trudi-Hornich-Straße 86,53402,+49(0)1010 24268
+1201,Herr Horst-Peter Trupp B.A.,Male,45,182,98,S34.0,Benthinstraße 28,70291,(02288) 62559
+1202,Miguel Gehringer B.Eng.,Male,81,184,88,J99.2,Gerard-Gorlitz-Gasse 8,76802,01133585426
+1203,Marten Börner,Male,43,180,79,I32.2,Rennerstraße 6,78264,+49 (0) 0479 530497
+1204,Hanne-Lore Nohlmans-Beckmann,Female,83,166,54,Q71.8,Cemil-Christoph-Platz 4/0,99035,+49 (0) 5761 635523
+1205,Prof. Manfred Stumpf B.Eng.,Male,66,183,76,G07.7,Hans-Gerd-Hartmann-Ring 56,41432,01086561966
+1206,Hannes Trubin,Male,28,178,82,E43.2,Ismet-Meister-Gasse 21,92830,+49(0)1644 638057
+1207,Augusta Eigenwillig,Female,71,171,60,J06.3,Aumannweg 34,46251,07837 45235
+1208,Dr. Annamaria Vollbrecht MBA.,Female,61,165,67,D91.0,Pölitzallee 4,54865,+49 (0) 7879 105640
+1209,Dipl.-Ing. Jörn Vollbrecht,Male,74,159,85,O79.8,Hermighausenring 5,10917,08650 070375
+1210,Leander Kade,Male,59,174,80,I93.6,Hörlestr. 667,07490,+49 (0) 5351 976514
+1211,Herr Roger Rohleder,Male,66,185,81,G21.1,Hartunggasse 71,01800,03333 718297
+1212,Joana Kabus,Female,54,177,61,N70.9,Christl-Heser-Ring 1,84312,(05772) 179041
+1213,Anja Karz B.A.,Female,45,163,65,V87.2,Schenkweg 53,87210,(07169) 912860
+1214,Dipl.-Ing. Hildegund Hettner MBA.,Female,56,174,64,S81.1,Mariusz-Rudolph-Gasse 3,97669,+49(0)7254468138
+1215,Univ.Prof. Heinz-Wilhelm Austermühle,Male,54,171,80,I94.5,Anna-Lena-Zobel-Gasse 7,87524,+49(0)7650 468074
+1216,Ljudmila Dippel,Female,67,163,78,S03.5,Baptist-Hendriks-Weg 452,85263,08998614937
+1217,Irmela Trupp-Wilms,Female,56,160,59,Q56.9,Conny-Müller-Straße 4/0,76751,+49(0)0603 89052
+1218,Dr. Roderich Kensy B.Sc.,Male,98,182,65,K42.7,Friedemann-Mühle-Straße 1/2,81046,08908122435
+1219,Dipl.-Ing. Christof Schweitzer B.A.,Male,59,189,86,Q21.8,Niemeierstr. 258,16934,+49(0)6986 33184
+1220,Ljubica Heydrich,Female,67,171,57,H62.2,Dagmar-auch Schlauchin-Platz 57,42051,+49 (0) 6624 427398
+1221,Ludwig Margraf B.Eng.,Male,90,164,89,Q52.0,Seifertallee 34,47716,05219 557199
+1222,Evi Dippel,Female,54,172,55,V60.5,Beyerstraße 351,93492,(02026) 85427
+1223,Moritz Schmiedecke,Male,57,185,86,R05.1,Kristine-Röhricht-Platz 0/8,27497,+49 (0) 0158 862192
+1224,Univ.Prof. Robert Stahr,Male,57,173,74,H58.5,Reginald-Seifert-Gasse 6/6,00501,02273 49416
+1225,Thomas Schinke B.A.,Male,38,175,86,V90.4,Höfigstr. 06,62828,+49(0)6334 91007
+1226,Andree Benthin,Male,56,174,78,Q02.7,Davidsplatz 8,40961,01218 489051
+1227,Daria Vogt-Mühle,Female,42,168,55,T77.3,Zirmestraße 9,82784,+49 (0) 7593 224604
+1228,Hans-Peter Naser-Ruppersberger,Male,43,185,94,G78.4,Flantzstr. 8,14193,+49(0)9040038441
+1229,Hellmut Adler,Male,45,160,79,O34.5,Seifertweg 3,75710,+49 (0) 9793 321252
+1230,Mahmut Seip,Male,56,182,83,S01.1,Kramergasse 8,81825,(02194) 647316
+1231,Ralf Wohlgemut,Male,80,175,81,J16.1,Lübsweg 0,30844,05411 62635
+1232,Siegmar Hövel B.A.,Male,80,173,56,A25.9,Börnerplatz 9,03017,+49(0)2996 010035
+1233,Ekkehard Matthäi,Male,29,177,95,I03.5,Hettnergasse 309,00149,(06201) 449914
+1234,Janett Drub,Female,49,163,62,O21.6,Röhrichtweg 1/6,90467,05074164777
+1235,Wolfgang Wilms-Wähner,Male,49,186,87,Q85.7,Gisela-Zirme-Gasse 35,13130,+49(0)7884 50667
+1236,Eckhard Jäkel,Male,35,186,81,L11.0,Gerhardt-Krein-Straße 2/6,77204,+49(0)5724385808
+1237,Dorothe Birnbaum-Gertz,Female,40,167,43,F19.7,Silvio-Röhricht-Allee 5,87452,+49(0)5026 20267
+1238,Frau Leyla Briemer B.Eng.,Female,53,169,51,O35.4,Reisingstraße 598,05749,00692644617
+1239,Dr. Alena Kohl,Female,92,165,70,V91.1,Hahnstraße 9/1,71393,(04075) 613949
+1240,Ralf-Peter Pieper,Male,62,181,68,R56.7,Gnatzplatz 7,67858,+49(0)3688 207378
+1241,Prof. Gebhard Girschner B.Eng.,Male,40,175,84,L07.2,Finkestraße 1/8,72025,+49(0)0514870903
+1242,Valeska Langern B.Sc.,Female,69,166,53,B79.8,Weinholdstr. 7/3,00109,(03356) 344670
+1243,Vera Heinrich,Female,66,175,59,G11.9,Biggenweg 49,72755,0513427913
+1244,Philippe Tlustek,Male,71,194,86,R34.0,Anita-Seip-Gasse 736,38433,05873460687
+1245,Ana Hethur-Hofmann,Female,39,164,69,Y77.9,Harm-Matthäi-Allee 5/1,94903,+49(0)2537 499545
+1246,Ing. Wolf Trapp B.Sc.,Male,66,186,74,T14.4,Hans-Josef-Christoph-Allee 3/5,89464,+49(0)9513812099
+1247,Gottlob Wagenknecht,Male,74,185,71,N92.0,Hanni-Mende-Weg 7/6,52436,02816 166722
+1248,Ismet Ladeck,Male,47,182,86,F70.9,Birnbaumstr. 678,72956,+49(0) 810415137
+1249,Stephan Finke,Non-Binary,44,177,77,O18.7,Kuschplatz 916,21405,+49(0)8347172111
+1250,Wladimir Süßebier,Male,55,177,90,O53.9,Scholtzstr. 2,42504,(00169) 207573
+1251,Cornelius Hermann,Male,47,176,78,T52.1,Andersstraße 3/4,94159,+49(0)8269 666836
+1252,Gertraut Löchel,Female,86,169,58,E34.3,Aline-Tröst-Gasse 41,40164,(09230) 71104
+1253,Genoveva Hande-Segebahn,Female,35,173,56,L44.1,Schaafring 53,10836,+49(0)2456571031
+1254,Anatoli Krein,Male,73,176,54,F28.4,Wilfried-Scheibe-Gasse 9/3,32629,+49(0)1097 88492
+1255,Ilona Riehl MBA.,Female,87,171,61,G30.9,Hedwig-Koch II-Weg 30,11431,(02615) 591335
+1256,Ben Wiek,Non-Binary,58,163,108,E35.7,Kraushaarweg 7/5,48930,+49(0)9690948678
+1257,Dagobert Textor B.Eng.,Male,63,179,92,B29.2,Knut-Kostolzin-Ring 096,33468,+49 (0) 5037 038375
+1258,Gudrun Mühle,Female,57,158,61,E83.3,Wolfhard-Barth-Gasse 20,12156,00622 55478
+1259,Murat Hering-Vollbrecht,Male,36,181,75,F80.2,Jacobstraße 7,15972,(00066) 92983
+1260,Siegrun Peukert,Female,61,169,61,T22.0,Gordon-Stey-Platz 98,50208,(00599) 16923
+1261,Hedi Dippel,Female,52,164,61,R86.1,Hanno-Bähr-Allee 6/5,64806,+49(0) 951655425
+1262,Elvira Beckmann MBA.,Female,76,169,40,E02.6,Wesackgasse 7/8,92161,04608 897447
+1263,Stefano Trapp,Male,59,198,83,J51.4,Jelena-Ritter-Gasse 01,10925,+49 (0) 2179 070299
+1264,Jolanda Beyer B.Eng.,Female,81,172,54,P72.9,Döringstraße 0/3,92840,07799 14143
+1265,Ing. Petros Rosemann,Male,41,178,70,E57.8,Eileen-Gude-Straße 1,00124,01911 54615
+1266,Hans Dieter Otto,Male,58,191,80,T94.8,Kreinweg 58,16981,(02436) 97931
+1267,Ing. Hanne-Lore Steinberg B.A.,Female,41,173,69,N67.1,Bienstraße 6/4,33117,0062110564
+1268,Dr. Reiner Rosemann MBA.,Male,80,192,60,L06.2,Striebitzplatz 5/2,44156,+49(0)1836 255985
+1269,Sylwia Haering,Female,68,173,45,N27.0,Gottlob-Häring-Weg 24,18871,+49(0)0549 76929
+1270,Univ.Prof. Rudolph Adolph B.Sc.,Male,72,181,95,V35.8,Frank-Michael-Sölzer-Allee 470,62243,(06332) 998552
+1271,Frau Lotte Albers B.Sc.,Female,55,175,48,B28.2,Loosplatz 3/1,46913,(07814) 03144
+1272,Iris Dörschner,Female,53,172,42,J27.1,Liesel-Staude-Straße 1/8,67843,+49(0) 009775177
+1273,Walther Hande-Girschner,Male,53,170,98,F11.4,Wiltrud-Köhler-Straße 1/8,15931,+49(0) 568392783
+1274,Frau Loretta Noack B.A.,Female,72,161,59,M37.2,Döringallee 17,09765,(02075) 56581
+1275,Alois Bolander,Male,59,166,76,F63.1,Stolzestr. 9,64706,+49(0)8458764868
+1276,Hannelore Mies B.A.,Female,55,161,72,O65.8,Thanelstraße 4/1,11006,+49(0)7313785296
+1277,Annett Junk B.Sc.,Female,26,164,51,Q86.6,Rustring 651,49850,+49(0)6945 73037
+1278,Herr Tomislav Schleich,Male,69,176,88,D99.5,Segebahnplatz 2/1,69872,0660166204
+1279,Susanna Wulff-Zänker,Female,61,166,62,R83.9,Willi-Heinz-Ring 7/5,43567,01494 99356
+1280,Ing. Lidwina Kreusel B.Eng.,Non-Binary,62,176,57,Q80.3,Falko-Benthin-Allee 64,15604,07975 61758
+1281,Dr. Rene Gutknecht B.A.,Male,48,169,78,S88.5,Hendriksweg 9/1,83706,+49(0)3831076719
+1282,Cemil Kaul-Rose,Male,68,185,65,L20.2,Stiebitzplatz 878,30923,+49(0) 999230210
+1283,Sylvio Margraf,Male,38,171,84,F21.6,Waltergasse 6,95122,(01862) 11277
+1284,Dariusz Gotthard-Löffler,Male,62,178,72,R30.2,Faustring 921,70122,+49(0)6720 215966
+1285,Stanislaus Otto,Male,57,197,96,Q72.0,Kunibert-Ehlert-Gasse 413,07558,+49(0)3214378915
+1286,Reinhardt Wulff,Male,32,183,98,Q15.8,Ortrun-Klemm-Allee 4/3,11727,+49(0) 076170995
+1287,Bernd-Dieter Adler,Male,63,174,74,M15.3,Fritschgasse 1/1,73714,+49(0)9066 318282
+1288,Ing. Pascale Caspar B.Eng.,Female,73,165,65,R05.2,Rena-Schäfer-Ring 8,15642,(07737) 33991
+1289,Irmengard Mohaupt,Female,49,158,58,D52.0,Thorsten-Ruppersberger-Ring 07,53905,+49(0)2261761331
+1290,Marko Jockel,Male,77,175,85,F84.9,Jan-Peter-Bolzmann-Gasse 09,41397,(07084) 416314
+1291,Silke Weihmann,Female,32,160,73,T90.1,Schinkegasse 14,31787,+49(0) 705784856
+1292,Inge Gunpf,Female,41,169,47,Q30.4,Römerweg 8/5,61320,+49 (0) 0602 661963
+1293,Mira Kusch,Female,77,166,61,S77.5,Börnerallee 94,67982,0059786891
+1294,Rebekka Wende,Female,41,164,60,D86.5,Pergandeweg 321,18826,08173 55122
+1295,Marina Rörricht,Female,47,161,55,C47.2,Horst-Dieter-Weiß-Straße 898,95616,+49(0) 115833646
+1296,Joana Segebahn,Female,66,160,56,K80.7,Adina-Holsten-Ring 2,08240,+49(0)5993 13519
+1297,Giesela Holt,Female,66,173,65,F43.9,Anastasios-Schmidt-Allee 894,65580,+49(0)3170 880009
+1298,Brunhilde Holt,Female,81,167,71,F47.0,Pedro-Scheel-Platz 0/2,64036,+49(0)8383 290992
+1299,Laszlo Geißler,Male,89,171,74,V03.6,Arthur-Dehmel-Gasse 26,60222,+49 (0) 0732 399487
+1300,Maximilian Pölitz,Male,57,170,95,R74.6,Gaetano-Pruschke-Weg 24,27203,+49(0) 574515901
+1301,Horst Misicher B.Sc.,Male,55,180,92,Z94.7,Hahnstraße 357,93405,04775 958461
+1302,Antonino Vogt,Male,79,179,69,E38.7,Löwerring 70,45314,+49 (0) 8593 687330
+1303,Ing. Adriana Kusch,Female,21,166,50,L39.4,Carlos-Scheibe-Ring 1,40592,(09445) 04214
+1304,Stefania Lehmann,Female,56,166,62,C94.7,Adolphgasse 809,95429,0968885405
+1305,Ercan Hertrampf,Male,45,167,62,C29.3,Eigenwilligstr. 637,95499,+49(0)9682 79546
+1306,Ricarda Hermighausen,Female,57,161,79,J43.1,Schönlandstr. 6,70699,+49(0) 180179723
+1307,Jeanette Mies,Female,61,160,61,Y36.3,Gero-Bärer-Platz 7/3,01904,0368157846
+1308,Bert Sauer,Male,66,178,85,I33.0,Larissa-Karge-Platz 26,92672,+49(0) 579307065
+1309,Prof. Anna-Maria Jähn B.Eng.,Female,53,177,58,P42.3,Mareile-Aumann-Platz 3,92956,+49(0)6193354969
+1310,Univ.Prof. Yvonne Neuschäfer B.Sc.,Female,91,166,64,J36.5,Hanife-Eigenwillig-Straße 7,16876,0802492470
+1311,Adelheid Liebelt,Female,62,167,66,Y16.6,Andrej-Barkholz-Allee 6/8,18603,+49 (0) 2890 297688
+1312,Slavko Förster,Male,59,187,71,E86.3,Hübelallee 156,93160,+49 (0) 6271 972460
+1313,Ayten Seifert,Female,50,160,48,E95.5,Kostolzinstraße 3,22359,+49(0)3380931792
+1314,Ibrahim Eberhardt,Male,63,180,80,B64.2,Insa-Biggen-Gasse 0,96191,(03695) 12064
+1315,Dr. Hans-Ludwig Birnbaum MBA.,Male,33,174,78,S09.6,Schmidtweg 607,81590,0879740220
+1316,Herr Friedbert Karge MBA.,Male,39,178,101,F93.1,Susanne-Hein-Gasse 99,80188,(03205) 351856
+1317,Hans-Günter Schaaf,Male,55,175,71,L09.1,Dietlinde-Römer-Allee 4,84570,03723 689244
+1318,Univ.Prof. Josip Langern,Male,71,186,79,Q17.7,Magdalene-Langern-Weg 3/5,30599,(04858) 203489
+1319,Monica Beyer B.A.,Female,66,162,56,P12.7,Kitzmannring 7,07027,+49(0)4433 572033
+1320,Univ.Prof. Marko Mans MBA.,Male,27,173,65,B27.4,Ulrike-Schönland-Allee 99,31374,+49(0)4612 70118
+1321,Ljubica Hermann,Female,50,160,55,Y86.0,Hans-Dieter-Wernecke-Weg 1/5,55418,0474900096
+1322,Orhan Junken,Male,75,179,106,O47.5,Clarissa-Schleich-Weg 98,31468,+49(0)1792 05282
+1323,Friedrich-Wilhelm Blümel,Male,68,185,84,F11.3,Mühleplatz 3,89898,+49(0)5589 24197
+1324,Mesut Mohaupt,Male,65,182,71,P64.2,Volkmar-Graf-Gasse 3,81954,(05423) 38386
+1325,Univ.Prof. Annemie Hesse MBA.,Female,78,168,60,E81.1,Nicolas-Kaul-Gasse 12,58227,+49(0)2999681257
+1326,Dipl.-Ing. Rüdiger Hänel,Male,45,178,90,S28.5,Klaus-Peter-Dörr-Allee 4,52625,+49(0)7441232043
+1327,Bozena Jäntsch B.Sc.,Female,75,178,58,S21.4,Bergerallee 88,64423,(04116) 96106
+1328,Hans-Adolf Dehmel,Male,54,181,92,B66.4,Herrmannplatz 095,98449,(07544) 78675
+1329,Jann Hentschel,Male,79,174,86,C79.7,Klingelhöferweg 3/7,43694,(00067) 59114
+1330,Univ.Prof. Willibert Fischer B.Sc.,Male,75,183,89,G39.8,Scholtzallee 90,32711,01100 117593
+1331,Dr. Marie-Theres Zorbach B.Sc.,Female,43,160,52,N69.7,Ursel-Becker-Gasse 8/0,09627,(03560) 028951
+1332,Eleonore Trupp,Female,36,156,54,V79.0,Janko-Schleich-Allee 30,62218,(06388) 510382
+1333,Univ.Prof. Giorgio Thies,Male,44,181,97,I89.4,Constanze-Gotthard-Weg 933,21828,05332132261
+1334,Adelgunde auch Schlauchin-Hahn,Female,62,166,70,F60.6,Ottoweg 4,49037,+49(0)0490 62170
+1335,Herr Hans-Jörg Bolnbach,Male,62,175,80,L37.1,Ilonka-Ladeck-Gasse 5,44325,+49(0) 023843840
+1336,Betti Hölzenbecher-Vogt,Female,69,171,55,V29.3,Schleichgasse 5/8,25159,+49(0)4127 50160
+1337,Kunigunde Hentschel,Female,88,173,58,I26.7,Edeltrud-Sorgatz-Gasse 7/7,07980,01578 94248
+1338,Ioannis Mälzer,Male,60,171,75,A89.6,Weinhagering 0,07453,(09142) 937959
+1339,Ludwig Stoll,Male,36,184,82,P32.6,Sorgatzweg 87,74379,09865154889
+1340,Ada Weimer B.Sc.,Male,83,179,63,T24.3,Gnatzring 069,16368,(00301) 53135
+1341,Eva-Maria Heß,Female,46,166,59,N76.5,Sabrina-Klingelhöfer-Weg 1,28545,+49(0)9303 83031
+1342,Gernot Holt,Male,39,186,67,J19.8,Wolf-Heintze-Weg 340,82804,(01997) 363744
+1343,Magda Rohleder-Johann,Female,81,170,55,S03.1,Sölzerallee 895,06117,+49 (0) 7230 475673
+1344,Dr. Alfons Lübs B.Sc.,Male,71,180,79,F38.2,Wolfgang-Hartmann-Gasse 0/6,98438,02018 40387
+1345,Louise Jäntsch B.Sc.,Female,43,155,76,C37.2,Marta-Schleich-Straße 139,87799,+49(0)2225 645007
+1346,Almuth Junck-Fritsch,Female,97,166,63,L56.5,Joerg-Bohlander-Straße 92,55715,06567 60294
+1347,Abram Schüler,Male,68,180,85,C63.0,Mielcarekplatz 3,64288,01892 549492
+1348,Ing. Alban Hesse B.Eng.,Male,31,178,70,T41.5,Erdal-Kramer-Gasse 4/5,22140,+49 (0) 4077 690652
+1349,Heidemarie Kallert-Bolander,Female,66,173,67,F92.9,Monika-Kohl-Allee 4,31246,+49(0)5610 29413
+1350,Annegrete Juncken-Koch,Female,66,165,47,T89.4,Klappring 2,07753,05501 50980
+1351,Dr. Zoran Geißler B.Sc.,Male,51,185,76,B62.6,Sergej-Austermühle-Allee 759,25632,06383 44134
+1352,Klaus-Peter Salz,Male,67,178,82,M62.7,Krokerplatz 426,67820,(06879) 80003
+1353,Oscar Scholl-Tschentscher,Male,78,170,90,R40.0,Alois-Drub-Gasse 6/9,56147,09426206251
+1354,Sibylla Wende-Möchlichen,Female,55,166,55,O05.4,Mendestraße 905,00721,04124 48277
+1355,Annemarie Bonbach,Female,90,163,54,E58.1,Annelies-Fechner-Gasse 0/4,05150,0323492966
+1356,Winfried Eigenwillig-Schottin,Male,99,181,73,J75.2,Karzallee 00,93944,+49(0)4265 79469
+1357,Univ.Prof. Theodora Schuchhardt B.Sc.,Female,52,159,65,I58.3,Hans-Uwe-Börner-Allee 3,04938,+49(0)6024 42166
+1358,Univ.Prof. Raymond Tintzmann,Male,61,166,58,Q55.0,Heinz-Dieter-Fischer-Gasse 32,42502,+49(0)7261 95103
+1359,Dr. Ida Eimer MBA.,Female,43,169,59,V52.3,Hillerstr. 27,41927,04541811989
+1360,Holger Krebs,Male,88,178,90,J41.4,Fischerallee 464,76058,(08296) 374498
+1361,Tobias Löchel,Male,64,171,101,M14.0,Liliane-Beyer-Weg 82,92512,0556843350
+1362,Dipl.-Ing. Frithjof Steinberg B.Sc.,Male,66,161,86,J37.2,Niemeierplatz 518,08425,02749 251908
+1363,Erdmute Tschentscher-Salz,Female,68,170,70,Z49.5,Emmy-Drewes-Ring 43,35155,00593536996
+1364,Fadime Weller,Female,57,159,55,T62.0,Ahmad-Heinz-Ring 362,55842,+49(0)0472 36111
+1365,Leonid Ortmann-Hornig,Male,56,178,82,I10.7,Hornigring 73,90657,(03030) 062095
+1366,Lisette Schweitzer,Female,53,162,58,Q92.2,Anastasia-Buchholz-Weg 94,14256,+49(0)2252 01623
+1367,Rüdiger Fliegner,Male,50,176,92,O17.5,Täscheplatz 2,64846,0555738104
+1368,Herr Aleksandr Mohaupt,Male,49,178,78,P77.0,Ludmilla-Rädel-Platz 2/8,85615,(04927) 22813
+1369,Zeynep Paffrath,Female,63,170,66,Q02.2,Trommlerallee 00,35866,02112 27488
+1370,Dietrich Mielcarek,Male,46,185,93,P15.4,Stolzering 83,88059,(08706) 05242
+1371,Edda Ebert B.A.,Female,36,171,57,J36.7,Aloisia-Krein-Straße 3/1,55480,05818305351
+1372,Imke Renner,Female,77,168,58,L03.8,Rädelgasse 84,95260,(02786) 36220
+1373,Frau Mariechen Johann B.Sc.,Non-Binary,54,175,73,J45.2,Carla-Faust-Allee 973,64286,0995933810
+1374,Josef Harloff,Male,44,177,76,G89.3,Johannstraße 1,83917,+49(0)9078 79570
+1375,Raymond Drub,Male,74,183,79,L34.5,Ilse-Jessel-Weg 906,13254,+49(0)2390993780
+1376,Ioannis Johann-Barkholz,Male,55,190,66,T80.2,Hövelgasse 2,05276,05841142142
+1377,Delia Hartmann,Female,39,170,55,Y94.1,Putzweg 64,68163,(03513) 441159
+1378,Nuray Seifert,Female,60,164,59,V73.3,Matthäiweg 32,41256,(04148) 72885
+1379,Danilo Tröst,Male,67,160,73,Q79.9,Bayram-Rogner-Platz 562,41911,+49(0)9180 790456
+1380,Sebastian Stahr,Male,75,187,63,P28.3,Vogtgasse 33,34911,(04643) 430281
+1381,Kasimir Wernecke,Male,27,200,75,O23.3,Stefani-Klotz-Platz 492,55529,+49(0) 530183326
+1382,Andre Ebert,Male,37,183,89,J75.7,Pärtzeltring 450,02669,0534970037
+1383,Karoline Reinhardt,Female,68,161,70,S14.7,Wilfriede-Mielcarek-Gasse 8,71195,(09146) 86859
+1384,Frau Angelina Gröttner B.A.,Female,67,171,54,L80.8,Dragica-Scheel-Weg 1/9,39585,09938067882
+1385,Prof. Lissy Pölitz,Female,43,174,56,M31.6,Beergasse 5,69412,(08255) 24755
+1386,Dipl.-Ing. Heinz-Walter Fritsch B.Eng.,Male,65,169,78,L21.6,Müllerstr. 586,77709,02157940720
+1387,Carmela Zänker MBA.,Female,57,166,76,N66.2,Sinaida-Nohlmans-Allee 419,73126,01992 88914
+1388,Geert Ziegert-Beier,Male,81,174,106,P95.1,Bruderring 615,32767,+49(0)4978 03292
+1389,Prof. Traude Jessel B.Sc.,Female,45,162,57,Q71.6,Mara-Döhn-Ring 7,78694,05996 11385
+1390,Dipl.-Ing. Alberto Holzapfel,Male,66,193,78,E59.7,Herrmann-Neureuther-Straße 450,68962,+49(0)0807 658934
+1391,Berend Metz,Male,62,174,91,O76.7,Wilmsengasse 880,43744,+49(0)6779 62178
+1392,Lidia Jockel-Hecker,Female,69,167,67,G85.6,Kenan-Zorbach-Ring 893,11951,05572753585
+1393,Sigurd Wende,Male,56,178,83,V72.2,Jäkelring 2/3,54233,+49(0)2197 033700
+1394,Carla Biggen B.Eng.,Female,69,168,64,E25.2,Kambsplatz 2/3,52765,02762 195441
+1395,Hajo Noack B.A.,Male,56,165,77,B08.6,Trommlerallee 1/4,64202,03984 85371
+1396,Univ.Prof. Karl Schmidt B.Sc.,Male,56,180,88,L03.0,Evelin-Gude-Platz 5/6,33933,00330690540
+1397,Traudel Eimer,Female,57,173,51,N35.6,Stefan-Heinz-Ring 30,73696,09991766655
+1398,Minna Gude,Female,59,165,51,C35.0,Corina-Huhn-Weg 72,53197,+49 (0) 0796 168545
+1399,Severin Fritsch-Trub,Male,79,175,92,V30.8,Tröstring 4/4,86464,01183 30758
+1400,Diedrich Beyer-Wernecke,Male,75,195,81,K35.6,Drubring 84,26365,02676 259794
+1401,Carmine Hendriks,Female,66,161,65,K17.9,Wellerweg 02,39230,(00166) 19241
+1402,Manuel Zobel,Male,25,173,79,R85.2,Marzena-Dehmel-Platz 49,55524,09825 17747
+1403,Luka Hamann,Female,72,160,61,A02.0,Koch IIstraße 051,47689,0538939531
+1404,Univ.Prof. Constance Becker,Female,85,170,44,S44.9,Nelly-Stiffel-Gasse 412,87970,(05232) 07633
+1405,Marlies Trubin,Female,33,173,60,O72.6,Rohtgasse 8/6,22948,0398190887
+1406,Dipl.-Ing. Nicole Briemer B.Eng.,Female,63,169,73,Z99.7,Dietzstraße 6/4,31093,+49(0)0994 173915
+1407,Hajo Bähr MBA.,Male,57,180,69,F14.5,Wilmsring 34,01092,+49(0)3682149552
+1408,Karen Börner MBA.,Female,80,167,50,F98.5,Irmgard-Kranz-Platz 1,58763,+49(0) 705561219
+1409,Dipl.-Ing. Geza Dussen van,Female,37,160,53,Q44.7,Gerolf-Stadelmann-Allee 918,76724,00242 386034
+1410,Hans-Helmut Pohl,Male,52,184,68,N42.2,Birte-Matthäi-Gasse 8,21601,06673 85139
+1411,Dipl.-Ing. Mira Wende B.Sc.,Female,68,172,65,C95.3,Steven-Rädel-Platz 957,83213,+49(0)1856 98953
+1412,Ing. Oswin Krebs B.Eng.,Non-Binary,85,176,60,P17.3,Holtallee 996,20368,+49(0)9743675515
+1413,German Noack,Male,28,170,98,P94.3,Astrid-Heß-Platz 4,62899,07404 501704
+1414,Univ.Prof. Sibilla Klemt B.Sc.,Female,59,161,47,B16.2,Pruschkeweg 1/4,80823,03408136911
+1415,Dörthe Putz,Non-Binary,62,181,65,B15.8,Heiner-Stoll-Platz 860,89084,06453006133
+1416,Peter Zänker-Budig,Male,53,192,82,M73.3,Koch IIweg 91,81008,03958 023670
+1417,Marius Lehmann,Male,75,183,63,R81.1,Ruben-Metz-Ring 3/4,88594,+49(0)7393 224598
+1418,Prof. Erich Hahn,Male,53,180,71,C61.6,Heinz-Willi-Schmidt-Straße 1,45999,+49(0)0693 114041
+1419,Univ.Prof. Annemarie Salz MBA.,Female,45,168,66,L47.3,Ortmannstr. 219,39805,09311162075
+1420,Lidia Anders,Female,75,170,67,N12.8,Dorle-Seidel-Gasse 5,34792,+49(0)1907 435464
+1421,Folkert Eberhardt,Male,81,189,80,G12.5,Asta-Döhn-Straße 6/8,40875,+49 (0) 9420 031624
+1422,Karl-Ernst Flantz,Male,91,187,82,H38.6,Nohlmansstraße 8,08848,+49 (0) 6911 919276
+1423,Ingo Trupp-Köster,Male,53,169,83,C38.6,Döringweg 3/4,33503,+49(0) 123484771
+1424,Iris Segebahn-Gertz,Female,29,167,53,I01.2,Rädelstraße 29,61783,+49(0)2185 449124
+1425,Arnulf Mosemann,Non-Binary,46,180,59,K04.3,Veronique-Weitzel-Gasse 8,69465,+49(0)3932404215
+1426,Thorben Seifert,Male,65,183,92,I51.0,Stumpfstr. 7/6,83885,0565783043
+1427,Iwona Höfig,Female,94,164,55,A09.0,Karl-Hermann-Krause-Platz 85,13170,+49(0)9219889628
+1428,Hellmut Rädel B.Eng.,Male,59,185,82,N66.2,Albertine-Knappe-Platz 3/1,47308,07521694151
+1429,Prof. Benno Rust B.A.,Male,36,171,65,D83.9,Tintzmannplatz 2/7,41760,+49(0)0569916030
+1430,Univ.Prof. Bernhard Möchlichen,Male,61,184,78,E26.8,Agnes-Bonbach-Gasse 44,75088,07839200191
+1431,Hans-Bernd Heydrich,Male,100,172,87,I00.7,Hans-Wolfgang-Gnatz-Allee 296,90923,00563 50292
+1432,Heinz-Wilhelm Eigenwillig,Male,41,174,67,R97.3,Beiergasse 1,70170,+49(0) 257680912
+1433,Gabriel Ebert,Male,60,175,83,T04.7,Gehringerring 0/1,61498,+49 (0) 3492 976188
+1434,Univ.Prof. Heinz-Dieter Junitz MBA.,Male,71,169,81,L15.0,Tilmann-auch Schlauchin-Ring 4/7,80705,+49(0) 099491241
+1435,Gerfried Jacobi Jäckel,Male,97,157,66,I93.0,Davidsstraße 1,85198,06745 791003
+1436,Nikolai Sauer,Male,38,177,78,R95.5,Junkallee 6/5,23893,(05708) 42741
+1437,Achim Freudenberger,Male,37,182,75,N92.2,Saskia-Römer-Gasse 3/0,43055,03371708536
+1438,Veli Söding-Sager,Male,69,176,96,D09.4,Löwerstr. 6,21038,+49(0)5922 842861
+1439,Dipl.-Ing. Ada Baum B.A.,Male,37,171,81,F76.5,Detlef-Kranz-Ring 6,78435,+49(0)6178 91137
+1440,Anastasios Roht,Male,62,176,91,B92.8,Hans-Willi-Junitz-Platz 9/6,85639,09430 126605
+1441,Angela Staude-Dowerg,Female,60,170,59,R54.1,Karl-Hermann-Hartmann-Straße 32,16851,0817082402
+1442,Dana Hartmann,Female,54,170,48,N59.6,Gülten-Schulz-Weg 6,20285,+49 (0) 9683 909306
+1443,Rebekka Matthäi,Female,54,170,56,I33.7,Sabina-Textor-Allee 6,70940,07941354205
+1444,Baldur Drub B.Sc.,Male,65,172,62,S22.7,Hans-Otto-Matthäi-Straße 4,47664,+49(0)0459 353398
+1445,Janos Weinhage,Male,51,174,84,S84.6,Metzstr. 1/0,60985,09019 28130
+1446,Mesut Eimer B.A.,Male,26,192,84,G64.7,Agathe-Klingelhöfer-Allee 83,52884,+49(0) 075585052
+1447,Univ.Prof. Albertine Losekann B.Eng.,Female,57,177,55,B28.9,Boucseingasse 7/3,59549,0483092530
+1448,Jaroslav Franke,Male,38,198,77,F86.1,Rena-Kramer-Weg 31,72668,+49(0)9651742736
+1449,Miguel Schönland,Male,94,190,70,E63.2,Hilma-Stiffel-Ring 17,98925,+49 (0) 6559 600178
+1450,Darko Biggen,Male,61,182,77,B85.4,Truppstr. 09,41079,04217 601939
+1451,Prof. Ernst-Dieter Albers,Male,45,174,83,N33.5,Bärerring 208,64218,03083 487695
+1452,Antonino Wilmsen,Male,59,172,66,G18.9,Tillmann-Gorlitz-Platz 10,92231,0061330517
+1453,Hans-Joachim Hartmann B.Sc.,Male,65,178,86,R78.1,Stiebitzweg 515,68575,(05120) 993371
+1454,Katja Schulz,Female,50,160,73,R61.7,Juan-Jopich-Allee 140,93637,+49(0)0884 948865
+1455,Undine Caspar,Female,75,161,50,A54.7,Siegmund-Bolander-Ring 7/5,56505,+49(0)6794 05675
+1456,Univ.Prof. Gert Weiß,Male,77,170,77,G76.6,Höfigweg 474,60551,06418573523
+1457,Aynur Koch II,Female,64,158,66,N35.2,Jörg-Spieß-Allee 26,82373,05758 496345
+1458,Gabi Trub,Non-Binary,91,186,70,B69.9,Vogtallee 6/6,07206,(02179) 61349
+1459,Guido Martin B.Eng.,Male,53,182,86,L05.2,Peukertring 5,56671,+49 (0) 0394 710427
+1460,Miroslawa Christoph-Bruder,Female,54,160,59,M53.4,Wilhelmine-Geisler-Ring 764,59984,08845 16784
+1461,Sybilla Beckmann-Budig,Female,69,171,66,M14.8,Pruschkering 2/6,12123,08271 630801
+1462,Kreszenz Bähr,Female,26,166,55,M01.6,Hiltraud-Wiek-Gasse 088,23938,+49 (0) 5818 874307
+1463,Gabriele Baum-Patberg,Female,60,172,64,B00.5,Hüseyin-Jacob-Gasse 4/9,65684,+49(0)1838 179222
+1464,Cynthia Walter,Female,45,182,48,I91.0,Kristine-Huhn-Weg 21,51538,0087812221
+1465,Kerstin Gnatz,Female,80,168,57,H86.4,Dippelgasse 577,09772,05613 63961
+1466,Anneli Dippel,Female,46,163,48,Q19.9,Luka-Zahn-Allee 83,44070,0617852482
+1467,Frau Ludmilla Weiß,Female,74,160,66,V09.8,Beckerstraße 3/1,89499,08696715448
+1468,Ing. Ernst-Dieter Gertz B.A.,Male,72,167,73,A92.2,Junkring 0/3,34657,06633 382964
+1469,Ing. Reimar Hellwig MBA.,Male,35,161,79,A32.0,Jüttnerstr. 5,17831,+49(0)5478880111
+1470,Ing. Theo Keudel MBA.,Male,41,161,82,I55.6,Bruno-Junk-Ring 1/1,67320,09083 139350
+1471,Milos Girschner,Male,60,181,78,J60.5,Jäntschring 2,81528,01292 97651
+1472,Dr. Suse Ziegert,Female,66,158,51,C96.4,Valentina-Hermann-Allee 726,30663,(06225) 552878
+1473,Sibille Drubin,Female,69,171,61,C01.5,Ritterplatz 60,47614,+49 (0) 5385 374962
+1474,Halina Koch II,Female,67,173,60,Z84.3,Klemmring 04,12268,00967 334371
+1475,Vincenzo Speer,Male,73,173,75,M60.9,Meinolf-Gute-Straße 95,04938,(05610) 294434
+1476,Sabrina Peukert,Female,26,168,49,D54.0,Ehlertweg 6/3,42827,+49(0) 984462225
+1477,Hans-Helmut Baum,Male,30,183,72,P08.3,Anika-Hermann-Allee 657,25760,0520031719
+1478,Margita Tintzmann B.Sc.,Female,78,153,70,H48.4,Ivonne-Bonbach-Straße 8,06327,(03853) 84000
+1479,Anneli Kühnert MBA.,Female,60,176,64,P44.5,Nancy-Rust-Gasse 0,92435,(04926) 30411
+1480,Eugenie Knappe,Female,71,166,58,N47.8,Fritschstraße 6/9,55401,+49(0)6842 315782
+1481,Univ.Prof. Heinz-Jürgen Gieß,Male,46,179,67,I10.1,Kallertplatz 2/6,35183,+49 (0) 0130 194269
+1482,Dogan Lindau,Male,61,178,73,I03.1,Minna-Gerlach-Ring 0/4,07337,+49(0)3986 477918
+1483,Dr. Volkhard Neuschäfer,Male,51,192,94,E01.9,Jochem-Lindner-Weg 14,32460,+49 (0) 9394 870351
+1484,Univ.Prof. Stephanie Stroh B.A.,Female,72,163,57,P82.2,Heintzestraße 5/3,28566,08119 72154
+1485,Dipl.-Ing. Karola Hethur B.Eng.,Female,77,171,62,S86.1,Zehra-Gude-Gasse 9,04612,+49 (0) 5388 400750
+1486,Hendrik Wohlgemut,Male,40,176,67,N64.8,Pohlring 036,52817,+49(0)5725 229776
+1487,Univ.Prof. Sigismund Sager B.Eng.,Male,54,184,66,K17.7,Grete-Kuhl-Weg 87,12174,(02001) 00560
+1488,Inna Stroh,Female,78,162,61,G15.0,Eimergasse 84,53471,+49 (0) 2785 688440
+1489,Sophia Nerger,Female,53,166,55,C87.3,Bozena-Dörr-Ring 2/5,00341,+49(0)5112321805
+1490,Theodor Bruder,Male,74,182,83,V05.8,Luis-Rosemann-Ring 5,73847,04647875518
+1491,Lili Trub MBA.,Female,89,160,60,J83.4,Maren-Noack-Gasse 0/9,95103,(07905) 51019
+1492,Sarah Lindner,Female,30,165,49,L57.5,Römerring 5/4,08800,0070064124
+1493,Peter-Michael Schacht,Male,61,187,88,Y42.9,Edward-Fritsch-Platz 6/4,11571,+49(0) 933973141
+1494,Heinz Kallert B.A.,Male,52,173,79,G36.6,Nettestraße 7,00674,+49(0)3928 327894
+1495,Änne Hänel,Female,35,162,61,C25.1,Alban-Weller-Gasse 88,50088,+49 (0) 2767 222556
+1496,Ing. Valerij Jopich,Male,59,173,89,M01.8,Oestrovskystr. 280,85168,02611 36240
+1497,Dipl.-Ing. Evelin Gumprich,Female,73,165,44,Y20.1,Vogtring 914,87410,(01602) 42760
+1498,Magarete van der Dussen,Female,83,161,52,R69.4,Lindaustr. 7/7,24866,+49(0)1619 02955
+1499,Ing. Giovanna Dietz,Female,70,165,45,H85.0,Nathalie-Weiß-Weg 6,68254,(03813) 69965
+1500,Antje Mende B.A.,Female,64,172,55,G80.0,Otmar-Eigenwillig-Allee 147,03152,0099085305

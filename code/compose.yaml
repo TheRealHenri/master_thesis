@@ -1,11 +1,11 @@
 services:
 
-  anonymized_kafka:
-    build: ./anonymized_kafka
+  simple_kafka_pipeline:
+    build: ./simple_kafka_pipeline
     networks:
       - kafka-network
     volumes: 
-      - kafka-anonymized-logs:/root/.m2/repository/com/pipeline/kafka/anonymized_kafka/1.0-SNAPSHOT
+      - simple_kafka_pipeline-logs:/root/.m2/repository/com/pipeline/kafka/simple_kafka_pipeline/1.0-SNAPSHOT
     command: install
 
   data_generator:
@@ -65,7 +65,7 @@ services:
       - ./kafka_connect_config/connect-standalone.properties:/opt/bitnami/kafka/config/connect-standalone.properties
       - ./kafka_connect_config/CSVSourceConnector.properties:/opt/bitnami/kafka/config/CSVSourceConnector.properties
       - ./kafka_connect_config/entrypoint.sh:/entrypoint.sh
-      - kafka-anonymized-logs:/custom-jars
+      - simple_kafka_pipeline-logs:/custom-jars
       - data-generator-datasets:/data-generator-datasets
     command: /entrypoint.sh
   
@@ -74,7 +74,7 @@ networks:
     driver: bridge
 
 volumes:
-  kafka-anonymized-logs:
+  simple_kafka_pipeline-logs:
   data-generator-datasets:
   zookeeper-logs:
   kafka-logs:
