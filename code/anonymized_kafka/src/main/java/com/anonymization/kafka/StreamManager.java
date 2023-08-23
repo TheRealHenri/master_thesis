@@ -1,5 +1,7 @@
 package com.anonymization.kafka;
 
+import com.anonymization.kafka.configs.SystemConfiguration;
+import com.anonymization.kafka.loaders.JSONLoader;
 import com.anonymization.kafka.streams.AnonymizationStream;
 import com.anonymization.kafka.streams.StreamState;
 import org.slf4j.Logger;
@@ -9,23 +11,20 @@ import java.util.Set;
 
 public class StreamManager {
 
-    private static StreamManager instance;
+    private SystemConfiguration systemConfiguration;
     private Set<AnonymizationStream> streams;
-    private Logger log = LoggerFactory.getLogger(StreamManager.class);
+    private final Logger log = LoggerFactory.getLogger(StreamManager.class);
+
+    private static final class ManagerInstanceHolder {
+        private static final StreamManager instance = new StreamManager();
+    }
 
     public static StreamManager getInstance() {
-        if (instance == null) {
-            synchronized (StreamManager.class) {
-                if (instance == null) {
-                    instance = new StreamManager();
-                }
-            }
-        }
-        return instance;
+        return ManagerInstanceHolder.instance;
     }
 
     public void initializeStreams() {
-        // parse config
+        systemConfiguration = JSONLoader.loadConfig();
         // build StreamConfigs
         // initialize streams
         // start all streams

@@ -1,19 +1,40 @@
 {
   "globalConfig": {
-    "kafkaServer": "kafka:9092",
+    "bootstrapServer": "kafka:9092",
     "topic": "no-filter",
-    "schema": "default"
+    "dataSchema": {
+      "schemaType": "kafkaStruct",
+      "kafkaStructSchema": {
+        "name": "com.pipeline.kafka.connectors.SyntheticData",
+        "fields": [
+          {"name": "id", "type": "int32"},
+          {"name": "name", "type": "string"},
+          {"name": "gender", "type": "string"},
+          {"name": "age", "type": "int32"},
+          {"name": "height", "type": "int32"},
+          {"name": "weight", "type": "int32"},
+          {"name": "diagnosis", "type": "string"},
+          {"name": "address", "type": "string"},
+          {"name": "zip", "type": "int32"},
+          {"name": "phone", "type": "string"}
+        ]
+      }
+    }
   },
-  "streams": [
+  "streamProperties": [
     {
-      "name": "level_1",
-      "category": "value",
+      "applicationId": "level_1",
+      "category": "VALUE_BASED",
       "anonymizers": [
         {
           "anonymizer": "suppression",
           "parameters": [
             {
-              "key": "diagnosis"
+              "keys": [
+                {
+                  "key": "diagnosis"
+                }
+              ]
             }
           ]
         },
@@ -21,7 +42,11 @@
           "anonymizer": "substitution",
           "parameters": [
             {
-              "key": "name"
+              "keys": [
+                {
+                  "key": "name"
+                }
+              ]
             }
           ]
         },
@@ -29,22 +54,9 @@
           "anonymizer": "bucketizing",
           "parameters": [
             {
-              "key": "age",
-              "buckets": [
+              "keys": [
                 {
-                  "1" : "0-20"
-                },
-                {
-                  "2" : "21-40"
-                },
-                {
-                  "3" : "41-60"
-                },
-                {
-                  "4" : "61-80"
-                },
-                {
-                  "5" : "80+"
+                  "key": "age"
                 }
               ]
             }
@@ -53,15 +65,19 @@
       ]
     },
     {
-      "name": "level_2",
-      "category": "attribute",
+      "applicationId": "level_2",
+      "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
           "anonymizer": "aggregation",
           "parameters": [
             {
               "windowSize": "1000",
-              "key": "age"
+              "keys": [
+                {
+                  "key": "diagnosis"
+                }
+              ]
             }
           ]
         },
@@ -70,15 +86,19 @@
           "parameters": [
             {
               "windowSize": "1000",
-              "key": "weight"
+              "keys": [
+                {
+                  "key": "diagnosis"
+                }
+              ]
             }
           ]
         }
       ]
     },
     {
-      "name": "level_3",
-      "category": "table",
+      "applicationId": "level_3",
+      "category": "TABLE_BASED",
       "anonymizers": [
         {
           "anonymizer": "kAnonymization",
@@ -92,8 +112,8 @@
       ]
     },
     {
-      "name": "level_4",
-      "category": "table",
+      "applicationId": "level_4",
+      "category": "TABLE_BASED",
       "anonymizers": [
         {
           "anonymizer": "lDiversity",
