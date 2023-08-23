@@ -1,4 +1,17 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
-public class EpsPrivacy {
+import com.anonymization.kafka.validators.ParameterValidator;
+
+import java.util.Set;
+
+public class EpsPrivacy implements TableBasedAnonymizer {
+    @Override
+    public String anonymize(String lineS) {
+        return null;
+    }
+
+    @Override
+    public Set<ParameterValidator> getParameterValidators() {
+        return null;
+    }
 }

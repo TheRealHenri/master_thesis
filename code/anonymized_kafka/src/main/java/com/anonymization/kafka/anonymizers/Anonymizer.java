@@ -6,9 +6,9 @@ import com.anonymization.kafka.validators.ParameterValidator;
 import java.util.Set;
 
 public interface Anonymizer {
-    public String anonymize(String lineS);
+    String anonymize(String lineS);
 
-    public Set<ParameterValidator> getParameterValidators();
+    Set<ParameterValidator> getParameterValidators();
 
-    public AnonymizationCategory getCategory();
+    AnonymizationCategory getAnonymizationCategory();
 }

@@ -1,4 +1,17 @@
 package com.anonymization.kafka.anonymizers.valuebased;
 
-public class NoiseMethods {
+import com.anonymization.kafka.validators.ParameterValidator;
+
+import java.util.Set;
+
+public class NoiseMethods implements ValueBasedAnonymizer {
+    @Override
+    public String anonymize(String lineS) {
+        return null;
+    }
+
+    @Override
+    public Set<ParameterValidator> getParameterValidators() {
+        return null;
+    }
 }

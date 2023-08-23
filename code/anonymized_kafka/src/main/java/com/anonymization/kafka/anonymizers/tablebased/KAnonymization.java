@@ -1,4 +1,17 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
-public class KAnonymization {
+import com.anonymization.kafka.validators.ParameterValidator;
+
+import java.util.Set;
+
+public class KAnonymization implements TableBasedAnonymizer {
+    @Override
+    public String anonymize(String lineS) {
+        return null;
+    }
+
+    @Override
+    public Set<ParameterValidator> getParameterValidators() {
+        return null;
+    }
 }

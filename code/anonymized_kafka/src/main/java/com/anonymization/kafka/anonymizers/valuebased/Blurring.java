@@ -1,4 +1,17 @@
 package com.anonymization.kafka.anonymizers.valuebased;
 
-public class Blurring {
+import com.anonymization.kafka.validators.ParameterValidator;
+
+import java.util.Set;
+
+public class Blurring implements ValueBasedAnonymizer {
+    @Override
+    public String anonymize(String lineS) {
+        return null;
+    }
+
+    @Override
+    public Set<ParameterValidator> getParameterValidators() {
+        return null;
+    }
 }
