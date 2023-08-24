@@ -94,7 +94,7 @@
       "category": "TABLE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "kAnonymization",
+          "anonymizer": "k_anonymization",
           "parameters": [
             {
               "windowSize": "1000",
@@ -109,7 +109,7 @@
       "category": "TABLE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "lDiversity",
+          "anonymizer": "l_diversity",
           "parameters": [
             {
               "windowSize": "1000",

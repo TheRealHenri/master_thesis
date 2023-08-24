@@ -1,12 +1,18 @@
 package com.anonymization.kafka;
 
+import com.anonymization.kafka.builders.AnonymizationStreamConfigBuilder;
+import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.SystemConfiguration;
+import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
+import com.anonymization.kafka.configs.stream.StreamProperties;
 import com.anonymization.kafka.loaders.JSONLoader;
 import com.anonymization.kafka.streams.AnonymizationStream;
 import com.anonymization.kafka.streams.StreamState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class StreamManager {
@@ -24,7 +30,23 @@ public class StreamManager {
     }
 
     public void initializeStreams() {
+        log.info("Initializing streams");
         systemConfiguration = JSONLoader.loadConfig();
+        SchemaCommon schemaCommon = systemConfiguration.getGlobalConfig().getDataSchema().getSchema();
+        log.info("Starting to build StreamConfigs");
+        AnonymizationStreamConfigBuilder configBuilder = new AnonymizationStreamConfigBuilder(schemaCommon);
+        List<StreamProperties> streamProperties = systemConfiguration.getStreamProperties();
+        ArrayList<AnonymizationStreamConfig> streamConfigs = new ArrayList<>();
+        for (StreamProperties streamProperty : streamProperties) {
+            try {
+                streamConfigs.add(configBuilder.build(streamProperty));
+            } catch (Exception e) {
+                log.error("Error while building stream config for stream {}", streamProperty.getApplicationId());
+                log.error(e.getMessage());
+            }
+        }
+        log.info("Creating Streams from configs");
+
         // build StreamConfigs
         // initialize streams
         // start all streams

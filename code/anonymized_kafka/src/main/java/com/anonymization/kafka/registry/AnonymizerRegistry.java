@@ -39,7 +39,10 @@ public final class AnonymizerRegistry {
         REGISTRY.put("tokenization", Tokenization.class);
     }
 
-    public static Class<? extends Anonymizer> getClassFrom(String name) {
+    public static Class<? extends Anonymizer> getClassFrom(String name) throws IllegalArgumentException {
+        if (!REGISTRY.containsKey(name)) {
+            throw new IllegalArgumentException("Anonymizer " + name + " is not registered.");
+        }
         return REGISTRY.get(name);
     }
 

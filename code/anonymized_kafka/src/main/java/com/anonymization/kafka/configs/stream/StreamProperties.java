@@ -2,15 +2,15 @@ package com.anonymization.kafka.configs.stream;
 
 import com.anonymization.kafka.AnonymizationCategory;
 
-import java.util.Set;
+import java.util.List;
 
 public class StreamProperties {
     private  String applicationId;
     private AnonymizationCategory category;
-    private  Set<AnonymizerConfig> anonymizers;
+    private List<AnonymizerConfig> anonymizers;
 
     public StreamProperties(){}
-    public StreamProperties(String applicationId, AnonymizationCategory category, Set<AnonymizerConfig> anonymizers) {
+    public StreamProperties(String applicationId, AnonymizationCategory category, List<AnonymizerConfig> anonymizers) {
         this.applicationId = applicationId;
         this.category = category;
         this.anonymizers = anonymizers;
@@ -24,7 +24,7 @@ public class StreamProperties {
         return category;
     }
 
-    public Set<AnonymizerConfig> getAnonymizers() {
+    public List<AnonymizerConfig> getAnonymizers() {
         return anonymizers;
     }
 
@@ -36,7 +36,7 @@ public class StreamProperties {
         this.category = category;
     }
 
-    public void setAnonymizers(Set<AnonymizerConfig> anonymizers) {
+    public void setAnonymizers(List<AnonymizerConfig> anonymizers) {
         this.anonymizers = anonymizers;
     }
 }
