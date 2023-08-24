@@ -1,11 +1,14 @@
 package com.anonymization.kafka.configs.global.schemas.avro;
 
-import com.anonymization.kafka.configs.global.schemas.struct.StructSchemaField;
+import com.anonymization.kafka.configs.global.schemas.SchemaType;
+import com.anonymization.kafka.configs.global.schemas.DataSchema;
+import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-public class AvroSchema {
-
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class AvroSchema implements DataSchema {
     private String namespace;
     private String type;
     private String name;
@@ -50,5 +53,15 @@ public class AvroSchema {
 
     public void setFields(List<AvroDataSchemaField> fields) {
         this.fields = fields;
+    }
+
+    @Override
+    public SchemaType getSchemaType() {
+        return SchemaType.AVRO;
+    }
+
+    @Override
+    public SchemaCommon getSchema() {
+        return new SchemaCommon(fields.stream().map(AvroDataSchemaField::getSchemaField).collect(java.util.stream.Collectors.toList()));
     }
 }

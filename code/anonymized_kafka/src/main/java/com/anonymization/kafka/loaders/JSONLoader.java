@@ -56,7 +56,7 @@ public class JSONLoader {
     }
 
     private static SystemConfiguration parseJson() {
-        SystemConfiguration config = null;
+        SystemConfiguration config;
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             config = objectMapper.readValue(new File(JSON_FILE_PATH), SystemConfiguration.class);

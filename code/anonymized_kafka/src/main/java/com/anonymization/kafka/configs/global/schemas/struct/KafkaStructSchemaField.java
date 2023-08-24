@@ -1,16 +1,17 @@
-package com.anonymization.kafka.configs.global.schemas.avro;
+package com.anonymization.kafka.configs.global.schemas.struct;
+
 
 import com.anonymization.kafka.configs.global.schemas.FieldType;
 
 import java.util.Map;
 
-public class AvroDataSchemaField {
+public class KafkaStructSchemaField {
     private String name;
-    private AvroType type;
+    private KafkaStructType type;
 
-    public AvroDataSchemaField() {}
+    public KafkaStructSchemaField() {}
 
-    public AvroDataSchemaField(String name, AvroType type) {
+    public KafkaStructSchemaField(String name, KafkaStructType type) {
         this.name = name;
         this.type = type;
     }
@@ -23,11 +24,11 @@ public class AvroDataSchemaField {
         this.name = name;
     }
 
-    public AvroType getType() {
+    public KafkaStructType getType() {
         return type;
     }
 
-    public void setType(AvroType type) {
+    public void setType(KafkaStructType type) {
         this.type = type;
     }
 

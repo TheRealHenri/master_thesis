@@ -1,17 +1,21 @@
 package com.anonymization.kafka.configs.global.schemas.struct;
 
-import com.anonymization.kafka.configs.global.schemas.struct.StructSchemaField;
+import com.anonymization.kafka.configs.global.schemas.SchemaType;
+import com.anonymization.kafka.configs.global.schemas.DataSchema;
+import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class KafkaStructSchema {
-
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class KafkaStructSchema implements DataSchema {
     private String name;
-    private List<StructSchemaField> fields;
+    private List<KafkaStructSchemaField> fields;
 
     public KafkaStructSchema() {}
 
-    public KafkaStructSchema(String name, List<StructSchemaField> fields) {
+    public KafkaStructSchema(String name, List<KafkaStructSchemaField> fields) {
         this.name = name;
         this.fields = fields;
     }
@@ -24,11 +28,21 @@ public class KafkaStructSchema {
         this.name = name;
     }
 
-    public List<StructSchemaField> getFields() {
+    public List<KafkaStructSchemaField> getFields() {
         return fields;
     }
 
-    public void setFields(List<StructSchemaField> fields) {
+    public void setFields(List<KafkaStructSchemaField> fields) {
         this.fields = fields;
+    }
+
+    @Override
+    public SchemaType getSchemaType() {
+        return SchemaType.KAFKA_STRUCT;
+    }
+
+    @Override
+    public SchemaCommon getSchema() {
+        return new SchemaCommon(fields.stream().map(KafkaStructSchemaField::getSchemaField).collect(Collectors.toList()));
     }
 }
