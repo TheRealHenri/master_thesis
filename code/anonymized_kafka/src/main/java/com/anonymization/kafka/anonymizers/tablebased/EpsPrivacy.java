@@ -21,7 +21,7 @@ public class EpsPrivacy implements TableBasedAnonymizer {
     public List<ParameterExpectation> getParameterValidators() {
         return List.of(
                 new ParameterExpectation(
-                        "windowSize",
+                        ParameterType.WINDOW_SIZE.getName(),
                         List.of(new PositiveIntegerValidator()),
                         true
                 )

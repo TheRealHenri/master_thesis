@@ -20,7 +20,7 @@ public class NoiseMethods implements ValueBasedAnonymizer {
     public List<ParameterExpectation> getParameterValidators() {
         return List.of(
                 new ParameterExpectation(
-                        "noise",
+                        ParameterType.NOISE.getName(),
                         Collections.emptyList(),
                         true
                 )

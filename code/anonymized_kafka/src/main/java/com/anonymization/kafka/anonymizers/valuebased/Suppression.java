@@ -23,7 +23,7 @@ public class Suppression implements ValueBasedAnonymizer {
     public List<ParameterExpectation> getParameterValidators() {
         return List.of(
                 new ParameterExpectation(
-                        "keys",
+                        ParameterType.KEYS.getName(),
                         List.of(new KeyValidator()),
                         true
                 )

@@ -1,6 +1,7 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
 import com.anonymization.kafka.configs.stream.Parameter;
+import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.ParameterExpectation;
 import com.anonymization.kafka.validators.PositiveIntegerValidator;
 
@@ -20,12 +21,12 @@ public class KAnonymization implements TableBasedAnonymizer {
     public List<ParameterExpectation> getParameterValidators() {
         return List.of(
                 new ParameterExpectation(
-                        "windowSize",
+                        ParameterType.WINDOW_SIZE.getName(),
                         List.of(new PositiveIntegerValidator()),
                         true
                 ),
                 new ParameterExpectation(
-                        "k",
+                        ParameterType.K.getName(),
                         List.of(new PositiveIntegerValidator()),
                         true
                 )

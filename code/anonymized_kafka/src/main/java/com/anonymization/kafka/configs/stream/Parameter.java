@@ -1,18 +1,24 @@
 package com.anonymization.kafka.configs.stream;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+
+@JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Parameter {
 
     private ParameterType type;
     private Object value;
+
+    public Parameter() {}
+    public Parameter(ParameterType type, Object value) {
+        this.type = type;
+        this.value = value;
+    }
 
     @JsonProperty("keys")
     private List<Key> getKeys() {
@@ -35,7 +41,7 @@ public class Parameter {
     }
 
     @JsonProperty("groupSize")
-    private String getgroupSize() {
+    private String getGroupSize() {
         return type == ParameterType.GROUP_SIZE ? value.toString() : null;
     }
 
@@ -109,34 +115,5 @@ public class Parameter {
             return (Double) value;
         }
         throw new UnsupportedOperationException("Current parameter value is not a double.");
-    }
-
-    @JsonValue
-    public Map<String, Object> toJsonValue() {
-        Map<String, Object> map = new HashMap<>();
-        switch (type) {
-            case KEYS:
-                map.put("keys", value);
-                break;
-            case WINDOW_SIZE:
-                map.put("windowSize", value.toString());
-                break;
-            case GROUP_SIZE:
-                map.put("groupSize", value.toString());
-                break;
-            case NOISE:
-                map.put("noise", value.toString());
-                break;
-            case K:
-                map.put("k", value.toString());
-                break;
-            case L:
-                map.put("l", value.toString());
-                break;
-            case T:
-                map.put("t", value.toString());
-                break;
-        }
-        return map;
     }
 }

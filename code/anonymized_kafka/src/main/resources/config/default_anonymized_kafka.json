@@ -3,14 +3,19 @@
     "bootstrapServer": "kafka:9092",
     "topic": "no-filter",
     "dataSchema": {
-      "schemaType": "AVRO",
-      "namespace": "example.avro",
-      "type": "record",
-      "name": "User",
+      "schemaType" : "KAFKA_STRUCT",
+      "name": "com.pipeline.kafka.connectors.SyntheticData",
       "fields": [
+        {"name": "id", "type": "int32"},
         {"name": "name", "type": "string"},
-        {"name": "favorite_number",  "type": ["int", "null"]},
-        {"name": "favorite_color", "type": ["string", "null"]}
+        {"name": "gender", "type": "string"},
+        {"name": "age", "type": "int32"},
+        {"name": "height", "type": "int32"},
+        {"name": "weight", "type": "int32"},
+        {"name": "diagnosis", "type": "string"},
+        {"name": "address", "type": "string"},
+        {"name": "zip", "type": "int32"},
+        {"name": "phone", "type": "string"}
       ]
     }
   },

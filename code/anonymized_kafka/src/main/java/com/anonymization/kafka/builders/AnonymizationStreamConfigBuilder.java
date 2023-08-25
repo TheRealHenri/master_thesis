@@ -68,8 +68,7 @@ public class AnonymizationStreamConfigBuilder {
                 Anonymizer initializedAnonymizer = AnonymizerFactory.createAnonymizer(anonymizerConfig);
                 resultingAnonymizers.add(initializedAnonymizer);
             } catch (IllegalArgumentException e) {
-                String previousStackTrace = e.getMessage();
-                throw new ConfigurationException(previousStackTrace + "\nAnonymizer " + anonymizerConfig.getAnonymizer() + " is not registered.");
+                throw new ConfigurationException("Anonymizer " + anonymizerConfig.getAnonymizer() + " is not valid: " + e.getMessage());
             } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 throw new RuntimeException("Anonymizer " + anonymizerConfig.getAnonymizer() + " could not be instantiated.");
             }
@@ -92,7 +91,8 @@ public class AnonymizationStreamConfigBuilder {
         List<String> providedParamNames = anonConfig
                 .getParameters()
                 .stream()
-                .map(Object::toString)
+                .map(parameter -> parameter.getType().getName()
+                )
                 .collect(Collectors.toList());
         List<String> expectedParameters = new ArrayList<>();
         for (ParameterExpectation parameterExpectation : specifiedAnonymizers.getParameterValidators()) {
@@ -103,7 +103,7 @@ public class AnonymizationStreamConfigBuilder {
             }
 
             if (providedParamNames.contains(parameterExpectation.getParamName())) {
-                Parameter providedParameter = anonConfig.getParameters().stream().filter(p -> p.toString().equals(parameterExpectation.getParamName())).findFirst().orElse(null);
+                Parameter providedParameter = anonConfig.getParameters().stream().filter(p -> p.getType().getName().equals(parameterExpectation.getParamName())).findFirst().orElse(null);
 
                 parameterExpectation.validate(providedParameter, schema);
             }

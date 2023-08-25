@@ -1,12 +1,13 @@
 package com.anonymization.kafka.configs.global.schemas.struct;
 
-import com.anonymization.kafka.configs.global.schemas.SchemaType;
 import com.anonymization.kafka.configs.global.schemas.DataSchema;
+import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
+import com.anonymization.kafka.configs.global.schemas.SchemaType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class KafkaStructSchema implements DataSchema {
@@ -43,6 +44,10 @@ public class KafkaStructSchema implements DataSchema {
 
     @Override
     public SchemaCommon getSchema() {
-        return new SchemaCommon(fields.stream().map(KafkaStructSchemaField::getSchemaField).collect(Collectors.toList()));
+        HashMap<String, FieldType> dataFields = new HashMap<>();
+        for (KafkaStructSchemaField field : fields) {
+            dataFields.putAll(field.getSchemaField());
+        }
+        return new SchemaCommon(dataFields);
     }
 }

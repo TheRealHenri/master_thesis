@@ -2,6 +2,7 @@ package com.anonymization.kafka.anonymizers.tuplebased;
 
 import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
+import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
 import com.anonymization.kafka.validators.ParameterExpectation;
 import com.anonymization.kafka.validators.PositiveIntegerValidator;
@@ -23,7 +24,7 @@ public class ConditionalSubstitution implements TupleBasedAnonymizer {
     public List<ParameterExpectation> getParameterValidators() {
         return List.of(
                 new ParameterExpectation(
-                        "keys",
+                        ParameterType.KEYS.getName(),
                         List.of(new KeyValidator()),
                         true
                 ),
