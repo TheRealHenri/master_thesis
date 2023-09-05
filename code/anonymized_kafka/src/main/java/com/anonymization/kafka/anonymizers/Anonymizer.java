@@ -3,13 +3,14 @@ package com.anonymization.kafka.anonymizers;
 import com.anonymization.kafka.AnonymizationCategory;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.validators.ParameterExpectation;
+import org.apache.kafka.connect.data.Struct;
 
 import java.util.List;
 
 public interface Anonymizer {
-    String anonymize(String lineS);
+    Struct anonymize(List<Struct> lineS);
 
-    List<ParameterExpectation> getParameterValidators();
+    List<ParameterExpectation> getParameterExpectations();
 
     AnonymizationCategory getAnonymizationCategory();
 

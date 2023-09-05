@@ -1,14 +1,7 @@
 package com.anonymization.kafka.configs.stream;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
-
-@JsonFormat(with = JsonFormat.Feature.ACCEPT_CASE_INSENSITIVE_PROPERTIES)
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Parameter {
 
     private ParameterType type;
@@ -20,7 +13,6 @@ public class Parameter {
         this.value = value;
     }
 
-    @JsonProperty("keys")
     private List<Key> getKeys() {
         return type == ParameterType.KEYS ? (List<Key>) value : null;
     }
@@ -30,7 +22,6 @@ public class Parameter {
         this.type = ParameterType.KEYS;
     }
 
-    @JsonProperty("windowSize")
     private String getWindowSize() {
         return type == ParameterType.WINDOW_SIZE ? value.toString() : null;
     }
@@ -40,7 +31,6 @@ public class Parameter {
         this.type = ParameterType.WINDOW_SIZE;
     }
 
-    @JsonProperty("groupSize")
     private String getGroupSize() {
         return type == ParameterType.GROUP_SIZE ? value.toString() : null;
     }
@@ -50,7 +40,6 @@ public class Parameter {
         this.type = ParameterType.GROUP_SIZE;
     }
 
-    @JsonProperty("noise")
     private String getNoise() {
         return type == ParameterType.NOISE ? value.toString() : null;
     }
@@ -60,8 +49,6 @@ public class Parameter {
         this.type = ParameterType.NOISE;
     }
 
-
-    @JsonProperty("k")
     private String getK() {
         return type == ParameterType.K ? value.toString() : null;
     }
@@ -71,7 +58,6 @@ public class Parameter {
         this.type = ParameterType.K;
     }
 
-    @JsonProperty("l")
     private String getL() {
         return type == ParameterType.L ? value.toString() : null;
     }
@@ -81,7 +67,6 @@ public class Parameter {
         this.type = ParameterType.L;
     }
 
-    @JsonProperty("t")
     private String getT() {
         return type == ParameterType.T ? value.toString() : null;
     }

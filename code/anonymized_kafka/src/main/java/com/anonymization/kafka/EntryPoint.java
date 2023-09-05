@@ -1,7 +1,5 @@
 package com.anonymization.kafka;
 
-import com.anonymization.kafka.StreamManager;
-
 public class EntryPoint {
     public static void main(String[] args) {
         StreamManager manager = StreamManager.getInstance();

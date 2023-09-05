@@ -65,7 +65,7 @@ public class AnonymizationStreamConfigBuilder {
             try {
                 Anonymizer currentEmptyAnonymizer = tryToGetAnonymizerInstance(anonymizerConfig);
                 validateAnonymizer(currentEmptyAnonymizer, anonymizerConfig);
-                Anonymizer initializedAnonymizer = AnonymizerFactory.createAnonymizer(anonymizerConfig);
+                Anonymizer initializedAnonymizer = AnonymizerFactory.createAnonymizer(anonymizerConfig, schema);
                 resultingAnonymizers.add(initializedAnonymizer);
             } catch (IllegalArgumentException e) {
                 throw new ConfigurationException("Anonymizer " + anonymizerConfig.getAnonymizer() + " is not valid: " + e.getMessage());
@@ -95,7 +95,7 @@ public class AnonymizationStreamConfigBuilder {
                 )
                 .collect(Collectors.toList());
         List<String> expectedParameters = new ArrayList<>();
-        for (ParameterExpectation parameterExpectation : specifiedAnonymizers.getParameterValidators()) {
+        for (ParameterExpectation parameterExpectation : specifiedAnonymizers.getParameterExpectations()) {
             expectedParameters.add(parameterExpectation.getParamName());
 
             if (parameterExpectation.isRequired() && !providedParamNames.contains(parameterExpectation.getParamName())) {

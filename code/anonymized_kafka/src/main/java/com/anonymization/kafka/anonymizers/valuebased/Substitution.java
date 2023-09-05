@@ -6,6 +6,7 @@ import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
 import com.anonymization.kafka.validators.ParameterExpectation;
 import com.anonymization.kafka.validators.PositiveIntegerValidator;
+import org.apache.kafka.connect.data.Struct;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,12 +17,12 @@ public class Substitution implements ValueBasedAnonymizer {
     private List<Key> keysToSubstitute = Collections.emptyList();
     private Optional<List<String>> mappingTable = Optional.empty();
     @Override
-    public String anonymize(String lineS) {
+    public Struct anonymize(List<Struct> lineS) {
         return null;
     }
 
     @Override
-    public List<ParameterExpectation> getParameterValidators() {
+    public List<ParameterExpectation> getParameterExpectations() {
         return List.of(
                 new ParameterExpectation(
                         ParameterType.KEYS.getName(),

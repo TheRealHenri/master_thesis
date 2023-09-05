@@ -3,22 +3,23 @@ package com.anonymization.kafka;
 import com.anonymization.kafka.builders.AnonymizationStreamConfigBuilder;
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.SystemConfiguration;
+import com.anonymization.kafka.configs.global.GlobalConfig;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.stream.StreamProperties;
+import com.anonymization.kafka.factory.AnonymizationStreamFactory;
 import com.anonymization.kafka.loaders.JSONLoader;
-import com.anonymization.kafka.streams.AnonymizationStream;
-import com.anonymization.kafka.streams.StreamState;
+import org.apache.kafka.streams.KafkaStreams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class StreamManager {
 
-    private SystemConfiguration systemConfiguration;
-    private Set<AnonymizationStream> streams;
+    private HashMap<String, KafkaStreams> streamsMap;
     private final Logger log = LoggerFactory.getLogger(StreamManager.class);
 
     private static final class ManagerInstanceHolder {
@@ -31,7 +32,7 @@ public class StreamManager {
 
     public void initializeStreams() {
         log.info("Initializing streams");
-        systemConfiguration = JSONLoader.loadConfig();
+        SystemConfiguration systemConfiguration = JSONLoader.loadConfig();
         SchemaCommon schemaCommon = systemConfiguration.getGlobalConfig().getDataSchema().getSchema();
         log.info("Starting to build StreamConfigs");
         AnonymizationStreamConfigBuilder configBuilder = new AnonymizationStreamConfigBuilder(schemaCommon);
@@ -45,86 +46,54 @@ public class StreamManager {
                 log.error(e.getMessage());
             }
         }
-        log.info("Creating Streams from configs");
-
-        // build StreamConfigs
-        // initialize streams
-        // start all streams
-        
+        log.info("Creating {} streams from configs", streamConfigs.size());
+        streamsMap = new HashMap<>();
+        GlobalConfig globalConfig = systemConfiguration.getGlobalConfig();
+        for (AnonymizationStreamConfig streamConfig : streamConfigs) {
+            streamsMap.put(streamConfig.getApplicationId(), AnonymizationStreamFactory.buildAnonymizationStream(globalConfig, streamConfig));
+        }
+        log.info("Streams created.");
+        log.info("Starting all streams");
+        startAllStreams();
     }
     public void startAllStreams() {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getState() != StreamState.STARTED) {
-                stream.start();
+        for (KafkaStreams stream : streamsMap.values()) {
+            if (stream.isPaused()) {
+                stream.resume();
             } else {
-                log.warn("Stream {} is already started", stream.getConfig().getApplicationId());
+                stream.start();
             }
         }
     }
 
     public void stopAllStreams() {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getState() != StreamState.STOPPED) {
-                stream.stop();
-            } else {
-                log.warn("Stream {} is already stopped", stream.getConfig().getApplicationId());
-            }
+        for (KafkaStreams stream : streamsMap.values()) {
+            stream.close();
         }
     }
 
     public void pauseAllStreams() {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getState() != StreamState.PAUSED) {
-                stream.pause();
-            } else {
-                log.warn("Stream {} is already paused", stream.getConfig().getApplicationId());
-            }
+        for (KafkaStreams stream : streamsMap.values()) {
+            stream.pause();
         }
     }
 
     public void startStream(String applicationId) {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getConfig().getApplicationId().equals(applicationId)) {
-                if (stream.getState() != StreamState.STARTED) {
-                    stream.start();
-                } else {
-                    log.warn("Stream {} is already started", stream.getConfig().getApplicationId());
-                }
-                return;
-            }
-        }
+        streamsMap.get(applicationId).start();
     }
 
     public void stopStream(String applicationId) {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getConfig().getApplicationId().equals(applicationId)) {
-                if (stream.getState() != StreamState.STOPPED) {
-                    stream.stop();
-                } else {
-                    log.warn("Stream {} is already stopped", stream.getConfig().getApplicationId());
-                }
-                return;
-            }
-        }
+        streamsMap.get(applicationId).close();
     }
 
     public void pauseStream(String applicationId) {
-        for (AnonymizationStream stream : streams) {
-            if (stream.getConfig().getApplicationId().equals(applicationId)) {
-                if (stream.getState() != StreamState.PAUSED) {
-                    stream.pause();
-                } else {
-                    log.warn("Stream {} is already paused", stream.getConfig().getApplicationId());
-                }
-                return;
-            }
-        }
+        streamsMap.get(applicationId).pause();
     }
 
     public void listStreams() {
         log.info("Listing all streams:");
-        for (AnonymizationStream stream : streams) {
-            log.info("Stream {} is in state {}", stream.getConfig().getApplicationId(), stream.getState());
+        for (Map.Entry<String, KafkaStreams> stream : streamsMap.entrySet()) {
+            log.info("Stream {} is in state {}", stream.getKey(), stream.getValue().state());
         }
     }
 }

@@ -3,6 +3,7 @@ package com.anonymization.kafka.anonymizers.valuebased;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.ParameterExpectation;
+import org.apache.kafka.connect.data.Struct;
 
 import java.util.Collections;
 import java.util.List;
@@ -12,12 +13,12 @@ public class NoiseMethods implements ValueBasedAnonymizer {
 
     private Double noise;
     @Override
-    public String anonymize(String lineS) {
+    public Struct anonymize(List<Struct> lineS) {
         return null;
     }
 
     @Override
-    public List<ParameterExpectation> getParameterValidators() {
+    public List<ParameterExpectation> getParameterExpectations() {
         return List.of(
                 new ParameterExpectation(
                         ParameterType.NOISE.getName(),
