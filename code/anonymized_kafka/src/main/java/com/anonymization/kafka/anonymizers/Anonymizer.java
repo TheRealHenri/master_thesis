@@ -8,7 +8,7 @@ import org.apache.kafka.connect.data.Struct;
 import java.util.List;
 
 public interface Anonymizer {
-    Struct anonymize(List<Struct> lineS);
+    List<Struct> anonymize(List<Struct> lineS);
 
     List<ParameterExpectation> getParameterExpectations();
 

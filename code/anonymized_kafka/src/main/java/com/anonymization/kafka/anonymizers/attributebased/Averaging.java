@@ -17,7 +17,7 @@ public class Averaging implements AttributeBasedAnonymizer {
     private int windowSize = 0;
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
 

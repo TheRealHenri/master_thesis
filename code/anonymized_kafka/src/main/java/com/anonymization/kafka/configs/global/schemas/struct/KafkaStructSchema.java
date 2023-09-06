@@ -5,6 +5,8 @@ import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.global.schemas.SchemaType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.apache.kafka.connect.data.Schema;
+import org.apache.kafka.connect.data.SchemaBuilder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -50,4 +52,16 @@ public class KafkaStructSchema implements DataSchema {
         }
         return new SchemaCommon(dataFields);
     }
+
+    @Override
+    public Schema getKafkaSchema() {
+        SchemaBuilder schemaBuilder = SchemaBuilder.struct().name(name);
+
+        for (KafkaStructSchemaField field : fields) {
+            schemaBuilder.field(field.getName(), field.getType().toKafkaSchema());
+        }
+        return schemaBuilder.build();
+    }
+
+
 }

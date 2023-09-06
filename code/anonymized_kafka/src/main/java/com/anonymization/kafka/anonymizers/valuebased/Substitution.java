@@ -17,8 +17,8 @@ public class Substitution implements ValueBasedAnonymizer {
     private List<Key> keysToSubstitute = Collections.emptyList();
     private Optional<List<String>> mappingTable = Optional.empty();
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

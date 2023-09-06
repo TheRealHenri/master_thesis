@@ -1,11 +1,11 @@
 package com.anonymization.kafka.configs.global.schemas.avro;
 
-import com.anonymization.kafka.configs.global.schemas.FieldType;
-import com.anonymization.kafka.configs.global.schemas.SchemaType;
 import com.anonymization.kafka.configs.global.schemas.DataSchema;
+import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
-import com.anonymization.kafka.configs.global.schemas.struct.KafkaStructSchemaField;
+import com.anonymization.kafka.configs.global.schemas.SchemaType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.apache.kafka.connect.data.Schema;
 
 import java.util.HashMap;
 import java.util.List;
@@ -70,5 +70,10 @@ public class AvroSchema implements DataSchema {
             dataFields.putAll(field.getSchemaField());
         }
         return new SchemaCommon(dataFields);
+    }
+
+    @Override
+    public Schema getKafkaSchema() {
+        return null;
     }
 }

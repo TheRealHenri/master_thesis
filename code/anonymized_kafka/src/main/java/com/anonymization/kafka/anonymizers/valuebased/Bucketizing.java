@@ -17,8 +17,8 @@ public class Bucketizing implements ValueBasedAnonymizer {
     private List<Key> keysToBucketize = Collections.emptyList();
     private Optional<List<String>> buckets = Optional.empty();
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

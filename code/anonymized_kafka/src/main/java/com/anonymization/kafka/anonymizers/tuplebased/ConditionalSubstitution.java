@@ -17,8 +17,8 @@ public class ConditionalSubstitution implements TupleBasedAnonymizer {
     private List<Key> keysToSubstitute = Collections.emptyList();
     private HashMap<Object, Object> lookupTable = new HashMap<>();
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

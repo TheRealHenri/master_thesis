@@ -18,8 +18,8 @@ public class Generalization implements ValueBasedAnonymizer {
     private Optional<List<String>> generalizationValues = Optional.empty();
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

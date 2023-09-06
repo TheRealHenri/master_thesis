@@ -18,7 +18,7 @@ public class MultivariantMicroAggregation implements TableBasedAnonymizer {
     private int groupSize = 0;
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
 

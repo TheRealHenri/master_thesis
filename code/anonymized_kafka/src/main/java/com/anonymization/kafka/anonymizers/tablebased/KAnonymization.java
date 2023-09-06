@@ -14,7 +14,7 @@ public class KAnonymization implements TableBasedAnonymizer {
     private int k = 0;
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
 

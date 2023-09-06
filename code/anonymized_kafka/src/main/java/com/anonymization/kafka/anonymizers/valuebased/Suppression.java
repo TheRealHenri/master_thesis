@@ -16,8 +16,8 @@ public class Suppression implements ValueBasedAnonymizer {
     private List<Key> keysToSuppress = Collections.emptyList();
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

@@ -17,7 +17,7 @@ public class UnivariantMicroAggregation implements AttributeBasedAnonymizer {
     private int windowSize = 0;
     private int groupSize = 0;
     @Override
-    public Struct anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
 

@@ -16,8 +16,8 @@ public class Tokenization implements ValueBasedAnonymizer {
 
     private List<Key> keysToTokenize = Collections.emptyList();
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

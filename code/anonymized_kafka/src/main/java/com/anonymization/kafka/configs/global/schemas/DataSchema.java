@@ -4,6 +4,7 @@ import com.anonymization.kafka.configs.global.schemas.avro.AvroSchema;
 import com.anonymization.kafka.configs.global.schemas.struct.KafkaStructSchema;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.apache.kafka.connect.data.Schema;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -17,4 +18,5 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 public interface DataSchema {
     SchemaType getSchemaType();
     SchemaCommon getSchema();
+    Schema getKafkaSchema();
 }

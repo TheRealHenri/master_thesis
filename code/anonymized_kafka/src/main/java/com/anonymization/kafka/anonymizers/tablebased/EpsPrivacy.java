@@ -14,7 +14,7 @@ public class EpsPrivacy implements TableBasedAnonymizer {
     private int windowSize = 0;
 
     @Override
-    public Struct anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
 

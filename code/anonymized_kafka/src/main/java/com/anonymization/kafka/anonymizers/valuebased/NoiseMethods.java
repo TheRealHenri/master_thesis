@@ -13,8 +13,8 @@ public class NoiseMethods implements ValueBasedAnonymizer {
 
     private Double noise;
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override

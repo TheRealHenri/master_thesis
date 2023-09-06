@@ -15,8 +15,8 @@ public class Blurring implements ValueBasedAnonymizer {
 
     private List<Key> keysToBlur = Collections.emptyList();
     @Override
-    public Struct anonymize(List<Struct> lineS) {
-        return null;
+    public List<Struct> anonymize(List<Struct> lineS) {
+        return lineS;
     }
 
     @Override
