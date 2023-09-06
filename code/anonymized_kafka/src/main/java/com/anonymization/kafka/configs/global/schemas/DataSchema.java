@@ -4,7 +4,8 @@ import com.anonymization.kafka.configs.global.schemas.avro.AvroSchema;
 import com.anonymization.kafka.configs.global.schemas.struct.KafkaStructSchema;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.apache.kafka.connect.data.Schema;
+import org.apache.kafka.common.serialization.Serde;
+import org.apache.kafka.connect.data.Struct;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
@@ -18,5 +19,5 @@ import org.apache.kafka.connect.data.Schema;
 public interface DataSchema {
     SchemaType getSchemaType();
     SchemaCommon getSchema();
-    Schema getKafkaSchema();
+    Serde<Struct> getSerde();
 }

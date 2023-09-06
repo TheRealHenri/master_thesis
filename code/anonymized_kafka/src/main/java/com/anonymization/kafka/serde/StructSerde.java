@@ -10,8 +10,6 @@ import org.apache.kafka.common.serialization.Serializer;
 import org.apache.kafka.connect.data.Field;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Struct;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -20,7 +18,6 @@ public class StructSerde implements Serializer<Struct>, Deserializer<Struct>, Se
 
     private final Schema schema;
     private final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-    private final Logger log = LoggerFactory.getLogger(StructSerde.class);
 
     public StructSerde(Schema schema) {
         this.schema = schema;
@@ -75,7 +72,7 @@ public class StructSerde implements Serializer<Struct>, Deserializer<Struct>, Se
         }
 
         try {
-            return struct.toString().getBytes(StandardCharsets.UTF_8);
+            return OBJECT_MAPPER.writeValueAsBytes(objectNode);
         } catch (Exception e) {
             throw new SerializationException("Error serializing value", e);
         }

@@ -4,8 +4,12 @@ import com.anonymization.kafka.configs.global.schemas.DataSchema;
 import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.global.schemas.SchemaType;
+import com.anonymization.kafka.serde.AvroSerde;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.apache.kafka.connect.data.Schema;
+import org.apache.avro.Schema;
+import org.apache.avro.SchemaBuilder;
+import org.apache.kafka.common.serialization.Serde;
+import org.apache.kafka.connect.data.Struct;
 
 import java.util.HashMap;
 import java.util.List;
@@ -73,7 +77,52 @@ public class AvroSchema implements DataSchema {
     }
 
     @Override
-    public Schema getKafkaSchema() {
-        return null;
+    public Serde<Struct> getSerde() {
+        return new AvroSerde(getAvroSchema());
+    }
+
+    public Schema getAvroSchema() {
+        SchemaBuilder.FieldAssembler<Schema> fieldAssembler = SchemaBuilder.record(name).namespace(namespace).fields();
+        for (AvroDataSchemaField field : fields) {
+            AvroType fieldType = field.getType();
+
+            switch (fieldType) {
+                case BOOLEAN:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().booleanType().noDefault();
+                    break;
+                case OPTIONAL_BOOLEAN:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().nullable().booleanType().noDefault();
+                    break;
+                case INT:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().intType().noDefault();
+                    break;
+                case OPTIONAL_INT:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().nullable().intType().noDefault();
+                    break;
+                case LONG:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().longType().noDefault();
+                    break;
+                case OPTIONAL_LONG:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().nullable().longType().noDefault();
+                    break;
+                case FLOAT:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().floatType().noDefault();
+                    break;
+                case OPTIONAL_FLOAT:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().nullable().floatType().noDefault();
+                    break;
+                case STRING:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().stringType().noDefault();
+                    break;
+                case OPTIONAL_STRING:
+                    fieldAssembler = fieldAssembler.name(field.getName()).type().nullable().stringType().noDefault();
+                    break;
+                case NULL:
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown field type: " + fieldType);
+            }
+        }
+        return fieldAssembler.endRecord();
     }
 }

@@ -2,7 +2,7 @@ package com.anonymization.kafka.factory;
 
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.global.GlobalConfig;
-import com.anonymization.kafka.serde.StructSerde;
+import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.streams.KafkaStreams;
@@ -24,7 +24,7 @@ public class AnonymizationStreamFactory {
 
         final StreamsBuilder builder = new StreamsBuilder();
 
-        StructSerde structSerde = new StructSerde(globalConfig.getDataSchema().getKafkaSchema());
+        Serde<Struct> structSerde = globalConfig.getDataSchema().getSerde();
 
         KStream<String, Struct> source = builder.stream(globalConfig.getTopic(), Consumed.with(Serdes.String(), structSerde));
 

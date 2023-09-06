@@ -4,9 +4,12 @@ import com.anonymization.kafka.configs.global.schemas.DataSchema;
 import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.global.schemas.SchemaType;
+import com.anonymization.kafka.serde.StructSerde;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaBuilder;
+import org.apache.kafka.connect.data.Struct;
 
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +57,10 @@ public class KafkaStructSchema implements DataSchema {
     }
 
     @Override
+    public Serde<Struct> getSerde() {
+        return new StructSerde(getKafkaSchema());
+    }
+
     public Schema getKafkaSchema() {
         SchemaBuilder schemaBuilder = SchemaBuilder.struct().name(name);
 
@@ -62,6 +69,4 @@ public class KafkaStructSchema implements DataSchema {
         }
         return schemaBuilder.build();
     }
-
-
 }
