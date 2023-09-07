@@ -33,11 +33,11 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                 JsonNode keyNode = jsonNode.get("keys");
                 Iterator<JsonNode> keyIterator = keyNode.elements();
                 while (keyIterator.hasNext()) {
-                    JsonNode currentKeyNode = keyIterator.next();
-                    String keyString = currentKeyNode.get("key").asText();
-                    keys.add(new Key(keyString));
+                    keys.add(new Key(keyIterator.next().asText()));
                 }
                 return keys;
+            case BUCKET_SIZE:
+                return jsonNode.get("bucketSize").asInt();
             case WINDOW_SIZE:
                 return jsonNode.get("windowSize").asInt();
             case GROUP_SIZE:

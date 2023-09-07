@@ -1,5 +1,6 @@
 package com.anonymization.kafka.factory;
 
+import com.anonymization.kafka.anonymizers.Anonymizer;
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.global.GlobalConfig;
 import org.apache.kafka.common.serialization.Serde;
@@ -15,7 +16,6 @@ import org.apache.kafka.streams.kstream.Produced;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
 public class AnonymizationStreamFactory {
 
@@ -31,10 +31,13 @@ public class AnonymizationStreamFactory {
         switch (streamConfig.getCategory()) {
             case VALUE_BASED:
             case TUPLE_BASED:
-                source.flatMapValues(value -> streamConfig.getAnonymizers().stream()
-                        .flatMap(anonymizer -> anonymizer.anonymize(List.of(value)).stream())
-                        .collect(Collectors.toList()))
-                    .to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
+                source.flatMapValues(value -> {
+                    List<Struct> tmpStruct = List.of(value);
+                    for (Anonymizer anonymizer : streamConfig.getAnonymizers()) {
+                        tmpStruct = anonymizer.anonymize(tmpStruct);
+                    }
+                    return tmpStruct;
+                }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
                 break;
             case ATTRIBUTE_BASED:
             case TABLE_BASED:

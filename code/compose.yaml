@@ -43,15 +43,18 @@ services:
     volumes: 
       - kafka-logs:/bitnami/kafka
     depends_on:
-      - zookeeper
+      zookeeper:
+        condition: service_started
 
   anonymized_kafka:
     build: ./anonymized_kafka
     networks:
       - kafka-network
     depends_on:
-      - kafka
-      - zookeeper
+      kafka:
+        condition: service_started
+      zookeeper:
+        condition: service_started
     volumes: 
     - ./anonymized_kafka_config/default_anonymized_kafka.json:/tmp/default_anonymized_kafka.json
 
@@ -85,6 +88,5 @@ networks:
 volumes:
   simple_kafka_pipeline-logs:
   data-generator-datasets:
-  anonymized_kafka-logs:
   zookeeper-logs:
   kafka-logs:

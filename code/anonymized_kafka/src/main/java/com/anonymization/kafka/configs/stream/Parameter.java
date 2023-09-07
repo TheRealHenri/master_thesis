@@ -22,6 +22,13 @@ public class Parameter {
         this.type = ParameterType.KEYS;
     }
 
+    private int getBucketSize() { return type == ParameterType.BUCKET_SIZE ? (int) value : 0; }
+
+    private void setBucketSize(int bucketSize) {
+        this.value = bucketSize;
+        this.type = ParameterType.BUCKET_SIZE;
+    }
+
     private String getWindowSize() {
         return type == ParameterType.WINDOW_SIZE ? value.toString() : null;
     }

@@ -91,10 +91,10 @@ public class AvroSerde implements Serde<Struct>, Deserializer<Struct>, Serialize
         for (Schema.Field avroField : avroFields) {
             Schema.Type avroType = avroField.schema().getType();
             String fieldName = avroField.name();
-
+            org.apache.kafka.connect.data.Schema typeSchema;
             switch (avroType) {
                 case BOOLEAN:
-                    org.apache.kafka.connect.data.Schema typeSchema = avroField.schema().isNullable() ?
+                    typeSchema = avroField.schema().isNullable() ?
                             org.apache.kafka.connect.data.Schema.OPTIONAL_BOOLEAN_SCHEMA : org.apache.kafka.connect.data.Schema.BOOLEAN_SCHEMA;
                     kafkaSchemaBuilder.field(fieldName, typeSchema);
                     break;

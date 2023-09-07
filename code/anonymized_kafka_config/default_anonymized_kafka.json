@@ -9,7 +9,7 @@
         {"name": "id", "type": "int32"},
         {"name": "name", "type": "string"},
         {"name": "gender", "type": "string"},
-        {"name": "age", "type": "int32"},
+        {"name": "age", "type": "string"},
         {"name": "height", "type": "int32"},
         {"name": "weight", "type": "int32"},
         {"name": "diagnosis", "type": "string"},
@@ -25,13 +25,11 @@
       "category": "VALUE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "suppression",
+          "anonymizer": "blurring",
           "parameters": [
             {
               "keys": [
-                {
-                  "key": "diagnosis"
-                }
+                "diagnosis","name", "gender"
               ]
             }
           ]
@@ -41,9 +39,7 @@
           "parameters": [
             {
               "keys": [
-                {
-                  "key": "name"
-                }
+                "name"
               ]
             }
           ]
@@ -53,10 +49,9 @@
           "parameters": [
             {
               "keys": [
-                {
-                  "key": "age"
-                }
-              ]
+                "age"
+              ],
+              "bucketSize" : 10
             }
           ]
         }
@@ -72,9 +67,7 @@
             {
               "windowSize": "1000",
               "keys": [
-                {
-                  "key": "diagnosis"
-                }
+                "diagnosis"
               ]
             }
           ]
@@ -85,9 +78,7 @@
             {
               "windowSize": "1000",
               "keys": [
-                {
-                  "key": "diagnosis"
-                }
+                "diagnosis"
               ]
             }
           ]

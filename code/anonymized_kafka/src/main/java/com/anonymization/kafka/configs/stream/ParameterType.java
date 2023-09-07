@@ -2,6 +2,7 @@ package com.anonymization.kafka.configs.stream;
 
 public enum ParameterType {
     KEYS("keys"),
+    BUCKET_SIZE("bucketSize"),
     WINDOW_SIZE("windowSize"),
     GROUP_SIZE("groupSize"),
     NOISE("noise"),
@@ -9,7 +10,7 @@ public enum ParameterType {
     L("l"),
     T("t");
 
-    private String name;
+    private final String name;
 
     ParameterType(String name) {
         this.name = name;
