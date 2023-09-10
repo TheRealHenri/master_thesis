@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.valuebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -13,8 +12,7 @@ import java.util.Objects;
 
 public class Tokenization implements ValueBasedAnonymizer {
 
-
-    private List<Key> keysToTokenize = Collections.emptyList();
+    private List<String> keysToTokenize = Collections.emptyList();
     @Override
     public List<Struct> anonymize(List<Struct> lineS) {
         return lineS;
@@ -35,7 +33,7 @@ public class Tokenization implements ValueBasedAnonymizer {
     public void initialize(List<Parameter> parameters) {
         for (Parameter param : parameters) {
             if (Objects.requireNonNull(param.getType()) == ParameterType.KEYS) {
-                this.keysToTokenize = (List<Key>) param.getValue();
+                this.keysToTokenize = (List<String>) param.getValue();
             }
         }
     }

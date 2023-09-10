@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.attributebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class UnivariantMicroAggregation implements AttributeBasedAnonymizer {
 
-    private List<Key> keysToAggregate = Collections.emptyList();
+    private List<String> keysToAggregate = Collections.emptyList();
     private int windowSize = 0;
     private int groupSize = 0;
     @Override
@@ -47,7 +46,7 @@ public class UnivariantMicroAggregation implements AttributeBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToAggregate = (List<Key>) param.getValue();
+                    this.keysToAggregate = (List<String>) param.getValue();
                     break;
                 case WINDOW_SIZE:
                     this.windowSize = param.toInt();

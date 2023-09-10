@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.valuebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -14,7 +13,7 @@ import java.util.Optional;
 
 public class Substitution implements ValueBasedAnonymizer {
 
-    private List<Key> keysToSubstitute = Collections.emptyList();
+    private List<String> keysToSubstitute = Collections.emptyList();
     private Optional<List<String>> mappingTable = Optional.empty();
     @Override
     public List<Struct> anonymize(List<Struct> lineS) {
@@ -42,7 +41,7 @@ public class Substitution implements ValueBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToSubstitute = (List<Key>) param.getValue();
+                    this.keysToSubstitute = (List<String>) param.getValue();
                     break;
             }
         }

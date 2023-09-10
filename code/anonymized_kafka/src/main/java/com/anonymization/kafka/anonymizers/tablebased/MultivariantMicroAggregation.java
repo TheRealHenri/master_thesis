@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class MultivariantMicroAggregation implements TableBasedAnonymizer {
 
-    private List<Key> keysToAggregate = Collections.emptyList();
+    private List<String> keysToAggregate = Collections.emptyList();
     private int windowSize = 0;
     private int groupSize = 0;
 
@@ -48,7 +47,7 @@ public class MultivariantMicroAggregation implements TableBasedAnonymizer {
         for (Parameter parameter : parameters) {
             switch (parameter.getType()) {
                 case KEYS:
-                    this.keysToAggregate = (List<Key>) parameter.getValue();
+                    this.keysToAggregate = (List<String>) parameter.getValue();
                     break;
                 case WINDOW_SIZE:
                     this.windowSize = parameter.toInt();

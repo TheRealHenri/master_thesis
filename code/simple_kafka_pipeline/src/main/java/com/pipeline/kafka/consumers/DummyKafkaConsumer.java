@@ -43,6 +43,7 @@ public class DummyKafkaConsumer {
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 
             for (ConsumerRecord<String, String> record : records) {
+                log.info(record.toString());
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 JsonElement je = JsonParser.parseString(record.value());
                 log.info(gson.toJson(je));

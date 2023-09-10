@@ -2,7 +2,9 @@ package com.anonymization.kafka.configs.stream;
 
 public enum ParameterType {
     KEYS("keys"),
+    MAP("map"),
     BUCKET_SIZE("bucketSize"),
+    N_FIELDS("nFields"),
     WINDOW_SIZE("windowSize"),
     GROUP_SIZE("groupSize"),
     NOISE("noise"),

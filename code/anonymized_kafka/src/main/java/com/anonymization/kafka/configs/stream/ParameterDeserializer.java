@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
     @Override
@@ -29,15 +27,26 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
     private Object parseValue(ParameterType type, JsonNode jsonNode) {
         switch (type) {
             case KEYS:
-                List<Key> keys = new ArrayList<>();
+                List<String> keys = new ArrayList<>();
                 JsonNode keyNode = jsonNode.get("keys");
                 Iterator<JsonNode> keyIterator = keyNode.elements();
                 while (keyIterator.hasNext()) {
-                    keys.add(new Key(keyIterator.next().asText()));
+                    keys.add(keyIterator.next().asText());
                 }
                 return keys;
+            case MAP:
+                HashMap<String, String> map = new HashMap<>();
+                JsonNode mapNode = jsonNode.get("map");
+                Iterator<Map.Entry<String, JsonNode>> mapIterator = mapNode.fields();
+                while (mapIterator.hasNext()) {
+                    Map.Entry<String, JsonNode> entry = mapIterator.next();
+                    map.put(entry.getKey(), entry.getValue().asText());
+                }
+                return map;
             case BUCKET_SIZE:
                 return jsonNode.get("bucketSize").asInt();
+            case N_FIELDS:
+                return jsonNode.get("nFields").asInt();
             case WINDOW_SIZE:
                 return jsonNode.get("windowSize").asInt();
             case GROUP_SIZE:

@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.attributebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class Averaging implements AttributeBasedAnonymizer {
 
-    private List<Key> keysToAverage = Collections.emptyList();
+    private List<String> keysToAverage = Collections.emptyList();
     private int windowSize = 0;
 
     @Override
@@ -42,7 +41,7 @@ public class Averaging implements AttributeBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToAverage = (List<Key>) param.getValue();
+                    this.keysToAverage = (List<String>) param.getValue();
                     break;
                 case WINDOW_SIZE:
                     this.windowSize = param.toInt();

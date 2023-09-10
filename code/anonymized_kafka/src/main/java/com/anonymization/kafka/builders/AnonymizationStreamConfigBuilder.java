@@ -65,7 +65,7 @@ public class AnonymizationStreamConfigBuilder {
             try {
                 Anonymizer currentEmptyAnonymizer = tryToGetAnonymizerInstance(anonymizerConfig);
                 validateAnonymizer(currentEmptyAnonymizer, anonymizerConfig);
-                Anonymizer initializedAnonymizer = AnonymizerFactory.createAnonymizer(anonymizerConfig, schema);
+                Anonymizer initializedAnonymizer = AnonymizerFactory.createAnonymizer(anonymizerConfig);
                 resultingAnonymizers.add(initializedAnonymizer);
             } catch (IllegalArgumentException e) {
                 throw new ConfigurationException("Anonymizer " + anonymizerConfig.getAnonymizer() + " is not valid: " + e.getMessage());

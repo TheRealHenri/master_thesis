@@ -14,7 +14,7 @@
         {"name": "gender", "type": "string"},
         {"name": "height", "type": "int32"},
         {"name": "weight", "type": "int32"},
-        {"name": "age", "type": "string"},
+        {"name": "age", "type": "int32"},
         {"name": "insurance_company", "type": "int32"},
         {"name": "insurance_number", "type": "string"},
         {"name": "diagnosis", "type": "string"},
@@ -34,7 +34,20 @@
           "parameters": [
             {
               "keys": [
-                "diagnosis","name", "gender"
+                "name", "gender"
+              ]
+            },
+            {
+              "nFields": 7
+            }
+          ]
+        },
+        {
+          "anonymizer": "suppression",
+          "parameters": [
+            {
+              "keys": [
+                "diagnosis"
               ]
             }
           ]
@@ -50,6 +63,19 @@
           ]
         },
         {
+          "anonymizer": "noise_methods",
+          "parameters": [
+            {
+              "keys": [
+                "glucose", "HbA1C"
+              ]
+            },
+            {
+              "noise": 0.2
+            }
+          ]
+        },
+        {
           "anonymizer": "bucketizing",
           "parameters": [
             {
@@ -57,6 +83,28 @@
                 "age"
               ],
               "bucketSize" : 10
+            }
+          ]
+        },
+        {
+          "anonymizer": "generalization",
+          "parameters": [
+            {
+              "keys": [
+                "zip"
+              ],
+              "map": {
+                "0": "Sachsen, Sachsenanhalt",
+                "1": "Berlin, Brandenburg, MV",
+                "2": "Norddeutschland (¬Berlin)",
+                "3": "Niedersachsen, Bremen",
+                "4": "NRW",
+                "5": "Rheinland-Pfalz, Saarland",
+                "6": "Hessen",
+                "7": "Baden-Württember",
+                "8": "Südbayern",
+                "9": "Nordbayern"
+              }
             }
           ]
         }

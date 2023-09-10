@@ -1,6 +1,5 @@
 package com.anonymization.kafka.anonymizers.tuplebased;
 
-import com.anonymization.kafka.configs.stream.Key;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
@@ -14,7 +13,7 @@ import java.util.List;
 
 public class ConditionalSubstitution implements TupleBasedAnonymizer {
 
-    private List<Key> keysToSubstitute = Collections.emptyList();
+    private List<String> keysToSubstitute = Collections.emptyList();
     private HashMap<Object, Object> lookupTable = new HashMap<>();
     @Override
     public List<Struct> anonymize(List<Struct> lineS) {
@@ -42,7 +41,7 @@ public class ConditionalSubstitution implements TupleBasedAnonymizer {
         for (Parameter parameter : parameters) {
             switch (parameter.getType()) {
                 case KEYS:
-                    this.keysToSubstitute = (List<Key>) parameter.getValue();
+                    this.keysToSubstitute = (List<String>) parameter.getValue();
                     break;
             }
         }

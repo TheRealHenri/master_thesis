@@ -1,5 +1,6 @@
 package com.anonymization.kafka.configs.stream;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Parameter {
@@ -13,13 +14,20 @@ public class Parameter {
         this.value = value;
     }
 
-    private List<Key> getKeys() {
-        return type == ParameterType.KEYS ? (List<Key>) value : null;
+    private List<String> getKeys() {
+        return type == ParameterType.KEYS ? (List<String>) value : null;
     }
 
-    private void setKeys(List<Key> keys) {
+    private void setKeys(List<String> keys) {
         this.value = keys;
         this.type = ParameterType.KEYS;
+    }
+
+    private HashMap<String, String> getMap() { return type == ParameterType.MAP ? (HashMap<String, String>) value : null; }
+
+    private void setMap(HashMap<String, String> map) {
+        this.value = map;
+        this.type = ParameterType.MAP;
     }
 
     private int getBucketSize() { return type == ParameterType.BUCKET_SIZE ? (int) value : 0; }
@@ -27,6 +35,13 @@ public class Parameter {
     private void setBucketSize(int bucketSize) {
         this.value = bucketSize;
         this.type = ParameterType.BUCKET_SIZE;
+    }
+
+    private int getNFields() { return type == ParameterType.N_FIELDS ? (int) value : 0; }
+
+    private void setNFields(int nFields) {
+        this.value = nFields;
+        this.type = ParameterType.N_FIELDS;
     }
 
     private String getWindowSize() {
