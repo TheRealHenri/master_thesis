@@ -8,14 +8,19 @@
       "fields": [
         {"name": "id", "type": "int32"},
         {"name": "name", "type": "string"},
-        {"name": "gender", "type": "string"},
-        {"name": "age", "type": "string"},
-        {"name": "height", "type": "int32"},
-        {"name": "weight", "type": "int32"},
-        {"name": "diagnosis", "type": "string"},
         {"name": "address", "type": "string"},
         {"name": "zip", "type": "int32"},
-        {"name": "phone", "type": "string"}
+        {"name": "phone", "type": "string"},
+        {"name": "gender", "type": "string"},
+        {"name": "height", "type": "int32"},
+        {"name": "weight", "type": "int32"},
+        {"name": "age", "type": "string"},
+        {"name": "insurance_company", "type": "int32"},
+        {"name": "insurance_number", "type": "string"},
+        {"name": "diagnosis", "type": "string"},
+        {"name": "glucose", "type": "int32"},
+        {"name": "HbA1C", "type": "float32"},
+        {"name": "medication", "type": "string"}
       ]
     }
   },
