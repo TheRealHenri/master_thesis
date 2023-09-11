@@ -70,7 +70,7 @@ public class Suppression implements ValueBasedAnonymizer {
     public void initialize(List<Parameter> parameters) {
         for (Parameter param : parameters) {
             if (Objects.requireNonNull(param.getType()) == ParameterType.KEYS) {
-                this.keysToSuppress = (List<String>) param.getValue();
+                this.keysToSuppress = param.getKeys();
             }
         }
     }

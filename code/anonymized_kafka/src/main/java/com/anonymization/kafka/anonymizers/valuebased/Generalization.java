@@ -78,7 +78,7 @@ public class Generalization implements ValueBasedAnonymizer {
                         true
                 ),
                 new ParameterExpectation(
-                        ParameterType.MAP.getName(),
+                        ParameterType.GENERALIZATION_MAP.getName(),
                         Collections.emptyList(),
                         true
                 )
@@ -90,10 +90,10 @@ public class Generalization implements ValueBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToGeneralize = (List<String>) param.getValue();
+                    this.keysToGeneralize = param.getKeys();
                     break;
-                case MAP:
-                    this.map = (HashMap<String, String>) param.getValue();
+                case GENERALIZATION_MAP:
+                    this.map = param.getGeneralizationMap();
                     break;
             }
         }

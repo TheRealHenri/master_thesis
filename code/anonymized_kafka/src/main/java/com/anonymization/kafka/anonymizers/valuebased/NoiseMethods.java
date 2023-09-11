@@ -89,10 +89,10 @@ public class NoiseMethods implements ValueBasedAnonymizer {
         for (Parameter parameter : parameters) {
             switch (parameter.getType()) {
                 case KEYS:
-                    this.keysForNoise = (List<String>) parameter.getValue();
+                    this.keysForNoise = parameter.getKeys();
                     break;
                 case NOISE:
-                    this.noise = (double) parameter.getValue();
+                    this.noise = parameter.getNoise();
                     break;
             }
         }

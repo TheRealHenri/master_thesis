@@ -14,87 +14,103 @@ public class Parameter {
         this.value = value;
     }
 
-    private List<String> getKeys() {
+    public List<String> getKeys() {
         return type == ParameterType.KEYS ? (List<String>) value : null;
     }
 
-    private void setKeys(List<String> keys) {
+    public void setKeys(List<String> keys) {
         this.value = keys;
         this.type = ParameterType.KEYS;
     }
 
-    private HashMap<String, String> getMap() { return type == ParameterType.MAP ? (HashMap<String, String>) value : null; }
+    public HashMap<String, String> getGeneralizationMap() { return type == ParameterType.GENERALIZATION_MAP ? (HashMap<String, String>) value : null; }
 
-    private void setMap(HashMap<String, String> map) {
-        this.value = map;
-        this.type = ParameterType.MAP;
+    public void setGeneralizationMap(HashMap<String, String> generalizationMap) {
+        this.value = generalizationMap;
+        this.type = ParameterType.GENERALIZATION_MAP;
     }
 
-    private int getBucketSize() { return type == ParameterType.BUCKET_SIZE ? (int) value : 0; }
+    public HashMap<String, Object> getConditionMap() { return type == ParameterType.CONDITION_MAP ? (HashMap<String, Object>) value : null; }
 
-    private void setBucketSize(int bucketSize) {
+    public void setConditionMap(HashMap<String, Object> conditionMap) {
+        this.value = conditionMap;
+        this.type = ParameterType.CONDITION_MAP;
+    }
+
+    public List<String> getSubstitutionList() {
+        return type == ParameterType.SUBSTITUTION_LIST ? (List<String>) value : null;
+    }
+
+    public void setSubstitutionList(List<String> substitutionList) {
+        this.value = substitutionList;
+        this.type = ParameterType.SUBSTITUTION_LIST;
+    }
+
+    public Integer getBucketSize() { return type == ParameterType.BUCKET_SIZE ? toInt() : null; }
+
+    public void setBucketSize(Integer bucketSize) {
         this.value = bucketSize;
         this.type = ParameterType.BUCKET_SIZE;
     }
 
-    private int getNFields() { return type == ParameterType.N_FIELDS ? (int) value : 0; }
+    public Integer getNFields() { return type == ParameterType.N_FIELDS ? toInt() : null; }
 
-    private void setNFields(int nFields) {
+    public void setNFields(Integer nFields) {
         this.value = nFields;
         this.type = ParameterType.N_FIELDS;
     }
 
-    private String getWindowSize() {
-        return type == ParameterType.WINDOW_SIZE ? value.toString() : null;
+    public Integer getWindowSize() {
+        return type == ParameterType.WINDOW_SIZE ? toInt() : null;
     }
 
-    private void setWindowSize(String windowSize) {
-        this.value = Integer.parseInt(windowSize);
+    public void setWindowSize(Integer windowSize) {
+        this.value = windowSize;
         this.type = ParameterType.WINDOW_SIZE;
     }
 
-    private String getGroupSize() {
-        return type == ParameterType.GROUP_SIZE ? value.toString() : null;
+    public Integer getGroupSize() {
+        return type == ParameterType.GROUP_SIZE ? toInt() : null;
     }
 
-    private void setGroupSize(String groupSize) {
+    public void setGroupSize(String groupSize) {
         this.value = Integer.parseInt(groupSize);
         this.type = ParameterType.GROUP_SIZE;
     }
 
-    private String getNoise() {
-        return type == ParameterType.NOISE ? value.toString() : null;
+    public Double getNoise() {
+        return type == ParameterType.NOISE ? toDouble() : 0;
     }
 
-    private void setNoise(String noise) {
-        this.value = Double.parseDouble(noise);
+    public void setNoise(Double noise) {
+        this.value = noise;
         this.type = ParameterType.NOISE;
     }
 
-    private String getK() {
-        return type == ParameterType.K ? value.toString() : null;
+    public Integer getK() {
+        return type == ParameterType.K ? toInt() : null;
     }
 
-    private void setK(String k) {
-        this.value = Integer.parseInt(k);
+    public void setK(Integer k) {
+        this.value = k;
         this.type = ParameterType.K;
     }
 
-    private String getL() {
-        return type == ParameterType.L ? value.toString() : null;
+    public Integer getL() {
+        return type == ParameterType.L ? toInt() : null;
     }
 
-    private void setL(String l) {
-        this.value = Integer.parseInt(l);
+    public void setL(Integer l) {
+        this.value = l;
         this.type = ParameterType.L;
     }
 
-    private String getT() {
-        return type == ParameterType.T ? value.toString() : null;
+    public Integer getT() {
+        return type == ParameterType.T ? toInt() : null;
     }
 
-    private void setT(String t) {
-        this.value = Integer.parseInt(t);
+    public void setT(Integer t) {
+        this.value = t;
         this.type = ParameterType.T;
     }
 

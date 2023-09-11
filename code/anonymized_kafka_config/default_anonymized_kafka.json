@@ -34,7 +34,7 @@
           "parameters": [
             {
               "keys": [
-                "name", "gender"
+                "gender"
               ]
             },
             {
@@ -48,16 +48,6 @@
             {
               "keys": [
                 "diagnosis"
-              ]
-            }
-          ]
-        },
-        {
-          "anonymizer": "substitution",
-          "parameters": [
-            {
-              "keys": [
-                "name"
               ]
             }
           ]
@@ -93,7 +83,7 @@
               "keys": [
                 "zip"
               ],
-              "map": {
+              "generalizationMap": {
                 "0": "Sachsen, Sachsenanhalt",
                 "1": "Berlin, Brandenburg, MV",
                 "2": "Norddeutschland (¬Berlin)",
@@ -101,7 +91,7 @@
                 "4": "NRW",
                 "5": "Rheinland-Pfalz, Saarland",
                 "6": "Hessen",
-                "7": "Baden-Württember",
+                "7": "Baden-Württemberg",
                 "8": "Südbayern",
                 "9": "Nordbayern"
               }
@@ -112,6 +102,60 @@
     },
     {
       "applicationId": "level_2",
+      "category": "TUPLE_BASED",
+      "anonymizers": [
+        {
+          "anonymizer": "conditional_substitution",
+          "parameters": [
+            {
+              "keys": [
+                "name"
+              ],
+              "conditionMap": {
+                "matchValue": "Henri Allgöwer"
+              },
+              "substitutionList": [
+                "Peter Müller"
+              ]
+            }
+          ]
+        },
+        {
+          "anonymizer": "conditional_substitution",
+          "parameters": [
+            {
+              "keys": [
+                "age"
+              ],
+              "conditionMap": {
+                "matchRange" : [18, 35.1]
+              },
+              "substitutionList": [
+                "young adult"
+              ]
+            }
+          ]
+        },
+        {
+          "anonymizer": "conditional_substitution",
+          "parameters": [
+            {
+              "keys": [
+                "phone"
+              ],
+              "conditionMap": {
+                "matchRegex": "^\\d{5} \\d{6}$"
+              },
+              "substitutionList": [
+                "XXXX - XXXXXXXX"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "applicationId": "level_3",
       "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
@@ -139,7 +183,7 @@
       ]
     },
     {
-      "applicationId": "level_3",
+      "applicationId": "level_4",
       "category": "TABLE_BASED",
       "anonymizers": [
         {
@@ -154,7 +198,7 @@
       ]
     },
     {
-      "applicationId": "level_4",
+      "applicationId": "level_5",
       "category": "TABLE_BASED",
       "anonymizers": [
         {

@@ -8,7 +8,6 @@ import org.apache.kafka.connect.data.Struct;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class Tokenization implements ValueBasedAnonymizer {
 
@@ -32,8 +31,10 @@ public class Tokenization implements ValueBasedAnonymizer {
     @Override
     public void initialize(List<Parameter> parameters) {
         for (Parameter param : parameters) {
-            if (Objects.requireNonNull(param.getType()) == ParameterType.KEYS) {
-                this.keysToTokenize = (List<String>) param.getValue();
+            switch (param.getType()) {
+                case KEYS:
+                    keysToTokenize = param.getKeys();
+                    break;
             }
         }
     }

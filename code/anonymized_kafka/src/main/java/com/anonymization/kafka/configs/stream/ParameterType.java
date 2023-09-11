@@ -2,12 +2,14 @@ package com.anonymization.kafka.configs.stream;
 
 public enum ParameterType {
     KEYS("keys"),
-    MAP("map"),
+    GENERALIZATION_MAP("generalizationMap"),
+    CONDITION_MAP("conditionMap"),
     BUCKET_SIZE("bucketSize"),
     N_FIELDS("nFields"),
     WINDOW_SIZE("windowSize"),
     GROUP_SIZE("groupSize"),
     NOISE("noise"),
+    SUBSTITUTION_LIST("substitutionList"),
     K("k"),
     L("l"),
     T("t");

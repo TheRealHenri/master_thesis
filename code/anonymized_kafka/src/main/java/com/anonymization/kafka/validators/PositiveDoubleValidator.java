@@ -10,7 +10,12 @@ public class PositiveDoubleValidator implements ParameterValidator{
 
     @Override
     public void validateParameter(Parameter param, SchemaCommon schema) throws IllegalArgumentException {
-        double doubleParam = (double) param.getValue();
+        double doubleParam;
+        try {
+            doubleParam = (double) param.getValue();
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Provided Parameter " + param.getType() + " is not of required Type Double");
+        }
         if (doubleParam <= 0) {
             throw new IllegalArgumentException("Parameter " + param + " has to be a positive double, but is " + doubleParam);
         }

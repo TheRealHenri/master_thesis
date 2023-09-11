@@ -82,10 +82,10 @@ public class Bucketizing implements ValueBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToBucketize = (List<String>) param.getValue();
+                    this.keysToBucketize = param.getKeys();
                     break;
                 case BUCKET_SIZE:
-                    this.bucketSize = (int) param.getValue();
+                    this.bucketSize = param.getBucketSize();
                     break;
             }
         }

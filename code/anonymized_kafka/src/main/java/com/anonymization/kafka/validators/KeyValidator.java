@@ -12,7 +12,12 @@ public class KeyValidator implements ParameterValidator {
 
     @Override
     public void validateParameter(Parameter param, SchemaCommon schema) throws IllegalArgumentException {
-        List<String> keys = (List<String>) param.getValue();
+        List<String> keys;
+        try {
+            keys = param.getKeys();
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Provided Parameter " + param.getType() + " is not of required Type List<String>");
+        }
         for (String key : keys) {
             if (!schema.getDataFields().containsKey(key)) {
                 throw new IllegalArgumentException("Key " + key + " is not present in schema");

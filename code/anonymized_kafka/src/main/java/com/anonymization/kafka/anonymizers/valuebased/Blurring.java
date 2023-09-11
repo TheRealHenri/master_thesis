@@ -85,10 +85,10 @@ public class Blurring implements ValueBasedAnonymizer {
         for (Parameter param : parameters) {
             switch (param.getType()) {
                 case KEYS:
-                    this.keysToBlur = (List<String>) param.getValue();
+                    this.keysToBlur = param.getKeys();
                     break;
                 case N_FIELDS:
-                    this.nFields = Optional.of((int) param.getValue());
+                    this.nFields = Optional.of(param.getNFields());
                     break;
             }
         }

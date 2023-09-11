@@ -24,7 +24,7 @@ public class ParameterExpectation {
         return isRequired;
     }
 
-    public void validate(Parameter param, SchemaCommon schema) {
+    public void validate(Parameter param, SchemaCommon schema) throws IllegalArgumentException {
         for (ParameterValidator validator : validators) {
             validator.validateParameter(param, schema);
         }
