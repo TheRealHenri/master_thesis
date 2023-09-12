@@ -71,8 +71,14 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                 return jsonNode.get("bucketSize").asInt();
             case N_FIELDS:
                 return jsonNode.get("nFields").asInt();
+            case WINDOW_TYPE:
+                return jsonNode.get("windowType").asText();
             case WINDOW_SIZE:
                 return jsonNode.get("windowSize").asInt();
+            case ADVANCE_TIME:
+                return jsonNode.get("advanceTime").asInt();
+            case GRACE_PERIOD:
+                return jsonNode.get("gracePeriod").asInt();
             case GROUP_SIZE:
                 return jsonNode.get("groupSize").asInt();
             case K:

@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import static com.pipeline.kafka.utils.ConfigConstants.DEFAULT_KEY;
 import static com.pipeline.kafka.utils.SchemaConstants.SYNTHETIC_DATA_CSV_SCHEMA;
 import static com.pipeline.kafka.utils.SchemaConstants.SYNTHETIC_DATA_CSV_TO_STRUCT_FOR;
 
@@ -126,8 +127,8 @@ public class CSVSourceTask extends SourceTask {
                                     Collections.singletonMap(POSITION_FIELD, streamOffSet),
                                     topic,
                                     null,
-                                    null,
-                                    null,
+                                    Schema.STRING_SCHEMA,
+                                    DEFAULT_KEY,
                                     VALUE_SCHEMA,
                                     structLine,
                                     System.currentTimeMillis()

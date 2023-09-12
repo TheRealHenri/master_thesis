@@ -4,7 +4,7 @@ import com.anonymization.kafka.configs.global.schemas.DataSchema;
 import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.global.schemas.SchemaType;
-import com.anonymization.kafka.serde.AvroSerde;
+import com.anonymization.kafka.serdes.AvroSerde;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;

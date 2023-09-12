@@ -1,4 +1,4 @@
-package com.anonymization.kafka.serde;
+package com.anonymization.kafka.serdes;
 
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;

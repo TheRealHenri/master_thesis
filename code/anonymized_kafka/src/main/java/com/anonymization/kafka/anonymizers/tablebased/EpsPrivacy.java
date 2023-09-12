@@ -1,5 +1,6 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
+import com.anonymization.kafka.anonymizers.window.WindowConfig;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.ParameterExpectation;
@@ -39,4 +40,9 @@ public class EpsPrivacy implements TableBasedAnonymizer {
     }
 
     public EpsPrivacy() {}
+
+    @Override
+    public WindowConfig getWindowConfig() {
+        return null;
+    }
 }

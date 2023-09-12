@@ -162,20 +162,10 @@
           "anonymizer": "aggregation",
           "parameters": [
             {
-              "windowSize": "1000",
+              "windowType": "tumbling",
+              "windowSize": 7,
               "keys": [
-                "diagnosis"
-              ]
-            }
-          ]
-        },
-        {
-          "anonymizer": "averaging",
-          "parameters": [
-            {
-              "windowSize": "1000",
-              "keys": [
-                "diagnosis"
+                "age"
               ]
             }
           ]

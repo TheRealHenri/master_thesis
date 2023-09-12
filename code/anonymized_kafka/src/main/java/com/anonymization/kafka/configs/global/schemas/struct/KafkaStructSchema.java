@@ -4,7 +4,7 @@ import com.anonymization.kafka.configs.global.schemas.DataSchema;
 import com.anonymization.kafka.configs.global.schemas.FieldType;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.global.schemas.SchemaType;
-import com.anonymization.kafka.serde.StructSerde;
+import com.anonymization.kafka.serdes.StructSerde;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.connect.data.Schema;
