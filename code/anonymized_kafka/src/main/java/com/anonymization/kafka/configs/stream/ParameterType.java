@@ -10,6 +10,7 @@ public enum ParameterType {
     ADVANCE_TIME("advanceTime"),
     GRACE_PERIOD("gracePeriod"),
     GROUP_SIZE("groupSize"),
+    AGGREGATION_MODE("aggregationMode"),
     NOISE("noise"),
     SUBSTITUTION_LIST("substitutionList"),
     K("k"),

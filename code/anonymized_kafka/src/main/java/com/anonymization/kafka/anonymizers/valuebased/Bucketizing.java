@@ -66,7 +66,7 @@ public class Bucketizing implements ValueBasedAnonymizer {
         return List.of(
                 new ParameterExpectation(
                         ParameterType.KEYS.getName(),
-                        List.of(new KeyValidator()),
+                        List.of(new KeyValidator(true)),
                         true
                 ),
                 new ParameterExpectation(

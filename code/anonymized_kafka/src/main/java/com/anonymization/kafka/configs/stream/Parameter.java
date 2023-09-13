@@ -87,9 +87,16 @@ public class Parameter {
         return type == ParameterType.GROUP_SIZE ? toInt() : null;
     }
 
-    public void setGroupSize(String groupSize) {
-        this.value = Integer.parseInt(groupSize);
+    public void setGroupSize(Integer groupSize) {
+        this.value = groupSize;
         this.type = ParameterType.GROUP_SIZE;
+    }
+
+    public String getAggregationMode() { return type == ParameterType.AGGREGATION_MODE ? toString() : null; }
+
+    public void setAggregationMode(String aggregationMode) {
+        this.value = aggregationMode;
+        this.type = ParameterType.AGGREGATION_MODE;
     }
 
     public Double getNoise() {

@@ -165,7 +165,32 @@
               "windowSize": 7,
               "keys": [
                 "age"
-              ]
+              ],
+              "aggregationMode": "count"
+            }
+          ]
+        },
+        {
+          "anonymizer": "aggregation",
+          "parameters": [
+            {
+              "windowSize": 7,
+              "keys": [
+                "glucose"
+              ],
+              "aggregationMode": "median"
+            }
+          ]
+        },
+        {
+          "anonymizer": "aggregation",
+          "parameters": [
+            {
+              "windowSize": 7,
+              "keys": [
+                "HbA1C"
+              ],
+              "aggregationMode": "average"
             }
           ]
         }

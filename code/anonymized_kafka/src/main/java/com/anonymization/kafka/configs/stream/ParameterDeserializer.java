@@ -79,6 +79,8 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                 return jsonNode.get("gracePeriod").asInt();
             case GROUP_SIZE:
                 return jsonNode.get("groupSize").asInt();
+            case AGGREGATION_MODE:
+                return jsonNode.get("aggregationMode").asText();
             case K:
                 return jsonNode.get("k").asInt();
             case L:

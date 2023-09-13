@@ -40,7 +40,7 @@ public class AnonymizationStreamFactory {
                             tmpStruct = anonymizer.anonymize(tmpStruct);
                         }
                         return tmpStruct;
-                    });
+                    }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
                     break;
                 case ATTRIBUTE_BASED:
                 case TABLE_BASED:
@@ -61,11 +61,11 @@ public class AnonymizationStreamFactory {
                                     values = anonymizer.anonymize(values);
                                 }
                                 return values;
-                            });
+                            }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
+                    break;
             }
         }
 
-        source.to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
 
         final Topology topology = builder.build();
         return new KafkaStreams(topology, props);
@@ -75,7 +75,6 @@ public class AnonymizationStreamFactory {
         Properties props = new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG, streamConfig.getApplicationId());
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, globalConfig.getBootstrapServer());
-        // adapt these probably
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         return props;

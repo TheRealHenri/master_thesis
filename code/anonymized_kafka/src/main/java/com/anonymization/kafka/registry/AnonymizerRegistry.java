@@ -2,7 +2,6 @@ package com.anonymization.kafka.registry;
 
 import com.anonymization.kafka.anonymizers.Anonymizer;
 import com.anonymization.kafka.anonymizers.attributebased.Aggregation;
-import com.anonymization.kafka.anonymizers.attributebased.Averaging;
 import com.anonymization.kafka.anonymizers.attributebased.Shuffling;
 import com.anonymization.kafka.anonymizers.attributebased.UnivariantMicroAggregation;
 import com.anonymization.kafka.anonymizers.tablebased.*;
@@ -18,7 +17,6 @@ public final class AnonymizerRegistry {
     static {
         // attribute based
         REGISTRY.put("aggregation", Aggregation.class);
-        REGISTRY.put("averaging", Averaging.class);
         REGISTRY.put("shuffling", Shuffling.class);
         REGISTRY.put("univariant_micro_aggregation", UnivariantMicroAggregation.class);
         // table based
