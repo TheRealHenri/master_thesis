@@ -1,7 +1,6 @@
 package com.anonymization.kafka.anonymizers;
 
 import com.anonymization.kafka.AnonymizationCategory;
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.validators.ParameterExpectation;
 import org.apache.kafka.connect.data.Struct;

@@ -6,7 +6,6 @@ public enum ParameterType {
     CONDITION_MAP("conditionMap"),
     BUCKET_SIZE("bucketSize"),
     N_FIELDS("nFields"),
-    WINDOW_TYPE("windowType"),
     WINDOW_SIZE("windowSize"),
     ADVANCE_TIME("advanceTime"),
     GRACE_PERIOD("gracePeriod"),

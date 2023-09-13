@@ -1,9 +1,6 @@
 package com.anonymization.kafka.anonymizers.attributebased;
 
-import com.anonymization.kafka.anonymizers.window.SlidingWindow;
-import com.anonymization.kafka.anonymizers.window.TumblingWindow;
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
-import com.anonymization.kafka.anonymizers.window.WindowType;
+import com.anonymization.kafka.anonymizers.WindowConfig;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.*;
@@ -19,7 +16,6 @@ import java.util.Optional;
 public class Aggregation implements AttributeBasedAnonymizer {
 
     private List<String> keysToAggregate = Collections.emptyList();
-    private WindowType windowType;
     private Duration windowSize = Duration.ZERO;
     private Optional<Duration> advanceTime = Optional.empty();
     private Optional<Duration> gracePeriod = Optional.empty();
@@ -39,11 +35,6 @@ public class Aggregation implements AttributeBasedAnonymizer {
                 new ParameterExpectation(
                         ParameterType.KEYS.getName(),
                         List.of(new KeyValidator()),
-                        true
-                ),
-                new ParameterExpectation(
-                        ParameterType.WINDOW_TYPE.getName(),
-                        List.of(new EnumValidator(WindowType.class)),
                         true
                 ),
                 new ParameterExpectation(
@@ -71,9 +62,6 @@ public class Aggregation implements AttributeBasedAnonymizer {
                 case KEYS:
                     this.keysToAggregate = param.getKeys();
                     break;
-                case WINDOW_TYPE:
-                    this.windowType = WindowType.getByName(param.getWindowType());
-                    break;
                 case WINDOW_SIZE:
                     this.windowSize = Duration.ofMillis(param.getWindowSize());
                     break;
@@ -92,20 +80,6 @@ public class Aggregation implements AttributeBasedAnonymizer {
 
     @Override
     public WindowConfig getWindowConfig() {
-        switch (windowType) {
-            case SLIDING:
-                if (advanceTime.isPresent()) {
-                    if (advanceTime.get().compareTo(windowSize) > 0) {
-                        throw new IllegalArgumentException("AdvanceTime cannot be greater than window Size!");
-                    }
-                    return gracePeriod.map(duration -> new SlidingWindow(windowSize, advanceTime.get(), duration)).orElseGet(() -> new SlidingWindow(windowSize, advanceTime.get()));
-                } else {
-                    throw new IllegalArgumentException("Sliding Window requires the specification of the advanceTime!");
-                }
-            case TUMBLING:
-                return gracePeriod.map(duration -> new TumblingWindow(windowSize, duration)).orElseGet(() -> new TumblingWindow(windowSize));
-            default:
-                return null;
-        }
+        return new WindowConfig(windowSize, advanceTime, gracePeriod);
     }
 }

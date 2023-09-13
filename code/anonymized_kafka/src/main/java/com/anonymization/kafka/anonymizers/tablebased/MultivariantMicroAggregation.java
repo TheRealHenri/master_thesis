@@ -1,6 +1,6 @@
 package com.anonymization.kafka.anonymizers.tablebased;
 
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
+import com.anonymization.kafka.anonymizers.WindowConfig;
 import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;

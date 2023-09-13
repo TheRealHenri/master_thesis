@@ -162,7 +162,6 @@
           "anonymizer": "aggregation",
           "parameters": [
             {
-              "windowType": "tumbling",
               "windowSize": 7,
               "keys": [
                 "age"

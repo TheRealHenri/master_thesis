@@ -1,8 +1,7 @@
 package com.anonymization.kafka.factory;
 
 import com.anonymization.kafka.anonymizers.Anonymizer;
-import com.anonymization.kafka.anonymizers.window.SlidingWindow;
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
+import com.anonymization.kafka.anonymizers.WindowConfig;
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.global.GlobalConfig;
 import org.apache.kafka.common.serialization.Serde;
@@ -41,7 +40,7 @@ public class AnonymizationStreamFactory {
                             tmpStruct = anonymizer.anonymize(tmpStruct);
                         }
                         return tmpStruct;
-                    }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
+                    });
                     break;
                 case ATTRIBUTE_BASED:
                 case TABLE_BASED:
@@ -62,10 +61,11 @@ public class AnonymizationStreamFactory {
                                     values = anonymizer.anonymize(values);
                                 }
                                 return values;
-                            })
-                            .to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
+                            });
             }
         }
+
+        source.to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
 
         final Topology topology = builder.build();
         return new KafkaStreams(topology, props);
@@ -85,14 +85,11 @@ public class AnonymizationStreamFactory {
         assert windowConfig != null;
         Duration windowSize = windowConfig.getWindowSize();
         Duration gracePeriod = windowConfig.getGracePeriod();
-        switch (windowConfig.getWindowType()) {
-            case SLIDING:
-                SlidingWindow slidingWindow = (SlidingWindow) windowConfig;
-                return TimeWindows.ofSizeAndGrace(windowSize, gracePeriod).advanceBy(slidingWindow.getAdvanceTime());
-            case TUMBLING:
-                return TimeWindows.ofSizeAndGrace(windowSize, gracePeriod);
-            default:
-                return null;
+        TimeWindows resultTimeWindows = TimeWindows.ofSizeAndGrace(windowSize, gracePeriod);
+        Duration advanceTime = windowConfig.getAdvanceTime();
+        if (!advanceTime.isZero()) {
+            resultTimeWindows.advanceBy(advanceTime);
         }
+        return resultTimeWindows;
     }
 }

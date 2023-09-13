@@ -2,7 +2,7 @@ package com.anonymization.kafka.anonymizers.tuplebased;
 
 import com.anonymization.kafka.AnonymizationCategory;
 import com.anonymization.kafka.anonymizers.Anonymizer;
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
+import com.anonymization.kafka.anonymizers.WindowConfig;
 
 public interface TupleBasedAnonymizer extends Anonymizer {
     @Override

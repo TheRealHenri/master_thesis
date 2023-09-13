@@ -60,13 +60,6 @@ public class Parameter {
         this.type = ParameterType.N_FIELDS;
     }
 
-    public String getWindowType() { return type == ParameterType.WINDOW_TYPE ? toString() : null; }
-
-    public void setWindowType(String windowType) {
-        this.value = windowType;
-        this.type = ParameterType.WINDOW_TYPE;
-    }
-
     public Integer getWindowSize() {
         return type == ParameterType.WINDOW_SIZE ? toInt() : null;
     }

@@ -2,9 +2,7 @@ package com.anonymization.kafka.builders;
 
 import com.anonymization.kafka.AnonymizationCategory;
 import com.anonymization.kafka.anonymizers.Anonymizer;
-import com.anonymization.kafka.anonymizers.attributebased.AttributeBasedAnonymizer;
-import com.anonymization.kafka.anonymizers.tablebased.TableBasedAnonymizer;
-import com.anonymization.kafka.anonymizers.window.WindowConfig;
+import com.anonymization.kafka.anonymizers.WindowConfig;
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.global.schemas.SchemaCommon;
 import com.anonymization.kafka.configs.stream.AnonymizerConfig;
@@ -124,24 +122,19 @@ public class AnonymizationStreamConfigBuilder {
     private void ensureOnlyOneWindowConfig(List<Anonymizer> anonymizers) throws ConfigurationException {
         WindowConfig expectedWindowConfig = null;
         for (Anonymizer anonymizer : anonymizers) {
-            WindowConfig currentWindowConfig = null;
-            if (anonymizer instanceof AttributeBasedAnonymizer) {
-                currentWindowConfig = ((AttributeBasedAnonymizer) anonymizer).getWindowConfig();
-            } else if (anonymizer instanceof TableBasedAnonymizer) {
-                currentWindowConfig = ((TableBasedAnonymizer) anonymizer).getWindowConfig();
-            }
+            WindowConfig currentWindowConfig = anonymizer.getWindowConfig();
             if (currentWindowConfig == null) {
                 throw new ConfigurationException("No Window Config found for anonymizer " + anonymizer);
             }
             if (expectedWindowConfig == null) {
                 expectedWindowConfig = currentWindowConfig;
             } else {
-                if (!expectedWindowConfig.getWindowType().equals(currentWindowConfig.getWindowType())) {
-                    throw new ConfigurationException("Window config must be the same for all anonymizers of a single stream. Expected window type " + expectedWindowConfig.getWindowType() + " but found " + currentWindowConfig.getWindowType());
-                } else if (!expectedWindowConfig.getWindowSize().equals(currentWindowConfig.getWindowSize())) {
+                if (!expectedWindowConfig.getWindowSize().equals(currentWindowConfig.getWindowSize())) {
                     throw new ConfigurationException("Window config must be the same for all anonymizers of a single stream. Expected window size" + expectedWindowConfig.getWindowSize() + " but found " + currentWindowConfig.getWindowSize());
                 } else if (!expectedWindowConfig.getGracePeriod().equals(currentWindowConfig.getGracePeriod())) {
                     throw new ConfigurationException("Window config must be the same for all anonymizers of a single stream. Expected grace period " + expectedWindowConfig.getGracePeriod() + " but found " + currentWindowConfig.getGracePeriod());
+                } else if (!expectedWindowConfig.getAdvanceTime().equals(currentWindowConfig.getAdvanceTime())) {
+                    throw new ConfigurationException("Window config must be the same for all anonymizers of a single stream. Expected advance time " + expectedWindowConfig.getAdvanceTime() + " but found " + currentWindowConfig.getAdvanceTime());
                 }
             }
         }
