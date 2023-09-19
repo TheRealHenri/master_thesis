@@ -1,0 +1,142 @@
+% !TEX root = .
+
+\documentclass[a4paper, 12pt, oneside, BCOR1cm,toc=chapterentrywithdots, hidelinks]{scrbook}
+\usepackage{scrhack}
+
+\usepackage[a4paper]{geometry}
+\usepackage{textcomp}
+\usepackage{longtable}
+%\usepackage{tabu}
+
+\usepackage[ngerman, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\usepackage{acronym}
+\usepackage{url}           	 
+\usepackage{hyperref} 	
+\usepackage{listings, color}	% for source code
+\usepackage{scrlayer-scrpage}	% header and footer line
+\usepackage{acronym}
+\usepackage[ruled,vlined,algochapter]{algorithm2e}
+%\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage{blindtext}
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{algocf}{chapter} 
+%\counterwithout{lstlisting}{chapter}
+\AtBeginDocument{% the counter is defined later
+  \counterwithout{lstlisting}{chapter}%
+}
+\renewcommand\lstlistingname{Code Fragment}
+
+%for adding comments
+\usepackage{verbatim}
+
+% for tables
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+
+% header and footer line - no header & footer line on pages where a new chapter starts
+\pagestyle{scrheadings}
+% TU Berlin logo at header
+%\chead{\includegraphics[width=1.2cm]{./img/TU-Berlin-Logo.pdf} 
+%}
+
+
+
+\begin{document}
+
+\frontmatter
+%Titlepage
+\include{./misc/Titlepage}
+\thispagestyle{empty}
+\cleardoublepage
+    
+%Self-assertion
+\include{./misc/Self-assertion} 
+\thispagestyle{empty}
+\cleardoublepage
+
+% Abstract in Deutsch
+\addchap*{Zusammenfassung}
+\input{misc/Abstract_deutsch}
+
+% Abstract
+\addchap*{Abstract}
+\input{misc/Abstract}
+  
+% Acknowledgments  
+\addchap*{Acknowledgments}
+\input{misc/Acknowledgment}
+
+%table of contents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+
+%footnote
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+\blfootnote{Chapters 3-5 are the core of the thesis, whereas Chapters 1, 2, 6, and 7 provide context. The major contributions should be in Chapters 4 and 5. This structure serves as a guideline and should be customized accordingly. In particular, the generic chapter titles should be replaced with more specific ones, where appropriate (e.g., Chapter 4).} 
+
+%list of figures
+\listoffigures
+
+%list of tables
+\listoftables
+
+
+
+    
+
+    
+
+% List of Abbreviations
+\onecolumn
+\addchap{List of Abbreviations}
+\begin{acronym}[Bash]   
+ \acro{DIMA}{Database Systems and Information Management}
+\end{acronym}
+\onecolumn
+
+
+%algorithms
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+
+%In case, code fragments have to be added
+%\renewcommand{\lstlistlistingname}{List of Code Fragments}
+%\lstlistoflistings
+%\addcontentsline{toc}{chapter}{List of Code Fragments}
+
+\mainmatter % comment single chapters for faster compilation
+    
+    \input{./chapters/1Introduction.tex}
+    \input{./chapters/2Related_work.tex}
+    \input{./chapters/3Research_problem}
+    \input{./chapters/4Solution}
+    \input{./chapters/5Experimental}
+    \input{./chapters/6Related_work}
+    \input{./chapters/7Conclusion}
+
+% ---------------------------------------------------------------
+
+%Bibliography
+\begingroup
+\raggedright
+\bibliographystyle{splncs03}
+%\bibliographystyle{acm}
+\bibliography{bibliography}
+\endgroup
+
+%appendix
+\input{./misc/Annex}
+
+\end{document}

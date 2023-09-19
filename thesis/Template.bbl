@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{GevayRBMQM21}
+Gévay, G.E., Rabl, T., Breß, S., Madai-Tahy, L., Quiané-Ruiz, J.A., Markl, V.: Efficient control flow in dataflow systems: When ease-of-use meets high performance (2021), \url{https://www.researchgate.net/publication/349768477_Efficient_Control_Flow_in_Dataflow_Systems_When_Ease-of-Use_Meets_High_Performance}, to be published
+
+\bibitem{EsmailoghliQZ21}
+Mahdi~Esmailoghli, Jorge-Arnulfo Quiané-Ruiz, Z.A.: Cocoa: Correlation coefficient-aware data augmentation (2021)
+
+\bibitem{TraubGCBKRM20}
+Traub, J., Grulich, P.M., Cuéllar, A.R., Bress, S., Katsifodimos, A., Rabl, T., Markl, V.: Scotty: General and efficient open-source window aggregation for stream processing systems (2020), \url{https://www.redaktion.tu-berlin.de/fileadmin/fg131/Publikation/Papers/Traub_TODS-21-Scotty_preprint.pdf}
+
+\bibitem{wallwork_177}
+Wallwork, A.: English for writing research papers, chap. Abstracts, pp. 177--245. Springer International Publishing Switzerland (2011)
+
+\bibitem{wallwork_306}
+Wallwork, A.: English for writing research papers, p. 306. Springer International Publishing Switzerland (2011)
+
+\end{thebibliography}
