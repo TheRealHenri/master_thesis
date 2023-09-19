@@ -100,13 +100,22 @@ public class Parameter {
     }
 
     public Double getNoise() {
-        return type == ParameterType.NOISE ? toDouble() : 0;
+        return type == ParameterType.NOISE ? toDouble() : null;
     }
 
     public void setNoise(Double noise) {
         this.value = noise;
         this.type = ParameterType.NOISE;
     }
+
+    public Long getSeed() { return type == ParameterType.SEED ? toLong() : null; }
+
+    public void setSeed(Long seed) {
+        this.value = seed;
+        this.type = ParameterType.SEED;
+    }
+
+    public Boolean getShuffleIndividually() { return type == ParameterType.SHUFFLE_INDIVIDUALLY ? toBoolean() : null;}
 
     public Integer getK() {
         return type == ParameterType.K ? toInt() : null;
@@ -159,5 +168,19 @@ public class Parameter {
             return (Double) value;
         }
         throw new UnsupportedOperationException("Current parameter value is not a double.");
+    }
+
+    public Long toLong() {
+        if (value instanceof Long) {
+            return (Long) value;
+        }
+        throw new UnsupportedOperationException("Current parameter value is not a long");
+    }
+
+    public Boolean toBoolean() {
+        if (value instanceof  Boolean) {
+            return (Boolean) value;
+        }
+        throw new UnsupportedOperationException("Current parameter value is not a boolean");
     }
 }

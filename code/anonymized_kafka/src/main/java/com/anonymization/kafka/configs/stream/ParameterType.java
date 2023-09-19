@@ -13,6 +13,8 @@ public enum ParameterType {
     AGGREGATION_MODE("aggregationMode"),
     NOISE("noise"),
     SUBSTITUTION_LIST("substitutionList"),
+    SEED("seed"),
+    SHUFFLE_INDIVIDUALLY("shuffleIndividually"),
     K("k"),
     L("l"),
     T("t");

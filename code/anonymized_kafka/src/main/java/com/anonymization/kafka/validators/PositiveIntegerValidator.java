@@ -15,7 +15,7 @@ public class PositiveIntegerValidator implements ParameterValidator{
         try {
             intParam = param.toInt();
         } catch (Exception e) {
-            throw new IllegalArgumentException("Provided Parameter " + param.getType() + " is not of required Type Double");
+            throw new IllegalArgumentException("Provided Parameter " + param.getType() + " is not of required Type int");
         }
         if (intParam <= 0) {
             throw new IllegalArgumentException("Parameter " + param + " has to be a positive integer, but is " + intParam);

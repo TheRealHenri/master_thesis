@@ -159,38 +159,15 @@
       "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "aggregation",
+          "anonymizer": "shuffling",
           "parameters": [
             {
               "windowSize": 7,
+              "advanceTime": 2,
               "keys": [
-                "age"
+                "name", "phone"
               ],
-              "aggregationMode": "count"
-            }
-          ]
-        },
-        {
-          "anonymizer": "aggregation",
-          "parameters": [
-            {
-              "windowSize": 7,
-              "keys": [
-                "glucose"
-              ],
-              "aggregationMode": "median"
-            }
-          ]
-        },
-        {
-          "anonymizer": "aggregation",
-          "parameters": [
-            {
-              "windowSize": 7,
-              "keys": [
-                "HbA1C"
-              ],
-              "aggregationMode": "average"
+              "shuffleIndividually": true
             }
           ]
         }

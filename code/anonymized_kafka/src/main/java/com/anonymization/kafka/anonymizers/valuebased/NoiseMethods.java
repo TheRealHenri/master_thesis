@@ -4,6 +4,7 @@ import com.anonymization.kafka.configs.stream.Parameter;
 import com.anonymization.kafka.configs.stream.ParameterType;
 import com.anonymization.kafka.validators.KeyValidator;
 import com.anonymization.kafka.validators.ParameterExpectation;
+import com.anonymization.kafka.validators.PositiveDoubleValidator;
 import org.apache.kafka.connect.data.Field;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Struct;
@@ -78,7 +79,7 @@ public class NoiseMethods implements ValueBasedAnonymizer {
                 ),
                 new ParameterExpectation(
                         ParameterType.NOISE.getName(),
-                        Collections.emptyList(),
+                        List.of(new PositiveDoubleValidator()),
                         true
                 )
         );

@@ -81,6 +81,10 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                 return jsonNode.get("groupSize").asInt();
             case AGGREGATION_MODE:
                 return jsonNode.get("aggregationMode").asText();
+            case SEED:
+                return jsonNode.get("seed").asLong();
+            case SHUFFLE_INDIVIDUALLY:
+                return jsonNode.get("shuffleIndividually").asBoolean();
             case K:
                 return jsonNode.get("k").asInt();
             case L:
