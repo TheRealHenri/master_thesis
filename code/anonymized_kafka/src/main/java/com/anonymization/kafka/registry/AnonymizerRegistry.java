@@ -3,7 +3,7 @@ package com.anonymization.kafka.registry;
 import com.anonymization.kafka.anonymizers.Anonymizer;
 import com.anonymization.kafka.anonymizers.attributebased.Aggregation;
 import com.anonymization.kafka.anonymizers.attributebased.Shuffling;
-import com.anonymization.kafka.anonymizers.attributebased.UnivariantMicroAggregation;
+import com.anonymization.kafka.anonymizers.attributebased.UnivariateMicroAggregation;
 import com.anonymization.kafka.anonymizers.tablebased.*;
 import com.anonymization.kafka.anonymizers.tuplebased.ConditionalSubstitution;
 import com.anonymization.kafka.anonymizers.valuebased.*;
@@ -18,12 +18,12 @@ public final class AnonymizerRegistry {
         // attribute based
         REGISTRY.put("aggregation", Aggregation.class);
         REGISTRY.put("shuffling", Shuffling.class);
-        REGISTRY.put("univariant_micro_aggregation", UnivariantMicroAggregation.class);
+        REGISTRY.put("univariate_micro_aggregation", UnivariateMicroAggregation.class);
         // table based
         REGISTRY.put("eps_privacy", EpsPrivacy.class);
         REGISTRY.put("k_anonymization", KAnonymization.class);
         REGISTRY.put("l_diversity", LDiversity.class);
-        REGISTRY.put("multivariant_micro_aggregation", MultivariantMicroAggregation.class);
+        REGISTRY.put("multivariate_micro_aggregation", MultivariateMicroAggregation.class);
         REGISTRY.put("t_closeness", TCloseness.class);
         // tuple based
         REGISTRY.put("conditional_substitution", ConditionalSubstitution.class);

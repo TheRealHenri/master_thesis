@@ -25,16 +25,4 @@ public class GlobalConfig {
     public DataSchema getDataSchema() {
         return dataSchema;
     }
-
-    public void setBootstrapServer(String bootstrapServer) {
-        this.bootstrapServer = bootstrapServer;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-
-    public void setDataSchema(DataSchema dataSchema) {
-        this.dataSchema = dataSchema;
-    }
 }

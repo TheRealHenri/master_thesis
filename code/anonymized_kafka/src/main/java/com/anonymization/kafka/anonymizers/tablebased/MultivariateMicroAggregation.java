@@ -11,7 +11,7 @@ import org.apache.kafka.connect.data.Struct;
 import java.util.Collections;
 import java.util.List;
 
-public class MultivariantMicroAggregation implements TableBasedAnonymizer {
+public class MultivariateMicroAggregation implements TableBasedAnonymizer {
 
     private List<String> keysToAggregate = Collections.emptyList();
     private int windowSize = 0;
@@ -60,7 +60,7 @@ public class MultivariantMicroAggregation implements TableBasedAnonymizer {
         }
     }
 
-    public MultivariantMicroAggregation() {}
+    public MultivariateMicroAggregation() {}
 
     @Override
     public WindowConfig getWindowConfig() {

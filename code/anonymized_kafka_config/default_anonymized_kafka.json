@@ -19,7 +19,7 @@
         {"name": "insurance_number", "type": "string"},
         {"name": "diagnosis", "type": "string"},
         {"name": "glucose", "type": "int32"},
-        {"name": "HbA1C", "type": "float32"},
+        {"name": "HbA1C", "type": "float64"},
         {"name": "medication", "type": "string"}
       ]
     }
@@ -163,7 +163,6 @@
           "parameters": [
             {
               "windowSize": 7,
-              "advanceTime": 2,
               "keys": [
                 "name", "phone"
               ],
@@ -175,14 +174,17 @@
     },
     {
       "applicationId": "level_4",
-      "category": "TABLE_BASED",
+      "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "k_anonymization",
+          "anonymizer": "univariate_micro_aggregation",
           "parameters": [
             {
-              "windowSize": "1000",
-              "k": "4"
+              "windowSize": 7,
+              "keys": [
+                "glucose"
+              ],
+              "k": 20
             }
           ]
         }
