@@ -180,7 +180,7 @@
           "anonymizer": "univariate_micro_aggregation",
           "parameters": [
             {
-              "windowSize": 7,
+              "windowSize": 15,
               "keys": [
                 "glucose"
               ],

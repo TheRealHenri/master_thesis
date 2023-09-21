@@ -31,7 +31,9 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
 
     @Override
     public List<Struct> anonymize(List<Struct> lineS) {
+
         Schema schema = lineS.get(0).schema().field(keysToAggregate.get(0)).schema();
+
         List<Object> values = lineS.stream().map(struct -> struct.get(keysToAggregate.get(0))).collect(Collectors.toList());
 
         List<Double> attributeList = new ArrayList<>();
@@ -55,7 +57,7 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
                 .collect(Collectors.toList());
 
         if (k >= sortedValues.size()) {
-            log.warn("k is greater than the number of elements in the window. Returning the mean of the window.");
+            log.warn("k is equal or greater than the number of elements in the window. Returning the mean of the window.");
             double average = sortedValues.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
             for (Struct struct : lineS) {
                 struct.put(keysToAggregate.get(0), convertBackToSchema(average, schema));
@@ -63,13 +65,29 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
             return lineS;
         }
 
-        // construct graph G(k;n)
-        List<Node> nodes = new ArrayList<>();
+        List<Node> graph = constructGraph(sortedValues, originalIndices);
+
+        dijkstra(graph);
+
+        List<Edge> resultingEdges = findShortestPath(graph);
+
+        for (Edge edge : resultingEdges) {
+            for (int index : edge.getCorrespondingGroupIndices()) {
+                Struct struct = lineS.get(index);
+                struct.put(keysToAggregate.get(0), convertBackToSchema(edge.getValue(), schema));
+            }
+        }
+
+        return lineS;
+    }
+
+    private List<Node> constructGraph(List<Double> sortedValues, List<Integer> originalIndices) {
+        List<Node> graph = new ArrayList<>();
         for (int i = 1; i <= sortedValues.size(); i++) {
-            nodes.add(new Node(i));
+            graph.add(new Node(i));
         }
         // adding source node
-        nodes.add(0, new Node(0, 0));
+        graph.add(0, new Node(0, 0));
         for (int i = 0; i < sortedValues.size() + 1; i++) {
             for (int j = i + k; j < i + 2 * k && j < sortedValues.size() + 1; j++) {
                 List<Integer> correspondingGroupIndices = originalIndices.subList(i, j);
@@ -81,17 +99,19 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
                     squaredError += Math.pow(value - mean, 2);
                 }
                 Edge edge = new Edge(j, squaredError, mean, correspondingGroupIndices);
-                nodes.get(i).addAdjacentNode(j, edge);
+                graph.get(i).addAdjacentNode(j, edge);
             }
         }
+        return graph;
+    }
 
-        // Dijkstra's algorithm
+    private void dijkstra(List<Node> graph) {
         PriorityQueue<Node> queue = new PriorityQueue<>();
-        queue.add(nodes.get(0));
+        queue.add(graph.get(0));
         while (!queue.isEmpty()) {
             Node currentNode = queue.poll();
             for (Map.Entry<Integer, Edge> adjacentNode : currentNode.getAdjacencyList().entrySet()) {
-                Node node = nodes.get(adjacentNode.getKey());
+                Node node = graph.get(adjacentNode.getKey());
                 double newDistance = currentNode.getDistance() + adjacentNode.getValue().getWeight();
                 if (newDistance < node.getDistance()) {
                     queue.remove(node);
@@ -101,28 +121,22 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
                 }
             }
         }
+    }
 
-        Node currentNode = nodes.get(nodes.size() - 1);
-        List<Edge> resultingEdges = new ArrayList<>();
+    private List<Edge> findShortestPath(List<Node> graph) {
+        List<Edge> shortestPath = new ArrayList<>();
+        Node currentNode = graph.get(graph.size() - 1);
         while (true) {
             int currentIndex = currentNode.getVertexID();
             Integer predecessorIndex = currentNode.getPredecessor();
             if (predecessorIndex == null) {
                 break;
             } else {
-                currentNode = nodes.get(predecessorIndex);
-                resultingEdges.add(currentNode.getAdjacencyList().get(currentIndex));
+                currentNode = graph.get(predecessorIndex);
+                shortestPath.add(currentNode.getAdjacencyList().get(currentIndex));
             }
         }
-
-        for (Edge edge : resultingEdges) {
-            for (int index : edge.getCorrespondingGroupIndices()) {
-                Struct struct = lineS.get(index);
-                struct.put(keysToAggregate.get(0), convertBackToSchema(edge.getValue(), schema));
-            }
-        }
-
-        return lineS;
+        return shortestPath;
     }
 
     private Object convertBackToSchema(double value, Schema schema) {
