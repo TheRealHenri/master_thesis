@@ -25,19 +25,18 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
     }
 
     private Object parseValue(ParameterType type, JsonNode jsonNode) {
+        JsonNode valueNode = jsonNode.get(type.getName());
         switch (type) {
             case KEYS:
                 List<String> keys = new ArrayList<>();
-                JsonNode keyNode = jsonNode.get("keys");
-                Iterator<JsonNode> keyIterator = keyNode.elements();
+                Iterator<JsonNode> keyIterator = valueNode.elements();
                 while (keyIterator.hasNext()) {
                     keys.add(keyIterator.next().asText());
                 }
                 return keys;
             case GENERALIZATION_MAP:
                 HashMap<String, String> generalizationMap = new HashMap<>();
-                JsonNode generalizationMapNode = jsonNode.get("generalizationMap");
-                Iterator<Map.Entry<String, JsonNode>> generalizationMapIterator = generalizationMapNode.fields();
+                Iterator<Map.Entry<String, JsonNode>> generalizationMapIterator = valueNode.fields();
                 while (generalizationMapIterator.hasNext()) {
                     Map.Entry<String, JsonNode> entry = generalizationMapIterator.next();
                     generalizationMap.put(entry.getKey(), entry.getValue().asText());
@@ -45,8 +44,7 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                 return generalizationMap;
             case CONDITION_MAP:
                 HashMap<String, Object> conditionMap = new HashMap<>();
-                JsonNode conditionMapNode = jsonNode.get("conditionMap");
-                Iterator<Map.Entry<String, JsonNode>> conditionMapIterator = conditionMapNode.fields();
+                Iterator<Map.Entry<String, JsonNode>> conditionMapIterator = valueNode.fields();
                 while (conditionMapIterator.hasNext()) {
                     Map.Entry<String, JsonNode> entry = conditionMapIterator.next();
                     if (entry.getValue().isValueNode()) {
@@ -59,43 +57,87 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
                     }
                 }
                 return conditionMap;
+            case QUASI_IDENTIFIERS:
+                List<QuasiIdentifier> quasiIdentifiers = new ArrayList<>();
+                Iterator<JsonNode> quasiIdentifiersIterator = valueNode.elements();
+                while (quasiIdentifiersIterator.hasNext()) {
+                    JsonNode quasiIdentifierNode = quasiIdentifiersIterator.next();
+                    Iterator<JsonNode> quasiIdentifierIterator = quasiIdentifierNode.elements();
+                    String key = quasiIdentifierIterator.next().asText();
+                    GeneralizationHierarchy hierarchy;
+                    JsonNode hierarchyNode = quasiIdentifierIterator.next();
+                    if (quasiIdentifierNode.has("bucketing")) {
+                        hierarchy = getNumericalHierarchyFor(hierarchyNode);
+                    } else if (quasiIdentifierNode.has("hierarchy")) {
+                        hierarchy = getCategoricalHierarchyFor(hierarchyNode);
+                    } else {
+                        throw new RuntimeException("Hierarchy type " + hierarchyNode.asText() + " not supported.");
+                    }
+                    quasiIdentifiers.add(new QuasiIdentifier(key, hierarchy));
+                }
+                return quasiIdentifiers;
             case SUBSTITUTION_LIST:
                 List<String> substitutionList = new ArrayList<>();
-                JsonNode subNode = jsonNode.get("substitutionList");
-                Iterator<JsonNode> subIterator = subNode.elements();
+                Iterator<JsonNode> subIterator = valueNode.elements();
                 while (subIterator.hasNext()) {
                     substitutionList.add(subIterator.next().asText());
                 }
                 return substitutionList;
             case BUCKET_SIZE:
-                return jsonNode.get("bucketSize").asInt();
             case N_FIELDS:
-                return jsonNode.get("nFields").asInt();
             case WINDOW_SIZE:
-                return jsonNode.get("windowSize").asInt();
             case ADVANCE_TIME:
-                return jsonNode.get("advanceTime").asInt();
             case GRACE_PERIOD:
-                return jsonNode.get("gracePeriod").asInt();
             case GROUP_SIZE:
-                return jsonNode.get("groupSize").asInt();
-            case AGGREGATION_MODE:
-                return jsonNode.get("aggregationMode").asText();
-            case SEED:
-                return jsonNode.get("seed").asLong();
-            case SHUFFLE_INDIVIDUALLY:
-                return jsonNode.get("shuffleIndividually").asBoolean();
             case K:
-                return jsonNode.get("k").asInt();
+            case DELTA:
+            case MU:
+            case BETA:
             case L:
-                return jsonNode.get("l").asInt();
             case T:
-                return jsonNode.get("t").asInt();
+                return valueNode.asInt();
+            case AGGREGATION_MODE:
+                return valueNode.asText();
+            case SEED:
+                return valueNode.asLong();
+            case SHUFFLE_INDIVIDUALLY:
+                return valueNode.asBoolean();
             case NOISE:
-                return jsonNode.get("noise").asDouble();
+                return valueNode.asDouble();
             default:
                 throw new RuntimeException("Parameter type " + type + " not supported.");
         }
     }
 
+    private NumericalHierarchy getNumericalHierarchyFor(JsonNode hierarchyNode) {
+        NumericalHierarchy hierarchy = new NumericalHierarchy(0,0,0);
+        Iterator<Map.Entry<String, JsonNode>> conditionMapIterator = hierarchyNode.fields();
+        while (conditionMapIterator.hasNext()) {
+            Map.Entry<String, JsonNode> entry = conditionMapIterator.next();
+            if (entry.getValue().isValueNode()) {
+                hierarchy.setBucketSize(entry.getValue().asInt());
+            } else {
+                Iterator<JsonNode> rangeIterator = entry.getValue().elements();
+                hierarchy.setRangeStart(rangeIterator.next().asInt());
+                hierarchy.setRangeEnd(rangeIterator.next().asInt());
+            }
+        }
+        return hierarchy;
+    }
+    private CategoricalHierarchy getCategoricalHierarchyFor(JsonNode hierarchyNode) {
+        if (hierarchyNode.isEmpty()) {
+            return null;
+        } else {
+            String value = hierarchyNode.get("value").asText();
+            List<CategoricalHierarchy> children = new ArrayList<>(Collections.emptyList());
+            if (hierarchyNode.has("children")) {
+                JsonNode childrenNode = hierarchyNode.get("children");
+                Iterator<JsonNode> childrenIterator = childrenNode.elements();
+                while (childrenIterator.hasNext()) {
+                    children.add(getCategoricalHierarchyFor(childrenIterator.next()));
+                }
+            }
+            return new CategoricalHierarchy(value, children);
+        }
+    }
 }

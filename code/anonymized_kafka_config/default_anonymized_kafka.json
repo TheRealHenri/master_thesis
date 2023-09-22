@@ -19,7 +19,7 @@
         {"name": "insurance_number", "type": "string"},
         {"name": "diagnosis", "type": "string"},
         {"name": "glucose", "type": "int32"},
-        {"name": "HbA1C", "type": "float64"},
+        {"name": "HbA1C", "type": "float32"},
         {"name": "medication", "type": "string"}
       ]
     }
@@ -195,12 +195,116 @@
       "category": "TABLE_BASED",
       "anonymizers": [
         {
-          "anonymizer": "l_diversity",
+          "anonymizer": "k_anonymization",
           "parameters": [
             {
-              "windowSize": "1000",
-              "k": "4",
-              "l": "2"
+              "keys": [
+                "id", "name", "address", "phone", "insurance_number"
+              ],
+              "k": 10,
+              "delta": 2000,
+              "mu": 10,
+              "beta": 5, 
+              "quasiIdentifiers": [
+                {
+                  "key": "zip",
+                  "bucketing": {
+                    "bucketSize": 500,
+                    "range": [0, 99999]
+                  }
+                },
+                {
+                  "key": "age",
+                  "bucketing": {
+                    "bucketSize": 3,
+                    "range": [0, 100]
+                  }
+                },
+                {
+                  "key": "height",
+                  "bucketing": {
+                    "bucketSize": 5,
+                    "range": [0, 225]
+                  }
+                },
+                {
+                  "key": "weight", 
+                  "bucketing": {
+                    "bucketSize": 5,
+                    "range": [0, 300]
+                  }
+                },
+                {
+                  "key": "gender",
+                  "hierarchy": {
+                    "value": "(M, W, D)",
+                    "children": [
+                      { "value": "M" },
+                      { "value": "W" },
+                      { "value": "D" }
+                    ]
+                  }
+                },
+                {
+                  "key": "insurance_company",
+                  "hierarchy": {
+                    "value": "Krankenkasse",
+                    "children": [
+                      {
+                        "value": "Ersatzkasse (EK) und Knappschaft",
+                        "children": [
+                          { "value": "104940005" },
+                          { "value": "103306961" },
+                          { "value": "104450915" },
+                          { "value": "109519176" },
+                          { "value": "103508742" },
+                          { "value": "101002659" },
+                          { "value": "101575519" }
+                        ]
+                      },
+                      {
+                        "value": "Innungskrankenkasse (IKK)",
+                        "children": [
+                          { "value": "109888001" },
+                          { "value": "108888888" },
+                          { "value": "109500787" },
+                          { "value": "109500044" },
+                          { "value": "109500490" },
+                          { "value": "109500398" }
+                        ]
+                      },
+                      {
+                        "value": "Allgemeine Ortskrankenkasse (AOK)",
+                        "children": [
+                          { "value": "108918320" },
+                          { "value": "108814099" },
+                          { "value": "108928697" },
+                          { "value": "108811072" },
+                          { "value": "108815718" }
+                        ]
+                      },
+                      {
+                        "value": "Betriebskrankenkasse (BKK)",
+                        "children": [
+                          { "value": "108313123" },
+                          { "value": "108918428" },
+                          { "value": "108817930" },
+                          { "value": "108811215" },
+                          { "value": "108334056" },
+                          { "value": "108815217" },
+                          { "value": "108312586" }
+                        ]
+                      },
+                      {
+                        "value": "Landwirtschaftliche Krankenkasse (LKK)",
+                        "children": [
+                          { "value": "109000051" }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
             }
           ]
         }

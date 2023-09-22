@@ -40,7 +40,7 @@ public class AnonymizationStreamConfigBuilder {
 
         List<Anonymizer> anonymizers = getValidatedInstantiatedAnonymizers(streamProperties);
 
-        if (anonymizationCategory.equals(AnonymizationCategory.ATTRIBUTE_BASED) || anonymizationCategory.equals(AnonymizationCategory.TABLE_BASED)) {
+        if (anonymizationCategory.equals(AnonymizationCategory.ATTRIBUTE_BASED)) {
             ensureOnlyOneWindowConfig(anonymizers);
         }
 

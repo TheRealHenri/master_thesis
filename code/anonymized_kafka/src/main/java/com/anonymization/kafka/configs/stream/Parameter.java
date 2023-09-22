@@ -18,11 +18,6 @@ public class Parameter {
         return type == ParameterType.KEYS ? (List<String>) value : null;
     }
 
-    public void setKeys(List<String> keys) {
-        this.value = keys;
-        this.type = ParameterType.KEYS;
-    }
-
     public HashMap<String, String> getGeneralizationMap() { return type == ParameterType.GENERALIZATION_MAP ? (HashMap<String, String>) value : null; }
 
     public void setGeneralizationMap(HashMap<String, String> generalizationMap) {
@@ -124,6 +119,22 @@ public class Parameter {
     public void setK(Integer k) {
         this.value = k;
         this.type = ParameterType.K;
+    }
+
+    public Integer getMu() {
+        return type == ParameterType.MU ? toInt() : null;
+    }
+
+    public Integer getDelta() {
+        return type == ParameterType.DELTA ? toInt() : null;
+    }
+
+    public Integer getBeta() {
+        return type == ParameterType.BETA ? toInt() : null;
+    }
+
+    public List<QuasiIdentifier> getQuasiIdentifiers() {
+        return type == ParameterType.QUASI_IDENTIFIERS ? (List<QuasiIdentifier>) value : null;
     }
 
     public Integer getL() {

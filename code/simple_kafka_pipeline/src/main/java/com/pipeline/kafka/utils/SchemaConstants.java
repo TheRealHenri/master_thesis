@@ -21,7 +21,7 @@ public class SchemaConstants {
             .field("insurance_number", Schema.STRING_SCHEMA)
             .field("diagnosis", Schema.STRING_SCHEMA)
             .field("glucose", Schema.INT32_SCHEMA)
-            .field("HbA1C", Schema.FLOAT64_SCHEMA)
+            .field("HbA1C", Schema.FLOAT32_SCHEMA)
             .field("medication", Schema.STRING_SCHEMA)
             .build();
 
@@ -41,7 +41,7 @@ public class SchemaConstants {
         resultingStruct.put("insurance_number", values[10]);
         resultingStruct.put("diagnosis", values[11]);
         resultingStruct.put("glucose", Integer.parseInt(values[12]));
-        resultingStruct.put("HbA1C", Double.parseDouble(values[13]));
+        resultingStruct.put("HbA1C", Float.parseFloat(values[13]));
         resultingStruct.put("medication", values[14]);
         return resultingStruct;
     }

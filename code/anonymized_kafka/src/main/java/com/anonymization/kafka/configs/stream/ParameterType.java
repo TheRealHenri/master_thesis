@@ -16,6 +16,10 @@ public enum ParameterType {
     SEED("seed"),
     SHUFFLE_INDIVIDUALLY("shuffleIndividually"),
     K("k"),
+    MU("mu"),
+    DELTA("delta"),
+    BETA("beta"),
+    QUASI_IDENTIFIERS("quasiIdentifiers"),
     L("l"),
     T("t");
 
