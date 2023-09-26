@@ -1,5 +1,8 @@
 package com.anonymization.kafka.configs.stream;
 
+import com.anonymization.kafka.anonymizers.tablebased.datastructures.CategoricalHierarchy;
+import com.anonymization.kafka.anonymizers.tablebased.datastructures.GeneralizationHierarchy;
+import com.anonymization.kafka.anonymizers.tablebased.datastructures.NumericalHierarchy;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
@@ -13,7 +16,6 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
     public List<Parameter> deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         JsonNode node = p.getCodec().readTree(p);
         List<Parameter> parametersList = new ArrayList<>();
-
         for (JsonNode parameterSetNode : node) {
             for (ParameterType type : ParameterType.values()) {
                 if (parameterSetNode.has(type.getName())) {

@@ -16,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class JSONLoader {
 
-    //private static final String JSON_FILE_PATH = "/tmp/default_anonymized_kafka.json";
+    // private static final String JSON_FILE_PATH = "/tmp/default_anonymized_kafka.json";
     private static final String JSON_FILE_PATH = "/Users/allgower/Uni/TUB/MA/master_thesis/code/anonymized_kafka_config/default_anonymized_kafka.json";
     private static SystemConfiguration cachedConfig;
     private static String lastChecksum;

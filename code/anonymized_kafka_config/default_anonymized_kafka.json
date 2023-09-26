@@ -1,6 +1,6 @@
 {
   "globalConfig": {
-    "bootstrapServer": "kafka:9092",
+    "bootstrapServer": "localhost:9094",
     "topic": "no-filter",
     "dataSchema": {
       "schemaType" : "KAFKA_STRUCT",
@@ -199,7 +199,7 @@
           "parameters": [
             {
               "keys": [
-                "id", "name", "address", "phone", "insurance_number"
+                "name", "address", "phone", "insurance_number"
               ],
               "k": 10,
               "delta": 2000,
@@ -237,11 +237,11 @@
                 {
                   "key": "gender",
                   "hierarchy": {
-                    "value": "(M, W, D)",
+                    "value": "(Male, Female, Non-Binary)",
                     "children": [
-                      { "value": "M" },
-                      { "value": "W" },
-                      { "value": "D" }
+                      { "value": "Male" },
+                      { "value": "Female" },
+                      { "value": "Non-Binary" }
                     ]
                   }
                 },

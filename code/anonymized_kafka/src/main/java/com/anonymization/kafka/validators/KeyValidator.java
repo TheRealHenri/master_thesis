@@ -30,15 +30,14 @@ public class KeyValidator implements ParameterValidator {
                 throw new IllegalArgumentException("Key " + key + " is not present in schema");
             } else if (requiresNumberValueForKey) {
                 FieldType type = schema.getDataFields().get(key);
-                if (!isNumberType(type)) {
+                if (!isNumber(type)) {
                     throw new IllegalArgumentException("Schema for key " + key + " requires a Number Schema, but found " + type);
                 }
             }
         }
     }
 
-    private boolean isNumberType(FieldType type) {
-        boolean isNumber = false;
+    private boolean isNumber(FieldType type) {
         switch (type) {
             case INT:
             case OPTIONAL_INT:
@@ -48,9 +47,8 @@ public class KeyValidator implements ParameterValidator {
             case OPTIONAL_FLOAT:
             case DOUBLE:
             case OPTIONAL_DOUBLE:
-                isNumber = true;
-                break;
+                return true;
         }
-        return isNumber;
+        return false;
     }
 }

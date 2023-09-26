@@ -1,4 +1,4 @@
-package com.anonymization.kafka.configs.stream;
+package com.anonymization.kafka.anonymizers.tablebased.datastructures;
 
 public class NumericalHierarchy implements GeneralizationHierarchy {
 
@@ -10,6 +10,18 @@ public class NumericalHierarchy implements GeneralizationHierarchy {
         this.bucketSize = bucketSize;
         this.rangeStart = rangeStart;
         this.rangeEnd = rangeEnd;
+    }
+
+    public int getBucketSize() {
+        return bucketSize;
+    }
+
+    public int getRangeStart() {
+        return rangeStart;
+    }
+
+    public int getRangeEnd() {
+        return rangeEnd;
     }
 
     public void setBucketSize(int bucketSize) {

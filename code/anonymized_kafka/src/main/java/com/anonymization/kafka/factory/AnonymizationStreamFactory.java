@@ -34,6 +34,7 @@ public class AnonymizationStreamFactory {
             switch (streamConfig.getCategory()) {
                 case VALUE_BASED:
                 case TUPLE_BASED:
+                case TABLE_BASED:
                     source.flatMapValues(value -> {
                         List<Struct> tmpStruct = List.of(value);
                         for (Anonymizer anonymizer : anonymizers) {
@@ -43,7 +44,6 @@ public class AnonymizationStreamFactory {
                     }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
                     break;
                 case ATTRIBUTE_BASED:
-                case TABLE_BASED:
                     TimeWindows timeWindow = extractWindow(anonymizers.get(0).getWindowConfig());
                     source.groupByKey()
                             .windowedBy(timeWindow)

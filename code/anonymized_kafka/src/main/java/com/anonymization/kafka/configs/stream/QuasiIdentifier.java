@@ -1,5 +1,7 @@
 package com.anonymization.kafka.configs.stream;
 
+import com.anonymization.kafka.anonymizers.tablebased.datastructures.GeneralizationHierarchy;
+
 public class QuasiIdentifier {
 
     String key;
