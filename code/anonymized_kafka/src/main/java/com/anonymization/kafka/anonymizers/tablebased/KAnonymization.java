@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class KAnonymization implements TableBasedAnonymizer {
 
@@ -34,35 +35,39 @@ public class KAnonymization implements TableBasedAnonymizer {
     private final Logger log = LoggerFactory.getLogger(KAnonymization.class);
 
     @Override
-    public List<Struct> anonymize(List<Struct> lineS) {
+    public List<Struct> anonymize(List<Struct> lineS, int position) {
         if (lineS.isEmpty()) {
             return Collections.emptyList();
         }
-        List<Struct> output = new ArrayList<>();
+        List<DataPoint> ejectedDataPoints = new ArrayList<>();
         for (Struct line : lineS) {
-            int dataPointId = line.getInt32("id");
-            if (deltaConstraintMap.containsKey(dataPointId)) {
-                continue;
-            }
-            Struct dataPoint = adjustSchemaAndSuppress(line);
+            DataPoint dataPoint = new DataPoint(position, line);
+            dataPoint.setData(adjustSchema(line));
             Cluster cluster = bestSelection(dataPoint);
             if (cluster == null) {
-                cluster = new Cluster(dataPoint, getKeyGeneralizationMapFor(dataPoint));
+                cluster = new Cluster(dataPoint, getKeyGeneralizationMapFor(dataPoint.getData()));
                 gamma.add(cluster);
             } else {
                 cluster.addDataPoint(dataPoint);
             }
-            deltaConstraintMap.put(dataPointId, new DataPointClusterPair(dataPoint, cluster));
+            deltaConstraintMap.put(position, new DataPointClusterPair(dataPoint, cluster));
             Map.Entry<Integer, DataPointClusterPair> firstEntry = deltaConstraintMap.firstEntry();
-            if (firstEntry != null && firstEntry.getKey() < dataPointId - delta) {
-                output.addAll(deltaConstraint(firstEntry.getValue()));
+            if (firstEntry != null && firstEntry.getKey() < position - delta) {
+                ejectedDataPoints.addAll(deltaConstraint(firstEntry.getValue()));
             }
         }
-        updateDeltaConstraintAndSuppressID(output);
-        return output;
+        updateDeltaConstraint(ejectedDataPoints);
+        suppressIdentifiableKeys(ejectedDataPoints);
+        return convertDataPointsToStructs(ejectedDataPoints);
     }
 
-    private Cluster bestSelection(Struct dataPoint) {
+    @Override
+    public List<Struct> anonymize(List<Struct> lineS) {
+        log.error("This anonymizer does not support windowed anonymization");
+        return lineS;
+    }
+
+    private Cluster bestSelection(DataPoint dataPoint) {
         HashMap<Cluster, Double> clusterEnlargementCostMap = new HashMap<>();
         for (Cluster cluster : gamma) {
             clusterEnlargementCostMap.put(cluster, cluster.getEnlargementCostFor(dataPoint));
@@ -88,8 +93,8 @@ public class KAnonymization implements TableBasedAnonymizer {
         return bestClusters.stream().findAny().orElse(null);
     }
 
-    private List<Struct> deltaConstraint(DataPointClusterPair expiredDataPointClusterPair) {
-        Struct expiredDataPoint = expiredDataPointClusterPair.getDataPoint();
+    private List<DataPoint> deltaConstraint(DataPointClusterPair expiredDataPointClusterPair) {
+        DataPoint expiredDataPoint = expiredDataPointClusterPair.getDataPoint();
         Cluster associatedCluster = expiredDataPointClusterPair.getCluster();
         if (associatedCluster.getSize() >= k) {
             return outputCluster(associatedCluster);
@@ -125,8 +130,8 @@ public class KAnonymization implements TableBasedAnonymizer {
         }
     }
 
-    public List<Struct> outputCluster(Cluster cluster) {
-        List<Struct> output = new ArrayList<>();
+    public List<DataPoint> outputCluster(Cluster cluster) {
+        List<DataPoint> output = new ArrayList<>();
         HashSet<Cluster> clusterSubset = new HashSet<>();
         if (cluster.getSize() >= 2 * k) {
             clusterSubset = splitCluster(cluster);
@@ -147,16 +152,67 @@ public class KAnonymization implements TableBasedAnonymizer {
     }
 
     public HashSet<Cluster> splitCluster(Cluster cluster) {
+        List<DataPoint> dataPoints = cluster.getDataPoints();
         HashSet<Cluster> clusterSubset = new HashSet<>();
-
-        return null;
+        while (dataPoints.size() >= k) {
+            DataPoint randomDataPoint = dataPoints.stream().findAny().orElse(null);
+            if (randomDataPoint == null) break;
+            HashMap<Integer, List<DataPoint>> dataPointsById = new HashMap<>();
+            for (DataPoint dataPoint : dataPoints) {
+                dataPointsById.computeIfAbsent(getIdForDataPoint(dataPoint), k -> new ArrayList<>()).add(dataPoint);
+            }
+            Cluster clusterForRandomDataPoint = new Cluster(randomDataPoint, getKeyGeneralizationMapFor(randomDataPoint.getData()));
+            TreeMap<Double, DataPoint> enlargementCostMap = new TreeMap<>();
+            for (Map.Entry<Integer, List<DataPoint>> entry : dataPointsById.entrySet()) {
+                DataPoint currentDataPoint = entry.getValue().stream().findAny().orElse(null);
+                if (Objects.equals(getIdForDataPoint(randomDataPoint), entry.getKey()) || currentDataPoint == null) {
+                    continue;
+                }
+                double enlargementCost = clusterForRandomDataPoint.getEnlargementCostFor(currentDataPoint);
+                enlargementCostMap.put(enlargementCost, currentDataPoint);
+            }
+            if (dataPointsById.size() > k - 1) {
+                for (int i = 0; i < k - 1; i++) {
+                    Map.Entry<Double, DataPoint> firstEntry = enlargementCostMap.pollFirstEntry();
+                    clusterForRandomDataPoint.addDataPoint(firstEntry.getValue());
+                    dataPoints.remove(firstEntry.getValue());
+                }
+                clusterSubset.add(clusterForRandomDataPoint);
+            } else {
+                break;
+            }
+        }
+        HashMap<Integer, List<DataPoint>> dataPointsById = new HashMap<>();
+        for (DataPoint dataPoint : dataPoints) {
+            dataPointsById.computeIfAbsent(getIdForDataPoint(dataPoint), k -> new ArrayList<>()).add(dataPoint);
+        }
+        for (Map.Entry<Integer, List<DataPoint>> entry : dataPointsById.entrySet()) {
+            TreeMap<Double, Cluster> enlargementCostMap = new TreeMap<>();
+            DataPoint currentDataPoint = entry.getValue().stream().findAny().orElse(null);
+            if (currentDataPoint == null) {
+                continue;
+            }
+            for (Cluster remainingCluster : clusterSubset) {
+                double enlargementCost = remainingCluster.getEnlargementCostFor(currentDataPoint);
+                enlargementCostMap.put(enlargementCost, remainingCluster);
+            }
+            Map.Entry<Double, Cluster> firstEntry = enlargementCostMap.pollFirstEntry();
+            for (DataPoint dataPoint : entry.getValue()) {
+                firstEntry.getValue().addDataPoint(dataPoint);
+            }
+        }
+        return clusterSubset;
     }
 
-    public Struct adjustSchemaAndSuppress(Struct dataPoint) {
+    public Integer getIdForDataPoint(DataPoint dataPoint) {
+        return Integer.parseInt(dataPoint.getData().getString("id"));
+    }
+
+    public Struct adjustSchema(Struct dataPoint) {
         SchemaBuilder schemaBuilder = SchemaBuilder.struct();
 
         for (Field field : dataPoint.schema().fields()) {
-            if (keysToSuppress.contains(field.name()) || qisHierarchyMap.containsKey(field.name()) || field.name().equals("id")) {
+            if (keysToSuppress.contains(field.name()) || qisHierarchyMap.containsKey(field.name())) {
                 if (field.schema().equals(Schema.STRING_SCHEMA) || field.schema().equals(Schema.OPTIONAL_STRING_SCHEMA)) {
                     schemaBuilder.field(field.name(), field.schema());
                 } else {
@@ -171,11 +227,7 @@ public class KAnonymization implements TableBasedAnonymizer {
         Struct newStruct = new Struct(newSchema);
 
         for (Field field : dataPoint.schema().fields()) {
-            if (keysToSuppress.contains(field.name())) {
-                newStruct.put(field.name(), "*");
-            } else if (qisHierarchyMap.containsKey(field.name())) {
-                newStruct.put(field.name(), dataPoint.get(field).toString());
-            } else if (field.name().equals("id")) {
+            if (keysToSuppress.contains(field.name()) || qisHierarchyMap.containsKey(field.name())) {
                 newStruct.put(field.name(), dataPoint.get(field).toString());
             } else {
                 newStruct.put(field.name(), dataPoint.get(field));
@@ -185,9 +237,9 @@ public class KAnonymization implements TableBasedAnonymizer {
         return newStruct;
     }
 
-    public void suppress(Struct dataPoint) {
+    public void suppress(DataPoint dataPoint) {
         for (String key : qisHierarchyMap.keySet()) {
-            dataPoint.put(key, "*");
+            dataPoint.getData().put(key, "*");
         }
     }
 
@@ -243,14 +295,22 @@ public class KAnonymization implements TableBasedAnonymizer {
         }
     }
 
-    private void updateDeltaConstraintAndSuppressID(List<Struct> output) {
-        for (Struct struct : output) {
-            String outputId = struct.getString("id");
-            if (outputId.equals("*")) continue;
-            int id = Integer.parseInt(struct.getString("id"));
-            Object removedItem = deltaConstraintMap.remove(id);
-            struct.put("id", "*");
+    private void updateDeltaConstraint(List<DataPoint> output) {
+        for (DataPoint dataPoint : output) {
+            deltaConstraintMap.remove(dataPoint.getPosition());
         }
+    }
+
+    private void suppressIdentifiableKeys(List<DataPoint> output) {
+        for (String key : keysToSuppress) {
+            for (DataPoint dataPoint : output) {
+                dataPoint.getData().put(key, "*");
+            }
+        }
+    }
+
+    private List<Struct> convertDataPointsToStructs(List<DataPoint> dataPoints) {
+        return dataPoints.stream().map(DataPoint::getData).collect(Collectors.toList());
     }
 
     @Override

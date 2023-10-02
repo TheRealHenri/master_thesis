@@ -1,18 +1,16 @@
 package com.anonymization.kafka.anonymizers.tablebased.datastructures;
 
-import org.apache.kafka.connect.data.Struct;
-
 public class DataPointClusterPair {
 
-    private final Struct dataPoint;
+    private final DataPoint dataPoint;
     private final Cluster cluster;
 
-    public DataPointClusterPair(Struct dataPoint, Cluster cluster) {
+    public DataPointClusterPair(DataPoint dataPoint, Cluster cluster) {
         this.dataPoint = dataPoint;
         this.cluster = cluster;
     }
 
-    public Struct getDataPoint() {
+    public DataPoint getDataPoint() {
         return dataPoint;
     }
 

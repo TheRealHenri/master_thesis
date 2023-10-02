@@ -18,6 +18,10 @@ public class EpsPrivacy implements TableBasedAnonymizer {
     public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }
+    @Override
+    public List<Struct> anonymize(List<Struct> lineS, int position) {
+        return null;
+    }
 
     @Override
     public List<ParameterExpectation> getParameterExpectations() {
@@ -45,4 +49,5 @@ public class EpsPrivacy implements TableBasedAnonymizer {
     public WindowConfig getWindowConfig() {
         return null;
     }
+
 }

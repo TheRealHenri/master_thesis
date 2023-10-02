@@ -16,6 +16,10 @@ public class TCloseness implements TableBasedAnonymizer {
     private int t = 0;
 
     @Override
+    public List<Struct> anonymize(List<Struct> lineS, int position) {
+        return null;
+    }
+    @Override
     public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }

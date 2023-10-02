@@ -15,6 +15,10 @@ public class LDiversity implements TableBasedAnonymizer {
     private int l = 0;
 
     @Override
+    public List<Struct> anonymize(List<Struct> lineS, int position) {
+        return null;
+    }
+    @Override
     public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }

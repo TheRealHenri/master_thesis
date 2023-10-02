@@ -1,16 +1,18 @@
 package com.anonymization.kafka.anonymizers.tablebased.datastructures;
 
-import org.apache.kafka.connect.data.Struct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Cluster {
-    private final ArrayList<Struct> dataPoints = new ArrayList<>();
+    private final ArrayList<DataPoint> dataPoints = new ArrayList<>();
     private final HashMap<String, Generalization> keyGeneralizationMap;
     private final Logger log = LoggerFactory.getLogger(Cluster.class);
-    public Cluster(Struct dataPoint, HashMap<String, Generalization> keyGeneralizationMap) {
+    public Cluster(DataPoint dataPoint, HashMap<String, Generalization> keyGeneralizationMap) {
         this.dataPoints.add(dataPoint);
         this.keyGeneralizationMap = keyGeneralizationMap;
     }
@@ -23,10 +25,10 @@ public class Cluster {
         return informationLoss;
     }
 
-    public boolean fitsGeneralizationFor(Struct dataPoint) {
+    public boolean fitsGeneralizationFor(DataPoint dataPoint) {
         boolean fitsGeneralization = false;
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
-            String value = dataPoint.get(entry.getKey()).toString();
+            String value = dataPoint.getData().get(entry.getKey()).toString();
             fitsGeneralization = entry.getValue().fitsGeneralization(value);
             if (!fitsGeneralization) {
                 return false;
@@ -35,10 +37,10 @@ public class Cluster {
         return fitsGeneralization;
     }
 
-    public double getEnlargementCostFor(Struct dataPoint) {
+    public double getEnlargementCostFor(DataPoint dataPoint) {
         double enlargementCost = 0;
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
-            String value = dataPoint.get(entry.getKey()).toString();
+            String value = dataPoint.getData().get(entry.getKey()).toString();
             enlargementCost += entry.getValue().calculateEnlargementCost(value);
         }
         return enlargementCost;
@@ -53,19 +55,19 @@ public class Cluster {
         return enlargementCost;
     }
 
-    public double getInformationLossIncluding(Struct dataPoint) {
+    public double getInformationLossIncluding(DataPoint dataPoint) {
         double informationLoss = 0;
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
-            String value = dataPoint.get(entry.getKey()).toString();
+            String value = dataPoint.getData().get(entry.getKey()).toString();
             informationLoss += entry.getValue().getInformationLossIncluding(value);
         }
         return informationLoss;
     }
 
-    public void addDataPoint(Struct dataPoint) {
+    public void addDataPoint(DataPoint dataPoint) {
         dataPoints.add(dataPoint);
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
-            String value = dataPoint.get(entry.getKey()).toString();
+            String value = dataPoint.getData().get(entry.getKey()).toString();
             entry.getValue().generalize(value);
         }
     }
@@ -74,7 +76,7 @@ public class Cluster {
         return dataPoints.size();
     }
 
-    public ArrayList<Struct> getDataPoints() {
+    public ArrayList<DataPoint> getDataPoints() {
         return dataPoints;
     }
 
@@ -82,10 +84,10 @@ public class Cluster {
         return keyGeneralizationMap;
     }
 
-    public Struct generalize(Struct dataPoint) {
+    public DataPoint generalize(DataPoint dataPoint) {
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
             String generalizedValue = entry.getValue().getGeneralization();
-            dataPoint.put(entry.getKey(), generalizedValue);
+            dataPoint.getData().put(entry.getKey(), generalizedValue);
         }
         return dataPoint;
     }
@@ -98,9 +100,9 @@ public class Cluster {
         }
     }
 
-    public List<Struct> getGeneralizedDataPoints() {
+    public List<DataPoint> getGeneralizedDataPoints() {
         for (Map.Entry<String, Generalization> entry : keyGeneralizationMap.entrySet()) {
-            dataPoints.forEach(datapoint -> datapoint.put(entry.getKey(), entry.getValue().getGeneralization()));
+            dataPoints.forEach(datapoint -> datapoint.getData().put(entry.getKey(), entry.getValue().getGeneralization()));
         }
         return dataPoints;
     }

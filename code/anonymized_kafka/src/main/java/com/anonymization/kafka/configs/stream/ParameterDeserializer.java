@@ -126,6 +126,7 @@ public class ParameterDeserializer extends JsonDeserializer<List<Parameter>> {
         }
         return hierarchy;
     }
+
     private CategoricalHierarchy getCategoricalHierarchyFor(JsonNode hierarchyNode) {
         if (hierarchyNode.isEmpty()) {
             return null;

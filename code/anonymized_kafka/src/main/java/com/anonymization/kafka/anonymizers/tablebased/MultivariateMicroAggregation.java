@@ -18,6 +18,11 @@ public class MultivariateMicroAggregation implements TableBasedAnonymizer {
     private int groupSize = 0;
 
     @Override
+    public List<Struct> anonymize(List<Struct> lineS, int position) {
+        return null;
+    }
+
+    @Override
     public List<Struct> anonymize(List<Struct> lineS) {
         return null;
     }

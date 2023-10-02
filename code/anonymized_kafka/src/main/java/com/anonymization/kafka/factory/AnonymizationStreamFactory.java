@@ -2,6 +2,7 @@ package com.anonymization.kafka.factory;
 
 import com.anonymization.kafka.anonymizers.Anonymizer;
 import com.anonymization.kafka.anonymizers.WindowConfig;
+import com.anonymization.kafka.anonymizers.tablebased.TableBasedAnonymizer;
 import com.anonymization.kafka.configs.AnonymizationStreamConfig;
 import com.anonymization.kafka.configs.global.GlobalConfig;
 import org.apache.kafka.common.serialization.Serde;
@@ -20,6 +21,8 @@ import java.util.Properties;
 
 public class AnonymizationStreamFactory {
 
+    private static int eventCounter = 0;
+
     public static KafkaStreams buildAnonymizationStream(GlobalConfig globalConfig, AnonymizationStreamConfig streamConfig) {
         Properties props = createPropertiesFrom(globalConfig, streamConfig);
 
@@ -34,7 +37,6 @@ public class AnonymizationStreamFactory {
             switch (streamConfig.getCategory()) {
                 case VALUE_BASED:
                 case TUPLE_BASED:
-                case TABLE_BASED:
                     source.flatMapValues(value -> {
                         List<Struct> tmpStruct = List.of(value);
                         for (Anonymizer anonymizer : anonymizers) {
@@ -63,6 +65,16 @@ public class AnonymizationStreamFactory {
                                 return values;
                             }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
                     break;
+                case TABLE_BASED:
+                    source.flatMapValues(value -> {
+                        eventCounter++;
+                        List<Struct> tmpStruct = List.of(value);
+                        for (Anonymizer anonymizer : anonymizers) {
+                            TableBasedAnonymizer tableBasedAnonymizer = (TableBasedAnonymizer) anonymizer;
+                            tmpStruct = tableBasedAnonymizer.anonymize(tmpStruct, eventCounter);
+                        }
+                        return tmpStruct;
+                    }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
             }
         }
 
