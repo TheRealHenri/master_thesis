@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  18 SEP 2023 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  2 OCT 2023 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -689,7 +689,10 @@ although it is yet undefined on input line 2.
 ) [5
 
 
-] (./Template.toc)
+] (./Template.toc [6
+
+
+])
 \tf@toc=\write4
 \openout4 = `Template.toc'.
 
@@ -697,26 +700,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 87.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 87.
- [6
-
-
-] (./Template.lof)
+ [7] (./Template.lof)
 \tf@lof=\write5
 \openout5 = `Template.lof'.
 
- [7
+ [8
 
 
 ] (./Template.lot)
 \tf@lot=\write6
 \openout6 = `Template.lot'.
 
- [8
+ [9
 
 
 ]
 chapter without number
-[9
+[10
 
 
 
@@ -724,7 +724,7 @@ chapter without number
 \tf@loa=\write7
 \openout7 = `Template.loa'.
 
- [10
+ [11
 
 
 
@@ -734,52 +734,52 @@ chapter 1.
 
 
 
-]) (./chapters/2Related_work.tex [2]
+]) (./chapters/2Literature_review.tex [2] [3]
 chapter 2.
-<./img/strong_scaling.pdf, id=133, 224.84pt x 117.43875pt>
+<./img/strong_scaling.pdf, id=203, 224.84pt x 117.43875pt>
 File: ./img/strong_scaling.pdf Graphic file (type pdf)
 <use ./img/strong_scaling.pdf>
-Package pdftex.def Info: ./img/strong_scaling.pdf  used on input line 13.
+Package pdftex.def Info: ./img/strong_scaling.pdf  used on input line 22.
 (pdftex.def)             Requested size: 250.95476pt x 131.08427pt.
-) (./chapters/3Research_problem.tex [3
+) (./chapters/3Theoretical_framework.tex [4
 
 
  <./img/strong_scaling.pdf>]
 chapter 3.
-) (./chapters/4Solution.tex [4
+) (./chapters/4System_design.tex [5
 
 
 ]
 chapter 4.
-) (./chapters/5Experimental.tex [5
+) (./chapters/5Implementation.tex [6
 
 
 ]
 chapter 5.
-) (./chapters/6Related_work.tex [6
+) (./chapters/6Testing_evaluation.tex [7
 
 
-]
+] [8]
 chapter 6.
-) (./chapters/7Conclusion.tex [7
+) (./chapters/7Conclusion.tex [9
 
 
 ]
 chapter 7.
-) (./Template.bbl [8
+) (./Template.bbl [10
 
 
-]) (./misc/Annex.tex [9
-
-
-]
-chapter without number
-[10
+]) (./misc/Annex.tex [11
 
 
 ]
 chapter without number
-) [11
+[12
+
+
+]
+chapter without number
+) [13
 
 
 ] (./Template.aux (./misc/Titlepage.aux) (./misc/Self-assertion.aux))
@@ -787,18 +787,18 @@ Package rerunfilecheck Info: File `Template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19371 strings out of 476025
- 371503 string characters out of 5779036
- 1863388 words of memory out of 5000000
- 39437 multiletter control sequences out of 15000+600000
- 518975 words of font info for 54 fonts, out of 8000000 for 9000
+ 19443 strings out of 476025
+ 372541 string characters out of 5779036
+ 1866388 words of memory out of 5000000
+ 39477 multiletter control sequences out of 15000+600000
+ 519269 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,19n,106p,10671b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10671b,696s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Template.pdf (21 pages, 404133 bytes).
+Output written on Template.pdf (24 pages, 412217 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 160 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 510 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 392 words of extra memory for PDF output out of 10000 (max. 10000000)
 
