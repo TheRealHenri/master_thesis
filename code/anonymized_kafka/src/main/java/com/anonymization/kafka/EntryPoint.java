@@ -10,6 +10,18 @@ public class EntryPoint {
         }
 
         switch (args[0]) {
+            case "help":
+                System.out.println("Available commands:");
+                System.out.println("  initialize            - Initialize streams");
+                System.out.println("  start_all_streams     - Start all streams");
+                System.out.println("  stop_all_streams      - Stop all streams");
+                System.out.println("  pause_all_streams     - Pause all streams");
+                System.out.println("  start_stream <name>   - Start a specific stream");
+                System.out.println("  stop_stream <name>    - Stop a specific stream");
+                System.out.println("  pause_stream <name>   - Pause a specific stream");
+                System.out.println("  list_streams          - List all streams");
+                System.out.println("  close                 - Shutdown system");
+                break;
             case "initialize":
                 manager.initializeStreams();
                 break;
@@ -45,6 +57,9 @@ public class EntryPoint {
                 break;
             case "list_streams":
                 manager.listStreams();
+                break;
+            case "close":
+                manager.close();
                 break;
             default:
                 System.out.println("Unknown command.");

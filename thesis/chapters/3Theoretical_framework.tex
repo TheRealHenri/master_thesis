@@ -1,17 +1,137 @@
 \chapter{Theoretical Framework\label{cha:chapter3}}
 
-\section{Apache ZooKeeper}
+\section{Managing Different Anonymization Granularity}
+When planning to integrate anonymization techniques into existing systems, there are many things to consider. First one must understand the data flowing through the system.
+Does it include personally identifiable information? Is there further sensitive data? What part of it is necessary for system maintenance? Maybe there is additional data collected for statistics.
+Bearing this in mind the next thought would what needs to be anonymized. For this privacy agreements with the user must be taken into account. There may be additional government regulations in place like the \ac{CCPA} in the United States of America or the \ac{GDPR} in the European Union. 
+The next course of action is deciding on specific masking functions. As was discussed in \ref{sec:anon} there is a plethora to chose from. It is important to note that all forms of anonymization lead to a loss of information. 
+While choosing Blurring or Suppression, two methods that replace attributes with a placeholder, for all critical data fields derived in the previous assessment will ensure that all privacy concerns are addressed, it will also diminish all intelligence gained from collecting this data in the first place. It is questionable if not collecting this type of data in the first place would then be the better solution as it would safe storage and computing power. 
+An alternative approach would be to invest heavily in the IT security ensuring that no intruder with malicious intent can gain access to sensitive data. Keeping in mind, however, that social engineering attacks are nowadays the most common and effective strategy (SAUCE) giving a guarantee of safety can be impossible. It also stands to reason that the more employees a company has the risk for social
+engineering attacks increases. Both of these radical approaches do not seem to adequately solve the problem. Fortunately, there is a way to navigate between these two extremes. An attentive observer of the company's data operations will likely notice that data can and should be restricted similarily to permissions: Only the data needed to furfill the user's duty should be accessible to the user. 
+In addition, there are anonymization techniques, which do not lead to total information loss like the two mentioned before. Generalization for example can be employed to significantly reduce the re-identification of individuals, while simultaneously retaining some information.
+With data restriction and different anonymization techniques in mind there is a middle ground to be found which maximizes security and minimizes information loss. Consider the following example:
 
-\section{Apache Kafka}
-\subsection{Architecture}
-\subsection{Administration}
-\subsection{Connector}
-\subsection{Streams}
+\subsection{Use Case Example}
+Hospitals depend on the collection, management and analysis of data to administer the best and most accurate care of their patients. In a modern hospital all data would be stored in a centralized hospital database. 
+Here all data for individual patients are brought together. Table \ref{table:dia_patient} shows an exemplary entry of a patient in the diabetes and endocrinology ward of a german hospital. Note that the table has been shortened to enhance its clarity and readability.  (A MORE DETAILED VERSION CAN BE FOUND IN THE APPENDIX)
 
+
+\bigskip 
+
+
+\begin{table}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c | c | } 
+            \hline
+            pid & name & addr. & gender & age & ins. co. & ins. no. & diag. & gluc. & hba1c & med. \\
+            \hline
+            1 & F. Ott & Berlin & M & 28 & TK & K15489 & E10 & 22.1 & 8.74 & Insulin \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Example datum of a diabetes patient}
+    \label{table:dia_patient}
+    \end{center}
+\end{table}
+
+The header of table \ref{table:dia_patient} shows eleven attributes. First the person id (\textit{pid}), which is the primary key for each patient as it uniquely identifies the patient in the database. Then \textit{name}, address (\textit{addr.}), \textit{gender} and \textit{age} are included as additional personal information.
+This would typically also include the full address not just the city name, contact information, height as well as weight to adapt the dosage of the medication. The subsequent two attributes include information about the patient's insurance information. 
+Insurance companies in Germany are uniquely identified with a nine digit institutional identifier. In this example the insurance company (\textit{ins. co.}) has the value 101575519, which matches the identifier of the Techniker Krankenkasse (TK). 
+Each client is then assigned a number unique to that insurance company called the insurance number (\textit{ins. no.}). It always starts with a letter followed by digits. Finally, the datum references the medical information. It starts with the diagnosis (\textit{diag.}) classified according to the \ac*{ICD}. 
+E10 being the label for Type 1 Diabetes Mellitus. The most important medical measurement for the treatment of this disease is the current amount of glucose (\textit{gluc.}) in the blood. This determines the quantity of medication (\textit{med.}) to be administered to the patient. For Type 1 Diabetes this is Insulin. 
+Lastly, the table includes an attribute called \textit{hba1c}. This is the body's own three-month average of blood glucose. By means of which diabetes is diagnosed. In this case it is also symbolic for all additional diagnostic findings. 
+Glucose and HbA1c are intentionally distinguished as separate attributes in this dataset, despite both being blood-derived metrics, due to their distinct measurement methodologies and relevance in immediate treatment contexts. Glucose can be ascertained with a single drop of blood, providing critical information for the immediate treatment.
+Conversely, HbA1c is derived from a complete blood count and does not require instant action. \newline
+
+In a hospital setting, numerous actors engage with the aforementioned dataset. The most straightforward and prominent is the doctor. She will need all data to fulfill her duties. The doctor's letter contains all personal information. The medical data is needed for diagnosis and treatment. 
+She will also need to keep the insurance information in mind as the covered treatment options are oftentimes different for each company. Additionally, she will need to write the patient's insurance information on the rescriptions. Only the pid could be omitted, but is debatable if the overhead is worth it, considering the pid can be easily inferred with all the given information.
+Therefore, no anonymization to the doctor's data makes the most sense. \\
+Supporting the doctor is the nurse staff. One of their main tasks is to monitor patients and administer medication. To accomplish this they require the diagnosis, medication and in this case the glucose data. As the HbA1c value is not relevant for the immediate treatment it can be safely ommitted. 
+Again insurance information is necessary as nurses typically do have the liberty of administer medication according to their own judgement. This is especially important when considering how understaffed hospitals in Germany are most of the time. On the other hand the patient's personal insurance number does not play into this. As nurses also interact directly with the patients they need some basic personal information like name and gender. 
+Pid and address, however, are not required. Therefore, the data for the nurse staff can be anonymized as shown in Table \ref{table:nurse} without limiting the nurses or losing valuable information. 
+
+\bigskip
+
+\begin{table}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c | c | } 
+            \hline
+            pid & name & addr. & gender & age & ins. co. & ins. no. & diag. & gluc. & hba1c & med. \\
+            \hline
+            * & F. Ott & * & M & 28 & TK & * & E10 & 22.1 & * & Insulin \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Data available for the nurse staff. Note that pid, address, insurance number and additional medical information.}
+    \label{table:nurse}
+    \end{center}
+\end{table}
+
+In tandem with the stay and medical treatment of the patient, the administartion of the hospital will want to collect the money from the patient's insurance. The insurance company together with the patient's personal insurance number will suffice as identification. 
+Administered medication will be imperative as this dictates the amount of money the hospital will get in addition to the fees for the stay. For this the diagnosis will typically have to be added as a suitable reason. No further information is required. Limiting the amount of data here 
+is crucial as here the data is exported to a third party. Which means that additional regulations will take effect. Minimizing the data leaving the hospital minimizes security risks. With these strict rules in place the data can be adjusted as seen in Table \ref{table:administration}. \newline 
+Note at this point that an attacker, who has gained access to both the data of the nurse staff and that of the administration, would struggle to correlate the entries. The shared available data fields insurance company, diagnosis and medication are likely generic enough to not point to a singular but to many patients. 
+
+\bigskip
+
+\begin{table}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c | c | } 
+            \hline
+            pid & name & addr. & gender & age & ins. co. & ins. no. & diag. & gluc. & hba1c & med. \\
+            \hline
+            * & * & * & * & * & TK & K15489 & E10 & * & * & Insulin \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Data available for the administration. Note that only the insurance information, medication and diagnosis are not suppressed.}
+    \label{table:administration}
+    \end{center}
+\end{table}
+
+Diabetes, which afflicts over ten percent of the global population and demonstrates a rising prevalence, stands as one of the most common chronic diseases worldwide \cite{idf2023,WHODiabetes2023}. Given its mostly non-lethal progression and lifetime dependency on medication, 
+it has given rise to a substatial market. As cause, optimal treatment and cure remain subject to research, data of especially newer diabetes patients is in hot demand. To provide this data to research institutes in accordance with the regulations in place the hospital must ensure that no concrete patient can be reidentified. 
+Here, advanced anonymization techniques such as K-Anonymization come into place. Each attribute of the data entry can be assigned to one of three categories: personally identifiable, quasi indentifying and remaining attributes. To achieve k anonymity each entry must supress the personally identifiable attributes, while keeping the remaining attributes untouched. 
+Most importantly the quasi identifiable attributes of each data entry must be the same for at least k - 1 other entries of a data set. This is typically achieving with generalization of these attributes until k entries are found. In this use case the personally identifiable attributes are \textit{pid}, \textit{name}, \textit{address} and \textit{insurance number}. 
+The quasi indentifying attributes are \textit{gender}, \textit{age} and \textit{insurance company}. The medical data comprive the remaining attributes. A K anonymous version of this data extry is depicted in Table \ref{table:k_anon}.
+
+\bigskip
+
+\begin{table}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c | c | } 
+            \hline
+            pid & name & addr. & gender & age & ins. co. & ins. no. & diag. & gluc. & hba1c & med. \\
+            \hline
+            * & * & * & \{M, F, X\} & {[20 - 30]} & ins. co. & * & E10 & 22.1 & 8.74 & Insulin \\
+            \hline
+        \end{tabular}
+    }
+    \caption{Data available for external research. Note the untouched medical, the suppressed personally identifying and generalized quasi identifiable attributes.}
+    \label{table:k_anon}
+    \end{center}
+\end{table}
+
+FAZIT?
 
 \section{Masking Functions}
 
-\section{Anonymization Levels}
+\section{System Requirements}
+\subsection{Data Stream Integration}
+\subsection{Administration}
+\subsection{Performance}
+\subsection{Adaptability}
+\subsection{Scalability}
+\subsection{Reliability}
+
 Use case
 RBAC
 

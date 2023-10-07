@@ -58,7 +58,7 @@ services:
       zookeeper:
         condition: service_started
     volumes: 
-    - ./anonymized_kafka_config/default_anonymized_kafka.json:/tmp/default_anonymized_kafka.json
+      - ./anonymized_kafka_config/default_anonymized_kafka.json:/tmp/default_anonymized_kafka.json
 
   kafka-connect:
     image: 'bitnami/kafka:3.5'
