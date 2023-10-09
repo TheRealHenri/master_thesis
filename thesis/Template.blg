@@ -5,48 +5,50 @@ A level-1 auxiliary file: ./misc/Titlepage.aux
 A level-1 auxiliary file: ./misc/Self-assertion.aux
 The style file: splncs03.bst
 Database file #1: bibliography.bib
+Database file #2: mendeley_library.bib
+Warning--empty booktitle in Cao2008
 Warning--empty booktitle in GevayRBMQM21
 Warning--empty booktitle in EsmailoghliQZ21
 Warning--empty booktitle in TraubGCBKRM20
-You've used 7 entries,
+You've used 9 entries,
             2785 wiz_defined-function locations,
-            625 strings with 5804 characters,
-and the built_in function-call counts, 3161 in all, are:
-= -- 230
-> -- 104
-< -- 3
-+ -- 43
-- -- 36
-* -- 192
-:= -- 415
-add.period$ -- 2
-call.type$ -- 7
-change.case$ -- 40
+            639 strings with 6156 characters,
+and the built_in function-call counts, 4233 in all, are:
+= -- 320
+> -- 133
+< -- 4
++ -- 55
+- -- 46
+* -- 257
+:= -- 545
+add.period$ -- 4
+call.type$ -- 9
+change.case$ -- 52
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 285
-empty$ -- 312
-format.name$ -- 38
-if$ -- 684
+cite$ -- 13
+duplicate$ -- 377
+empty$ -- 415
+format.name$ -- 49
+if$ -- 926
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 62
-newline$ -- 26
-num.names$ -- 14
-pop$ -- 139
+int.to.str$ -- 9
+missing$ -- 80
+newline$ -- 32
+num.names$ -- 18
+pop$ -- 180
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 41
 quote$ -- 0
-skip$ -- 90
+skip$ -- 122
 stack$ -- 0
-substring$ -- 131
-swap$ -- 130
-text.length$ -- 3
+substring$ -- 199
+swap$ -- 179
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 3
-while$ -- 24
-width$ -- 8
-write$ -- 66
-(There were 3 warnings)
+type$ -- 32
+warning$ -- 4
+while$ -- 32
+width$ -- 10
+write$ -- 85
+(There were 4 warnings)
