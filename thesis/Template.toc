@@ -21,13 +21,13 @@
 \contentsline {section}{\numberline {3.1}Managing Different Anonymization Granularity}{6}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Use Case Example}{7}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Masking Functions}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}System Requirements}{11}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Data Stream Integration}{11}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Administration}{11}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Performance}{11}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Adaptability}{11}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Scalability}{11}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Reliability}{11}{subsection.3.3.6}%
+\contentsline {section}{\numberline {3.3}System Requirements}{10}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Data Stream Integration}{10}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Administration}{10}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Performance}{10}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Adaptability}{10}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Scalability}{10}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Reliability}{10}{subsection.3.3.6}%
 \contentsline {chapter}{\numberline {4}Implementation}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Apache Kafka}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Apache ZooKeeper}{12}{section.4.2}%

@@ -5,7 +5,7 @@ When planning to integrate anonymization techniques into existing systems, there
 Does it include personally identifiable information? Is there further sensitive data? What part of it is necessary for system maintenance? Maybe there is additional data collected for statistics.
 Bearing this in mind the next thought would what needs to be anonymized. For this privacy agreements with the user must be taken into account. There may be additional government regulations in place like the \ac{CCPA} in the United States of America or the \ac{GDPR} in the European Union. 
 The next course of action is deciding on specific masking functions. As was discussed in \ref{sec:anon} there is a plethora to chose from. It is important to note that all forms of anonymization lead to a loss of information. 
-While choosing Blurring or Suppression, two methods that replace attributes with a placeholder, for all critical data fields derived in the previous assessment will ensure that all privacy concerns are addressed, it will also diminish all intelligence gained from collecting this data in the first place. It is questionable if not collecting this type of data in the first place would then be the better solution as it would safe storage and computing power. 
+While choosing Blurring or Suppression, two methods that replace attributes with a placeholder, for all critical data fields derived in the previous assessment will ensure that all privacy concerns are addressed, it will also diminish all intelligence gained from collecting this data in the first place. It is questionable if not collecting this type of data in the first place would then be the better solution as it would save storage and computing power. 
 An alternative approach would be to invest heavily in the IT security ensuring that no intruder with malicious intent can gain access to sensitive data. Keeping in mind, however, that social engineering attacks are nowadays the most common and effective strategy (SAUCE) giving a guarantee of safety can be impossible. It also stands to reason that the more employees a company has the risk for social
 engineering attacks increases. Both of these radical approaches do not seem to adequately solve the problem. Fortunately, there is a way to navigate between these two extremes. An attentive observer of the company's data operations will likely notice that data can and should be restricted similarily to permissions: Only the data needed to furfill the user's duty should be accessible to the user. 
 In addition, there are anonymization techniques, which do not lead to total information loss like the two mentioned before. Generalization for example can be employed to significantly reduce the re-identification of individuals, while simultaneously retaining some information.
@@ -125,26 +125,75 @@ It is also viable in different sectors. Imagine security levels in government ma
 
 \section{Masking Functions}
 
-Sometimes it is just hard to  write innit 
-But what can you do?
-You just have to make it happen
-But the question remains the same? 
-What can you do?
-The desperation
-Sadness
-Despair
-Emotions
-Negative
-Positive
-Uplifiting
-Hopefull
-But ultimately worthless
-The saddddddd truth
-Has to be done unfortunately
-Just sitting here with a hurt finger. Well multiple fingers really, but only one is really giving me the struggles. What to do, What to do?
-The questions remain. Nothing changes when writing senseless shit. Just tough innit. But the music is keeping me honest. TheBausFFS another love AI cover. Pure gold. 
+\begin{figure}
+    \begin{tikzpicture}[node distance=1.5cm, auto, trim left=-2.5cm]
+        % Define block styles
+        \tikzstyle{box} = [rectangle, draw, rounded corners, fill=blue!20, text width=5em, text centered, minimum height=3em]
+        \tikzstyle{line} = [draw, -latex']
 
-What 
+        % Nodes
+        
+        \node [box, text width=5em, xshift=-1cm] (value) {Value Based};
+        \node [box, right=of value, text width=5em] (tuple) {Tuple Based};
+        \node [box, right=of tuple, text width=6em] (attribute) {Attribute Based};
+        \node [box, right=of attribute, text width=5em] (table) {Table Based};
+        \node [box, fill=purple!30, above=of tuple, text width=9em] at ($(value)!0.5!(tuple)$) (semantics1) {Tuple-at-the-time\\ Semantics};
+        \node [box, fill=purple!30, above=of attribute, text width=6em] at ($(attribute)$) (semantics2) {Table Semantics};
+        \node [box, fill=purple!50, above=of semantics1, text width=6em] at ($(semantics1)!0.5!(semantics2)$) (masking) {Masking Functions};
+        \node [box, fill=white, text width=6em, opacity=0, above=of table] at ($(table)$) (reference){};
+        \node [box, fill=green!30, above=of reference, text width=7.5em] at ($(reference)$) (anonymizations) {Table Anonymizations};
+
+
+        % Lists
+        \node[below=0.2cm of value] (value_mf) {
+            \begin{tabular}{l}
+                - Suppression \\
+                - Substitution \\
+                - Tokenization \\
+                - Blurring/Scrambling \\
+                - Bucketizing \\
+                - Generalization \\
+                - Noise Methods
+            \end{tabular}
+        };
+
+        \node[below=0.2cm of tuple] (tuple_mf) {
+            \begin{tabular}{l}
+                - Conditional \\ Substitution
+            \end{tabular}
+        };
+
+        \node[below=0.2cm of attribute] (attribute_mf) {
+            \begin{tabular}{l}
+                - Shuffling \\
+                - Averaging \\
+                - Aggregation \\
+                - Univariate \\ Microaggregation
+            \end{tabular}
+        };
+
+        \node[below=0.2cm of table] (table_mf) {
+            \begin{tabular}{l}
+                - Multivariate \\ Microaggregation \\
+                - k-anonymization \\
+                - l-diversity \\
+                - t-closeness \\
+                - eps-privacy
+            \end{tabular}
+        };
+
+        % Paths
+        \path [line] (masking) -- (semantics1);
+        \path [line] (masking) -- (semantics2);
+        \path [line] (semantics1) -- (value);
+        \path [line] (semantics1) -- (tuple);
+        \path [line] (semantics2) -- (attribute);
+        \path [line] (anonymizations) -- (table);
+
+    \end{tikzpicture}
+    \caption{Hierarchy of masking functions\label{fig:hierarchy_mf}} 
+\end{figure}
+
 
 \section{System Requirements}
 \subsection{Data Stream Integration}
