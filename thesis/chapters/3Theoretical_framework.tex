@@ -124,8 +124,19 @@ While the aforementioned diabetes patient use case scenario may appear unique an
 It is also viable in different sectors. Imagine security levels in government matters, trade secrets and specific customer knowledge in corporations or secrecy of correspondense for the transportation industry. Distributed event stores are utilized across all of these sectors with major players relying on Apache Kafka for their day to day needs \cite{KafkaPoweredBY}. 
 
 \section{Masking Functions}
+Data anonymization is a multifaceted process tailored to meet application requirements, user groups and their specific needs. This section goes in depth into masking functions, the cornerstone of data anonymization. In this context a \textit{datum} refers to a single piece of information e.g. a singular entry of a database or any one event of a data stream. Synonymous with it also used the word \textit{tuple}. A tuple is comprived of one or multiple \textit{attributes} (also called \textit{fields}). It is customary for individual tuples to be part of a bigger collection. In the static context they are collected in databases and grouped in tables. Data streams work analogous for dynamic operations. All tuples of the same database table or data stream are required to follow the same pattern. This refers to the sequence of attributes of each tuple. This pattern is fixed in a data schema associated with the table or stream. Sometimes it is appended to each datum in form of a header as seen exemplary in Table \ref{table:dia_patient}. As this substantially increases the size of each datum it is more common to define it once in the initialization step of the database table or data stream. \\
+While all forms of anonymization aim to alter the underlying sensitive information, e.g. the tuple's attributes containing perhaps personally identifiying information, in a way that makes it harder if not impossible to reconstruct, they can be categorized based on their scope of operation:
 
-\begin{figure}
+\begin{itemize}
+    \item \textbf{Value-Based} Handles one tuple at a time and replaces the values of attributes independently. 
+    \item \textbf{Tuple-Based} Operates on individual attributes of a single tuple, but considers the values of the entire tuple for the change. 
+    \item \textbf{Attribute-Based} Extends the view from one tuple to a larger collection or table of data. Evaluates the values of singular attributes of the entire set and collectively makes changes to that attribute accordingly. 
+    \item \textbf{Table-Based} Covers a table of data and perceives all attributes of each tuple. Adaptions to multiple attributes simultaneously are common. It can be argued that methods falling under this category are not masking functions but algorithms utilizing many masking functions to achieve anonymization on a table level.  
+\end{itemize}
+
+To better illuminate the relationship and hierarchy of the aforementioned categories as well as provide some examples, refer to Figure \ref{fig:hierarchy_mf}. 
+
+\begin{figure}[ht]
     \begin{tikzpicture}[node distance=1.5cm, auto, trim left=-2.5cm]
         % Define block styles
         \tikzstyle{box} = [rectangle, draw, rounded corners, fill=blue!20, text width=5em, text centered, minimum height=3em]
@@ -148,11 +159,11 @@ It is also viable in different sectors. Imagine security levels in government ma
         \node[below=0.2cm of value] (value_mf) {
             \begin{tabular}{l}
                 - Suppression \\
+                - Blurring \\
                 - Substitution \\
                 - Tokenization \\
-                - Blurring/Scrambling \\
-                - Bucketizing \\
                 - Generalization \\
+                - Bucketizing \\
                 - Noise Methods
             \end{tabular}
         };
@@ -191,9 +202,205 @@ It is also viable in different sectors. Imagine security levels in government ma
         \path [line] (anonymizations) -- (table);
 
     \end{tikzpicture}
-    \caption{Hierarchy of masking functions\label{fig:hierarchy_mf}} 
+    \caption{Hierarchy of masking functions}\label{fig:hierarchy_mf} 
 \end{figure}
 
+Having outlined the structure and dimensions of the various masking functions, it is now time to take a closer look at the functionality and use cases of the examples given in Figure \ref{fig:hierarchy_mf} starting with the value based. \\
+\textbf{Suppression} aims to effectively delete the value by replacing the value of an attribute with a meaningless character, most commonly the asterisk \textit{*}. It is important to note, that actually removing the attribute from the tuple or replacing it will a null value would violate the data schema and thus negatively impact operability. The asterisk does the trick while maintaining the data schema. To work Suppression only requires a non-empty set of keys for the attributes that are supposed to be suppressed as parameter. Naturally, it leads to total information loss of the specfified fields. This can be particular useful for containing personally identifiable data like a person's home address as exemplary shown in Figure \ref{fig:suppression}. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            address \\
+            \hline
+            Smith Street 3 \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            address \\
+            \hline
+            * \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of suppression of an attribute.\label{fig:suppression}}
+\end{figure}
+
+A similar approach is applied in \textbf{Blurring}. Here the value of an attribute is replaced with arbitrary characters, typically \textit{X}s. It is distinguishable from Suppression in that not all characters of the value have to be replaced and even the amount of characters can remain the same. Imagine a user at the checkout of an online store that they have already purchased goods at prior to this session. Here the credit card information of that user was saved as part of the agreement from the previous session. The user is then given the option to use that credit card again, with it being specified as a sequence of blurred characters with only the last three digits in plain text as shown in Figure \ref{fig:blurring}. This allows the user to double-check the card information without exposing the credit card number to the network, screen capturers or bystanders. This operation also leads to high information loss but retains some usability of the value. The parameters for Blurring include the keys to blurr as well as optionally the number of characters and whether the amount of characters is to be maintained. Note, that setting the parameters to blur all characters and reduce the amount to one is equal in funtionality to Suppression. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            credit card \\
+            \hline
+            1234 5678 9123 4567 \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            credit card \\
+            \hline
+            XXXX XXXX XXXX X567 \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of blurring of an attribute.\label{fig:blurring}}
+\end{figure}
+
+\textbf{Substitution} replaces the value of the specified attribute with a predefined substitute. Figure \ref{fig:substitution} shows an example where a name is switched out with an arbitrary fake name from a library. While this masking function leads to substantial information loss, it seemingly maintains the integrity of the data from an outsider's perspective. This can make the data easier to work with, while still ensuring anonymity. As parameters the keys for the attributes that are supposed to be substituted are required in tandem with the intended substitutes. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            name \\
+            \hline
+            Henri Allgöwer \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            name \\
+            \hline
+            John Doe \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of substitution of an attribute.\label{fig:substitution}}
+\end{figure}
+
+An alternative approach is \textbf{Tokenization}. Here values are also substituted, but not with some arbitrary replacement. Instead, the substitute is a specific token. These tokens can be reversed to restore the original value as long as a secret is known with which the token was created. There are different approaches to achieve this. The first one coming to mind is a database mapping token to the hash of the original value. Only access to the database as well as the hashing function will yield the correct original value from the token. Another approach is to omit the database and instead use a more sophisticated cryptographic algorithm to create the token, essentially encrypting the data. While this masking function manages to preserve the information, it requires substantial overhead in form of storage for the database and/or computing power for the cryptographic algorithms. This costly masking function is usually reserved for highly sensitive data. For instance passwords as illustrated in Figure \ref{fig:tokenization}.
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            password \\
+            \hline
+            MyPassword1 \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            password \\
+            \hline
+            d9f4c3b72c7935e5 \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of tokenization of an attribute.\label{fig:tokenization}}
+\end{figure}
+
+One of the most common masking functions is \textbf{Generalization}. Here, the value of an attribute is abstracted to a more general value. This effectively reduces the information, but does not remove it entirely. For example a datum with an address field could generalize the exact location to a broader one. Instead of Berlin it would read Germany as shown in Figure \ref{fig:generalization}. This could then be even further generalized to Europe and so forth. Typically, entire generalization hierarchies are provided as parameter to facilitate this. It is crucial that these hierarchies are exhaustive of all possible arising values if no default is provided as genarlization is ambiguous. These complete generalization hierarchies are required as parameters in addition to their respective attribute key. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            address \\
+            \hline
+            Berlin \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            address \\
+            \hline
+            Germany \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of the generalization of an attribute.\label{fig:generalization}}
+\end{figure}
+
+A special case of Generalization is \textbf{Bucketizing}. It functions similarly, but exclusively for numerical values. Ranges replace specific values in the tuple. Figure \ref{fig:bucketizing} shows an example where the age 27 is bucketized to the range {[20 - 30]}. Only a moderate amount of information is lost with this masking function. To deploy it requires the bucket sizes as well as the keys to the numerical attribute. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|}
+            \hline
+            age \\
+            \hline
+            27 \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|}
+            \hline
+            age \\
+            \hline
+            {[20 - 30]} \\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of bucketizing of an attribute.\label{fig:bucketizing}}
+\end{figure}
+
+Finally, there are the \textbf{Noise Methods}. Again, these only apply to numerical data. The idea is to modify the original values by adding noise. Typically, this noise is chosen randomly from a distribution. Utilizing the normal distribution with mean 0 it would ensure that the data over a period of time would retain its average and distribution. The standard deviation will then define how much each individual data point can diverge from the original value. The result will invalidate individual tuples but preserve the overall spread of the data in the long run. As an example Figure \ref{fig:noise} shows noise added to two attributes of a tuple. Note that with no loss to the generality one is decreased, while the other increased. 
+
+\bigskip
+
+\begin{figure}[ht]
+    \begin{center}
+    \footnotesize{
+        \renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{|c|c|}
+            \hline
+            height & weight \\
+            \hline
+            185 & 83 \\
+            \hline
+            \end{tabular}
+            \quad $\longrightarrow$ \quad
+            \begin{tabular}{|c|c|}
+            \hline
+            height & weight  \\
+            \hline
+            181 & 84\\
+            \hline
+        \end{tabular}
+    }
+    \end{center}
+    \caption{Example of adding noise.\label{fig:noise}}
+\end{figure}
 
 \section{System Requirements}
 \subsection{Data Stream Integration}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  12 OCT 2023 18:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  15 OCT 2023 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -974,10 +974,10 @@ chapter 1.
 
 ] [2]) (./chapters/2Literature_review.tex [3]
 chapter 2.
-<./img/strong_scaling.pdf, id=238, 224.84pt x 117.43875pt>
+<./img/strong_scaling.pdf, id=252, 224.84pt x 117.43875pt>
 File: ./img/strong_scaling.pdf Graphic file (type pdf)
 <use ./img/strong_scaling.pdf>
-Package pdftex.def Info: ./img/strong_scaling.pdf  used on input line 28.
+Package pdftex.def Info: ./img/strong_scaling.pdf  used on input line 29.
 (pdftex.def)             Requested size: 250.95476pt x 131.08427pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1014,37 +1014,37 @@ Overfull \hbox (20.8247pt too wide) in paragraph at lines 110--118
  [] 
  []
 
-[9]
-Overfull \hbox (21.58418pt too wide) in paragraph at lines 193--194
+[9] [10]
+Overfull \hbox (21.58418pt too wide) in paragraph at lines 204--205
 [][] 
  []
 
-) (./chapters/4Implementation.tex [10] [11]
+[11] [12] [13]) (./chapters/4Implementation.tex [14] [15]
 chapter 4.
-[12
+[16
 
 
-]) (./chapters/5Testing_evaluation.tex [13]
+]) (./chapters/5Testing_evaluation.tex [17]
 chapter 5.
-) (./chapters/6Conclusion.tex [14
+) (./chapters/6Conclusion.tex [18
 
 
 ]
 chapter 6.
-) (./Template.bbl [15
+) (./Template.bbl [19
 
 
-]) (./misc/Annex.tex [16
-
-
-]
-chapter without number
-[17
+]) (./misc/Annex.tex [20
 
 
 ]
 chapter without number
-) [18
+[21
+
+
+]
+chapter without number
+) [22
 
 
 ] (./Template.aux (./misc/Titlepage.aux) (./misc/Self-assertion.aux))
@@ -1052,18 +1052,18 @@ Package rerunfilecheck Info: File `Template.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 32164 strings out of 476025
- 673046 string characters out of 5779036
- 1870388 words of memory out of 5000000
- 51918 multiletter control sequences out of 15000+600000
+ 32182 strings out of 476025
+ 673259 string characters out of 5779036
+ 1871388 words of memory out of 5000000
+ 51925 multiletter control sequences out of 15000+600000
  519269 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,19n,106p,10671b,865s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,19n,106p,10671b,863s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Template.pdf (29 pages, 439698 bytes).
+Output written on Template.pdf (33 pages, 454572 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 113 named destinations out of 1000 (max. 500000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 568 compressed objects within 6 object streams
+ 124 named destinations out of 1000 (max. 500000)
  420 words of extra memory for PDF output out of 10000 (max. 10000000)
 
