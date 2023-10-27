@@ -1,24 +1,48 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
 \bibitem{Cao2008}
 Cao, J., Carminati, B., Ferrari, E., Tan, K.L.: Castle: A delay-constrained scheme for k-anonymizing data streams. pp. 1376--1378. IEEE (4 2008)
 
+\bibitem{dijkstra2022note}
+Dijkstra, E.W.: A note on two problems in connexion with graphs. In: Edsger Wybe Dijkstra: His Life, Work, and Legacy, pp. 287--290 (2022)
+
 \bibitem{idf2023}
 Federation, I.D.: Diabetes facts \& figures (2023), \url{https://idf.org/about-diabetes/diabetes-facts-figures/}, accessed: 2023-10-01
 
-\bibitem{GevayRBMQM21}
-Gévay, G.E., Rabl, T., Breß, S., Madai-Tahy, L., Quiané-Ruiz, J.A., Markl, V.: Efficient control flow in dataflow systems: When ease-of-use meets high performance (2021), \url{https://www.researchgate.net/publication/349768477_Efficient_Control_Flow_in_Dataflow_Systems_When_Ease-of-Use_Meets_High_Performance}, to be published
+\bibitem{HansenUnivariateMicroaggregation}
+Hansen, S.L., Mukherjee, S.: A polynomial algorithm for optimal univariate microaggregation. IEEE Transactions on Knowledge and Data Engineering  15,  1043--1044 (7 2003)
 
 \bibitem{KafkaPoweredBY}
 Kafka, A.: Organizations powered by apache kafka (2023), \url{https://kafka.apache.org/powered-by}, accessed: 2023-10-01
 
+\bibitem{lefevre2005incognito}
+LeFevre, K., DeWitt, D.J., Ramakrishnan, R.: Incognito: Efficient full-domain k-anonymity. In: Proceedings of the 2005 ACM SIGMOD international conference on Management of data. pp. 49--60. ACM (2005)
+
+\bibitem{lefevre2006mondrian}
+LeFevre, K., DeWitt, D.J., Ramakrishnan, R.: Mondrian multidimensional k-anonymity. In: 22nd International Conference on Data Engineering (ICDE'06). pp. 25--25. IEEE (2006)
+
+\bibitem{li2007tcloseness}
+Li, N., Li, T., Venkatasubramanian, S.: T-closeness: Privacy beyond k-anonymity and l-diversity. In: 2007 IEEE 23rd International Conference on Data Engineering. pp. 106--115. IEEE (2007)
+
+\bibitem{machanavajjhala2007ldiversity}
+Machanavajjhala, A., Kifer, D., Gehrke, J., Venkitasubramaniam, M.: l-diversity: Privacy beyond k-anonymity. ACM Transactions on Knowledge Discovery from Data (TKDD)  1(1), ~3 (2007)
+
 \bibitem{EsmailoghliQZ21}
 Mahdi~Esmailoghli, Jorge-Arnulfo Quiané-Ruiz, Z.A.: Cocoa: Correlation coefficient-aware data augmentation (2021)
 
+\bibitem{oganian_domingo-ferrer_2001}
+Oganian, A., Domingo-Ferrer, J.: On the complexity of optimal microaggregation for statistical disclosure control. Statistical Journal of the United Nations Economic Commission for Europe  18(4),  345--353 (12 2001)
+
 \bibitem{WHODiabetes2023}
 Organization, W.H.: Diabetes fact sheet (2023), \url{ttps://www.who.int/news-room/fact-sheets/detail/diabetes}, accessed: 2023-10-01
+
+\bibitem{sweeney1997datafly}
+Sweeney, L.: Weaving technology and policy together to maintain confidentiality. In: Journal of Law, Medicine \& Ethics. pp. 184--195. Wiley Online Library (1997)
+
+\bibitem{sweeney2002kanonymity}
+Sweeney, L.: K-anonymity: A model for protecting privacy. International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems  10(05),  557--570 (2002)
 
 \bibitem{TraubGCBKRM20}
 Traub, J., Grulich, P.M., Cuéllar, A.R., Bress, S., Katsifodimos, A., Rabl, T., Markl, V.: Scotty: General and efficient open-source window aggregation for stream processing systems (2020), \url{https://www.redaktion.tu-berlin.de/fileadmin/fg131/Publikation/Papers/Traub_TODS-21-Scotty_preprint.pdf}

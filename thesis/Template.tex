@@ -21,8 +21,11 @@
 \usepackage[ruled,vlined,algochapter]{algorithm2e}
 %\usepackage[nottoc, notlof, notlot]{tocbibind}
 \usepackage{blindtext}
-
+\usepackage{mathtools}
+\newcommand*\mean[1]{\bar{#1}}
 \usepackage{chngcntr}
+\usepackage{adjustbox}
+
 
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
@@ -38,7 +41,11 @@
 
 % for tables
 \usepackage{multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
 \usepackage[table]{xcolor}
+\definecolor{lightred}{rgb}{1, 0.8, 0.8} 
+\definecolor{lightyellow}{rgb}{1, 1, 0.8}
 \usepackage{xcolor}
 
 % header and footer line - no header & footer line on pages where a new chapter starts
@@ -109,6 +116,8 @@
  \acro{CCPA}{California Consumer Privacy Act}
  \acro{GDPR}{General Data Protection Regulation}
  \acro{ICD}{International Statistical Classification of Diseases and Related Health Problems}
+ \acro{PII}{Personally Identifiable Information}
+ \acro{SSE}{Sum of Squared Errors}
 \end{acronym}
 \onecolumn
 

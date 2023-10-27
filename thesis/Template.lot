@@ -4,10 +4,14 @@
 \contentsline {table}{\numberline {1}{\ignorespaces Correlation in the existence of outlier\cite {EsmailoghliQZ21}.}}{2}{table.1.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2}{\ignorespaces Example datum of a diabetes patient}}{7}{table.3.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Data available for the nurse staff. Note that pid, address, insurance number and additional medical information.}}{8}{table.3.3}%
+\contentsline {table}{\numberline {2}{\ignorespaces Example table of diabetes patients}}{6}{table.3.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Data available for the nurse staff. Note that pid, zip, insurance number and additional medical information have been suppressed as indicated by their cell's light red background.}}{8}{table.3.3}%
 \contentsline {table}{\numberline {4}{\ignorespaces Data available for the administration. Note that only the insurance information, medication and diagnosis are not suppressed.}}{9}{table.3.4}%
-\contentsline {table}{\numberline {5}{\ignorespaces Data available for external research. Note the untouched medical, the suppressed personally identifying and generalized quasi identifiable attributes.}}{10}{table.3.5}%
+\contentsline {table}{\numberline {5}{\ignorespaces K-anonymized data available for external research. The sensitive medical attribtues remains unchanged as indicated by the white cell background. Unlike the personally identifying attributes, which have been suppressed as denoted by the red cell background. The yellow cell background highlights the generalized quasi identifiable attributes. Note that the entries of the first group have unchanged values for the attributes \textit {sex} and \textit {ins. co.}. As all three original entries shared the same value it did not need to be generalized.}}{10}{table.3.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Working example for table based anonymization containing a table with four attributes marked above with their corresponding category. Additionally, there is a leading column, which is not part of the data, but serves as reference.}}{22}{table.3.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces 3-anonymized version of the working example. Suppressed fields are in red cells, generalized fields in yellow. }}{25}{table.3.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces 2-diverse version of the working example. Suppressed fields are in red cells, generalized fields in yellow.}}{26}{table.3.8}%
+\contentsline {table}{\numberline {9}{\ignorespaces T-closeness version of the working example. Suppressed fields are in red cells, generalized fields in yellow.}}{27}{table.3.9}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

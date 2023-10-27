@@ -5,13 +5,20 @@
 \section{Distributed Event Stores}
 
 \section{Anonymization\label{sec:anon}}
+
+
+The concept of data anonymity plays a pivotal role in the context of access control in distributed event stores. One of the widely accepted models for preserving the privacy of data subjects in datasets is $K-Anonymity$. Introduced by Sweeney \cite{sweeney2002kanonymity}, the $K-Anonymity$ model posits that each data record within a dataset should be indistinguishable from at least $K-1$ other records with respect to any set of quasi-identifiers. Mathematically, a dataset adheres to $K-Anonymity$ if, for a set of quasi-identifiers $Q$, each sequence of values in $Q$ appears at least $K$ times in the dataset.
+
+
 Techniques 
 Cryptography, Masking Functions and there is a thirsd ?
 
 \subsection{Principles}
 
-\subsection{Data Streaming}
+\subsection{Data Streaming\label{lit:data_streaming}}
 One prominent example of applying anonymization techniques to streamed data is the work CASTLE \cite{Cao2008}
+
+Univariate Microaggregation \label{lit:univariate}
 
 \section{Related Work}
 
@@ -22,13 +29,6 @@ One prominent example of applying anonymization techniques to streamed data is t
     \item descriptions of algorithms, hardware, software, and/or systems employed.
 \end{itemize}
 
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{./img/strong_scaling.pdf}
-\caption{Strong scaling for Visit Count\cite{GevayRBMQM21}.}
-\end{figure}
 
 % We can leave this out... The advisor can point this out, if it is a concern.
 %Suggestion: Figures could be inserted in pdf form to avoid pixelation when the image is magnified.

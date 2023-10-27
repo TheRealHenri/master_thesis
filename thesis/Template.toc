@@ -17,37 +17,44 @@
 \contentsline {subsection}{\numberline {2.3.1}Principles}{4}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Data Streaming}{4}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}Related Work}{4}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Theoretical Framework}{6}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Managing Different Anonymization Granularity}{6}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Use Case Example}{7}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Masking Functions}{10}{section.3.2}%
-\contentsline {section}{\numberline {3.3}System Requirements}{15}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Data Stream Integration}{15}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Administration}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Performance}{15}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Adaptability}{15}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Scalability}{15}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Reliability}{15}{subsection.3.3.6}%
-\contentsline {chapter}{\numberline {4}Implementation}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Apache Kafka}{16}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Apache ZooKeeper}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Anonymized Kafka}{16}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Stream Manager}{16}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Configuration parsing}{16}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Validation}{16}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Stream Config Builder}{16}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Kafka Streams}{16}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Anonymizers}{16}{subsection.4.3.6}%
-\contentsline {section}{\numberline {4.4}Test Suite}{16}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Data Generator}{16}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Kafka Connector}{16}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Consumers}{16}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Docker}{16}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Testing and Evaluation}{18}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Experimental Setup}{18}{section.5.1}%
-\contentsline {section}{\numberline {5.X}Design and an Interpretation of the Results (For each Experiment Class X)}{18}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Future Work}{19}{section.6.1}%
-\contentsline {chapter}{\nonumberline Appendix A. Further Details on the Solution Approach}{21}{chapter*.14}%
-\contentsline {chapter}{\nonumberline Appendix B. Extended Version of the Experimental Results}{22}{chapter*.15}%
+\contentsline {chapter}{\numberline {3}Theoretical Framework}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Managing Different Anonymization Granularity}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Use Case Example}{6}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Anonymization Techniques}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Value Based Masking Functions}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Tuple Based Masking Functions}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Attribute Based Masking Functions}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Table Based Anonymization Techniques}{21}{subsection.3.2.4}%
+\contentsline {subsubsection}{\nonumberline CASTLE}{23}{subsubsection*.16}%
+\contentsline {section}{\numberline {3.3}System Requirements}{28}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Data Stream Integration}{28}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Administration}{28}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Performance}{28}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Adaptability}{28}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Scalability}{28}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Reliability}{28}{subsection.3.3.6}%
+\contentsline {chapter}{\numberline {4}Implementation}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Apache Kafka}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Apache ZooKeeper}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Anonymized Kafka}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Stream Manager}{29}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Configuration parsing}{29}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Validation}{29}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Stream Config Builder}{29}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Kafka Streams}{29}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Anonymizers}{29}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Test Suite}{29}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Data Generator}{29}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Kafka Connector}{29}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Consumers}{29}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Docker}{29}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Testing and Evaluation}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Setup}{31}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Experimental Design}{31}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Parameter Optimization}{31}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Interpretation of the Results}{31}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {6}Conclusion}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Future Work}{32}{section.6.1}%
+\contentsline {chapter}{\nonumberline Appendix A. Further Details on the Solution Approach}{35}{chapter*.18}%
+\contentsline {chapter}{\nonumberline Appendix B. Extended Version of the Experimental Results}{36}{chapter*.19}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
