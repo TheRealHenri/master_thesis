@@ -1,19 +1,19 @@
 \chapter{Theoretical Framework\label{cha:chapter3}}
+This chapter lays the theoretical foundation for addressing the challenges and intricacies of anonymized access control in distributed event stores. It begins with an exploration of managing different anonymization granularity. In this process, it describes one specific use case in detail, underscoring the necessity and practicality of various levels of anonymization, illustrated through a real-world scenario. The following section presents a categorical survey of anonymization techniques. This survey aims to provide a comprehensive overview of existing methods, structuring these techniques in a way that showcases their complexities as well as their potential applications. The focus here is on categorizing and understanding the broad spectrum of anonymization methods, setting a theoretical basis for their practical implementation. In the final section, we discuss a concrete theoretical model capable of fulfilling the requirements for varying levels of anonymization granularity for distributed event stores. It will go in-depth on the model architecture as well as its functional and non-functional requirements. 
 
-\section{Managing Different Anonymization Granularity}
+\section{Managing Different Anonymization Granularity\label{sec:anon_granularity}}
 When planning to integrate anonymization techniques into existing systems, there are many things to consider. First one must understand the data flowing through the system.
 Does it include \ac{PII}? Is there further sensitive data? What part of it is necessary for system maintenance? Maybe there is additional data collected for statistics.
-Bearing this in mind the next thought would what needs to be anonymized. For this privacy agreements with the user must be taken into account. There may be additional government regulations in place like the \ac{CCPA} in the United States of America or the \ac{GDPR} in the European Union. 
-The next course of action is deciding on specific masking functions. As was discussed in \ref{sec:anon} there is a plethora to chose from. It is important to note that all forms of anonymization lead to a loss of information. 
-While choosing Blurring or Suppression, two methods that replace attributes with a placeholder, for all critical data fields derived in the previous assessment will ensure that all privacy concerns are addressed, it will also diminish all intelligence gained from collecting this data in the first place. It is questionable if not collecting this type of data in the first place would then be the better solution as it would save storage and computing power. 
-An alternative approach would be to invest heavily in the IT security ensuring that no intruder with malicious intent can gain access to sensitive data. Keeping in mind, however, that social engineering attacks are nowadays the most common and effective strategy (SAUCE) giving a guarantee of safety can be impossible. It also stands to reason that the more employees a company has the risk for social
-engineering attacks increases. Both of these radical approaches do not seem to adequately solve the problem. Fortunately, there is a way to navigate between these two extremes. An attentive observer of the company's data operations will likely notice that data can and should be restricted similarily to permissions: Only the data needed to furfill the user's duty should be accessible to the user. 
+Bearing this in mind the next thought would be what needs to be anonymized. For this privacy agreements with the user must be taken into account. There may be additional government regulations in place like the \ac{CCPA} in the United States of America or the \ac{GDPR} in the European Union. 
+The next course of action is deciding on specific masking functions. As was discussed in \ref{sec:anon} and further detailed in the subsequent section there is a plethora to choose from. It is important to note that all forms of anonymization lead to a loss of information. 
+Choosing Blurring or Suppression, two methods that replace attributes with a placeholder, for all critical data fields derived in the previous assessment, will ensure that all privacy concerns are addressed, it will also diminish all intelligence gained from collecting this data in the first place. It is questionable if not collecting this type of data in the first place would then be the better solution as it would save storage and computing power. 
+An alternative approach would be to invest heavily in IT security ensuring that no intruder with malicious intent can gain access to sensitive data. Keeping in mind, however, that social engineering attacks are nowadays the most common and effective strategy giving a guarantee of safety can be impossible. It also stands to reason that the more employees a company has the risk of social engineering attacks increases. Both of these radical approaches do not seem to adequately solve the problem. Fortunately, there is a way to navigate between these two extremes. An attentive observer of the company's data operations will likely notice that data can and should be restricted similarly to permissions: Only the data needed to fulfill the user's duty should be accessible to the user. 
 In addition, there are anonymization techniques, which do not lead to total information loss like the two mentioned before. Generalization for example can be employed to significantly reduce the re-identification of individuals, while simultaneously retaining some information.
-With data restriction and different anonymization techniques in mind there is a middle ground to be found which maximizes security and minimizes information loss. Consider the following example:
+With data restriction and different anonymization techniques in mind, there is a middle ground to be found that maximizes security and minimizes information loss. Consider the following example:
 
 \subsection{Use Case Example}
-Hospitals depend on the collection, management and analysis of data to administer the best and most accurate care of their patients. In a modern hospital all data would be stored in a centralized hospital database. 
-Here all data for individual patients are brought together. Table \ref{table:dia_patient} shows an exemplary table of patients in the endocrinology ward of a german hospital. Note that the tuple has been shortened to enhance its readability as well as prepended with a header of the corresponding database table.  (A MORE DETAILED VERSION CAN BE FOUND IN THE APPENDIX)
+Hospitals depend on the collection, management, and analysis of data to administer the best and most accurate care to their patients. In a modern hospital, all data would be stored in a centralized hospital database. 
+Here all data for individual patients are brought together. Table \ref{table:dia_patient} shows an exemplary table of patients in the endocrinology ward of a German hospital. Note that the tuple has been shortened to enhance its readability as well as prepended with a header of the corresponding database table. A more detailed version is shown in Table \ref{tab:patient_data} in Appendix A. 
 
 
 \bigskip 
@@ -48,18 +48,19 @@ Here all data for individual patients are brought together. Table \ref{table:dia
 
 The header of table \ref{table:dia_patient} shows eleven attributes. First the person id (\textit{pid}), which is the primary key for each patient as it uniquely identifies the patient in the database. Then \textit{name}, zip code (\textit{zip}), \textit{sex} and \textit{age} are included as additional personal information.
 This would typically also include the full address not just the zip code, contact information, height as well as weight to adapt the dosage of the medication. The subsequent two attributes include information about the patient's insurance information. 
-Insurance companies in Germany are uniquely identified with a nine digit institutional identifier. In the case of the first entry the insurance company (\textit{ins. co.}) has the value 101575519, which matches the identifier of the Techniker Krankenkasse (TK). 
+Insurance companies in Germany are uniquely identified with a nine-digit institutional identifier. In the case of the first entry the insurance company (\textit{ins. co.}) has the value 101575519, which matches the identifier of the Techniker Krankenkasse (TK). 
 Each client is then assigned a number unique to that insurance company called the insurance number (\textit{ins. no.}). It always starts with a letter followed by digits. Finally, the datum references the medical information. It starts with the diagnosis (\textit{diag.}) classified according to the \ac*{ICD}. 
-E10 being the label for Type 1 Diabetes Mellitus, E11 the label for Type 2 Diabetes Mellitus. The most important medical measurement for the treatment of this disease is the current amount of glucose (\textit{gluc.}) in the blood. This determines the quantity of medication (\textit{med.}) to be administered to the patient. For Type 1 Diabetes this is Insulin, for Type 2 it is Metformin. 
-Lastly, the table includes an attribute called \textit{hba1c}. This is the body's own three-month average of blood glucose. By means of which diabetes is diagnosed. In this case it is also symbolic for all additional diagnostic findings. 
-Glucose and HbA1c are intentionally distinguished as separate attributes in this dataset, despite both being blood-derived metrics, due to their distinct measurement methodologies and relevance in immediate treatment contexts. Glucose can be ascertained with a single drop of blood, providing critical information for the immediate treatment.
-Conversely, HbA1c is derived from a complete blood count and does not require instant action. \newline
+E10 is the label for Type 1 Diabetes Mellitus; E11 is the label for Type 2 Diabetes Mellitus. The most important medical measurement for the treatment of this disease is the current amount of glucose (\textit{gluc.}) in the blood. This determines the quantity of medication (\textit{med.}) to be administered to the patient. For Type 1 Diabetes this is Insulin, for Type 2 it is Metformin. 
+Lastly, the table includes an attribute called \textit{hba1c}. This is the body's three-month average of blood glucose. Through which diabetes is diagnosed. In this case, it is also symbolic for all additional diagnostic findings. 
+Glucose and HbA1c are intentionally distinguished as separate attributes in this dataset, despite both being blood-derived metrics, due to their distinct measurement methodologies and relevance in immediate treatment contexts. Glucose can be ascertained with a single drop of blood, providing critical information for immediate treatment.
+Conversely, HbA1c is derived from a complete blood count and does not require instant action. \par
 
 In a hospital setting, numerous actors engage with the aforementioned dataset. The most straightforward and prominent is the doctor. She will need all data to fulfill her duties. The doctor's letter contains all personal information. The medical data is needed for diagnosis and treatment. 
-She will also need to keep the insurance information in mind as the covered treatment options are oftentimes different for each company. Additionally, she will need to write the patient's insurance information on the rescriptions. Only the pid could be omitted, but is debatable if the overhead is worth it, considering the pid can be easily inferred with all the given information.
-Therefore, no anonymization to the doctor's data makes the most sense. \\\\
-\indent Supporting the doctor is the nurse staff. One of their main tasks is to monitor patients and administer medication. To accomplish this they require the diagnosis, medication and in this case the glucose data. As the HbA1c value is not relevant for the immediate treatment it can be safely ommitted. 
-Again insurance information is necessary as nurses typically do have the liberty of administer medication according to their own judgement. This is especially important when considering how understaffed hospitals in Germany are most of the time. On the other hand the patient's personal insurance number does not play into this. As nurses also interact directly with the patients they need some basic personal information like name and sex. 
+She will also need to keep the insurance information in mind as the covered treatment options are oftentimes different for each company. Additionally, she will need to write the patient's insurance information on the prescriptions. Only the pid could be omitted, but is debatable if the overhead is worth it, considering the pid can be easily inferred with all the given information.
+Therefore, no anonymization of the doctor's data makes the most sense. \par
+
+Supporting the doctor is the nurse staff. One of their main tasks is to monitor patients and administer medication. To accomplish this they require the diagnosis, medication, and in this case the glucose data. As the HbA1c value is not relevant for the immediate treatment it can be safely omitted. 
+Again insurance information is necessary as nurses typically do have the liberty to administer medication according to their judgment. This is especially important when considering how understaffed hospitals in Germany are most of the time. On the other hand, the patient's insurance number does not play into this. As nurses also interact directly with the patients they need some basic personal information like name and sex. 
 Pid and zip, however, are not required. Therefore, the data for the nurse staff can be anonymized as shown in Table \ref{table:nurse} without limiting the nurses or losing valuable information. 
 
 \bigskip
@@ -86,15 +87,15 @@ Pid and zip, however, are not required. Therefore, the data for the nurse staff 
             \hline
         \end{tabular}
     }
-    \caption{Data available for the nurse staff. Note that pid, zip, insurance number and additional medical information have been suppressed as indicated by their cell's light red background.}
+    \caption{Data available for the nurse staff. Note that PID, zip, insurance number, and additional medical information have been suppressed as indicated by their cell's light red background.}
     \label{table:nurse}
     \end{center}
 \end{table}
 
-In tandem with the stay and medical treatment of the patient, the administartion of the hospital will want to collect the money from the patient's insurance. The insurance company together with the patient's personal insurance number will suffice as identification. 
-Administered medication will be imperative as this dictates the amount of money the hospital will get in addition to the fees for the stay. For this the diagnosis will typically have to be added as a suitable reason. No further information is required. Limiting the amount of data here 
-is crucial as here the data is exported to a third party. Which means that additional regulations will take effect. Minimizing the data leaving the hospital minimizes security risks. With these strict rules in place the data can be adjusted as seen in Table \ref{table:administration}. \newline 
-Note at this point that an unauthorized entity, who has gained access to both the data of the nurse staff and that of the administration, would struggle to correlate the entries. The shared available data fields insurance company, diagnosis and medication are likely generic enough to not point to a singular but to many patients. 
+In tandem with the stay and medical treatment of the patient, the administration of the hospital will want to collect the money from the patient's insurance. The insurance company together with the patient's personal insurance number will suffice as identification. 
+Administered medication will be imperative as this dictates the amount of money the hospital will get in addition to the fees for the stay. For this, the diagnosis will typically have to be added as a suitable reason. No further information is required. Limiting the amount of data here 
+is crucial as the data is exported to a third party. Which means that additional regulations will take effect. Minimizing the data leaving the hospital minimizes security risks. With these strict rules in place, the data can be adjusted as seen in Table \ref{table:administration}. \newline 
+Note at this point that an unauthorized entity, who has gained access to both the data of the nurse staff and that of the administration, would struggle to correlate the entries. The shared available data fields insurance company, diagnosis, and medication are likely generic enough to not point to a singular but to many patients. 
 
 \bigskip
 
@@ -120,16 +121,16 @@ Note at this point that an unauthorized entity, who has gained access to both th
             \hline
         \end{tabular}
     }
-    \caption{Data available for the administration. Note that only the insurance information, medication and diagnosis are not suppressed.}
+    \caption{Data available for the administration. Note that only the insurance information, medication, and diagnosis are not suppressed.}
     \label{table:administration}
     \end{center}
 \end{table}
 
-Diabetes, which afflicts over ten percent of the global population and demonstrates a rising prevalence, stands as one of the most common chronic diseases worldwide \cite{idf2023,WHODiabetes2023}. Given its mostly non-lethal progression and lifetime dependency on medication, 
-it has given rise to a substatial market. As cause, optimal treatment and cure remain subject to research, data of especially newer diabetes patients is in hot demand. To provide this data to research institutes in accordance with the regulations in place the hospital must ensure that no concrete patient can be reidentified. 
-Here, advanced anonymization techniques such as K-Anonymization come into place. Each attribute of the data entry can be assigned to one of three categories: personally identifiable, quasi identifying and sensitive attributes. To achieve k anonymity each entry must suppress the personally identifiable attributes, while keeping the sensitive attributes untouched. 
-Most importantly the quasi identifiable attributes of each data entry must be the same for at least k - 1 other entries of a data set. This is typically achieving with generalization of these attributes until k entries are found. In this use case the personally identifiable attributes are \textit{pid}, \textit{name} and \textit{insurance number}. 
-The quasi indentifying attributes are \textit{zip}, \textit{sex}, \textit{age} and \textit{insurance company}. The medical data comprive the sensitive attributes. A K anonymous version of this data extry is depicted in Table \ref{table:k_anon}. 
+Diabetes, which afflicts over ten percent of the global population and demonstrates a rising prevalence, stands as one of the most common chronic diseases worldwide \cite{idf2023, WHODiabetes2023}. Given its mostly non-lethal progression and lifetime dependency on medication, 
+it has given rise to a substantial market. As the cause, optimal treatment, and cure remain subject to research, data from especially newer diabetes patients is in hot demand. To provide this data to research institutes following the regulations in place the hospital must ensure that no concrete patient can be reidentified. 
+Here, advanced anonymization techniques such as K-Anonymization come into play. Each attribute of the data entry can be assigned to one of three categories: personally identifiable, quasi-identifying, and sensitive attributes. To achieve k-anonymity each entry must suppress the personally identifiable attributes - while keeping the sensitive attributes untouched. 
+Most importantly the quasi-identifiable attributes of each data entry must be the same for at least k - 1 other entries of a data set. This is typically achieved with generalization of these attributes until k entries are found. In this use case, the personally identifiable attributes are \textit{pid}, \textit{name}, and \textit{insurance number}. 
+The quasi-indentifying attributes are \textit{zip}, \textit{sex}, \textit{age}, and \textit{insurance company}. The medical data comprises sensitive attributes. A K anonymous version of this data extry is depicted in Table \ref{table:k_anon}. 
 
 \bigskip
 
@@ -148,35 +149,36 @@ The quasi indentifying attributes are \textit{zip}, \textit{sex}, \textit{age} a
                     \hline 
                     \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & M & \cellcolor{lightyellow} {[10 - 70]} & TK & \cellcolor{lightred} * & E11 & 19.1 & 5.07 & Metformin \\
                     \hline
-                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co & \cellcolor{lightred} * & E11 & 16.3 & 7.61 & Metformin \\
+                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co. & \cellcolor{lightred} * & E11 & 16.3 & 7.61 & Metformin \\
                     \hline
-                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co & \cellcolor{lightred} * & E10 & 18.9 & 7.99 & Insulin \\
+                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co. & \cellcolor{lightred} * & E10 & 18.9 & 7.99 & Insulin \\
                     \hline
-                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co & \cellcolor{lightred} * & E10 & 21.2 & 6.04 & Insulin \\
+                    \cellcolor{lightred} * & \cellcolor{lightred} * & \cellcolor{lightyellow} XXXXX & \cellcolor{lightyellow} \{M, F, D\} & \cellcolor{lightyellow} {[10 - 70]} & \cellcolor{lightyellow} ins. co. & \cellcolor{lightred} * & E10 & 21.2 & 6.04 & Insulin \\
                     \hline
                 \end{tabular}
             \end{adjustbox}
         }
-    \caption{K-anonymized data available for external research. The sensitive medical attribtues remains unchanged as indicated by the white cell background. Unlike the personally identifying attributes, which have been suppressed as denoted by the red cell background. The yellow cell background highlights the generalized quasi identifiable attributes. Note that the entries of the first group have unchanged values for the attributes \textit{sex} and \textit{ins. co.}. As all three original entries shared the same value it did not need to be generalized.}
+    \caption{K-anonymized data available for external research. The sensitive medical attributes remain unchanged as indicated by the white cell background. Unlike the personally identifying attributes, which have been suppressed as denoted by the red cell background. The yellow cell background highlights the generalized quasi-identifiable attributes. Note that the entries of the first group have unchanged values for the attributes \textit{sex} and \textit{ins. co.}. As all three original entries shared the same value it did not need to be generalized.}
     \label{table:k_anon}
     \end{center}
 \end{table}
 
-While the aforementioned diabetes patient use case scenario may appear unique and specific, the aspects and nuances are applicable in numerous contexts. The distinct data requirements for doctors, nurses, administration and research are anticipated to persist, albeit adapted, throughout the entire healthcare industry. 
-It is also viable in different sectors. Imagine security levels in government matters, trade secrets and specific customer knowledge in corporations or secrecy of correspondense for the transportation industry. Distributed event stores are utilized across all of these sectors with major players relying on Apache Kafka for their day to day needs \cite{KafkaPoweredBY}. 
+While the aforementioned diabetes patient use case scenario may appear unique and specific, the aspects and nuances are applicable in numerous contexts. The distinct data requirements for doctors, nurses, administration, and research are anticipated to persist, albeit adapted, throughout the entire healthcare industry. 
+It is also viable in different sectors. Imagine security levels in government matters, trade secrets, and specific customer knowledge in corporations or secrecy of correspondence for the transportation industry. Distributed event stores are utilized across all of these sectors with major players relying on distributed event stores for their everyday needs \cite{kafka}. 
 
-\section{Anonymization Techniques}
-Data anonymization is a multifaceted process tailored to meet application requirements, user groups and their specific needs. This section first goes in depth into masking functions, the cornerstone of data anonymization. It then explores table based techniques that look at the whole dataset to ensure privacy. In this context a \textit{datum} refers to a single piece of information e.g. a singular entry of a database or any one event of a data stream. Synonymous with it also used the word \textit{tuple}. A tuple is comprived of one or multiple \textit{attributes} (also called \textit{fields}). It is customary for individual tuples to be part of a bigger collection. In the static context they are collected in databases and grouped in tables. Data streams work analogous for dynamic operations. All tuples of the same database table or data stream are required to follow the same pattern. This refers to the sequence of attributes of each tuple. This pattern is fixed in a data schema associated with the table or stream. Sometimes it is appended to each datum in form of a header as seen exemplary in Table \ref{table:dia_patient}. As this substantially increases the size of each datum it is more common to define it once in the initialization step of the database table or data stream. \\
-While all forms of anonymization aim to alter the underlying sensitive information, e.g. the tuple's attributes containing perhaps personally identifiying information, in a way that makes it harder if not impossible to reconstruct, they can be further categorized based on their scope of operation:
+\section{Categorical Survey of Anonymization Techniques\label{sec:anonymization_hierarchy}}
+Data anonymization is a multifaceted process tailored to meet diverse application requirements and user needs. This section first categorizes the anonymization techniques based on their scope of operation, simultaneously setting them into context with each other through a hierarchical structure. It will then continue to go in-depth on each category, highlighting the intricacies of that category alone and providing insights, implementation considerations, and use cases to prominent examples. The aim is to provide a structured understanding of their application in various contexts.\par
+
+The categorization of anonymization techniques can be delineated as follows: 
 
 \begin{itemize}
     \item \textbf{Value-Based} Handles one tuple at a time and replaces the values of attributes independently. 
-    \item \textbf{Tuple-Based} Operates on individual attributes of a single tuple, but considers the values of the entire tuple for the change. 
-    \item \textbf{Attribute-Based} Extends the view from one tuple to a larger collection or table of data. Evaluates the values of singular attributes of the entire set and collectively makes changes to that attribute accordingly. 
+    \item \textbf{Tuple-Based} Operates on individual attributes of a single tuple - but considers the values of the entire tuple for the change. 
+    \item \textbf{Attribute-Based} Extends the view from one tuple to a larger collection or table of data. Evaluate the values of singular attributes of the entire set and collectively make changes to that attribute accordingly. 
     \item \textbf{Table-Based} Covers a table of data and perceives all attributes of each tuple. Adaptions to multiple attributes simultaneously are common. It can be argued that methods falling under this category are not masking functions but algorithms utilizing many masking functions to achieve anonymization on a table level.  
 \end{itemize}
 
-To better illuminate the relationship and hierarchy of the aforementioned categories as well as provide some examples, refer to Figure \ref{fig:hierarchy_mf}. 
+To better illuminate the relationship and hierarchy of the aforementioned categories as well as provide some examples, refer to Figure \ref{fig:hierarchy_mf}. These categorizations are critical for selecting suitable anonymization strategies in various real-world applications. Having outlined the structure and dimensions of the various masking functions, it is now time to take a closer look at the functionality and use cases, beginning with the value-based masking functions. 
 
 \begin{figure}[ht]
     \begin{tikzpicture}[node distance=1.5cm, auto, trim left=-2.5cm]
@@ -245,208 +247,24 @@ To better illuminate the relationship and hierarchy of the aforementioned catego
     \caption{Hierarchy of masking functions}\label{fig:hierarchy_mf} 
 \end{figure}
 
-\subsection{Value Based Masking Functions}
-Having outlined the structure and dimensions of the various masking functions, it is now time to take a closer look at the functionality and use cases of the examples given in Figure \ref{fig:hierarchy_mf} starting with the value based. \\
-\textbf{Suppression} aims to effectively delete the value by replacing the value of an attribute with a meaningless character, most commonly the asterisk \textit{*}. It is important to note, that actually removing the attribute from the tuple or replacing it will a null value would violate the data schema and thus negatively impact operability. The asterisk does the trick while maintaining the data schema. To work Suppression only requires a non-empty set of keys for the attributes that are supposed to be suppressed as parameter. Naturally, it leads to total information loss of the specfified fields. This can be particular useful for fields containing \ac{PII} like a person's home address as exemplary shown in Figure \ref{fig:suppression}. 
+\subsection{Value-Based Masking Functions}
+Value-based masking functions form the foundation of data anonymization. These functions focus on altering single values within a tuple. They play a pivotal role in the construction of more complex anonymization methods. Although integral, their application in isolation often falls short of providing robust protection, due to their limited scope of operation, which is restricted to a single attribute. Utilizing them together in the context of more complex anonymization strategies is essential in providing effective data protection. In Section \ref{sec:masking_functions} we have already covered these simple masking functions and refer the reader to that for more detail. For the sake of completeness and quick reference, we provide a short overview of the most prominent value-based masking functions: 
 
-\bigskip
+\begin{itemize}
+    \item \textbf{Suppression} Replaces a value with a generic value.
+    \item \textbf{Blurring} Alters a value by partial suppression.
+    \item \textbf{Substitution} Replaces one value with another valid value given a lookup table.
+    \item \textbf{Tokenization} Replaces one value with a random value. The mapping is stored in a database.
+    \item \textbf{Generalization} Generalizes a value using a predefined generalization hierarchy. 
+    \item \textbf{Bucketizing} Specialized version of Generalization referring to numerical values. They are generalized by discretizing the value range and replacing each value with the corresponding range. 
+    \item \textbf{Noise Methods} Adds noise to each value, where the noise can be additive or multiplicative.
+\end{itemize}
 
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            address \\
-            \hline
-            Smith Street 3 \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            address \\
-            \hline
-            * \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of suppression of an attribute.\label{fig:suppression}}
-\end{figure}
 
-A similar approach is applied in \textbf{Blurring}. Here the value of an attribute is replaced with arbitrary characters, typically \textit{X}s. It is distinguishable from Suppression in that not all characters of the value have to be replaced and even the amount of characters can remain the same. Imagine a user at the checkout of an online store that they have already purchased goods at prior to this session. Here the credit card information of that user was saved as part of the agreement from the previous session. The user is then given the option to use that credit card again, with it being specified as a sequence of blurred characters with only the last three digits in plain text as shown in Figure \ref{fig:blurring}. This allows the user to double-check the card information without exposing the credit card number to the network, screen capturers or bystanders. This operation also leads to high information loss but retains some usability of the value. The parameters for Blurring include the keys to blurr as well as optionally the number of characters and whether the amount of characters is to be maintained. Note, that setting the parameters to blur all characters and reduce the amount to one is equal in funtionality to Suppression. 
+\subsection{Tuple-Based Masking Functions}
+Extending the scope of operation from independent attributes to the tuple as a whole yields the tuple-based masking functions. The most notable candidate is \textbf{Conditional Substitution}. As can be expected the change to the tuple is identical to that of the value-based Substitution. The value of the attribute specified by the parameter is changed according to the given substitution dictionary. The key difference, however, is that a change only occurs if a certain condition is met. These are additionally provided as a parameter. They can be specified in a variety of different possible formats like a direct match, a numerical range, or even a regular expression. Before showcasing some examples consider the following definitions: \par
 
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            credit card \\
-            \hline
-            1234 5678 9123 4567 \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            credit card \\
-            \hline
-            XXXX XXXX XXXX X567 \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of blurring of an attribute.\label{fig:blurring}}
-\end{figure}
-
-\textbf{Substitution} replaces the value of the specified attribute with a predefined substitute. Figure \ref{fig:substitution} shows an example where a name is switched out with an arbitrary fake name from a library. While this masking function leads to substantial information loss, it seemingly maintains the integrity of the data from an outsider's perspective. This can make the data easier to work with, while still ensuring anonymity. As parameters the keys for the attributes that are supposed to be substituted are required in tandem with the intended substitutes. 
-
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            name \\
-            \hline
-            Martin Smith \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            name \\
-            \hline
-            John Doe \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of substitution of an attribute.\label{fig:substitution}}
-\end{figure}
-
-An alternative approach is \textbf{Tokenization}. Here values are also substituted, but not with some arbitrary replacement. Instead, the substitute is a specific token. These tokens can be reversed to restore the original value as long as a secret is known with which the token was created. There are different approaches to achieve this. The first one coming to mind is a database mapping token to the hash of the original value. Only access to the database as well as the hashing function will yield the correct original value from the token. Another approach is to omit the database and instead use a more sophisticated cryptographic algorithm to create the token, essentially encrypting the data. While this masking function manages to preserve the information, it requires substantial overhead in form of storage for the database and/or computing power for the cryptographic algorithms. This costly masking function is usually reserved for highly sensitive data. For instance passwords as illustrated in Figure \ref{fig:tokenization}.
-
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            password \\
-            \hline
-            MyPassword1 \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            password \\
-            \hline
-            d9f4c3b72c7935e5 \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of tokenization of an attribute.\label{fig:tokenization}}
-\end{figure}
-
-One of the most common masking functions is \textbf{Generalization}. Here, the value of an attribute is abstracted to a more general value. This effectively reduces the information, but does not remove it entirely. For example a datum with a residency field could generalize the exact location to a broader one. Instead of Berlin it would read Germany as shown in Figure \ref{fig:generalization}. This could then be even further generalized to Europe and so forth. Typically, entire generalization hierarchies are provided as parameter to facilitate this. It is crucial that these hierarchies are exhaustive of all possible arising values if no default is provided as generalization is ambiguous. These complete generalization hierarchies are required as parameters in addition to their respective attribute key. 
-
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            residency \\
-            \hline
-            Berlin \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            residency \\
-            \hline
-            Germany \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of the generalization of an attribute.\label{fig:generalization}}
-\end{figure}
-
-A special case of Generalization is \textbf{Bucketizing}. It functions similarly, but exclusively for numerical values. Ranges replace specific values in the tuple. Figure \ref{fig:bucketizing} shows an example where the age 27 is bucketized to the range {[20 - 30]}. Only a moderate amount of information is lost with this masking function. To deploy it requires the bucket sizes as well as the keys to the numerical attribute. 
-
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|}
-            \hline
-            age \\
-            \hline
-            27 \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|}
-            \hline
-            age \\
-            \hline
-            {[20 - 30]} \\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of bucketizing of an attribute.\label{fig:bucketizing}}
-\end{figure}
-
-Finally, there are the \textbf{Noise Methods}. Again, these only apply to numerical data. The idea is to modify the original values by adding noise. Typically, this noise is chosen randomly from a distribution. Utilizing the normal distribution with mean 0 it would ensure that the data over a period of time would retain its average and distribution. The standard deviation will then define how much each individual data point can diverge from the original value. The result will invalidate individual tuples but preserve the overall spread of the data in the long run. As an example Figure \ref{fig:noise} shows noise added to two attributes of a tuple. Note that with no loss to the generality one is decreased, while the other increased. 
-
-\bigskip
-
-\begin{figure}[ht]
-    \begin{center}
-    \footnotesize{
-        \renewcommand{\arraystretch}{1.5}
-        \begin{tabular}{|c|c|}
-            \hline
-            height & weight \\
-            \hline
-            185 & 83 \\
-            \hline
-            \end{tabular}
-            \quad $\longrightarrow$ \quad
-            \begin{tabular}{|c|c|}
-            \hline
-            height & weight  \\
-            \hline
-            181 & 84\\
-            \hline
-        \end{tabular}
-    }
-    \end{center}
-    \caption{Example of adding noise.\label{fig:noise}}
-\end{figure}
-
-\subsection{Tuple Based Masking Functions}
-Extending the scope of operation from independent attributes to the tuple as a whole yields the tuple based masking functions. The most notable candidate is \textbf{Conditional Substitution}. As can be expected the change to the tuple is identical to that of the value based Substitution. The value of the attribute specified by the parameter is changed according to the given substitution dictionary. The key difference, however, is that a change only occurs if a certain condition is met. These are additionally provided as a parameter. They can be specified in a variety of different possible formats like a direct match, a numerical range or even a regular expression. Before showcasing some examples consider the following definitions: \newline
-\\
-Let $T$ be a tuple defined as a fixed sequence of attributes $a_0$ to $a_n$, $T = (a_0, a_1, \dots, a_n)$. Also, let $i$, $j$ $\in \{0,1, \dots, n\}$. \\
+Let $T$ be a tuple defined as a fixed sequence of attributes $a_0$ to $a_n$, $T = (a_0, a_1, \dots, a_n)$. Also, let $i$, $j$ $\in \{0,1, \dots, n\}$. \par
 
 Further, a masking function for conditional substitution $mf_{cs}$ can be defined based on a condition $c$ evaluated on the attribute $a_i$, with a substitute $s$ for the attribute $a_j$:
 \vspace{-0.8em}
@@ -460,7 +278,7 @@ mf_{cs}(i, c, j, s) &=
 \end{aligned}
 \]
 
-Note, a match on c can take on different forms. An example of a conditional substitution masking function for a direct match on the value of one of the attributes is shown in Figure \ref{fig:condiSubValue}. It shows an excerpt of a database table with three entries. Remember that all tuples of a single database table share the same data scheme. For better understanding the header with the attribute's labels is shown in the first row of each table in the figure. It shows that the data in this table has two attributes, \textit{rank} and \textit{salary}. The masking function $mf_{cs}(0, 'Manager', 1, '*')$ is applied to every tuple in the table. It can be read as: if the attribute with index 0 matches on 'Manager', substitute the attribute with index 1 with '*'. Following this logic only one entry in the output was changed, as there was just one match.
+Note, that a match on c can take on different forms. An example of a conditional substitution masking function for a direct match on the value of one of the attributes is shown in Figure \ref{fig:condiSubValue}. It shows an excerpt of a database table with three entries. Remember that all tuples of a single database table share the same data scheme. For better understanding, the header with the attribute's labels is shown in the first row of each table in the figure. It shows that the data in this table has two attributes, \textit{rank} and \textit{salary}. The masking function $mf_{cs}(0, 'Manager', 1, '*')$ is applied to every tuple in the table. It can be read as: if the attribute with index 0 matches on 'Manager', substitute the attribute with index 1 with '*'. Following this logic only one entry in the output was changed, as there was just one match.
 
 \bigskip
 
@@ -496,7 +314,7 @@ Note, a match on c can take on different forms. An example of a conditional subs
     \caption{Conditional substitution with a direct match condition taking the entire tuple into consideration.\label{fig:condiSubValue}}
 \end{figure}
 
-Another example is shown in Figure \ref{fig:condiSubRange}. The condition in this case is a range. Naturally, it can only be applied to numerical attributes since there is a clear ordering of values. In the example the database table shows two attributes: \textit{name} and \textit{age}. The masking function employed is $mf_{cs}(1,[0, 18], 1, 'minor')$. Subsequently, the output shows two changes in the table as two entries match the condition. Note that this time the condition is evaluated on the same attribute as the substitution e.g. $i = j$. 
+Another example is shown in Figure \ref{fig:condiSubRange}. The condition in this case is a range. Naturally, it can only be applied to numerical attributes since there is a clear ordering of values. In the example, the database table shows two attributes: \textit{name} and \textit{age}. The masking function employed is $mf_{cs}(1,[0, 18], 1, 'minor')$. Subsequently, the output shows two changes in the table as two entries match the condition. Note that this time the condition is evaluated on the same attribute as the substitution e.g. $i = j$. 
 
 
 \bigskip
@@ -566,12 +384,13 @@ Finally, Figure \ref{fig:condiSubRegex} shows $mf_{cs}(0,'@example\backslash.com
         \end{tabular}
     }
     \end{center}
-    \caption{Regular expression as a condition for the substition as part of a tuple based masking function. \label{fig:condiSubRegex}}
+    \caption{Regular expression as a condition for the substitution as part of a tuple-based masking function. \label{fig:condiSubRegex}}
 \end{figure}
 
-\subsection{Attribute Based Masking Functions}
-Following the hierarchy of masking functions depicted in Figure \ref{fig:hierarchy_mf} this concludes the masking functions with Tuple-at-the-time semantics. Next, the focus shifts towards operations on tables, more specifically on collections of tuples. Before, the masking functions were applied to each tuple individually. The focus is to add more context to the anonymization and in return diminishing the information loss caused by anonymizing altogether. Also, it allows the better handling of outliers. Returning to the generalization example from Figure \ref{fig:generalization}, where the residency 'Berlin' was generalized to 'Germany'. If in an entire table there is only one german resident, it would be easy for an unauthorized party, who has gained access to this table, to reidentify the individual from the output. All the masking operation would have done is cost resources and lead to information loss within the system. This is of course not desirable. Fortunately, edge cases like these are unlikely for data with low spread or high density. And even in data sets with high spread and likelihood of outliers, situations like the aforementioned can be easily avoided with knowledge of the data and the correct choice of masking function for the appropriate edge cases e.g. Suppression. An approach that more complex anonymization techniques like the ones discussed in Section \ref{lit:data_streaming} employ inherently. The subsequent subsection will go into more depth on this as well. For the moment, it is crucial to understand that more input can lead to less information loss and more anonymization reliability. It does, however, come at higher computing cost as the findings in Chapter \ref{cha:chapter5} show. More input in the context of attribute based masking functions refers to more values from multiple tuples for the same attribute. Whithin the scope of this thesis it is essential to highlight the particular interest in data streams being the foundation of distributed event stores as opposed to static databases or bounded datasets. Data streams inherently pose additional challenges due to their unbounded nature. In Section \ref{lit:data_streaming} this has been addressed already and windowing was introduced as a means of discretizing data streams. In this context 'collections of tuples', 'table' and 'window' all refer to this same discretization: a finite number of tuples as working base obtained through windowing operations. It is worth mentioning that the parameters for windowing like window size can be included in the optimization of the anonymization itself. This particular nuance is looked into in Section \ref{sec:parameterOptimization} \newline
-Building on this understanding, \textbf{Aggregation} as an attribute based masking function leverages this principle. In essence, aggregation combines multiple values into one single value. This in turn will represent the attribute for all input tuples. This effectively reduces the information of an individual entry but preserves the underlying trend. By merging data it significantly reduces the reidentification probability of a single individual through this attribute. There is a variety of aggregation techniques, but they all have one thing in common. They work only on numerical values. Figure \ref{fig:aggregation} shows an example. The table contains six tuples, each tuple only has one attribute, \textit{age}. The right side of the arrow illustrates the result. Note that the amount of tuples remains unchanged, but now all tuples have the same value for the attribute. Depending on the aggregation type, which is written underneath each column, the values have been combined. The first column shows the sum, the second the median, the third the average, the fourth the maximum value found, the fifth the minimum value found, the sixth the number of input tuples and the last the most frequent value in the input table. 
+\subsection{Attribute-Based Masking Functions}
+Following the hierarchy of masking functions depicted in Figure \ref{fig:hierarchy_mf} this concludes the masking functions with Tuple-at-the-time semantics. Next, the focus shifts towards operations on tables, more specifically on collections of tuples. Before, the masking functions were applied to each tuple individually. The focus is to add more context to the anonymization and in return diminish the information loss caused by anonymizing altogether. Also, it allows the better handling of outliers. Returning to the generalization example from Figure \ref{fig:generalization}, where the residency 'Berlin' was generalized to 'Germany'. If in an entire table there is only one German resident, it would be easy for an unauthorized party, who has gained access to this table, to reidentify the individual from the output. All the masking operation would have done is cost resources and lead to information loss within the system. This is of course not desirable. Fortunately, edge cases like these are unlikely for data with low spread or high density. Even in data sets with high spread and the likelihood of outliers, situations like the aforementioned can be easily avoided with knowledge of the data and the correct choice of masking function for the appropriate edge cases e.g. Suppression. An approach that more complex anonymization techniques like the ones discussed in Section \ref{lit:data_streaming} employ inherently. The subsequent subsection will go into more depth on this as well. For the moment, it is crucial to understand that more input can lead to less information loss and more anonymization reliability. It does, however, come at a higher computing cost as the findings in Chapter \ref{cha:chapter5} show. More input in the context of attribute-based masking functions refers to more values from multiple tuples for the same attribute. Within the scope of this thesis, it is essential to highlight the particular interest in data streams being the foundation of distributed event stores as opposed to static databases or bounded datasets. Data streams inherently pose additional challenges due to their unbounded nature. In Section \ref{lit:data_streaming} this has been addressed already and windowing was introduced as a means of discretizing data streams. In this context 'collections of tuples', 'table', and 'window' all refer to this same discretization: a finite number of tuples as a working base obtained through windowing operations. It is worth mentioning that the parameters for windowing like window size can be included in the optimization of the anonymization itself. This particular nuance is looked into in Section \ref{sec:parameterOptimization} \par
+
+Building on this understanding, \textbf{Aggregation} as an attribute-based masking function leverages this principle. In essence, aggregation combines multiple values into one single value. This in turn will represent the attribute for all input tuples. This effectively reduces the information of an individual entry but preserves the underlying trend. By merging data it significantly reduces the reidentification probability of a single individual through this attribute. There is a variety of aggregation techniques, but they all have one thing in common. They work only on numerical values. Figure \ref{fig:aggregation} shows an example. The table contains six tuples, each tuple only has one attribute, \textit{age}. The right side of the arrow illustrates the result. Note that the amount of tuples remains unchanged, but now all tuples have the same value for the attribute. Depending on the aggregation type, which is written underneath each column, the values have been combined. The first column shows the sum, the second the median, the third the average, the fourth the maximum value found, the fifth the minimum value found, the sixth the number of input tuples, and the last the most frequent value in the input table. 
 
 \bigskip
 
@@ -623,7 +442,7 @@ Building on this understanding, \textbf{Aggregation} as an attribute based maski
     \caption{Aggregation operations on the "age" attribute.\label{fig:aggregation}}
 \end{figure}
 
-A special form of aggregation is \textbf{Univariate Microaggregation}. This masking function specifically optimizes the goal of minimizing information loss. The method accomplishes this by clustering similar data. The aggregation is then only applied on these groups. This approach yields a table with greater variance in data than what is observed with standard aggregation. Also, outliers have less effect on the overall table. Of course the clustering of data will require additional resources. One approach to univariate microaggregation is offered by Hansen and Mukherjee \cite{HansenUnivariateMicroaggregation}. They formulate the univariate microaggregation problem as a table consisting of $n$ entries to be divided into subgroups with at least $k$ observations with minimized spread of the original data within the subgroups. The authors transform the univariate microaggregation problem into an equivalent graph problem. They then prove that this graph problem can be solved using a shortest-path algorithm in polynomial time. The authors commence by collecting all $n$ values for the given attribute and sorting them in ascending order to form a vector $V$ with $|V| = n$. Each $V_i$ corresponds with an original value from the table, now at position $i, i \in [1,n]$. They go on to construct a directed weighted graph $G_{k,n}$. The nodes are labeled with $i$ and added with a source node with label $0$. The graph has a directed edge $e(i,j)$ from each node $i$ to node $j$ if $i + k \leq j \le i + 2k$. The edge $e(i,j)$ is then associated with the group of values, called the 'corresponding group', in $V$ with index $h$ where $i \le h \leq j$. The edge $e(i,j)$ is then assigned a weight equal to the \ac{SSE} of the corresponding group. Finally, they prove that the shortest path in $G_{k,n}$ is the optimal solution of the univariate microaggregation problem. Algorithm \ref{algo:uniMicroAgg} shows pseudocode for their proposed solution. 
+A special form of aggregation is \textbf{Univariate Microaggregation\label{lit:univariate}}. This masking function specifically optimizes the goal of minimizing information loss. The method accomplishes this by clustering similar data. The aggregation is then only applied to these groups. This approach yields a table with greater variance in data than what is observed with standard aggregation. Also, outliers have less effect on the overall table. Of course, the clustering of data will require additional resources. One approach to univariate microaggregation is offered by Hansen and Mukherjee \cite{HansenUnivariateMicroaggregation}. They formulate the univariate microaggregation problem as a table consisting of $n$ entries to be divided into subgroups with at least $k$ observations with minimized spread of the original data within the subgroups. The authors transform the univariate microaggregation problem into an equivalent graph problem. They then prove that this graph problem can be solved using a shortest-path algorithm in polynomial time. The authors commence by collecting all $n$ values for the given attribute and sorting them in ascending order to form a vector $V$ with $|V| = n$. Each $V_i$ corresponds with an original value from the table, now at position $i, i \in [1,n]$. They go on to construct a directed weighted graph $G_{k,n}$. The nodes are labeled with $i$ and added with a source node with label $0$. The graph has a directed edge $e(i,j)$ from each node $i$ to node $j$ if $i + k \leq j < i + 2k$. The edge $e(i,j)$ is then associated with the group of values, called the 'corresponding group', in $V$ with index $h$ where $i < h \leq j$. The edge $e(i,j)$ is then assigned a weight equal to the \ac{SSE} of the corresponding group. Finally, they prove that the shortest path in $G_{k,n}$ is the optimal solution of the univariate microaggregation problem. Algorithm \ref{algo:uniMicroAgg} shows pseudocode for their proposed solution. 
 
 \begin{algorithm}
     \SetAlgoLined
@@ -635,7 +454,7 @@ A special form of aggregation is \textbf{Univariate Microaggregation}. This mask
         \( k \): Minimum observations per group
     }
     \Output{
-        Shortest path in the form of a list of edges
+        The shortest path in the form of a list of edges
     }
     \( V \) ← Values of column \( a \) in \( T \) sorted in ascending order \\
     \( n \) ← \( |V| \) \\
@@ -655,8 +474,9 @@ A special form of aggregation is \textbf{Univariate Microaggregation}. This mask
     \label{algo:uniMicroAgg}
 \end{algorithm}
 
-Let us break this down. Remember that the core idea is to minimize information loss. Less spread in a group that is subject to aggregation is key here. Therefore, ordering the elements before grouping neighbors ensures that for any two elements within a group there does not exist another element in another group that lies between them. The question now is where to start and end each group. They then go on to construct a graph by adding nodes for each value in $V$. Intuitively, these are all possible starting positions of subgroups. The only constraint is that each group must at least contain $k$ observations. The compund inequality $i + k \leq j \le i + 2k$ for the creation of edges enforces this constraint and additionally limits the number of elements within a group to $2k - 1$. This is important as larger groups lead to more information loss. However, limiting the group size to exactly $k$ is not feasible, as $n$ is not required to be a multiple of $k$. If $n \mod k \neq 0$ at least one group must contain more than $k$ elements. Now each node $i$ is connected via an edge $e(i,j)$ to all nodes $j$ that are at least $k$ and at most $2k - 1$ elements away from it. The corresponding groups to each edge $e(i,j)$ are then evaluated for their closeness to each other. This is done by calculating the within squared error \ac{SSE}. First the mean $\mean x$ of the values in the corresponding group $cg$ is calculated. Then for each value $x_{i}$ in $cg$ the squared error $sqe_i$ is calculated, $sqe_i = (x_i - \mean x)^2$. The \ac{SSE} for a corresponding group $cg$ with $h$ values is then equal to the sum of $sqe_i$ for all $x_{i}$ in $cg$: $\ac{SSE} = \sum_{i=1}^{h}sqe_i$. With the directed weighted graph $G_{k,n}$ defined and an artificial source node labeled with $0$ connected to the first $k$ to $2k-1$ nodes properly weighted, a shortest path algorithm is applied. In Algorithm \ref{algo:uniMicroAgg} Dijkstra \cite{dijkstra2022note} is used. Finally, the optimal solution is the grouping according to the corresponding groups of all the edges of the shortest path.\\\\
-\indent\textbf{Shuffling} is another attribute based masking function. The technique involves rearranging the values of the specified attribute. The value of the attribute for an individual tuple is exchanged with that of another tuple in the same table. Thus, from an observing standpoint, the overall data actually remains exactly the same. No information is lost. In addition, reidentification on basis of the value of this attribute is no longer possible as the likelihood of the value belonging to the original tuple is slim. Consequently, shuffling diminishes the direct applicability or interpretability of the changed tuple. It becomes impossible to maintain valid statistical correlations among multiple attributes within a tuple. Also, users of the data can no longer rely on the veracity of individual data in the table. The negative impact on statistical value and tuple autheticity intensifies with increasing data spread. Mixing outlying values into otherwise inlying tuples can prove to be detrimental when performing data analysis. Taking into account Shuffling's strengts and weaknesses a primary area of application is with personally identifying attributes. In this context, outliers are nonexistent, and ideally, statistics on the basis of these attributes are rare or even absent. Consider the example shown in Figure \ref{fig:shuffling}. It depicts a table consisting of five tuples with three attributes \textit{name}, \textit{residency} and \textit{purchase} respectively. Shuffling is separately applied to each of the two attributes containing \ac{PII}, \textit{name} and \textit{residency}. Note, the names do not correspond with the residencies anymore, this is due to them being shuffled independently. Also observe that the residency of the second tuple is unchanged. When shuffling each element is switched with an element at a random index in the set. Therefore, it can occur that an element is actually shuffled with itself. The implementation itself can then be enhanced with a seed to effectively determine the randomness if that is to be desired. The overall result in this example shows that no person can be reidentified from a purchase, while the overall data volume and variety has been maintained. On a statistical standpoint no harm has been done either as the primary interest does not lie in personally indentifiable attributes. It is worth noting that while names are shuffled, they still persist in the dataset. In situations requiring extreme confidentiality, this might not provide sufficient anonymization. Another risk emerges if another database table with shared attributes exist; such tables could be used to cross-reference tuples, potentially nullifying the effectiveness of this masking function.
+Let us break this down. Remember that the core idea is to minimize information loss. Less spread in a group that is subject to aggregation is key here. Therefore, ordering the elements before grouping neighbors ensures that for any two elements within a group, there does not exist another element in another group that lies between them. The question now is where to start and end each group. They then go on to construct a graph by adding nodes for each value in $V$. Intuitively, these are all possible starting positions of subgroups. The only constraint is that each group must at least contain $k$ observations. The compound inequality $i + k \leq j < i + 2k$ for the creation of edges enforces this constraint and additionally limits the number of elements within a group to $2k - 1$. This is important as larger groups lead to more information loss. However, limiting the group size to exactly $k$ is not feasible, as $n$ is not required to be a multiple of $k$. If $n \mod k \neq 0$ at least one group must contain more than $k$ elements. Now each node $i$ is connected via an edge $e(i,j)$ to all nodes $j$ that are at least $k$ and at most $2k - 1$ elements away from it. The corresponding groups to each edge $e(i,j)$ are then evaluated for their closeness to each other. This is done by calculating the within-group squared error \ac{SSE}. First, the mean $\mean x$ of the values in the corresponding group $cg$ is calculated. Then for each value $x_{i}$ in $cg$ the squared error $sqe_i$ is calculated, $sqe_i = (x_i - \mean x)^2$. The \ac{SSE} for a corresponding group $cg$ with $h$ values is then equal to the sum of $sqe_i$ for all $x_{i}$ in $cg$: $\ac{SSE} = \sum_{i=1}^{h}sqe_i$. With the directed weighted graph $G_{k,n}$ defined and an artificial source node labeled with $0$ connected to the first $k$ to $2k-1$ nodes properly weighted, a shortest path algorithm is applied. In Algorithm \ref{algo:uniMicroAgg} Dijkstra \cite{dijkstra2022note} is used. Finally, the optimal solution is the grouping according to the corresponding groups of all the edges of the shortest path. \par
+
+\textbf{Shuffling} is another attribute-based masking function. The technique involves rearranging the values of the specified attribute. The value of the attribute for an individual tuple is exchanged with that of another tuple in the same table. Thus, from an observing standpoint, the overall data remains the same. No information is lost. In addition, reidentification based on the value of this attribute is no longer possible as the likelihood of the value belonging to the original tuple is slim. Consequently, shuffling diminishes the direct applicability or interpretability of the changed tuple. It becomes impossible to maintain valid statistical correlations among multiple attributes within a tuple. Also, users of the data can no longer rely on the veracity of individual data in the table. The negative impact on the statistical value and tuple authenticity intensifies with increasing data spread. Mixing outlying values into otherwise inlying tuples can prove to be detrimental when performing data analysis. Taking into account Shuffling's strengths and weaknesses a primary area of application is with personally identifying attributes. In this context, outliers are nonexistent, and ideally, statistics based on these attributes are rare or even absent. Consider the example shown in Figure \ref{fig:shuffling}. It depicts a table consisting of five tuples with three attributes \textit{name}, \textit{residency}, and \textit{purchase} respectively. Shuffling is separately applied to each of the two attributes containing \ac{PII}, \textit{name} and \textit{residency}. Note, that names do not correspond with the residencies anymore, this is due to them being shuffled independently. Also, observe that the residency of the second tuple is unchanged. When shuffling each element is switched with an element at a random index in the set. Therefore, an element may be shuffled with itself. The implementation itself can then be enhanced with a seed to effectively determine the randomness if that is to be desired. The overall result in this example shows that no person can be reidentified from a purchase, while the overall data volume and variety have been maintained. From a statistical standpoint, no harm has been done either as the primary interest does not lie in personally identifiable attributes. It is worth noting that while names are shuffled, they persist in the dataset. In situations requiring extreme confidentiality, this might not provide sufficient anonymization. Another risk emerges if another database table with shared attributes exists; such tables could be used to cross-reference tuples, potentially nullifying the effectiveness of this masking function.
 
 
 \bigskip
@@ -683,26 +503,26 @@ Let us break this down. Remember that the core idea is to minimize information l
         \quad $\longrightarrow$ \quad
         \begin{tabular}{|c|c|c|}
             \hline
-            name & residency & purchase \\
+            \cellcolor{lightyellow} name & \cellcolor{lightyellow} residency & purchase \\
             \hline
-            John & Townsville & Laptop \\
+            \cellcolor{lightyellow} John & \cellcolor{lightyellow} Townsville & Laptop \\
             \hline
-            Jane & Cityburg & Teapot \\
+            \cellcolor{lightyellow} Jane & Cityburg & Teapot \\
             \hline
-            Alice & Villagetop & Desk \\
+            \cellcolor{lightyellow} Alice & \cellcolor{lightyellow} Villagetop & Desk \\
             \hline
-            Bob & Hillside & Camera \\
+            \cellcolor{lightyellow} Bob & \cellcolor{lightyellow} Hillside & Camera \\
             \hline
-            Eve & Lakefront & Bookshelf \\
+            \cellcolor{lightyellow} Eve & \cellcolor{lightyellow} Lakefront & Bookshelf \\
             \hline
         \end{tabular}
     }
     \end{center}
-    \caption{Arbitrary customer data where the values of the attribute "name" as well as "residency" is shuffled throughout the table. \label{fig:shuffling}}
+    \caption{Arbitrary customer data where the values of the attribute "name" as well as "residency" are shuffled throughout the table. \label{fig:shuffling}}
 \end{figure}
 
-\subsection{Table Based Anonymization Techniques}
-Extending the scope of operation from individual attributes within a larger collection of tuples to the entirety of the tuple with all its attributes, it is in this context the concept of table based anonymization techniques emerges. It is essential at this point to remark that these table based anonymization techniques rely on a fundamentally different premise than masking functions. While masking functions main aim is to obscure or change pieces of data, table based anonymization techniques operate on a holistic approach. The individual datum is only regarded as part of the larger set, which in turn is to be remolded to fit into predefined data privacy policies. To elaborate on this difference further think of the underlying methodology of the masking functions thus far. They all intend on masking sensitive information be it in form of an attribute or tuple, they make specific changes to it to ensure that individual values are no longer recognizable. They suppress, obscure and generalize the original values. The main intent here is to mask or hide the sentive information, essentially camouflaging it to deter any reidentification. On the other hand table based anonymization techniques do not target individual data points. They use more sophisticated methods of analyzing the data set as a whole and transforming the entire table ensuring that it aligns with established privacy standards. To facilitate the comprehension of these concepts, consider the Table \ref{table:WorkingExample} as a working example throughout this subsection. It depicts a table with five columns. In typical relational databases, attributes can be categorized into three main types: Personally Identifiable Information (PII), Quasi-identifiers, and Sensitive attributes. Personally Identifiable Information (PII) is defined as any information that can be used to explicitly identify an individual. In this example the \textit{name} attribute serves this purpose. Quasi-identifiers are attributes that can be used to implicitly identify an individual when correlated with other information. In the current example, the attributes \textit{residency} and \textit{age} function as quasi-identifiers. Sensitive attributes contain information collected about an individual but must be protected from being traced back to the individual once anonymized. In this table, \textit{diagnosis} serves as a sensitive attribute. Finally, the example contains a nameless leading column, marked as 'Row Index'. While not part of the table's data, it serves as a reference to facilitate the reader's understanding, especially as rows will be rearranged and anonymized subsequently.
+\subsection{Table-Based Anonymization Techniques}
+Extending the scope of operation from individual attributes within a larger collection of tuples to the entirety of the tuple with all its attributes, it is in this context the concept of table-based anonymization techniques emerges. It is essential at this point to remark that these table-based anonymization techniques rely on a fundamentally different premise than masking functions. While masking functions' main aim is to obscure or change pieces of data, table-based anonymization techniques operate on a holistic approach. The individual datum is only regarded as part of the larger set, which in turn is to be remolded to fit into predefined data privacy policies. To elaborate on this difference further think of the underlying methodology of the masking functions thus far. They all intend on masking sensitive information be it in the form of an attribute or tuple, they make specific changes to it to ensure that individual values are no longer recognizable. They suppress, obscure, and generalize the original values. The main intent here is to mask or hide the sensitive information, essentially camouflaging it to deter any reidentification. On the other hand table based anonymization techniques do not target individual data points. They use more sophisticated methods of analyzing the data set as a whole and transforming the entire table ensuring that it aligns with established privacy standards. To facilitate the comprehension of these concepts, consider Table \ref{table:WorkingExample} as a working example throughout this subsection. It depicts a table with five columns. In typical relational databases, attributes can be categorized into three main types: Personally Identifiable Information (PII), Quasi-identifiers, and Sensitive attributes. Personally Identifiable Information (PII) is defined as any information that can be used to explicitly identify an individual. In this example, the \textit{name} attribute serves this purpose. Quasi-identifiers are attributes that can be used to implicitly identify an individual when correlated with other information. In the current example, the attributes \textit{residency} and \textit{age} function as quasi-identifiers. Sensitive attributes contain information collected about an individual but must be protected from being traced back to the individual once anonymized. In this table, \textit{diagnosis} serves as a sensitive attribute. Finally, the example contains a nameless leading column, marked as 'Row Index'. While not part of the table's data, it serves as a reference to facilitate the reader's understanding, especially as rows will be rearranged and anonymized subsequently.
  
 \bigskip
 
@@ -739,14 +559,14 @@ Extending the scope of operation from individual attributes within a larger coll
             \end{tabular}
         }
     \end{center}
-    \caption{Working example for table based anonymization containing a table with four attributes marked above with their corresponding category. Additionally, there is a leading column, which is not part of the data, but serves as reference.\label{table:WorkingExample}}
+    \caption{Working example for table-based anonymization containing a table with four attributes marked above with their corresponding category. Additionally, there is a leading column, which is not part of the data - but serves as reference.\label{table:WorkingExample}}
 \end{table}
 
-The most notable concept is \textbf{\textit{k}-anonymity}. In the definition by Sweeney from 2002 \cite{sweeney2002kanonymity} k-anonymity demands that any one entry in a table must be indistinguishable to $k - 1$ others in regard to its quasi-identifiers. Table \ref{table:kanon} shows a 3-anonymized version of the working example. The entries were grouped into sizes of $k=3$ according to their similarity in quasi-identifiers. These then were generalized to encompass all values in a group making them indistinguishable. The \textit{name} was suppressed, while the \textit{diagnosis} remained unchanged. Now no individual can be reidentified given this table. Over the years a number of algorithms have emerged to efficiently transform a set of data to conform to k-anonymity. Notabely, this includes Datafly by Sweeney herself \cite{sweeney1997datafly} as well as Mondrian \cite{lefevre2006mondrian} and Incognito \cite{lefevre2005incognito} by LeFevre et al. Each of these algorithms has its own computational complexity, quality of results, and applicability to different kinds of data. Datafly for example is more suited for categorical data, while Mondrian is more optimized for numerical data whereas Incognito focuses on the optimization for computational efficiency. As this thesis's focal point is dynamic data in the form of data streams another algorithm emerges as the most relevant - 'CASTLE: a $\delta$-constrained scheme for $k_s$-anonymizing data streams' by Cao et al. \cite{Cao2008}. 
+The most notable concept is \textbf{\textit{k}-anonymity}. In the definition by Sweeney from 2002 \cite{sweeney2002kanonymity} k-anonymity demands that any one entry in a table must be indistinguishable from $k - 1$ others regarding its quasi-identifiers. Table \ref{table:kanon} shows a 3-anonymized version of the working example. The entries were grouped into sizes of $k=3$ according to their similarity in quasi-identifiers. These then were generalized to encompass all values in a group making them indistinguishable. The \textit{name} was suppressed, while the \textit{diagnosis} remained unchanged. Now no individual can be reidentified given this table. Over the years several algorithms have emerged to efficiently transform a set of data to conform to k-anonymity. Notabely, this includes Datafly by Sweeney herself \cite{sweeney1997datafly} as well as Mondrian \cite{lefevre2006mondrian} and Incognito \cite{lefevre2005incognito} by LeFevre et al. Each of these algorithms has its computational complexity, quality of results, and applicability to different kinds of data. Datafly for example is more suited for categorical data, while Mondrian is more optimized for numerical data whereas Incognito focuses on the optimization for computational efficiency. As this thesis's focal point is streaming data another algorithm emerges as the most relevant - 'CASTLE: a $\delta$-constrained scheme for $k_s$-anonymizing data streams' by Cao et al. \cite{Cao2008}. 
 
 \subsubsection{CASTLE\label{lit:castle}}
-CASTLE stands for Continuously Anonymizing STreaming data via adaptive cLustEring. Streaming data differs from static databases in two key aspects: first, it is unbounded, necessitating an approach that can handle data of indeterminate size. The second distinction is that streaming data is append-only; that is, entries in a data stream are not modified or deleted once added. However, the significance of entries may diminish over time, a factor that the authors of CASTLE address by focusing on the \textit{freshness} of the data. They do this by defining a dynamic variant of k-anonymity called $k_s$-anonymity. Each tuple $t$ of a stream $S$ consists, as always, of personally identying attributes $p_1, \dots, p_n$, quasi-identifiers $q_1, \dots, q_n$ and sensitive attributes $s_1,\dots, s_n$. Additionally, it is given another attribute, the position $p$ in $S$. The anonymized result of the stream $S$ is termed $S_{out}$. Given a position $P$, the authors consider $S_{out}$ \textit{$k_s$ anonymized up to P} if the collection of all tuples with $t.p \le P$ in $S_{out}$ is k-anonymized. To further facilitate the requirement of freshness they add a $\delta$-constraint to their scheme. It says that any such stream $S$ satisfied the $\delta$-constraint if all tuples with a position less than $t.p - \delta$ are already in $S_{out}$. Keep in mind that there is a time difference, the processing time, between $S$ and $S_{out}$. The algorithm consumes the plaintext stream $S$ one tuple at a time and produces the anoynmized stream $S_{out}$ in  batches. The $\delta$-constraint limits the number of tuples that are being processed by CASTLE at any one time and subsequently ensures that fresh data is produced to $S_{out}$. \newline
-\indent Minimizing information loss is important and for k-anonymity the only leeway lies within the quasi-identifiers as they are generalized. Sensitive attributes remain untouched and \ac{PII} is suppressed. To be able to minimize information loss, it first has to be quantified. For a numerical attribute $q_i$ and the generalization $g$ to the range $[l,u]$, from the domain $[L,U]$ of $q_i$, the corresponding information loss is defined by the authors as follows: 
+CASTLE stands for Continuously Anonymizing STreaming data via adaptive clustering. Streaming data differs from static databases in two key aspects: first, it is unbounded, necessitating an approach that can handle data of indeterminate size. The second distinction is that streaming data is append-only; that is, entries in a data stream are not modified or deleted once added. However, the significance of entries may diminish over time, a factor that the authors of CASTLE address by focusing on the \textit{freshness} of the data. They do this by defining a streaming variant of k-anonymity called $k_s$-anonymity. Each tuple $t$ of a stream $S$ consists, as always, of personally identying attributes $p_1, \dots, p_n$, quasi-identifiers $q_1, \dots, q_n$ and sensitive attributes $s_1,\dots, s_n$. Additionally, it is given another attribute, the position $p$ in $S$. The anonymized result of the stream $S$ is termed $S_{out}$. Given a position $P$, the authors consider $S_{out}$ \textit{$k_s$ anonymized up to P} if the collection of all tuples with $t.p \le P$ in $S_{out}$ is k-anonymized. To further facilitate the requirement of freshness they add a $\delta$-constraint to their scheme. It says that any such stream $S$ satisfied the $\delta$-constraint if all tuples with a position less than $t.p - \delta$ are already in $S_{out}$. Keep in mind that there is a time difference, the processing time, between $S$ and $S_{out}$. The algorithm consumes the plaintext stream $S$ one tuple at a time and produces the anonymized stream $S_{out}$ in batches. The $\delta$ constraint limits the number of tuples that are being processed by CASTLE at any one time and subsequently ensures that fresh data is produced to $S_{out}$. \par
+Minimizing information loss is important and for k-anonymity the only leeway lies within the quasi-identifiers as they are generalized. Sensitive attributes remain untouched and \ac{PII} is suppressed. To be able to minimize information loss, it first has to be quantified. For a numerical attribute $q_i$ and the generalization $g$ to the range $[l,u]$, from the domain $[L, U]$ of $q_i$, the corresponding information loss is defined by the authors as follows: 
 
 \begin{center}
     $VInfoLoss(g) = \frac{u - l}{U - L}$
@@ -804,14 +624,28 @@ The information loss for the generalization $g$ of a categorical attribute to a 
     $VInfoLoss(g) = \frac{|S_v| - 1}{|S| - 1}$
 \end{center}
 
-Here, $|S_v|$ is the number of leaf nodes of the subtree rooted at $v$ and $|S_v|$ is the overall number of leaf nodes in the generalization hierarchy. No generalization, e.g. the attribute remaining the value of a leaf node in its generaliation hierarchy, would lead to $\frac{1-1}{|S| - 1} = 0$ no information loss. An example of the attribute \textit{residence} and its generalization hierarchy as it is shown in Figure \ref{fig:residency_hierarchy} would be the generalization to 'Germany' leading to an information loss of $\frac{3-1}{9-1} = \frac{2}{8}$. \\
+Here, $|S_v|$ is the number of leaf nodes of the subtree rooted at $v$ and $|S_v|$ is the overall number of leaf nodes in the generalization hierarchy. No generalization, e.g. the attribute remaining the value of a leaf node in its generalization hierarchy, would lead to $\frac{1-1}{|S| - 1} = 0$ no information loss. On the other hand, a generalization leading to complete information loss e.g. generalization to the root of the generalization tree is equal to $\frac{|S| - 1}{|S| - 1} = 1$. An example of the attribute \textit{residence} and its generalization hierarchy as it is shown in Figure \ref{fig:residency_hierarchy} would be the generalization to 'Germany' leading to an information loss of $\frac{3-1}{9-1} = \frac{2}{8}$. \\
 Overall, the information loss $G$ due to the generalization of its $n$ quasi-identifiers is defined as follows: 
 
 \begin{center}
     $VInfoLoss(G) = \frac{1}{n}\sum_{i=1}^{n}VInfoLoss(g_i)$
 \end{center}
 
-The CASTLE scheme revolves around the clustering of data. Each cluster encompasses a number of tuples and is defined by the common generalization of the quasi-identifiers of its members. As mentioned before the algorithm consumes one tuple $t$ at a time from the stream. Information loss is key to the assignment of $t$ to a cluster. For all clusters the enlargement cost is determined. It is the difference in information loss of the cluster if it generalized its quasi-identifiers to include $t$ and the current information loss of the cluster. If $t$ already fits whithin the generalization of the cluster, the enlargement cost is $0$. The tuple is then assigned to the cluster with the minimal enlargement cost. 
+The CASTLE scheme revolves around the clustering of data. Each cluster encompasses some tuples and is defined by the common generalization of the quasi-identifiers of its members. As mentioned before the algorithm consumes one tuple $t$ at a time from the input stream. Information loss is key to the assignment of $t$ to a cluster. For all clusters, the enlargement cost is determined. The enlargement cost is the additional information loss through further generalization of the cluster to include $t$. It is calculated for a cluster $C$ as follows: 
+
+\begin{center}
+    $Enlargement(C,t) = \sum_{i=1}^{n}(InfoLoss(\hat{g}_i) - InfoLoss(g_i))$
+\end{center}
+
+The current generalization of $C$ for the attribute $i$ is denoted as $g_i$ and the generalization to include $t_i$ as $\hat{g}_i$. Consider again the working example of Table \ref{table:WorkingExample}. The generalization of the quasi-identifier \textit{residency} is in accordance with Figure \ref{fig:residency_hierarchy} and for \textit{age} it is in buckets of size $5$ for the domain [0,100]. Imagine the tuples are consumed in order of their row index and the current tuple $t$ has position 6. At this point there are three Clusters, $C_1$, $C_2$ and $C_3$ with generalizations $G_1 = (Germany, [25,35])$, $G_2 = (UK, [20,45])$ and $G_3 = (Madrid,[55,60])$ respectively. To include $t$ the enlargement cost for $G_1$ is $Enlargement(G_1, t) = (2/8 - 2/8) + ((55-25) - (35-25))/ (100 - 0) = 0 + 20/100 = 0.2$. Intuitively,  this is to be expected as 'Stuttgart' is within the 'Germany' generalization and the age range has to be extended by 20 within a domain of 100. Similarly, the other enlargement costs are calculated: $Enlargement(G_2, t) = (1 - 2/8) + 10/100 = 0.85$; $Enlargement(G_3, t) = (5/8 - 0) + 5/100 = 0.675$. As $Enlargement(G_1, t) < Enlargement(G_3, t) < Enlargement(G_2, t)$, $t$ is assigned to $G_1$. \par
+
+\indent With every incoming tuple $t$ the freshness of the data already within the system is evaluated. This is enforced by the $\delta$ constraint. Should the system include a tuple with a position less than $t.p - \delta$ it is marked as expired. Before any new tuple is consumed, the expired tuple is subject to be output. To adhere to k-anonymity in the output stream at least $k-1$ other tuples must be indistinguishable from the expired tuple in the output. Therefore, not only the expired tuple itself - but its corresponding cluster is ejected with the generalization of the cluster. Here, the size of the cluster is essential to consider. It must be at least k to ensure k-anonymity. If the size of the expired cluster, however, is smaller than k it must be merged with another cluster. Again the information loss is the key metric. The merge of the expired cluster with all existing clusters is evaluated by its enlargement cost. This cost is calculated similarly as for the enlargement of a cluster to encompass a tuple. The cluster with the smallest enlargement cost is chosen and the merged cluster with their shared generalizations is subject to be output. Furthermore, a cluster should also not be too large, when it is output. The bigger the cluster the more generalization it is likely to have undertaken, and thus more information has been lost. Any cluster larger than 2k in size is therefore split. CASTLE reorganizes the cluster into subclusters with at least size k, whose generalizations lead to less information loss. It draws inspiration from \ac{KNN} algorithms to efficiently find dense subclusters. CASTLE then outputs the subclusters. Any output cluster is not deleted, it is emptied of its tuples (to save storage), but the generalizations can still be useful and are saved for reuse in a set of reused clusters $KC$. If a cluster is expired but is not of size k, its generalizations can be checked against the $KC$, should it fit any of the already output clusters it can be output with the generalizations of that cluster as it can be sure that at least k other tuples exist in the output with the same generalizations. The reuse technique mitigates the need for expensive cluster merges and splits. However, the authors of CASTLE realize that it also leaves the output open to attacks due to the overlapping of clusters. Say two clusters $C_1$ and $C_2$ were output with their only difference being the generalization of the \textit{age} interval being [25-35] and [20-35] respectively. If at a later stage, a single tuple is output with the gernalization of $C_2$ an attacker watching the output of the stream could infer, that the tuple's age is actually within the interval [20-25]. If the age was in [25-35] it would have been output with that generalization as the information loss of that cluster is lower. To avoid this, reused clusters are examined for overlap, and if it exists a random cluster's generalizations are chosen instead of the one with minimal information loss. \par 
+
+They optimize further by taking into consideration the unbound nature of data streams. It can be expected that the distribution of the data will not remain constant over time. Therefore, a fixed value $\tau$ for the maximum enlargement cost is not ideal. Instead, it reflects the information loss of the last $\mu$ output clusters, where $\mu$ is an input parameter. This will reflect the current expected variance of data and assist in maintaining a constant amount of clusters with ideally similar spread. They go even further with this concept by introducing another input parameter $\beta$ limiting the maximum amount of clusters at any one moment in the system. This not only prevents large numbers of clusters, which need storage as well as computation power to calculate enlargement costs every time a new tuple arrives. But also reduces the amount of small-sized clusters and subsequent expensive merge operations. If an incoming tuple would require a new cluster, but $\beta$ has been reached, it will instead be pushed to the existing cluster with minimal enlargement cost regardless of $\tau$. \par
+
+Another consideration they made is regarding outliers. In the context of CASTLE, an outlier can be understood as a cluster, with a small size (less than k) and a long lifetime. When a tuple in such a cluster expires, a merge of clusters would lead to potentially high information loss across multiple clusters. To avoid this the tuple is instead suppressed and output on its own. This of course means maximum information lost for that one tuple, but it is worth considering what the merge would have cost. \\ 
+We refer to the original paper CASTLE by Cao et al. \cite{Cao2008} for the pseudocode of the algorithm as it goes in-depth on its various components. For the working example, the output for a 3-anonymized version is shown in Table \ref{table:kanon}.
+
 
 \begin{table}[ht]
     \begin{center}
@@ -843,10 +677,10 @@ The CASTLE scheme revolves around the clustering of data. Each cluster encompass
             \end{tabular}
         }
     \end{center}
-    \caption{3-anonymized version of the working example. Suppressed fields are in red cells, generalized fields in yellow. \label{table:kanon}}
+    \caption{3-anonymized version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow. \label{table:kanon}}
 \end{table}
 
-While k-anonymity offers protection against identity disclosure, it is insufficient for guarding against attribute disclosure. Specifically, k-anonymity does not impose diversity on sensitive attributes within each equivalence class (i.e., a group of at least k elements indistinguishable in respect to their quasi-identifiers). As a result, an attacker can still infer the sensitive attribute of an individual with a high degree of confidence if all k records in the same equivalence class share the same sensitive value. Recall the 3-anonymized version of the example in Table \ref{table:kanon}. All entries within the first group share the same value for the sensitive attribute \textit{diagnosis}. To mitigate this vulnerability, \mbox{\textbf{\textit{l}-diversity}} is introduced as an enhancement to k-anonymity. It requires that each equivalence class contain at least $l$ distinct values for the sensitive attributes, thereby adding a layer of protection against attribute disclosure. Concretely, Machanavajjhala et al. define the principle of l-diversity in their paper "l-Diversity: Privacy Beyond k-Anonymity" \cite{machanavajjhala2007ldiversity} as follows: "A $q^*$-block is $l$-diverse if it contains at least  well-represented values for the sensitive attribute S. A table is $l$-diverse if every $q^*$-block is $l$-diverse." In this context a "$q^*$-block" refers to an equivalence class and, in its simplest form, "well-represented" is to be understood as \textit{distinct} values according to their definition. This is also the definition used by Cao et al. in CASTLE when illuminating their extension of the algorithm proposed by them to allow for the adherence of l-diversity. In fact the extension refers only to a small change within the delta constraint logic of their algorithm as well as a renewed cluster splitting approach. Essentially, it ensures that clusters that are meant to be returned are certain to contain at least l different values for the sensitive attributes. If this is not the case clusters are merged and subsequently bucketized in accordance to their values of the sensitive attributes. Should a bucket contain k elements it is ready to be split from the rest and output. Take a look at Table \ref{table:ldiversity}, it shows a 2-diverse version of the working example. The groups have been adjusted to ensure that they each conatin at least two distinct sensitive values. This has come at the cost of generalizing the \textit{residency} attribute one more time. 
+While k-anonymity offers protection against identity disclosure, it is insufficient for guarding against attribute disclosure. Specifically, k-anonymity does not impose diversity on sensitive attributes within each equivalence class (i.e., a group of at least k elements indistinguishable concerning their quasi-identifiers). As a result, an attacker can still infer the sensitive attribute of an individual with a high degree of confidence if all k records in the same equivalence class share the same sensitive value. Recall the 3-anonymized version of the example in Table \ref{table:kanon}. All entries within the first group share the same value for the sensitive attribute \textit{diagnosis}. To mitigate this vulnerability, \mbox{\textbf{\textit{l}-diversity}} is introduced as an enhancement to k-anonymity. It requires that each equivalence class contain at least $l$ distinct values for the sensitive attributes, thereby adding a layer of protection against attribute disclosure. Concretely, Machanavajjhala et al. define the principle of l-diversity in their paper "l-Diversity: Privacy Beyond k-Anonymity" \cite{machanavajjhala2007ldiversity} as follows: "A $q^*$-block is $l$-diverse if it contains at least  well-represented values for the sensitive attribute S. A table is $l$-diverse if every $q^*$-block is $l$-diverse." In this context, a "$q^*$-block" refers to an equivalence class and, in its simplest form, "well-represented" is to be understood as \textit{distinct} values according to their definition. This is also the definition used by Cao et al. in CASTLE when illuminating their extension of the algorithm proposed by them to allow for the adherence of l-diversity. The extension refers only to a small change within the delta constraint logic of their algorithm as well as a renewed cluster splitting approach. Essentially, it ensures that clusters that are meant to be returned are certain to contain at least $l$ different values for the sensitive attributes. If this is not the case clusters are merged and subsequently bucketized following the values of the sensitive attributes. Should a bucket contain k elements it is ready to be split from the rest and output. Take a look at Table \ref{table:ldiversity}, which shows a 2-diverse version of the working example. The groups have been adjusted to ensure that they each contain at least two distinct sensitive values. This has come at the cost of generalizing the \textit{residency} attribute one more time. 
 
 \begin{table}[ht]
     \begin{center}
@@ -878,10 +712,10 @@ While k-anonymity offers protection against identity disclosure, it is insuffici
             \end{tabular}
         }
     \end{center}
-    \caption{2-diverse version of the working example. Suppressed fields are in red cells, generalized fields in yellow.\label{table:ldiversity}}
+    \caption{2-diverse version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow.\label{table:ldiversity}}
 \end{table}
 
-Adhering to the l-diversity principle, however, does not protect against attackers with background knowledge. Similarity attacks for example, which exploit the inherent characteristics and structural patterns within the data to compromise their anonymity, are still effective. In the context of the 2-diverse table presented earlier (see Table \ref{table:ldiversity}), the susceptibility to similarity attack becomes evident. Take, for instance, the first equivalence class characterized by residency in the EU and age between 25 and 55 years. The diagnoses within this class - Covid and Asthma - are both lung-related conditions. An attacker could easily infer that an individual belonging to this group is highly likely to be suffering from a respiratory disease. This is addressed by \textbf{\textit{t}-Closeness} as it takes the distribution of sensitive attributes into consideration. Li et al., who have coined the term in their paper 't-Closeness: Privacy Beyond k-Anonymity and l-Diversity' \cite{li2007tcloseness}, define the t-closeness principle as follows: "An equivalence class is said to have t-closeness if the distance between the distribution of a sensitive attribute in this class and the distribution of the attribute in the whole table is no more than a threshold t. A table is said to have t-closeness if all equivalence classes have t-closeness.". This principle serves as an enahnced metric for privacy preservation by addressing the distributional skewness in sensitive attributes that might otherwise lead to privacy leaks. The advantage of t-Closeness stemming from the face that the overall distribution of the sensitive attributes is mimiced in each equivalence class, thereby minimizing the changes of attribute disclosure thorough background knowledge or data patterns. This principle applied to the working example is shown in Table \ref{table:tcloseness}. As the overall distribution of respiratory diseases in the original table (Table \ref{table:WorkingExample}) is $2/3$ the entry with row index 4 instead of 7 is exchanged within the first and third group. This leads to a preservation of the distribution at a minor cost of generalization in the \textit{age} quasi-identifier. 
+Adhering to the l-diversity principle, however, does not protect against attackers with background knowledge. Similarity attacks for example, which exploit the inherent characteristics and structural patterns within the data to compromise their anonymity, are still effective. In the context of the 2-diverse table presented earlier (see Table \ref{table:ldiversity}), the susceptibility to similarity attack becomes evident. Take, for instance, the first equivalence class characterized by residency in the EU and age between 25 and 55 years. The diagnoses within this class - Covid and Asthma - are both lung-related conditions. An attacker could easily infer that an individual belonging to this group is highly likely to be suffering from a respiratory disease. This is addressed by \textbf{\textit{t}-Closeness} as it considers the distribution of sensitive attributes. Li et al., who have coined the term in their paper 't-Closeness: Privacy Beyond k-Anonymity and l-Diversity' \cite{li2007tcloseness}, define the t-closeness principle as follows: "An equivalence class is said to have t-closeness if the distance between the distribution of a sensitive attribute in this class and the distribution of the attribute in the whole table is no more than a threshold t. A table is said to have t-closeness if all equivalence classes have t-closeness.". This principle serves as an enhanced metric for privacy preservation by addressing the distributional skewness in sensitive attributes that might otherwise lead to privacy leaks. The advantage of t-closeness stems from the fact that the overall distribution of the sensitive attributes is mimicked in each equivalence class, thereby minimizing the changes in attribute disclosure through background knowledge or data patterns. This principle applied to the working example is shown in Table \ref{table:tcloseness}. As the overall distribution of respiratory diseases in the original table (Table \ref{table:WorkingExample}) is $2/3$ the entry with row index 4 instead of 7 is exchanged within the first and third group. This leads to a preservation of the distribution at a minor cost of generalization in the \textit{age} quasi-identifier. 
 
 \begin{table}[ht]
     \begin{center}
@@ -913,15 +747,87 @@ Adhering to the l-diversity principle, however, does not protect against attacke
             \end{tabular}
         }
     \end{center}
-    \caption{T-closeness version of the working example. Suppressed fields are in red cells, generalized fields in yellow.\label{table:tcloseness}}
+    \caption{T-closeness version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow.\label{table:tcloseness}}
 \end{table}
 
-An honorable mention for the table based anonymization techniques is \textbf{Multivariate Microaggregation}. This method extends Univariate Microaggregation by simultaneously considering multiple attributes and aggregating them in a conjunctive manner. To achieve this, it groups records into clusters of at least $k$ similar records, where $k$ is the microaggregation factor, and subsequently replaces each record in the cluster with the cluster's centroid. Although this ensures that no individual record can be uniquely identified, it incurs a substantial computational cost. The computational intensity is such that, to date, no efficient algorithm for this problem has been identified. In fact, Oganian and Domingo-Ferrer have proven that multivariate microaggregation is an NP-hard problem \cite{oganian_domingo-ferrer_2001}.
+An honorable mention for the table-based anonymization techniques is \textbf{Multivariate Microaggregation}. This method extends Univariate Microaggregation by simultaneously considering multiple attributes and aggregating them in a conjunctive manner. To achieve this, it groups records into clusters of at least $k$ similar records, where $k$ is the microaggregation factor, and subsequently replaces each record in the cluster with the cluster's centroid. Although this ensures that no individual record can be uniquely identified, it incurs a substantial computational cost. The computational intensity is such that, to date, no efficient algorithm for this problem has been identified. Oganian and Domingo-Ferrer have proven that multivariate microaggregation is an NP-hard problem \cite{oganian_domingo-ferrer_2001}.
 
-\section{System Requirements}
-\subsection{Data Stream Integration}
-\subsection{Administration}
-\subsection{Performance}
-\subsection{Adaptability}
-\subsection{Scalability}
-\subsection{Reliability}
+\section{Model for Anonymization in Distributed Event Stores}
+The opening chapters of this thesis underscored the rising ubiquity of distributed event stores in the current era of data streaming. It has been observed that the optimization of performance often takes precedence over privacy concerns in the design and implementation of stream processing systems. This has been mostly due to the lack of privacy regulations and the additional computational costs associated with implementing robust privacy measures. It is worth noting, however, that this favoritism is not universal. Especially in the healthcare and government sectors the focus on privacy has always been prevalent. Nevertheless, advances in technology and shifts in regulatory focus are increasingly leading to solutions that aim to balance performance with privacy. The rise of the demand for enhanced privacy in all sectors further underscores the need for the development of robust, efficient solutions specifically tailored to comply with a variety of regulations. Thus, earlier sections of this chapter focused on the need for various degrees of anonymization granularity. Through a use-case example, the practical implications and advantages of different levels of anonymization were shown. In light of these discussions, the two research questions formulated in the Introduction of this thesis gain renewed focus:
+
+\begin{enumerate}
+    \item What techniques can be effectively employed to ensure privacy and security measures, such as Role-Based Access Control and data masking, in distributed event stores?
+    \item What strategies can be developed and implemented to ensure that these privacy and security measures have a minimal impact on the performance of distributed event stores?
+\end{enumerate}
+
+Addressing these questions requires a complex system that meets a comprehensive set of requirements, both functional and non-functional, which will be thoroughly examined in the subsequent subsections. 
+
+\subsection{Architecture\label{sec:model_architecture}}
+Before getting into any specifics, let us first lay the foundation of the envisioned system architecture. Figure \ref{fig:componentDiagram} shows a high-level version of the UML Component Diagram, displaying the key components and their interactions. 
+
+\bigskip 
+
+\begin{figure}[ht]
+    \begin{adjustbox}{center}
+    \includegraphics[width=0.8\pdfpagewidth]{img/Component_Diagram.pdf}
+    \end{adjustbox}
+    \caption{UML Component Diagram of the anonymization system for distributed event stores. \label{fig:componentDiagram}}
+\end{figure}
+
+At the center of the architecture, the Data Officer serves as the primary and sole user of the system. The Data Officer interacts with components of the system via interfaces. In the diagram, the interaction points are represented by lines terminating in either circles or semicircles. These symbolize required and provided interfaces respectively. The role of the Data Officer embodies either an individual or a group within an organization responsible for data management. This role, therefore, depends on the \ac{DES} as their primary source of data. The Data Officer is reliant on the proper functionality and accessibility of these stores. This dependency is represented by the dotted arrow in the diagram. The people with the Data Officer role are expected to be technically skilled individuals with extensive knowledge of the data flowing through the \ac{DES}. This is critical as the Data Officer has the authorization to assign and withdraw access control to all consumers and producers of data within the \ac{DES}. Additionally, these people will have to think of and define the levels of anonymization appropriate for their use case, a non-trivial task as we have seen in Section \ref{sec:anon_granularity}. In the context of the anonymization system, however, the Data Officer does not operate directly with the \ac{DES}. Instead, these interactions are abstracted away to two intermediate independent components - one responsible for Role Based Access Control and one we call the Anonymization Stream Factory. They communicate with each other by passing requirements and status updates. These are explicitly two different interactions because of their usage. The requirements are meant to be large one-time occurrences at the setup stage of the operation. They dictate the layout of the initial anonymization structure. During runtime, the Data Officer can monitor the processes through queries. This is the other type of interaction. For the \ac{RBAC}, one can conceptualize the requirements as a collection of individual access control queries. As such the interactions merge on the \ac{RBAC} side of the system. The interactions for the Anonymization Stream Factory paint a similar picture. The two components process these incoming requests. In the case of the requirements, they transform these into a form, which is interpretable by the management component of the \ac{DES}. \par
+
+With a general understanding of the overarching components and interactions, we can look deeper into each component. Figure \ref{fig:component_rbac} provides an in-depth look at the component responsible for enabling \ac{RBAC}. Note that this is not the only possible approach to facilitate role-based access control. 
+
+\begin{figure}[ht]
+    \begin{adjustbox}{center}
+    \includegraphics[width=0.7\textwidth]{img/RBAC_Component_Diagram.pdf}
+    \end{adjustbox}
+    \caption{UML Component Diagram of the component responsible for facilitating Role Based Access Control. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. \label{fig:component_rbac}}
+\end{figure}
+
+The Component Diagram shows the system operating with a Controller-Service-Repository setup. The Controller is responsible for interactions with the Client. As there are two Clients, the Data Officer and the Distributed Event Store, two separate controllers distribute the responsibility. Blue arrows in the diagram indicate the data flow. They have been added to the UML diagram to highlight a distinct feature of this system. Data is generally only flowing in one direction. These instructions, provided by the Data Officer, are translated by the RBAC system into requests directed to the \ac{DES}. The only data flowing back are simple responses without payload as illustrated by the dashed arrows. The external interactions are handled by the controllers. These then pass on the data to the service. Here the business logic of the system is executed. Incoming requests are addressed and, either transformed and forwarded to the \ac{DES} or immediately taken care of. Hereby, the repository is utilized. The roles and their access clearance must be saved somewhere. If the \ac{DES} would already have the role and their access clearance, the \ac{RBAC} system would be redundant. As this is not the case the management of roles falls to the responsibility of this component. An API request for the addition of a role would be handled by the \ac{RBAC} component and by this component alone. The modification of a role, however, would need to be forwarded to the \ac{DES} if a user occupies this role. It would convert this role modification into modified Access Control Lists of each user with that role and pass these on. Additions or modifications to users are stored within the component and also forwarded, for analogous reasons. Altogether this leads to an overall better user experience for the Data Officer. They would only have to deal with the abstraction of access control lists in the form of roles, simplifying requests and making them less error-prone in the process. One important additional functionality the \ac{RBAC} component has to offer is the assignment of roles to the consumption of streams. Users will be able to access different versions of the data depending on their role. The access control aspect of this will be managed by this component as well. The functionality of providing differently anonymized versions of data is provided by another component - the Anonymization Stream Factory. \par
+
+The Anonymization Stream Factory is the heart of the system. Its Component Diagram is depicted in Figure \ref{fig:anon_fac_component}. Within this component, the specifications provided by the Data Officer are implemented. After thoroughly analyzing their data needs, a plan detailing the anonymization granularity was formulated and transformed into a comprehensive set of requirements. These requirements are subsequently transmitted to the entry point of the Anonymization Stream Factory. The requirements include all the necessary information of the stream that is supposed to be anonymized. It also includes the wishes for the various levels of anonymization. Together they are sent to the entry point of the anonymization stream factory.\par
+
+\begin{figure}[ht]
+    \begin{adjustbox}{center}
+    \includegraphics[width=0.8\pdfpagewidth]{img/Anon_Factory_Component_Diagram.pdf}
+    \end{adjustbox}
+    \caption{UML Component Diagram of the anonymization system for distributed event stores. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. \label{fig:anon_fac_component}}
+\end{figure}
+
+Internally, these are received by the system's central component, the Manager. This component is responsible for external communication as well as internal communication. With that, its main task is forwarding data. First, the requirements are passed on to the Requirements Processor. As the requirements are expected to come in one request, These requirements are translated into a format comprehensible to this component and then deconstructed into their parts. Remember, these are the original stream configuration and the various anonymized stream desires. These desires will then be passed individually on to the Stream Configuration Builder. It verifies the availability of the desired anonymization techniques for the stream by interacting with the Anonymization Technique Library. An immutable data component within the system. In Section \ref{sec:anon} we have seen that each anonymization technique can be finetuned through parameters. While these can be syntactically checked with the requirements processor, their semantics need to be validated as well. For this, the configuration builder must include some sort of validation component. The validation must be properly done at this stage as catching these errors should be done before the stream's runtime. They should also be well communicated back to the Data Officer. Regardless of the outcome, the results are relayed back to the Manager. Either with an error message, that is to be forwarded back to the user or with the defined stream configurations. These then can be passed on to the Stream Builder. Here the actual streams are built, they will consume the original data stream and transform it according to the stream configuration, then produce a new anonymized stream. This ready-to-go stream will be passed back again to the Manager. Subsequently, the Manager forwards the processed stream to the \ac{DES}. It should either be able to monitor the status of the streams by itself or answer the status queries by the data officer with forwarded messages from the \ac{DES}. \par
+
+Finally, let us take a look at the internal architecture of the Distributed Event Store. Figure \ref{fig:des_component} shows its Component Diagram. At the core are the individual Event Stores. Each is responsible for storing and managing data (in this context also often to referred as "Events"). They are distributed, forming a loose cluster of individually not connected stores. They can be spread across multiple physical machines and even different geographical locations. The Event Stores are controlled by the administration component of the system. It monitors and logs the stores as well as gives commands like adding or removing individual event stores. The administration also decides on the partitioning and aggregation logic. The main benefits of a distributed system are scalability and reliability. It accomplishes horizontal scalability with ease through the extension of additional event stores. The workload is then balanced across these stores to mitigate bottlenecks. Reliability is facilitated through replicability. If any one event store fails, there is another with replicated data, which can take its place until the original event store is back online. This leads to increased fault tolerance, data durability, and higher availability. All this relies on the proper replication and distribution logic. The strategy is chosen by the Administration and forwarded to the Partitioner component to put into effect. It takes the data collected by the producers and shards it e.g. splits it into multiple pieces. Shards are replicated and sent to other destinations. The Aggregator does the composite process. From the Administration, it is familiar with the distribution logic and can piece together the data from multiple sources into one output. This output is relayed to the consumers of the data.
+
+
+
+\begin{figure}[ht]
+    \begin{adjustbox}{center}
+    \includegraphics[width=0.8\pdfpagewidth]{img/DES_Component_Diagram.pdf}
+    \end{adjustbox}
+    \caption{Architecture of a Distributed Event Store illustrated with a UML Component Diagram. \label{fig:des_component}}
+\end{figure}
+
+The Administration component is configurable from the outside through an interface. Normally, there is only one expected interface. The reason for the two interfaces shown in the diagram is simply due to it being a part of a bigger Component Diagram shown in Figure \ref{fig:componentDiagram}. It is administrated from two other components, the \ac{RBAC} system and the Anonymization Stream Factory, both dictated by the Data Officer. The full Component Diagram spans multiple pages and can be found in Appendix \ref{app:component_diagram}. In reality, it would be safe to assume that the other components interact with the Distributed Event Store through one administration interface. Through this interface, for example, access control can be assigned or data streams added. The access control would then be enforced at the system's data ports. 
+
+\subsection{Functional Requirements}
+
+The architectural layout presented until this point describes the system as a whole, its components, and their interactions, thereby serving as a blueprint for the envisioned infrastructure. Let us translate this vision into actionable and measurable goals: \par
+
+\begin{enumerate}
+    \item \textbf{Data Stream Integration}\\ Distributed Event Stores are specialized towards operating on streaming data; appropriate integration is essential to the success of the system. The system is anticipated to receive streaming data as the input that requires anonymization. Consequently, the anonymized output data must likewise be in a streaming format. The system must facilitate the ingestion, processing, and management of data streams in real-time, ensuring both the efficiency and reliability of data handling. 
+    \item \textbf{Administrative Control}\\ The goal of the system is to provide granular anonymization to its user, the Data Officer. Here, the system must provide tools for the Data Officer to govern the system's operation. This specifically includes access control management and oversight of the data processing pipeline. The system must incorporate robust monitoring tools and provide interfaces for the user.
+    \item \textbf{Adaptability}\\ With any large software endeavor comes changes in requirements over time. The system must be adaptable to that change. New anonymization techniques must be addable to the system. Existing ones must be customizable. It must be possible to modify the system ports to enable connections to different distributed event stores. The system's architecture must be designed with flexibility at its core, accommodating changes in requirements and technological advancements with minimal disruption.
+\end{enumerate}
+
+
+\subsection{Non-functional Requirements}
+Finally, let us address the non-functional requirements. Although non-functional requirements do not dictate system functionality, they are imperative for the operational integrity of the system. Reiterating that the strengths of Distributed Event Stores lie in their ability to efficiently handle large amounts of data in real-time, the addition of the proposed system mustn't diminish these. Therefore, the three main non-functional requirements of the system are essential to maintain the strengths of the underlying distributed event stores: 
+
+\begin{enumerate}
+    \item \textbf{Performance}\\ The system should minimize performance overhead. This can be evaluating the latency and throughput with and without the anonymization system in place. Additionally, storage is always a concern. However, given the fact that the system's central idea is duplicating the data and providing different anonymized versions through different streams, much more storage capacity can be expected. 
+    \item \textbf{Reliability}\\ The system must ensure the availability of anonymized data counterparts concurrently with non-anonymized data. System failure carries significant risks. Furthermore, it must be guaranteed that non-anonymized data is under the strict proposed access control rules. The plain text data being available to unauthorized persons would jeopardize the entire system. 
+    \item \textbf{Scalability}\\ It should be possible to easily scale the system horizontally, mirroring the core attributes of distributed systems. Accommodating increasing data loads and parallel processing demands without compromising the efficiency of the anonymization process, is what the system should strive to do.
+\end{enumerate}
+

@@ -1,3 +1,89 @@
-\addchap{Appendix A. Further Details on the Solution Approach}
+\addchap{Appendix A. Further Details on the Solution Approach\label{app:A}}
+
+\begin{sidewaystable}
+    \centering
+    \tiny
+    \begin{longtable}{lllllllllllllll}
+        \caption{Extended table of patient data used. The table shows a part of the data used when testing the system. The attribute abbreviations correspond as follows: hgt - height; wgt - weight; ins.\_company - insurance\_company; ins.\_number - insurance\_number, diag. - diagnosis; gluc. - glucose.} \label{tab:patient_data}\\
+    \toprule
+    \textbf{id} & \textbf{name} & \textbf{address} & \textbf{zip} & \textbf{phone} & \textbf{gender} & \textbf{hgt} & \textbf{wgt} & \textbf{age} & \textbf{ins.\_company} & \textbf{ins.\_number} & \textbf{diag.} & \textbf{gluc.} & \textbf{hba1c} & \textbf{medication} \\
+    \midrule
+    \endfirsthead
+    
+    \multicolumn{15}{c}%
+    {{\tablename\ \thetable{} -- continued from previous page}} \\
+    \toprule
+    \textbf{id} & \textbf{name} & \textbf{address} & \textbf{zip} & \textbf{phone} & \textbf{gender} & \textbf{hgt} & \textbf{wgt} & \textbf{age} & \textbf{ins.\_company} & \textbf{ins.\_number} & \textbf{diag.} & \textbf{gluc.} & \textbf{hba1c} & \textbf{medication} \\
+    \midrule
+    \endhead
+    
+    \bottomrule
+    \endfoot
+    
+    \bottomrule
+    \endlastfoot
+    
+    
+    1 & Sarah Kreusel & Benthinring 6 & 34597 & 0711 98 81331 & Female & 169 & 62 & 95 & 108312586 & L660487647 & E11 & 65 & 9.36 & Metformin \\
+    2 & Ronny Kohl & Sauerplatz 42 & 93801 & 089 14407487 & Male & 180 & 73 & 68 & 103508742 & R938242194 & E11 & 157 & 7.77 & Metformin \\
+    3 & Lilly Geißler & Mühlestr. 565 & 66369 & 03525914827 & Female & 170 & 51 & 75 & 108928697 & B659387784 & E11 & 98 & 9.79 & Metformin \\
+    4 & Marian Bauer & Bruderweg 6/2 & 27618 & 034 56379318 & Male & 189 & 69 & 23 & 103306961 & N988901370 & E10 & 112 & 8.67 & Insulin \\
+    5 & Sandra Jähn & Södinggasse 82 & 87339 & 02437 40551 & Female & 166 & 64 & 61 & 101002659 & R453561328 & E10 & 382 & 8.88 & Insulin \\
+    6 & Steffen Henk & Junkenallee 03 & 11517 & 03939818024 & Male & 169 & 82 & 57 & 103508742 & Z988986270 & E11 & 96 & 5.76 & Metformin \\
+    7 & Dennis Dobes & Trübplatz 465 & 00839 & 08180041538 & Male & 178 & 94 & 86 & 109500490 & T577049432 & E11 & 437 & 7.8 & Metformin \\
+    8 & Arif Geisler & Bienstraße 792 & 34510 & 09659 95631 & Diverse & 169 & 61 & 68 & 109500490 & Z210900364 & E10 & 182 & 5.6 & Insulin \\
+    9 & Udo Bürger & Kunst Allee 3 & 44149 & 023 1977653 & Male & 182 & 92 & 61 & 109519176 & J339204213 & E11 & 179 & 7.7 & Metformin \\
+    10 & Max Mustermann & Wegstr. 42 & 69840 & 0309 049397 & Male & 175 & 80 & 40 & 109500398 & E822232308 & E11 & 120 & 7.0 & Metformin \\
+    11 & Erika Mustermann & Hauptstr. 5 & 52820 & 04839768544 & Female & 165 & 65 & 36 & 108817930 & K759451642 & E10 & 140 & 6.8 & Insulin \\
+    12 & Julia Schmidt & Bergweg 13 & 33888 & 0612347192 & Female & 168 & 60 & 28 & 109000051 & L858268436 & E11 & 150 & 7.5 & Metformin \\
+    13 & Tobias Müller & Seeallee 21 & 78151 & 07899 544559 & Male & 180 & 85 & 55 & 108928697 & I998139981 & E11 & 130 & 6.9 & Metformin \\
+    14 & Christina Klein & Talweg 8 & 37111 & 0603328566 & Female & 160 & 55 & 33 & 108888888 & K926100157 & E10 & 135 & 7.2 & Insulin \\
+    15 & Uwe Lehmann & Stadtweg 14 & 27417 & 04896 92775 & Male & 175 & 78 & 45 & 109500398 & P619653870 & E10 & 145 & 7.1 & Insulin \\
+    16 & Anna Becker & Waldstr. 3 & 10044 & 08645 546756 & Female & 170 & 68 & 31 & 108312586 & D769681473 & E11 & 155 & 7.6 & Metformin \\
+    17 & Frank Schubert & Blumenweg 7 & 19364 & 0087010395 & Male & 178 & 82 & 48 & 109500787 & G425120298 & E11 & 125 & 7.4 & Metformin \\
+    18 & Kathrin Neumann & Feldstr. 11 & 56066 & 0759017707 & Female & 162 & 58 & 29 & 108814099 & L006897178 & E10 & 138 & 7.3 & Insulin \\
+    19 & Lars Hoffmann & Wiesenweg 18 & 75261 & 06671 81305 & Male & 182 & 90 & 52 & 109000051 & A510337443 & E11 & 128 & 6.7 & Metformin \\
+    20 & Sabine Fuchs & Bachstr. 22 & 68656 & 06366 46753 & Female & 167 & 63 & 34 & 109500398 & H758511496 & E10 & 132 & 7.0 & Insulin \\
+    21 & Dirk Sommer & Forstweg 5 & 73277 & 09304 75332 & Male & 170 & 76 & 43 & 109500787 & M562343754 & E10 & 142 & 6.9 & Insulin \\
+    22 & Marie Lange & Hügelstr. 9 & 72773 & 0353876928 & Female & 165 & 61 & 38 & 108313123 & D564564174 & E11 & 160 & 7.8 & Metformin \\
+    23 & Oliver Krause & Grabenstr. 2 & 35141 & 01214338986 & Male & 180 & 84 & 50 & 101002659 & U921658735 & E11 & 118 & 6.8 & Metformin \\
+    24 & Susanne Winter & Brunnenweg 19 & 01870 & 05033 36428 & Female & 159 & 54 & 32 & 108918320 & Q667879936 & E10 & 137 & 7.1 & Insulin \\
+    25 & Markus Winkler & Kanalweg 4 & 90111 & 06309 336421 & Male & 176 & 77 & 46 & 103306961 & X360906143 & E10 & 148 & 7.0 & Insulin \\
+    26 & Stefanie Berger & Bahnhofstr. 31 & 83716 & 0371472504 & Female & 169 & 67 & 39 & 108811215 & I955572981 & E11 & 153 & 7.7 & Metformin \\
+    27 & Peter Klein & Rosenweg 12 & 30962 & 01556 031663 & Male & 179 & 83 & 51 & 109500398 & H607086736 & E11 & 121 & 6.6 & Metformin \\
+    28 & Claudia Schmitt & Kirchweg 29 & 57024 & 09251 652740 & Female & 164 & 59 & 30 & 101575519 & T477237457 & E10 & 136 & 7.2 & Insulin \\
+    29 & Heiko Schulz & Sonnenallee 23 & 67294 & 07686863295 & Male & 183 & 88 & 53 & 108928697 & K281348102 & E11 & 127 & 6.5 & Metformin \\
+    30 & Birgit Maier & Deichstr. 1 & 28024 & 01098 38370 & Female & 166 & 64 & 35 & 109500044 & G059276367 & E10 & 134 & 6.9 & Insulin \\
+    31 & Jan Fischer & Windweg 6 & 60379 & 04196 93544 & Diverse & 171 & 79 & 44 & 109519176 & R260583528 & E10 & 140 & 7.0 & Insulin \\
+    32 & Silke Wagner & Steinweg 10 & 09392 & 05613 34703 & Female & 172 & 70 & 37 & 108334056 & O996297939 & E11 & 158 & 7.9 & Metformin \\
+    33 & Daniel Meier & Schlossallee 15 & 23078 & 02210254705 & Male & 177 & 81 & 49 & 108817930 & B037958300 & E11 & 124 & 7.5 & Metformin \\
+    34 & Heike Schmidt & Lindenweg 20 & 85957 & 01958909813 & Female & 161 & 57 & 27 & 109500398 & V237931864 & E10 & 139 & 7.4 & Insulin \\
+    35 & Andreas Schneider & Parkstr. 16 & 67797 & 0118630356 & Male & 184 & 89 & 54 & 103306961 & O573258576 & E11 & 129 & 6.6 & Metformin \\
+    36 & Petra Fischer & Mühlenweg 17 & 92660 & 00420619289 & Female & 168 & 62 & 36 & 108918428 & W571231267 & E10 & 131 & 7.1 & Insulin \\
+    37 & Christian Weber & Querstr. 8 & 40430 & 0025856617 & Male & 172 & 75 & 42 & 108815718 & M968302874 & E10 & 143 & 6.8 & Insulin \\
+    38 & Laura Hoffmann & Auenweg 33 & 45953 & 0778320272 & Female & 173 & 69 & 40 & 108815718 & T881197036 & E11 & 157 & 7.6 & Metformin \\
+    39 & Stefan Bauer & Kreuzweg 3 & 24996 & 01188195858 & Male & 178 & 80 & 47 & 108815718 & L541039098 & E11 & 123 & 7.3 & Metformin \\
+    \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots & \dots \\
+    n & Henri Allgöwer & Einsteinufer 17 & 10587 & 01765 123456 & Male & 178 & 68 & 27 & 101575519 & T460187489 & E10 & 453 & 10.13 & Insulin \\
+
+    \end{longtable}    
+\end{sidewaystable}
+
+\begin{figure}
+    \label{table:anonymizers_parameters}
+\end{figure}
+
+\begin{figure}
+    \label{fig:full_class_diagram}
+\end{figure}
+
+
+\begin{sidewaysfigure}
+    \centering
+    \includegraphics[width=\linewidth]{img/Complete_Component_Diagram.pdf}
+    \caption{Full UML Component Diagram for the system as a whole.}
+    \label{app:component_diagram}
+\end{sidewaysfigure}
+
 
 \addchap{Appendix B. Extended Version of the Experimental Results}

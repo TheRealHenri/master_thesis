@@ -1,0 +1,9 @@
+{
+    "editor.wordWrap": "on",
+    "latex-workshop.message.bibtexlog.exclude": [
+        "empty booktitle"
+    ],
+    "grammarly.files.include": ["**/*.tex"],
+    "grammarly.files.exclude": ["Thesis.tex"]
+}
+  

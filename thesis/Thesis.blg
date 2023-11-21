@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Homebrew)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+A level-1 auxiliary file: ./misc/Titlepage.aux
+A level-1 auxiliary file: ./misc/Self-assertion.aux
+The style file: splncs03.bst
+Database file #1: bibliography.bib
+Database file #2: mendeley_library.bib
+Warning--empty booktitle in Cao2008
+Warning--empty booktitle in Sandhu_Coyne_1994
+You've used 41 entries,
+            2785 wiz_defined-function locations,
+            825 strings with 10571 characters,
+and the built_in function-call counts, 20731 in all, are:
+= -- 1755
+> -- 497
+< -- 35
++ -- 209
+- -- 166
+* -- 1242
+:= -- 2570
+add.period$ -- 43
+call.type$ -- 41
+change.case$ -- 244
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 1841
+empty$ -- 2011
+format.name$ -- 184
+if$ -- 4659
+int.to.chr$ -- 0
+int.to.str$ -- 41
+missing$ -- 355
+newline$ -- 128
+num.names$ -- 82
+pop$ -- 725
+preamble$ -- 1
+purify$ -- 165
+quote$ -- 0
+skip$ -- 606
+stack$ -- 0
+substring$ -- 1277
+swap$ -- 983
+text.length$ -- 35
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 158
+warning$ -- 2
+while$ -- 181
+width$ -- 43
+write$ -- 409
+(There were 2 warnings)

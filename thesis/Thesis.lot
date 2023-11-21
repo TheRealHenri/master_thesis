@@ -1,0 +1,21 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Example table of diabetes patients}}{16}{table.3.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Data available for the nurse staff. Note that PID, zip, insurance number, and additional medical information have been suppressed as indicated by their cell's light red background.}}{17}{table.3.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Data available for the administration. Note that only the insurance information, medication, and diagnosis are not suppressed.}}{18}{table.3.3}%
+\contentsline {table}{\numberline {4}{\ignorespaces K-anonymized data available for external research. The sensitive medical attributes remain unchanged as indicated by the white cell background. Unlike the personally identifying attributes, which have been suppressed as denoted by the red cell background. The yellow cell background highlights the generalized quasi-identifiable attributes. Note that the entries of the first group have unchanged values for the attributes \textit {sex} and \textit {ins. co.}. As all three original entries shared the same value it did not need to be generalized.}}{19}{table.3.4}%
+\contentsline {table}{\numberline {5}{\ignorespaces Working example for table-based anonymization containing a table with four attributes marked above with their corresponding category. Additionally, there is a leading column, which is not part of the data - but serves as reference.}}{29}{table.3.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces 3-anonymized version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow. }}{34}{table.3.6}%
+\contentsline {table}{\numberline {7}{\ignorespaces 2-diverse version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow.}}{35}{table.3.7}%
+\contentsline {table}{\numberline {8}{\ignorespaces T-closeness version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow.}}{36}{table.3.8}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9}{ List of Anonymizers available in the \acf {DASH}. They are listed with their respective category color coded as well as their parameters including the parameter type and whether it is required or not. A description of the parameters is also added. }}{53}{table.4.9}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {10}{Extended table of patient data used. The table shows a part of the data used when testing the system. The attribute abbreviations correspond as follows: hgt - height; wgt - weight; ins.\_company - insurance\_company; ins.\_number - insurance\_number, diag. - diagnosis; gluc. - glucose.}}{67}{table.6.10}%
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

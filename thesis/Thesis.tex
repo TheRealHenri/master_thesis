@@ -1,0 +1,196 @@
+% !TEX root = .
+
+\documentclass[a4paper, 12pt, oneside, BCOR1cm,toc=chapterentrywithdots, hidelinks, parskip]{scrbook}
+\usepackage{scrhack}
+
+\usepackage[a4paper]{geometry}
+\usepackage{textcomp}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{float}
+%\usepackage{tabu}
+
+\usepackage[ngerman, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\usepackage{acronym}
+\usepackage{url}           	 
+\usepackage{hyperref} 	
+\usepackage{listings, color}	% for source code
+\usepackage{scrlayer-scrpage}	% header and footer line
+\usepackage{acronym}
+\usepackage[ruled,vlined,algochapter]{algorithm2e}
+%\usepackage[nottoc, notlof, notlot]{tocbibind}
+\usepackage{blindtext}
+\usepackage{mathtools}
+\newcommand*\mean[1]{\bar{#1}}
+\usepackage{chngcntr}
+\usepackage{adjustbox}
+\usepackage{indentfirst}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{1ex plus 0.2ex}
+\usepackage{amssymb}
+\makeatletter
+\newcommand\notsotiny{\@setfontsize\notsotiny\@vipt\@viipt}
+\makeatother
+
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{algocf}{chapter} 
+%\counterwithout{lstlisting}{chapter}
+\AtBeginDocument{% the counter is defined later
+  \counterwithout{lstlisting}{chapter}%
+}
+\renewcommand\lstlistingname{Code Fragment}
+\lstdefinelanguage{json}{
+  basicstyle=\normalfont\ttfamily,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  literate=
+   *{"dataSchema"}{{{\color{teal}{"dataSchema"}}}}{10}
+   {"AVRO"}{{{\color{cyan}{"AVRO"}}}}{4}
+   {"KAFKA\_STRUCT"}{{{\color{purple}{"KAFKA\_STRUCT"}}}}{12}
+   {"globalConfig"}{{{\color{magenta}{"globalConfig"}}}}{12}
+   {"anonymizers"}{{{\color{yellow}{"anonymizers"}}}}{11}
+    {"streamProperties"}{{{\color{orange}{"streamProperties"}}}}{16},
+}
+
+%for adding comments
+\usepackage{verbatim}
+
+% for tables
+\usepackage{multirow}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\usepackage[table]{xcolor}
+\definecolor{lightred}{rgb}{1, 0.8, 0.8} 
+\definecolor{lightyellow}{rgb}{1, 1, 0.8}
+\definecolor{lightblue}{rgb}{0.8, 0.9, 1}
+\definecolor{lightgreen}{rgb}{0.8, 1, 0.8}
+
+\usepackage{xcolor}
+\definecolor{purple}{HTML}{6929c4} 
+\definecolor{magenta}{HTML}{9f1853} 
+\definecolor{green}{HTML}{198038} 
+\definecolor{yellow}{HTML}{b28600} 
+\definecolor{orange}{HTML}{8a3800} 
+\definecolor{teal}{HTML}{009d9a} 
+\definecolor{cyan}{HTML}{1192e8} 
+
+
+% header and footer line - no header & footer line on pages where a new chapter starts
+\pagestyle{scrheadings}
+% TU Berlin logo at header
+%\chead{\includegraphics[width=1.2cm]{./img/TU-Berlin-Logo.pdf} 
+%}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, calc}
+
+\begin{document}
+
+\frontmatter
+%Titlepage
+\include{./misc/Titlepage}
+\thispagestyle{empty}
+\cleardoublepage
+    
+%Self-assertion
+\include{./misc/Self-assertion} 
+\thispagestyle{empty}
+\cleardoublepage
+
+% Abstract in Deutsch
+\addchap*{Zusammenfassung}
+\input{misc/Abstract_deutsch}
+
+% Abstract
+\addchap*{Abstract}
+\input{misc/Abstract}
+  
+% Acknowledgments  
+\addchap*{Acknowledgments}
+\input{misc/Acknowledgment}
+
+%table of contents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+\tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+
+%footnote
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+%list of figures
+\listoffigures
+
+%list of tables
+\listoftables
+
+
+
+    
+
+    
+
+% List of Abbreviations
+\onecolumn
+\addchap{List of Abbreviations}
+\begin{acronym}[Bash]   
+  \acro{ACL}{Access Control List}
+  \acro{CCPA}{California Consumer Privacy Act}
+  \acro{DASH}{Data Anonymization Stream Handler}
+  \acro{DIMA}{Database Systems and Information Management}
+  \acro{DAC}{Discretionary Access Control}
+  \acro{DES}{Distributed Event Store}
+  \acro{GDPR}{General Data Protection Regulation}
+  \acro{ICD}{International Statistical Classification of Diseases and Related Health Problems}
+  \acro{IoT}{Internet of Things}
+  \acro{KNN}{K-Nearest Neighbors}
+  \acro{MAC}{Mandatory Access Control}
+  \acro{PII}{Personally Identifiable Information}
+  \acro{RBAC}{Role Based Access Control}
+  \acro{SSE}{Sum of Squared Errors}
+\end{acronym}
+\onecolumn
+\acrodefplural{ACL}{Access Control Lists}
+
+%algorithms
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+
+%In case, code fragments have to be added
+%\renewcommand{\lstlistlistingname}{List of Code Fragments}
+%\lstlistoflistings
+%\addcontentsline{toc}{chapter}{List of Code Fragments}
+
+\mainmatter % comment single chapters for faster compilation
+    
+    \input{./chapters/1Introduction.tex}
+    \input{./chapters/2Literature_review.tex}
+    \input{./chapters/3Theoretical_framework.tex}
+    \input{./chapters/4Implementation.tex}
+    \input{./chapters/5Testing_evaluation.tex}
+    \input{./chapters/6Conclusion.tex}
+
+% ---------------------------------------------------------------
+
+%Bibliography
+\begingroup
+\raggedright
+\bibliographystyle{splncs03}
+%\bibliographystyle{acm}
+\bibliography{bibliography, mendeley_library}
+\endgroup
+
+%appendix
+\input{./misc/Annex}
+
+\end{document}

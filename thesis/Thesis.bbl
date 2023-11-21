@@ -1,0 +1,128 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{amazon_kinesis}
+Amazon: Amazon kinesis (2023), \url{https://aws.amazon.com/kinesis/}, accessed: 2023-10-01
+
+\bibitem{amazon_redshift}
+Amazon: Amazon redshift (2023), \url{https://aws.amazon.com/redshift}, accessed: 2023-10-01
+
+\bibitem{kafka}
+{Apache Software Foundation}: Apache kafka (2023), \url{https://kafka.apache.org}, accessed: 2023-10-01
+
+\bibitem{Byun2008}
+Byun, J.W., Li, N.: Purpose based access control for privacy protection in relational database systems. The VLDB Journal  17,  603--619 (7 2008)
+
+\bibitem{Cao2008}
+Cao, J., Carminati, B., Ferrari, E., Tan, K.L.: Castle: A delay-constrained scheme for k-anonymizing data streams. pp. 1376--1378. IEEE (4 2008)
+
+\bibitem{chaudhuri2011database}
+Chaudhuri, S., Kaushik, R., Ramamurthy, R.: Database access control and privacy: Is there a common ground? In: CIDR. pp. 96--103. Citeseer (2011)
+
+\bibitem{Colombo2015}
+Colombo, P., Ferrari, E.: Privacy aware access control for big data: A research roadmap. Big Data Research  2,  145--154 (12 2015)
+
+\bibitem{GDPR}
+Commission, E.: General data protection regulation (gdpr) (2023), \url{https://gdpr.eu/}, accessed: 2023-06-01
+
+\bibitem{privitar}
+Confluent: Privitar kafka connector (2023), \url{https://www.confluent.io/hub/privitar/privitar-kafka-connector/}, accessed: 2023-06-01
+
+\bibitem{oracle}
+Coporation, O.: Oracle databases (2023), \url{https://www.oracle.com/database/}, accessed: 2023-10-01
+
+\bibitem{dijkstra2022note}
+Dijkstra, E.W.: A Note on Two Problems in Connexion with Graphs, pp. 287--290. Association for Computing Machinery, New York, NY, USA, 1 edn. (2022), \url{https://doi.org/10.1145/3544585.3544600}
+
+\bibitem{idf2023}
+Federation, I.D.: Diabetes facts \& figures (2023), \url{https://idf.org/about-diabetes/diabetes-facts-figures/}, accessed: 2023-10-01
+
+\bibitem{ferraiolo1992role}
+Ferraiolo, D.F., Kuhn, D.R.: Role-based access controls. In: Proceedings of the 15th National Computer Security Conference. pp. 554--563. National Computer Security Conference, Baltimore, Maryland, United States (October 1992), published October 13-16, 1992
+
+\bibitem{Ferraiolo2001}
+Ferraiolo, D.F., Sandhu, R., Gavrila, S., Kuhn, D.R., Chandramouli, R.: Proposed nist standard for role-based access control. ACM Transactions on Information and System Security  4,  224--274 (8 2001)
+
+\bibitem{cassandra}
+Foundation, A.S.: Apacha cassandra (2023), \url{https://cassandra.apache.org/index.html}, accessed: 2023-10-01
+
+\bibitem{pulsar}
+Foundation, A.S.: Apache pulsar (2023), \url{https://pulsar.apache.org/}, accessed: 2023-10-01
+
+\bibitem{HansenUnivariateMicroaggregation}
+Hansen, S.L., Mukherjee, S.: A polynomial algorithm for optimal univariate microaggregation. IEEE Transactions on Knowledge and Data Engineering  15,  1043--1044 (7 2003)
+
+\bibitem{mongo_db}
+Inc, M.: Mongodb (2023), \url{https://www.mongodb.com/}, accessed: 2023-10-01
+
+\bibitem{CCPA}
+of~California Department~of Justice, S.: California consumer privacy act (ccpa) (2023), \url{https://oag.ca.gov/privacy/ccpa}, accessed: 2023-06-01
+
+\bibitem{lefevre2005incognito}
+LeFevre, K., DeWitt, D.J., Ramakrishnan, R.: Incognito: Efficient full-domain k-anonymity. In: Proceedings of the 2005 ACM SIGMOD international conference on Management of data. pp. 49--60. ACM (2005)
+
+\bibitem{lefevre2006mondrian}
+LeFevre, K., DeWitt, D.J., Ramakrishnan, R.: Mondrian multidimensional k-anonymity. In: 22nd International Conference on Data Engineering (ICDE'06). pp. 25--25. IEEE (2006)
+
+\bibitem{li2007tcloseness}
+Li, N., Li, T., Venkatasubramanian, S.: T-closeness: Privacy beyond k-anonymity and l-diversity. In: 2007 IEEE 23rd International Conference on Data Engineering. pp. 106--115. IEEE (2007)
+
+\bibitem{cloud_bigtable}
+LLC, G.: Cloud bigtable (2023), \url{https://cloud.google.com/bigtable}, accessed: 2023-10-01
+
+\bibitem{rabbit_mq}
+Ltd, R.T.: Rabbitmq (2023), \url{https://www.rabbitmq.com/}, accessed: 2023-10-01
+
+\bibitem{machanavajjhala2007ldiversity}
+Machanavajjhala, A., Kifer, D., Gehrke, J., Venkitasubramaniam, M.: l-diversity: Privacy beyond k-anonymity. ACM Transactions on Knowledge Discovery from Data (TKDD)  1(1), ~3 (2007)
+
+\bibitem{mysql}
+MySQL: Mysql (2023), \url{https://www.mysql.com/}, accessed: 2023-10-01
+
+\bibitem{oganian_domingo-ferrer_2001}
+Oganian, A., Domingo-Ferrer, J.: On the complexity of optimal microaggregation for statistical disclosure control. Statistical Journal of the United Nations Economic Commission for Europe  18(4),  345--353 (12 2001)
+
+\bibitem{WHODiabetes2023}
+Organization, W.H.: Diabetes fact sheet (2023), \url{ttps://www.who.int/news-room/fact-sheets/detail/diabetes}, accessed: 2023-10-01
+
+\bibitem{anonymizing_IoT}
+Otgonbayar, A., Pervez, Z., Dahal, K.: Toward anonymizing iot data streams via partitioning. In: 2016 IEEE 13th International Conference on Mobile Ad Hoc and Sensor Systems (MASS). pp. 331--336 (2016)
+
+\bibitem{sandhu1998role}
+Sandhu, R.S.: Role-based access control. In: Advances in computers, vol.~46, pp. 237--286. Elsevier (1998)
+
+\bibitem{Sandhu_Coyne_1994}
+Sandhu, R., Coyne, E., Feinstein, H., Youman, C.: Role-based access control: a multi-dimensional view. pp. 54--62. IEEE Comput. Soc. Press (1994)
+
+\bibitem{Sandhu1994}
+Sandhu, R., Samarati, P.: Access control: principle and practice. IEEE Communications Magazine  32,  40--48 (9 1994)
+
+\bibitem{selinger1979access}
+Selinger, P.G., Astrahan, M.M., Chamberlin, D.D., Lorie, R.A., Price, T.G.: Access path selection in a relational database management system. In: Proceedings of the 1979 ACM SIGMOD international conference on Management of data. pp. 23--34 (1979)
+
+\bibitem{dbms_statistics}
+Statista: Ranking of the most popular database management systems worldwide, as of september 2023 (2023), \url{https://www.statista.com/statistics/809750/worldwide-popularity-ranking-database-management-systems/}, accessed: 2023-11-01
+
+\bibitem{sweeney1997datafly}
+Sweeney, L.: Weaving technology and policy together to maintain confidentiality. In: Journal of Law, Medicine \& Ethics. pp. 184--195. Wiley Online Library (1997)
+
+\bibitem{sweeney2002kanonymity}
+Sweeney, L.: K-anonymity: A model for protecting privacy. International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems  10(05),  557--570 (2002)
+
+\bibitem{wallwork_177}
+Wallwork, A.: English for writing research papers, chap. Abstracts, pp. 177--245. Springer International Publishing Switzerland (2011)
+
+\bibitem{wallwork_306}
+Wallwork, A.: English for writing research papers, p. 306. Springer International Publishing Switzerland (2011)
+
+\bibitem{wang2007correctness}
+Wang, Q., Yu, T., Li, N., Lobo, J., Bertino, E., Irwin, K., Byun, J.W.: On the correctness criteria of fine-grained access control in relational databases. In: Proceedings of the 33rd international conference on Very large data bases. pp. 555--566 (2007)
+
+\bibitem{eventstore_db}
+Young, G.: Eventstoredb (2023), \url{https://www.eventstore.com/}, accessed: 2023-10-01
+
+\bibitem{KIDS_zhang}
+Zhang, J., Yang, J., Zhang, J., Yuan, Y.: Kids:k-anonymization data stream base on sliding window. In: 2010 2nd International Conference on Future Computer and Communication. vol.~2, pp. V2--311--V2--316 (2010)
+
+\end{thebibliography}

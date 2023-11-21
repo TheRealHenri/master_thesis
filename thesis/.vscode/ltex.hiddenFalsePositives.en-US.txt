@@ -1,0 +1,1 @@
+{"rule":"POSSESSIVE_APOSTROPHE","sentence":"^\\QWhile these can be syntactically checked with the requirements processor, their semantics need to be validated as well.\\E$"}
