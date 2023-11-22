@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TOPIC="anonymized_kafka_commands"
+TOPIC="dash_commands"
 HOST_SERVER="localhost"
 PORT="9094"
 BOOTSTRAP_SERVER=$HOST_SERVER:$PORT
