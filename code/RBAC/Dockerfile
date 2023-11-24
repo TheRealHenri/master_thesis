@@ -22,5 +22,4 @@ FROM openjdk:11-jre-slim
 # Copy the jar file from the build stage
 COPY --from=build /app/target/RBAC-1.0-SNAPSHOT-jar-with-dependencies.jar /RBAC-1.0-SNAPSHOT-jar-with-dependencies.jar
 
-# Set the startup command
-CMD ["java", "-jar", "/RBAC-1.0-SNAPSHOT-jar-with-dependencies.jar", "initialize"]
+ENTRYPOINT ["java", "-jar", "/RBAC-1.0-SNAPSHOT-jar-with-dependencies.jar"]

@@ -58,7 +58,10 @@ services:
       zookeeper:
         condition: service_started
     volumes: 
-      - ./RBACdata/db:/var/lib/myapp/db
+      - ./RBACdata/db/rbacdatabase.db:/var/lib/rbac/db/rbacdatabase.db
+    stdin_open: true
+    tty: true
+    command: sh
 
 
   dash:
@@ -72,7 +75,6 @@ services:
         condition: service_started
     volumes: 
       - ./dash_config/default_dash_config.json:/tmp/default_dash_config.json
-
   kafka-connect:
     image: 'bitnami/kafka:3.5'
     ports:

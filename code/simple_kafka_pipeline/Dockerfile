@@ -13,4 +13,12 @@ RUN mvn dependency:go-offline -B -X
 # Copy the src code into the image
 COPY src/ /app/src/
 
-CMD ["mvn", "clean", "install"]
+RUN mvn clean install
+
+# Use OpenJDK base image for running the app
+FROM openjdk:11-jre-slim
+
+# Copy the jar file from the build stage
+COPY --from=build /app/target/simple_kafka_pipeline-1.0-SNAPSHOT-jar-with-dependencies.jar /simple_kafka_pipeline-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+ENTRYPOINT ["java", "-jar", "/simple_kafka_pipeline-1.0-SNAPSHOT-jar-with-dependencies.jar"]
