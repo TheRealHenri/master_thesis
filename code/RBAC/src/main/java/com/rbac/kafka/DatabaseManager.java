@@ -10,10 +10,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static com.rbac.kafka.RBACUtils.DB_URL;
 
 public class DatabaseManager {
+
+    private final KafkaController kafkaController;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private Connection connection;
 
-    public DatabaseManager() {
+    public DatabaseManager(KafkaController kafkaController) {
+        this.kafkaController = kafkaController;
         if(!checkDatabaseExists()){
             System.out.println("Initializing new Database");
             initializeDatabase();
@@ -106,13 +109,26 @@ public class DatabaseManager {
             System.out.println("User does not exist");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> userStatus = userStatus(userName);
+        List<String> userPermissions = getPermissionsFromStatus(userStatus);
+        aclChanges.put(userName, userPermissions);
+
+        AtomicBoolean success = new AtomicBoolean(true);
         performDatabaseOperation(connection -> {
-            String sql = "DELETE FROM Users WHERE UserName = ?";
-            try (var preparedStatement = connection.prepareStatement(sql)) {
+            String deleteUserSQL = "DELETE FROM Users WHERE UserName = ?";
+            try (var preparedStatement = connection.prepareStatement(deleteUserSQL)) {
                 preparedStatement.setString(1, userName);
-                preparedStatement.executeUpdate();
+                int rowsAffected = preparedStatement.executeUpdate();
+                success.set(rowsAffected > 0);
             }
         });
+        if (success.get()) {
+            kafkaController.manageDatabaseChanges(aclChanges, false);
+        } else {
+            System.out.println("Failed to delete user from the database.");
+        }
     }
 
     public void addRole(String roleName, List<String> permissions) {
@@ -138,13 +154,45 @@ public class DatabaseManager {
             System.out.println("Role does not exist");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> preUsersWithPermissions = new HashMap<>();
+        List<String> users = getUsersForRole(roleName);
+        for (String user : users) {
+            Map<String, List<String>> userStatus = userStatus(user);
+            List<String> userPermissions = getPermissionsFromStatus(userStatus);
+            preUsersWithPermissions.put(user, userPermissions);
+        }
+
+        AtomicBoolean success = new AtomicBoolean(true);
         performDatabaseOperation(connection -> {
             String sql = "DELETE FROM Roles WHERE RoleName = ?";
             try (var preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, roleName);
-                preparedStatement.executeUpdate();
+                int rowsAffected = preparedStatement.executeUpdate();
+                success.set(rowsAffected > 0);
             }
         });
+
+        if (success.get()) {
+            Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
+            for (String user : users) {
+                Map<String, List<String>> userStatus = userStatus(user);
+                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                postUsersWithPermissions.put(user, userPermissions);
+            }
+            for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
+                List<String> prePermissions = entry.getValue();
+                List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
+                List<String> permissionsRemoved = new ArrayList<>(prePermissions);
+                permissionsRemoved.removeAll(postPermissions);
+                aclChanges.put(entry.getKey(), permissionsRemoved);
+            }
+            kafkaController.manageDatabaseChanges(aclChanges, false);
+        } else {
+            System.out.println("Failed to delete user from the database.");
+        }
+
     }
 
     public void addPermission(String roleName, String permission) {
@@ -156,6 +204,18 @@ public class DatabaseManager {
             System.out.println("Permission already exists for role");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> preUsersWithPermissions = new HashMap<>();
+        List<String> users = getUsersForRole(roleName);
+        for (String user : users) {
+            Map<String, List<String>> userStatus = userStatus(user);
+            List<String> userPermissions = getPermissionsFromStatus(userStatus);
+            preUsersWithPermissions.put(user, userPermissions);
+        }
+
+        boolean success = false;
+
         try {
             String currentPermissionsQuery = "SELECT Permissions FROM Roles WHERE RoleName = ?";
             String permissionsJson = retrieveData(currentPermissionsQuery, roleName).get(0);
@@ -164,9 +224,28 @@ public class DatabaseManager {
             permissions.add(permission);
             String newPermissionsJson = objectMapper.writeValueAsString(permissions);
             String updatePermissionsQuery = "UPDATE Roles SET Permissions = ? WHERE RoleName = ?";
-            updateData(updatePermissionsQuery, newPermissionsJson, roleName);
+            success = updateData(updatePermissionsQuery, newPermissionsJson, roleName);
         } catch (Exception e) {
             System.out.println("Error adding permission: " + e.getMessage());
+        }
+
+        if (success) {
+            Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
+            for (String user : users) {
+                Map<String, List<String>> userStatus = userStatus(user);
+                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                postUsersWithPermissions.put(user, userPermissions);
+            }
+            for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
+                List<String> prePermissions = entry.getValue();
+                List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
+                List<String> permissionsAdded = new ArrayList<>(postPermissions);
+                permissionsAdded.removeAll(prePermissions);
+                aclChanges.put(entry.getKey(), permissionsAdded);
+            }
+            kafkaController.manageDatabaseChanges(aclChanges, true);
+        } else {
+            System.out.println("Failed to delete user from the database.");
         }
     }
 
@@ -179,6 +258,18 @@ public class DatabaseManager {
             System.out.println("Permission does not exist for role");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> preUsersWithPermissions = new HashMap<>();
+        List<String> users = getUsersForRole(roleName);
+        for (String user : users) {
+            Map<String, List<String>> userStatus = userStatus(user);
+            List<String> userPermissions = getPermissionsFromStatus(userStatus);
+            preUsersWithPermissions.put(user, userPermissions);
+        }
+
+        boolean success = false;
+
         try {
             String currentPermissionsQuery = "SELECT Permissions FROM Roles WHERE RoleName = ?";
             String permissionsJson = retrieveData(currentPermissionsQuery, roleName).get(0);
@@ -186,9 +277,28 @@ public class DatabaseManager {
             permissions.remove(permission);
             String newPermissionsJson = objectMapper.writeValueAsString(permissions);
             String updatePermissionsQuery = "UPDATE Roles SET Permissions = ? WHERE RoleName = ?";
-            updateData(updatePermissionsQuery, newPermissionsJson, roleName);
+            success = updateData(updatePermissionsQuery, newPermissionsJson, roleName);
         } catch (Exception e) {
             System.out.println("Error adding permission: " + e.getMessage());
+        }
+
+        if (success) {
+            Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
+            for (String user : users) {
+                Map<String, List<String>> userStatus = userStatus(user);
+                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                postUsersWithPermissions.put(user, userPermissions);
+            }
+            for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
+                List<String> prePermissions = entry.getValue();
+                List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
+                List<String> permissionsRemoved = new ArrayList<>(prePermissions);
+                permissionsRemoved.removeAll(postPermissions);
+                aclChanges.put(entry.getKey(), permissionsRemoved);
+            }
+            kafkaController.manageDatabaseChanges(aclChanges, false);
+        } else {
+            System.out.println("Failed to delete user from the database.");
         }
     }
 
@@ -197,6 +307,13 @@ public class DatabaseManager {
             System.out.println("User or role does not exist");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> preUserStatus = userStatus(userName);
+        List<String> preUserPermissions = getPermissionsFromStatus(preUserStatus);
+
+        AtomicBoolean success = new AtomicBoolean(true);
+
         performDatabaseOperation(connection -> {
             String sql = "INSERT INTO UserRoles (UserId, RoleId) " +
                     "SELECT u.UserId, r.RoleId " +
@@ -205,9 +322,22 @@ public class DatabaseManager {
             try (var preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, userName);
                 preparedStatement.setString(2, roleName);
-                preparedStatement.executeUpdate();
+                int rowsAffected = preparedStatement.executeUpdate();
+                success.set(rowsAffected > 0);
             }
         });
+
+        if (success.get()) {
+            Map<String, List<String>> postUserStatus = userStatus(userName);
+            List<String> postUserPermissions = getPermissionsFromStatus(postUserStatus);
+            List<String> permissionsAdded = new ArrayList<>(postUserPermissions);
+            permissionsAdded.removeAll(preUserPermissions);
+            aclChanges.put(userName, permissionsAdded);
+            kafkaController.manageDatabaseChanges(aclChanges, true);
+        } else {
+            System.out.println("Failed to delete user from the database.");
+        }
+
     }
 
     public void removeRole(String userName, String roleName) {
@@ -219,6 +349,13 @@ public class DatabaseManager {
             System.out.println("User is not assigned to role");
             return;
         }
+
+        Map<String, List<String>> aclChanges = new HashMap<>();
+        Map<String, List<String>> preUserStatus = userStatus(userName);
+        List<String> preUserPermissions = getPermissionsFromStatus(preUserStatus);
+
+        AtomicBoolean success = new AtomicBoolean(true);
+
         performDatabaseOperation(connection -> {
             String sql = "DELETE FROM UserRoles " +
                     "WHERE UserId = (SELECT UserId FROM Users WHERE UserName = ?) " +
@@ -226,9 +363,21 @@ public class DatabaseManager {
             try (var preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setString(1, userName);
                 preparedStatement.setString(2, roleName);
-                preparedStatement.executeUpdate();
+                int rowsAffected = preparedStatement.executeUpdate();
+                success.set(rowsAffected > 0);
             }
         });
+
+        if (success.get()) {
+            Map<String, List<String>> postUserStatus = userStatus(userName);
+            List<String> postUserPermissions = getPermissionsFromStatus(postUserStatus);
+            List<String> permissionsAdded = new ArrayList<>(postUserPermissions);
+            preUserPermissions.removeAll(postUserPermissions);
+            aclChanges.put(userName, permissionsAdded);
+            kafkaController.manageDatabaseChanges(aclChanges, false);
+        } else {
+            System.out.println("Failed to delete user from the database.");
+        }
     }
 
     public Map<String, List<String>> userStatus(String userName) {
@@ -294,6 +443,15 @@ public class DatabaseManager {
             }
         });
         return userRoles;
+    }
+
+    public List<String> getUsersForRole(String roleName) {
+        if (!roleExists(roleName)) {
+            System.out.println("Role does not exist");
+            return Collections.emptyList();
+        }
+        String sql = "SELECT u.UserName FROM Users u JOIN UserRoles ur ON u.UserId = ur.UserId JOIN Roles r ON ur.RoleId = r.RoleId WHERE r.RoleName = ?";
+        return new ArrayList<>(retrieveData(sql, roleName));
     }
 
     public List<String> getAllRoles() {
@@ -382,15 +540,18 @@ public class DatabaseManager {
         return results;
     }
 
-    public void updateData(String sql, Object... params) {
+    public boolean updateData(String sql, Object... params) {
+        AtomicBoolean success = new AtomicBoolean(true);
         performDatabaseOperation(connection -> {
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 for (int i = 0; i < params.length; i++) {
                     preparedStatement.setObject(i + 1, params[i]);
                 }
-                preparedStatement.executeUpdate();
+                int rowsAffected = preparedStatement.executeUpdate();
+                success.set(rowsAffected > 0);
             }
         });
+        return success.get();
     }
 
     public boolean isUserAssignedToRole(String userName, String roleName) {
@@ -408,6 +569,18 @@ public class DatabaseManager {
             }
         });
         return isAssigned.get();
+    }
+
+    private List<String> getPermissionsFromStatus(Map<String, List<String>> userStatus) {
+        List<String> uniquePermissions = new ArrayList<>();
+        for (Map.Entry<String, List<String>> entry : userStatus.entrySet()) {
+            for (String permission : entry.getValue()) {
+                if (!uniquePermissions.contains(permission)) {
+                    uniquePermissions.add(permission);
+                }
+            }
+        }
+        return uniquePermissions;
     }
 
 

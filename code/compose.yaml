@@ -75,6 +75,7 @@ services:
         condition: service_started
     volumes: 
       - ./dash_config/default_dash_config.json:/tmp/default_dash_config.json
+
   kafka-connect:
     image: 'bitnami/kafka:3.5'
     ports:

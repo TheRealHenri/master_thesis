@@ -22,9 +22,11 @@ public class RBACBootstrapper {
         }
 
         System.out.println("Initializing RBAC");
-        DatabaseManager databaseManager = new DatabaseManager();
-        System.out.println("Setting up Database");
         System.out.println("Setting up Kafka");
+        KafkaController kafkaController = new KafkaController();
+        kafkaController.initializeKafkaAdmin();
+        DatabaseManager databaseManager = new DatabaseManager(kafkaController);
+        System.out.println("Setting up Database");
         System.out.println("Ready to go!");
         System.out.println("Starting CLI");
         Scanner scanner = new Scanner(System.in);
@@ -36,6 +38,7 @@ public class RBACBootstrapper {
             System.out.print("> ");
             String line = scanner.nextLine();
             if ("exit".equalsIgnoreCase(line)) {
+                kafkaController.closeKafkaAdmin();
                 break;
             }
 
