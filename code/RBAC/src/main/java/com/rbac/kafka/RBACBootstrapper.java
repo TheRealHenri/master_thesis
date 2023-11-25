@@ -43,17 +43,21 @@ public class RBACBootstrapper {
             }
 
             String[] input = line.split(" ");
-            CLICommands commands = new CLICommands(databaseManager);
-            JCommander jCommander = JCommander.newBuilder()
-                    .addObject(commands)
-                    .build();
+            handleInput(input, databaseManager);
+        }
+    }
 
-            try {
-                jCommander.parse(input);
-                commands.runCommand();
-            } catch (Exception e) {
-                System.out.println("Error: " + e.getMessage());
-            }
+    public static void handleInput(String[] line, DatabaseManager databaseManager) {
+        CLICommands commands = new CLICommands(databaseManager);
+        JCommander jCommander = JCommander.newBuilder()
+                .addObject(commands)
+                .build();
+
+        try {
+            jCommander.parse(line);
+            commands.runCommand();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

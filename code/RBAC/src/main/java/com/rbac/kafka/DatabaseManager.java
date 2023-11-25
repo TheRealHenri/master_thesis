@@ -34,7 +34,7 @@ public class DatabaseManager {
 
         boolean databaseExists;
         try {
-            connection = DriverManager.getConnection(DB_URL);
+            connection = getConnection();
             DatabaseMetaData metaData = connection.getMetaData();
             ResultSet resultSet = metaData.getTables(null, null, "%", null);
             while (resultSet.next()) {
@@ -53,9 +53,9 @@ public class DatabaseManager {
         return databaseExists;
     }
 
-    private void initializeDatabase() {
+    public void initializeDatabase() {
         try {
-        connection = DriverManager.getConnection(DB_URL);
+        connection = getConnection();
         createTables();
         } catch (SQLException e) {
             System.out.println("Error connecting to SQLite database: " + e.getMessage());
@@ -178,14 +178,14 @@ public class DatabaseManager {
             Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
             for (String user : users) {
                 Map<String, List<String>> userStatus = userStatus(user);
-                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                List<String> userPermissions = getPostPermissionsFromStatus(userStatus);
                 postUsersWithPermissions.put(user, userPermissions);
             }
             for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
                 List<String> prePermissions = entry.getValue();
                 List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
                 List<String> permissionsRemoved = new ArrayList<>(prePermissions);
-                permissionsRemoved.removeAll(postPermissions);
+                if (!postPermissions.isEmpty()) permissionsRemoved.removeAll(postPermissions);
                 aclChanges.put(entry.getKey(), permissionsRemoved);
             }
             kafkaController.manageDatabaseChanges(aclChanges, false);
@@ -214,7 +214,7 @@ public class DatabaseManager {
             preUsersWithPermissions.put(user, userPermissions);
         }
 
-        boolean success = false;
+        boolean success = true;
 
         try {
             String currentPermissionsQuery = "SELECT Permissions FROM Roles WHERE RoleName = ?";
@@ -233,14 +233,14 @@ public class DatabaseManager {
             Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
             for (String user : users) {
                 Map<String, List<String>> userStatus = userStatus(user);
-                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                List<String> userPermissions = getPostPermissionsFromStatus(userStatus);
                 postUsersWithPermissions.put(user, userPermissions);
             }
             for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
                 List<String> prePermissions = entry.getValue();
                 List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
                 List<String> permissionsAdded = new ArrayList<>(postPermissions);
-                permissionsAdded.removeAll(prePermissions);
+                if (!prePermissions.isEmpty()) permissionsAdded.removeAll(prePermissions);
                 aclChanges.put(entry.getKey(), permissionsAdded);
             }
             kafkaController.manageDatabaseChanges(aclChanges, true);
@@ -268,7 +268,7 @@ public class DatabaseManager {
             preUsersWithPermissions.put(user, userPermissions);
         }
 
-        boolean success = false;
+        boolean success = true;
 
         try {
             String currentPermissionsQuery = "SELECT Permissions FROM Roles WHERE RoleName = ?";
@@ -286,14 +286,14 @@ public class DatabaseManager {
             Map<String, List<String>> postUsersWithPermissions = new HashMap<>();
             for (String user : users) {
                 Map<String, List<String>> userStatus = userStatus(user);
-                List<String> userPermissions = getPermissionsFromStatus(userStatus);
+                List<String> userPermissions = getPostPermissionsFromStatus(userStatus);
                 postUsersWithPermissions.put(user, userPermissions);
             }
             for (Map.Entry<String, List<String>> entry : preUsersWithPermissions.entrySet()) {
                 List<String> prePermissions = entry.getValue();
                 List<String> postPermissions = postUsersWithPermissions.get(entry.getKey());
                 List<String> permissionsRemoved = new ArrayList<>(prePermissions);
-                permissionsRemoved.removeAll(postPermissions);
+                if (!postPermissions.isEmpty()) permissionsRemoved.removeAll(postPermissions);
                 aclChanges.put(entry.getKey(), permissionsRemoved);
             }
             kafkaController.manageDatabaseChanges(aclChanges, false);
@@ -303,11 +303,13 @@ public class DatabaseManager {
     }
 
     public void assignRole(String userName, String roleName) {
+        System.out.println("Assigning role to user");
         if (!userExists(userName) || !roleExists(roleName)) {
             System.out.println("User or role does not exist");
             return;
         }
 
+        System.out.println("Assigning role to user1");
         Map<String, List<String>> aclChanges = new HashMap<>();
         Map<String, List<String>> preUserStatus = userStatus(userName);
         List<String> preUserPermissions = getPermissionsFromStatus(preUserStatus);
@@ -329,9 +331,9 @@ public class DatabaseManager {
 
         if (success.get()) {
             Map<String, List<String>> postUserStatus = userStatus(userName);
-            List<String> postUserPermissions = getPermissionsFromStatus(postUserStatus);
+            List<String> postUserPermissions = getPostPermissionsFromStatus(postUserStatus);
             List<String> permissionsAdded = new ArrayList<>(postUserPermissions);
-            permissionsAdded.removeAll(preUserPermissions);
+            if (!preUserPermissions.isEmpty()) permissionsAdded.removeAll(preUserPermissions);
             aclChanges.put(userName, permissionsAdded);
             kafkaController.manageDatabaseChanges(aclChanges, true);
         } else {
@@ -370,10 +372,10 @@ public class DatabaseManager {
 
         if (success.get()) {
             Map<String, List<String>> postUserStatus = userStatus(userName);
-            List<String> postUserPermissions = getPermissionsFromStatus(postUserStatus);
-            List<String> permissionsAdded = new ArrayList<>(postUserPermissions);
-            preUserPermissions.removeAll(postUserPermissions);
-            aclChanges.put(userName, permissionsAdded);
+            List<String> postUserPermissions = getPostPermissionsFromStatus(postUserStatus);
+            List<String> permissionsRemoved = new ArrayList<>(preUserPermissions);
+            if (!postUserPermissions.isEmpty()) permissionsRemoved.removeAll(postUserPermissions);
+            aclChanges.put(userName, permissionsRemoved);
             kafkaController.manageDatabaseChanges(aclChanges, false);
         } else {
             System.out.println("Failed to delete user from the database.");
@@ -485,15 +487,15 @@ public class DatabaseManager {
     }
 
 
-    private boolean userExists(String userName) {
+    public boolean userExists(String userName) {
         return checkExists("SELECT COUNT(*) FROM Users WHERE UserName = ?", userName);
     }
 
-    private boolean roleExists(String roleName) {
+    public boolean roleExists(String roleName) {
         return checkExists("SELECT COUNT(*) FROM Roles WHERE RoleName = ?", roleName);
     }
 
-    private boolean permissionExistsForRole(String permission, String roleName) {
+    public boolean permissionExistsForRole(String permission, String roleName) {
         AtomicBoolean exists = new AtomicBoolean(false);
         performDatabaseOperation(connection -> {
             String sql = "SELECT COUNT(*) FROM Roles WHERE RoleName = ? AND Permissions LIKE ?";
@@ -571,8 +573,9 @@ public class DatabaseManager {
         return isAssigned.get();
     }
 
-    private List<String> getPermissionsFromStatus(Map<String, List<String>> userStatus) {
+    public List<String> getPermissionsFromStatus(Map<String, List<String>> userStatus) {
         List<String> uniquePermissions = new ArrayList<>();
+        if (userStatus == null) return uniquePermissions;
         for (Map.Entry<String, List<String>> entry : userStatus.entrySet()) {
             for (String permission : entry.getValue()) {
                 if (!uniquePermissions.contains(permission)) {
@@ -583,11 +586,15 @@ public class DatabaseManager {
         return uniquePermissions;
     }
 
+    public List<String> getPostPermissionsFromStatus(Map<String, List<String>> userStatus) {
+        return getPermissionsFromStatus(userStatus);
+    }
 
-    private synchronized void performDatabaseOperation(DatabaseOperation operation) {
+
+    public synchronized void performDatabaseOperation(DatabaseOperation operation) {
         try {
             if (connection == null || connection.isClosed()) {
-                connection = DriverManager.getConnection(DB_URL);
+                connection = getConnection();
             }
             operation.execute(connection);
         } catch (SQLException e) {
@@ -604,6 +611,10 @@ public class DatabaseManager {
         } catch (SQLException e) {
             System.out.println("Error closing the SQLite database connection: " + e.getMessage());
         }
+    }
+
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(DB_URL);
     }
 
 }
