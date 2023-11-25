@@ -5,6 +5,7 @@ import com.dash.configs.stream.ParameterType;
 import com.dash.validators.KeyValidator;
 import com.dash.validators.ParameterExpectation;
 import com.dash.validators.PositiveDoubleValidator;
+import com.dash.validators.PositiveLongValidator;
 import org.apache.kafka.connect.data.Field;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Struct;
@@ -13,12 +14,14 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 public class NoiseMethods implements ValueBasedAnonymizer {
 
     private List<String> keysForNoise = Collections.emptyList();
     private Double noise;
+    private Optional<Long> seed;
     private final Logger log = LoggerFactory.getLogger(NoiseMethods.class);
     @Override
     public List<Struct> anonymize(List<Struct> lineS) {
@@ -28,7 +31,7 @@ public class NoiseMethods implements ValueBasedAnonymizer {
         }
 
         Struct struct = lineS.get(0);
-        Random random = new Random();
+        Random random = seed.map(Random::new).orElseGet(Random::new);
 
         for (Field field : struct.schema().fields()) {
             if (keysForNoise.contains(field.name())) {
@@ -81,6 +84,11 @@ public class NoiseMethods implements ValueBasedAnonymizer {
                         ParameterType.NOISE.getName(),
                         List.of(new PositiveDoubleValidator()),
                         true
+                ),
+                new ParameterExpectation(
+                        ParameterType.SEED.getName(),
+                        List.of(new PositiveLongValidator()),
+                        false
                 )
         );
     }
@@ -94,6 +102,9 @@ public class NoiseMethods implements ValueBasedAnonymizer {
                     break;
                 case NOISE:
                     this.noise = parameter.getNoise();
+                    break;
+                case SEED:
+                    this.seed = Optional.of(parameter.getSeed());
                     break;
             }
         }
