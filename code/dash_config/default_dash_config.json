@@ -1,6 +1,6 @@
 {
   "globalConfig": {
-    "bootstrapServer": "kafka:9092",
+    "bootstrapServer": "kafka1:9092,kafka2:9093,kafka3:9094",
     "topic": "no-filter",
     "dataSchema": {
       "schemaType" : "KAFKA_STRUCT",
@@ -26,7 +26,12 @@
   },
   "streamProperties": [
     {
-      "applicationId": "level_1",
+      "applicationId": "baseline",
+      "category": "TUPLE_BASED",
+      "anonymizers": []
+    },
+    {
+      "applicationId": "basic_tuple",
       "category": "VALUE_BASED",
       "anonymizers": [
         {
@@ -64,7 +69,13 @@
               "noise": 0.2
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "applicationId": "generalization_buckets",
+      "category": "TUPLE_BASED",
+      "anonymizers": [
         {
           "anonymizer": "bucketizing",
           "parameters": [
@@ -75,7 +86,14 @@
               "bucketSize" : 10
             }
           ]
-        },
+        }
+      ]
+    },
+
+    {
+      "applicationId": "generalization",
+      "category": "TUPLE_BASED",
+      "anonymizers": [
         {
           "anonymizer": "generalization",
           "parameters": [
@@ -101,7 +119,7 @@
       ]
     },
     {
-      "applicationId": "level_2",
+      "applicationId": "conditional_match",
       "category": "TUPLE_BASED",
       "anonymizers": [
         {
@@ -119,7 +137,13 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "applicationId": "conditional_range",
+      "category": "TUPLE_BASED",
+      "anonymizers": [
         {
           "anonymizer": "conditional_substitution",
           "parameters": [
@@ -135,7 +159,13 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "applicationId": "conditional_regex",
+      "category": "TUPLE_BASED",
+      "anonymizers": [
         {
           "anonymizer": "conditional_substitution",
           "parameters": [
@@ -155,14 +185,14 @@
       ]
     },
     {
-      "applicationId": "level_3",
+      "applicationId": "shuffling",
       "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
           "anonymizer": "shuffling",
           "parameters": [
             {
-              "windowSize": 7,
+              "windowSize": 1000,
               "keys": [
                 "name", "phone"
               ],
@@ -173,14 +203,32 @@
       ]
     },
     {
-      "applicationId": "level_4",
+      "applicationId": "aggregation_average",
+      "category": "ATTRIBUTE_BASED",
+      "anonymizers": [
+        {
+          "anonymizer": "aggregation",
+          "parameters": [
+            {
+              "windowSize": 1000,
+              "keys": [
+                "age"
+              ],
+              "aggregationMode" : "average"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "applicationId": "univariate_microaggregation",
       "category": "ATTRIBUTE_BASED",
       "anonymizers": [
         {
           "anonymizer": "univariate_micro_aggregation",
           "parameters": [
             {
-              "windowSize": 15,
+              "windowSize": 1000,
               "keys": [
                 "glucose"
               ],
@@ -191,7 +239,7 @@
       ]
     },
     {
-      "applicationId": "level_5",
+      "applicationId": "k_anonymization",
       "category": "TABLE_BASED",
       "anonymizers": [
         {
@@ -201,10 +249,10 @@
               "keys": [
                 "id", "name", "address", "phone", "insurance_number"
               ],
-              "k": 10,
-              "delta": 2000,
-              "mu": 10,
-              "beta": 5, 
+              "k": 100,
+              "delta": 20000,
+              "mu": 100,
+              "beta": 50, 
               "quasiIdentifiers": [
                 {
                   "key": "zip",

@@ -31,7 +31,13 @@ public class NoiseMethods implements ValueBasedAnonymizer {
         }
 
         Struct struct = lineS.get(0);
-        Random random = seed.map(Random::new).orElseGet(Random::new);
+        Random random;
+
+        if (seed != null && seed.isPresent()) {
+            random = new Random(seed.get());
+        } else {
+            random = new Random();
+        }
 
         for (Field field : struct.schema().fields()) {
             if (keysForNoise.contains(field.name())) {

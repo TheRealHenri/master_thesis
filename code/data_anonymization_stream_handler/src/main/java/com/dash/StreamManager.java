@@ -8,6 +8,10 @@ import com.dash.configs.global.schemas.SchemaCommon;
 import com.dash.configs.stream.StreamProperties;
 import com.dash.factory.AnonymizationStreamFactory;
 import com.dash.loaders.JSONLoader;
+import com.dash.metrics.DatabaseEntry;
+import com.dash.metrics.DatabaseManager;
+import org.apache.kafka.common.Metric;
+import org.apache.kafka.common.MetricName;
 import org.apache.kafka.streams.KafkaStreams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class StreamManager {
 
@@ -69,9 +75,55 @@ public class StreamManager {
             streamsMap.put(streamConfig.getApplicationId(), AnonymizationStreamFactory.buildAnonymizationStream(globalConfig, streamConfig));
         }
         log.info("Streams created.");
+        log.info("Setting up metrics database");
+        String dbURLAppendix = System.currentTimeMillis() + ".db";
+        DatabaseManager databaseManager = new DatabaseManager(dbURLAppendix);
         log.info("Starting all streams");
-        startAllStreams();
+        startAllStreamsWithMetrics(databaseManager);
     }
+
+
+    public void startAllStreamsWithMetrics(DatabaseManager databaseManager) {
+        for (KafkaStreams stream : streamsMap.values()) {
+            if (stream.isPaused()) {
+                stream.resume();
+            } else {
+                stream.start();
+            }
+        }
+        Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
+            List<DatabaseEntry> batch = new ArrayList<>();
+            for (Map.Entry<String, KafkaStreams> kafkaStreamsEntry : streamsMap.entrySet()) {
+                Map<MetricName, ? extends Metric> metrics = kafkaStreamsEntry.getValue().metrics();
+                DatabaseEntry databaseEntry = createDatabaseEntry(kafkaStreamsEntry.getKey(), metrics);
+                batch.add(databaseEntry);
+            }
+            databaseManager.executeBatchInserts(batch);
+        }, 0, 1, TimeUnit.SECONDS);
+    }
+
+    private DatabaseEntry createDatabaseEntry(String applicationId, Map<MetricName, ? extends Metric> metrics) {
+        DatabaseEntry databaseEntry = new DatabaseEntry();
+        databaseEntry.setApplicationId(applicationId);
+        databaseEntry.setTimestamp(System.currentTimeMillis());
+        databaseEntry.setRecordSendRate(getMetricValue(metrics, "record-send-rate"));
+        databaseEntry.setRecordsPerRequestAvg(getMetricValue(metrics, "records-per-request-avg"));
+        databaseEntry.setProcessLatencyAvg(getMetricValue(metrics, "process-latency-avg"));
+        databaseEntry.setProcessRate(getMetricValue(metrics, "process-rate"));
+        return databaseEntry;
+    }
+
+    private double getMetricValue(Map<MetricName, ? extends Metric> metrics, String metricName) {
+        return metrics.entrySet().stream()
+                .filter(entry -> entry.getKey().name().equals(metricName))
+                .findFirst()
+                .map(entry -> {
+                    Double value = (Double) entry.getValue().metricValue();
+                    return value.isNaN() ? 0.0 : value;
+                })
+                .orElse(0.0);
+    }
+
     public void startAllStreams() {
         for (KafkaStreams stream : streamsMap.values()) {
             if (stream.isPaused()) {
@@ -81,7 +133,6 @@ public class StreamManager {
             }
         }
     }
-
     public void stopAllStreams() {
         for (KafkaStreams stream : streamsMap.values()) {
             stream.close();

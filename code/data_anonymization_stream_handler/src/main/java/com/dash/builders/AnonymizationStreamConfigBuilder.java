@@ -36,7 +36,12 @@ public class AnonymizationStreamConfigBuilder {
 
         log.info("Building Config for Stream {}", streamProperties.getApplicationId());
 
-        validateStreamProperties(streamProperties);
+        int validateStatus = validateStreamProperties(streamProperties);
+
+        if (validateStatus == 1) {
+            log.info("No Anonymizers defined for Stream {}.", streamProperties.getApplicationId());
+            return new AnonymizationStreamConfig(streamProperties.getApplicationId(), new ArrayList<>(), AnonymizationCategory.TUPLE_BASED);
+        }
 
         List<Anonymizer> anonymizers = getValidatedInstantiatedAnonymizers(streamProperties);
 
@@ -49,7 +54,7 @@ public class AnonymizationStreamConfigBuilder {
         return new AnonymizationStreamConfig(streamProperties.getApplicationId(), anonymizers, anonymizationCategory);
     }
 
-    private void validateStreamProperties(StreamProperties streamProperties) throws ConfigurationException {
+    private int validateStreamProperties(StreamProperties streamProperties) throws ConfigurationException {
         if (streamProperties.getApplicationId().isEmpty()) {
             throw new ConfigurationException("Application id must be defined. Stream must have name.");
         }
@@ -57,9 +62,10 @@ public class AnonymizationStreamConfigBuilder {
             throw new ConfigurationException("Application id must not contain spaces.");
         }
         if (streamProperties.getAnonymizers() == null || streamProperties.getAnonymizers().isEmpty()) {
-            throw new ConfigurationException("Define at least one Anonymizer per Stream.");
+            return 1;
         }
         log.info("Stream properties validated.");
+        return 0;
     }
 
     private List<Anonymizer> getValidatedInstantiatedAnonymizers(StreamProperties streamProperties) throws ConfigurationException {

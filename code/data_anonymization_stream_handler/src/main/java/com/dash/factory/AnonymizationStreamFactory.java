@@ -76,6 +76,8 @@ public class AnonymizationStreamFactory {
                         return tmpStruct;
                     }).to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
             }
+        } else {
+            source.to(globalConfig.getTopic() + "-" + streamConfig.getApplicationId(), Produced.with(Serdes.String(), structSerde));
         }
 
 
