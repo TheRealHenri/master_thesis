@@ -40,8 +40,23 @@ public class DatabaseManager {
                     "    RecordSendRate REAL," +
                     "    RecordsPerRequestAvg REAL," +
                     "    ProcessLatencyAvg REAL," +
-                    "    ProcessRate REAL" +
-                    ");";
+                    "    ProcessRate REAL," +
+                    "    MessagesInPerSecond REAL," +
+                    "    BytesInPerSecond REAL," +
+                    "    BytesOutPerSecond REAL," +
+                    "    FetchRequestRate REAL," +
+                    "    ProduceRequestRate REAL," +
+                    "    RequestLatencyAvg REAL," +
+                    "    RequestLatencyMax REAL," +
+                    "    CommitLatencyAvg REAL," +
+                    "    CommitLatencyMax REAL," +
+                    "    RequestSizeAvg REAL," +
+                    "    RequestSizeMax REAL," +
+                    "    ResponseQueueTimeAvg REAL," +
+                    "    ResponseQueueTimeMax REAL," +
+                    "    ResponseSendTimeAvg REAL," +
+                    "    ResponseSendTimeMax REAL" +
+                    ");\n";
             stmt.execute(createMetricsTable);
         }
     }
@@ -50,13 +65,32 @@ public class DatabaseManager {
         log.info("Executing batch inserts");
         try (Statement stmt = connection.createStatement()) {
             for (DatabaseEntry entry : batch) {
-                String insert = "INSERT INTO StreamMetrics (StreamId, Timestamp, RecordSendRate, RecordsPerRequestAvg, ProcessLatencyAvg, ProcessRate) VALUES (" +
+                String insert = "INSERT INTO StreamMetrics (StreamId, Timestamp, RecordSendRate, RecordsPerRequestAvg, ProcessLatencyAvg, " +
+                        "ProcessRate, MessagesInPerSecond, BytesInPerSecond, BytesOutPerSecond, FetchRequestRate, ProduceRequestRate, RequestLatencyAvg," +
+                        "RequestLatencyMax, CommitLatencyAvg, CommitLatencyMax, RequestSizeAvg, RequestSizeMax, ResponseQueueTimeAvg, ResponseQueueTimeMax," +
+                        "ResponseSendTimeAvg, ResponseSendTimeMax) VALUES (" +
                         "'" + entry.getApplicationId() + "'," +
                         entry.getTimestamp() + "," +
                         entry.getRecordSendRate() + "," +
                         entry.getRecordsPerRequestAvg() + "," +
                         entry.getProcessLatencyAvg() + "," +
-                        entry.getProcessRate() + ");";
+                        entry.getProcessRate()  + "," +
+                        entry.getMessagesInPerSecond() + "," +
+                        entry.getBytesInPerSecond() + "," +
+                        entry.getBytesOutPerSecond() + "," +
+                        entry.getFetchRequestRate() + "," +
+                        entry.getProduceRequestRate() + "," +
+                        entry.getRequestLatencyAvg() + "," +
+                        entry.getRequestLatencyMax() + "," +
+                        entry.getCommitLatencyAvg() + "," +
+                        entry.getCommitLatencyMax() + "," +
+                        entry.getRequestSizeAvg() + "," +
+                        entry.getRequestSizeMax() + "," +
+                        entry.getResponseQueueTimeAvg() + "," +
+                        entry.getResponseQueueTimeMax() + "," +
+                        entry.getResponseSendTimeAvg() + "," +
+                        entry.getResponseSendTimeMax() +
+                        ");";
                 stmt.addBatch(insert);
             }
             stmt.executeBatch();

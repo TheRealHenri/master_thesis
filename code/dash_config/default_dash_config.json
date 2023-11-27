@@ -1,6 +1,6 @@
 {
   "globalConfig": {
-    "bootstrapServer": "kafka1:9092,kafka2:9093,kafka3:9094",
+    "bootstrapServer": "kafka1:19092,kafka2:19093,kafka3:19094",
     "topic": "no-filter",
     "dataSchema": {
       "schemaType" : "KAFKA_STRUCT",
