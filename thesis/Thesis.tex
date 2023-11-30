@@ -58,6 +58,41 @@
    {"anonymizers"}{{{\color{yellow}{"anonymizers"}}}}{11}
     {"streamProperties"}{{{\color{orange}{"streamProperties"}}}}{16},
 }
+\newcommand\YAMLcolonstyle{\color{red}\mdseries}
+\newcommand\YAMLkeystyle{\color{black}\bfseries}
+\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+
+\makeatletter
+
+\newcommand\language@yaml{yaml}
+
+\expandafter\expandafter\expandafter\lstdefinelanguage
+\expandafter{\language@yaml}
+{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{darkgray}\bfseries,
+  basicstyle=\YAMLkeystyle,                                 
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{green}\normalfont\ttfamily,
+  stringstyle=\YAMLvaluestyle\normalfont\ttfamily,
+  moredelim=[l][\color{orange}]{\&},
+  moredelim=[l][\color{magenta}]{*},
+  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},   
+  morestring=[b]',
+  morestring=[b]",
+  literate =    {---}{{\ProcessThreeDashes}}3
+                {>}{{\textcolor{red}\textgreater}}1     
+                {|}{{\textcolor{red}\textbar}}1 
+                {\ -\ }{{\mdseries\ -\ }}3,
+}
+
+% switch to key style at EOL
+\lst@AddToHook{EveryLine}{\ifx\lst@language\language@yaml\YAMLkeystyle\fi}
+\makeatother
+
+\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}
 
 %for adding comments
 \usepackage{verbatim}
@@ -80,6 +115,10 @@
 \definecolor{orange}{HTML}{8a3800} 
 \definecolor{teal}{HTML}{009d9a} 
 \definecolor{cyan}{HTML}{1192e8} 
+\definecolor{dataBlue}{HTML}{625dff}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 
 % header and footer line - no header & footer line on pages where a new chapter starts
@@ -89,7 +128,7 @@
 %}
 
 \usepackage{tikz}
-\usetikzlibrary{shapes, arrows, positioning, calc}
+\usetikzlibrary{shapes, shapes.geometric, arrows, arrows.meta, positioning, calc}
 
 \begin{document}
 
@@ -146,6 +185,7 @@
 \begin{acronym}[Bash]   
   \acro{ACL}{Access Control List}
   \acro{CCPA}{California Consumer Privacy Act}
+  \acro{CLI}{Command Line Interface}
   \acro{DASH}{Data Anonymization Stream Handler}
   \acro{DIMA}{Database Systems and Information Management}
   \acro{DAC}{Discretionary Access Control}
@@ -153,11 +193,13 @@
   \acro{GDPR}{General Data Protection Regulation}
   \acro{ICD}{International Statistical Classification of Diseases and Related Health Problems}
   \acro{IoT}{Internet of Things}
+  \acro{JAAS}{Java Authentication and Authorization Service}
   \acro{KNN}{K-Nearest Neighbors}
   \acro{MAC}{Mandatory Access Control}
   \acro{PII}{Personally Identifiable Information}
   \acro{RBAC}{Role Based Access Control}
   \acro{SSE}{Sum of Squared Errors}
+  \acro{SASL}{Simple Authentication and Security Layer}
 \end{acronym}
 \onecolumn
 \acrodefplural{ACL}{Access Control Lists}
@@ -178,7 +220,8 @@
     \input{./chapters/3Theoretical_framework.tex}
     \input{./chapters/4Implementation.tex}
     \input{./chapters/5Testing_evaluation.tex}
-    \input{./chapters/6Conclusion.tex}
+    \input{./chapters/6Related_Work.tex}
+    \input{./chapters/7Conclusion.tex}
 
 % ---------------------------------------------------------------
 

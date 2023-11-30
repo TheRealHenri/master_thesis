@@ -1,13 +1,34 @@
 import sqlite3
 import pandas as pd
+import os
+import glob
 
-db_name = 'streams_metrics_'
-db_name += '1701098222224'
+def extract_metrics(db_directory, extracted_directory, prefix=""):
+    db_files = glob.glob(db_directory + '/*.db')
+    
+    for db_file in db_files:
+        base_name = os.path.basename(db_file)
+        csv_file = prefix + base_name.replace('.db', '.csv')
 
-conn = sqlite3.connect('./databases/' + db_name + '.db')
+        if not os.path.exists(os.path.join(extracted_directory, csv_file)):
+            conn = sqlite3.connect(db_file)
+            
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='StreamMetrics';")
+            if cursor.fetchone():
+                df = pd.read_sql_query("SELECT * FROM StreamMetrics", conn)
+                df.to_csv(os.path.join(extracted_directory, csv_file), index=False)
+            else:
+                print(f"Table 'StreamMetrics' not found in {db_file}")
+            
+            conn.close()
 
-df = pd.read_sql_query("SELECT * FROM StreamMetrics", conn)
+local_db_directory = './databases'
+server_db_directory = './ssh/databases'
+extracted_directory = './extracted_metrics'
 
-df.to_csv('./extracted_metrics/' + db_name  + '.csv', index=False)
+extract_metrics(local_db_directory, extracted_directory)
 
-conn.close()
+extract_metrics(server_db_directory, extracted_directory, prefix="ssh_")
+
+print("Extraction complete.")

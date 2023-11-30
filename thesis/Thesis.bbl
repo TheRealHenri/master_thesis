@@ -11,6 +11,9 @@ Amazon: Amazon redshift (2023), \url{https://aws.amazon.com/redshift}, accessed:
 \bibitem{kafka}
 {Apache Software Foundation}: Apache kafka (2023), \url{https://kafka.apache.org}, accessed: 2023-10-01
 
+\bibitem{jcommander}
+Beust, C.: Jcommander (2023), \url{https://jcommander.org/}, accessed: 2023-11-01
+
 \bibitem{Byun2008}
 Byun, J.W., Li, N.: Purpose based access control for privacy protection in relational database systems. The VLDB Journal  17,  603--619 (7 2008)
 
@@ -26,11 +29,17 @@ Colombo, P., Ferrari, E.: Privacy aware access control for big data: A research 
 \bibitem{GDPR}
 Commission, E.: General data protection regulation (gdpr) (2023), \url{https://gdpr.eu/}, accessed: 2023-06-01
 
+\bibitem{faker}
+Community, F.: Faker (2023), \url{https://faker.readthedocs.io/en/master/}, accessed: 2023-11-01
+
 \bibitem{privitar}
 Confluent: Privitar kafka connector (2023), \url{https://www.confluent.io/hub/privitar/privitar-kafka-connector/}, accessed: 2023-06-01
 
 \bibitem{oracle}
 Coporation, O.: Oracle databases (2023), \url{https://www.oracle.com/database/}, accessed: 2023-10-01
+
+\bibitem{numpy}
+Developers, N.: Numpy (2023), \url{https://numpy.org/}, accessed: 2023-11-01
 
 \bibitem{dijkstra2022note}
 Dijkstra, E.W.: A Note on Two Problems in Connexion with Graphs, pp. 287--290. Association for Computing Machinery, New York, NY, USA, 1 edn. (2022), \url{https://doi.org/10.1145/3544585.3544600}
@@ -53,8 +62,17 @@ Foundation, A.S.: Apache pulsar (2023), \url{https://pulsar.apache.org/}, access
 \bibitem{HansenUnivariateMicroaggregation}
 Hansen, S.L., Mukherjee, S.: A polynomial algorithm for optimal univariate microaggregation. IEEE Transactions on Knowledge and Data Engineering  15,  1043--1044 (7 2003)
 
+\bibitem{docker}
+Inc, D.: Docker (2023), \url{https://www.docker.com/}, accessed: 2023-11-01
+
+\bibitem{dockerhub}
+Inc, D.: Docker hub (2023), \url{https://hub.docker.com/}, accessed: 2023-11-01
+
 \bibitem{mongo_db}
 Inc, M.: Mongodb (2023), \url{https://www.mongodb.com/}, accessed: 2023-10-01
+
+\bibitem{jupyter_notebook}
+Jupyter, P.: Jupyter notebook (2023), \url{https://jupyter.org/}, accessed: 2023-11-01
 
 \bibitem{CCPA}
 of~California Department~of Justice, S.: California consumer privacy act (ccpa) (2023), \url{https://oag.ca.gov/privacy/ccpa}, accessed: 2023-06-01
@@ -109,6 +127,12 @@ Sweeney, L.: Weaving technology and policy together to maintain confidentiality.
 
 \bibitem{sweeney2002kanonymity}
 Sweeney, L.: K-anonymity: A model for protecting privacy. International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems  10(05),  557--570 (2002)
+
+\bibitem{pandas}
+Team, P.D.: Pandas (2023), \url{https://pandas.pydata.org/}, accessed: 2023-11-01
+
+\bibitem{sqlite}
+Team, S.: Sqlite (2023), \url{https://www.sqlite.org/}, accessed: 2023-11-01
 
 \bibitem{wallwork_177}
 Wallwork, A.: English for writing research papers, chap. Abstracts, pp. 177--245. Springer International Publishing Switzerland (2011)

@@ -1,5 +1,5 @@
 \chapter{Literature Review\label{cha:chapter2}}
-This chapter presents a comprehensive review of the important literature relevant to the key topics of this thesis. Initially, it examines the evolution of access control. This is followed by an in-depth exploration of distributed event stores, elucidating their development, their strengths and weaknesses, and their prominence in modern distributed database systems. Subsequently, the following section explores data anonymization, highlighting general techniques as well as those specifically tailored for streaming data. Finally, we conclude this chapter with related work. 
+This chapter presents a comprehensive review of the important literature relevant to the key topics of this thesis. Initially, it examines the evolution of access control. This is followed by an in-depth exploration of distributed event stores, elucidating their development, their strengths and weaknesses, and their prominence in modern distributed database systems. Subsequently, the following section explores data anonymization, highlighting general techniques as well as those specifically tailored for streaming data.
 
 
 \section{Access Control\label{sec:rbac}}
@@ -225,10 +225,6 @@ The aforementioned masking functions are applied to a single value within a reco
 
 \subsection{Data Streaming\label{lit:data_streaming}}
 In the context of Distributed Event Stores, which operate on streaming data, additional challenges emerge, as previously established. Simple masking functions are well-suited for data stream handling, as they modify single records and integrate seamlessly into the data pipeline. Complex masking functions, such as those performing aggregations based on multiple tuples, require a distinct approach. An unbounded stream must be discretized into finite sets of records for these functions to operate effectively. Modern data stream handlers, such as \ac{DES}, typically employ 'windowing' techniques. Windowing segments an unbounded stream into discrete windows of record collections. These may vary in size, overlap, and basis (periods, sessions, or states). The scope of this concept is extensive, encompassing a vast array of methodologies and applications. Researchers have developed specialized adaptations of established concepts to address the unique challenges of streaming data. For instance, targeted solutions for k-anonymity within data streams include KIDS \cite{KIDS_zhang} and CASTLE \cite{Cao2008}. 
-
-\section{Related Work}
-A notable piece of related work is Privitar \cite{privitar}, a tool designed for anonymizing data entering distributed event stores. While Privitar is a significant step in integrating data privacy measures into distributed systems, it is important to note that its applicability is limited to a specific platform, and the full documentation of the tool is not publicly available. Furthermore, Privitar primarily focuses on protecting data during processing by encrypting the data entering the system and implementing authentication and authorization mechanisms. Additionally, it is worth noting that Privitar also claims to de-identify the data, although the specific methods or techniques employed for deidentification are not explicitly specified. 
-
 
 
 
