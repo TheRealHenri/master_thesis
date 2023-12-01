@@ -31,6 +31,7 @@ services:
 
   kafka1:
     image: confluentinc/cp-kafka:latest
+    restart: always
     ports:
       - "9092:9092"
       - "29092:29092"
@@ -49,6 +50,7 @@ services:
 
   kafka2:
     image: confluentinc/cp-kafka:latest
+    restart: always
     ports:
       - "9093:9093"
       - "29093:29093"
@@ -67,6 +69,7 @@ services:
 
   kafka3:
     image: confluentinc/cp-kafka:latest
+    restart: always
     ports:
       - "9094:9094"
       - "29094:29094"
