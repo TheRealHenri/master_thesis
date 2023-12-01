@@ -103,7 +103,7 @@
         ]
       },
       {
-        "applicationId": "aggregation_ms_window",
+        "applicationId": "aggregation_100ms_window",
         "category": "ATTRIBUTE_BASED",
         "anonymizers": [
           {
@@ -111,6 +111,60 @@
             "parameters": [
               {
                 "windowSize": 100,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_150ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 150,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_200ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 200,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_500ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 500,
                 "keys": [
                   "age"
                 ],
