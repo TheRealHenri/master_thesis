@@ -1,362 +1,125 @@
 {
-  "globalConfig": {
-    "bootstrapServer": "kafka1:19092,kafka2:19093,kafka3:19094",
-    "topic": "no-filter",
-    "dataSchema": {
-      "schemaType" : "KAFKA_STRUCT",
-      "name": "com.pipeline.kafka.connectors.SyntheticData",
-      "fields": [
-        {"name": "id", "type": "int32"},
-        {"name": "name", "type": "string"},
-        {"name": "address", "type": "string"},
-        {"name": "zip", "type": "int32"},
-        {"name": "phone", "type": "string"},
-        {"name": "gender", "type": "string"},
-        {"name": "height", "type": "int32"},
-        {"name": "weight", "type": "int32"},
-        {"name": "age", "type": "int32"},
-        {"name": "insurance_company", "type": "int32"},
-        {"name": "insurance_number", "type": "string"},
-        {"name": "diagnosis", "type": "string"},
-        {"name": "glucose", "type": "int32"},
-        {"name": "HbA1C", "type": "float32"},
-        {"name": "medication", "type": "string"}
-      ]
-    }
-  },
-  "streamProperties": [
-    {
-      "applicationId": "baseline",
-      "category": "TUPLE_BASED",
-      "anonymizers": []
+    "globalConfig": {
+      "bootstrapServer": "kafka1:19092,kafka2:19093,kafka3:19094",
+      "topic": "no-filter",
+      "dataSchema": {
+        "schemaType" : "KAFKA_STRUCT",
+        "name": "com.pipeline.kafka.connectors.SyntheticData",
+        "fields": [
+          {"name": "id", "type": "int32"},
+          {"name": "name", "type": "string"},
+          {"name": "address", "type": "string"},
+          {"name": "zip", "type": "int32"},
+          {"name": "phone", "type": "string"},
+          {"name": "gender", "type": "string"},
+          {"name": "height", "type": "int32"},
+          {"name": "weight", "type": "int32"},
+          {"name": "age", "type": "int32"},
+          {"name": "insurance_company", "type": "int32"},
+          {"name": "insurance_number", "type": "string"},
+          {"name": "diagnosis", "type": "string"},
+          {"name": "glucose", "type": "int32"},
+          {"name": "HbA1C", "type": "float32"},
+          {"name": "medication", "type": "string"}
+        ]
+      }
     },
-    {
-      "applicationId": "basic_tuple",
-      "category": "VALUE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "blurring",
-          "parameters": [
-            {
-              "keys": [
-                "gender"
-              ]
-            },
-            {
-              "nFields": 7
-            }
-          ]
-        },
-        {
-          "anonymizer": "suppression",
-          "parameters": [
-            {
-              "keys": [
-                "diagnosis"
-              ]
-            }
-          ]
-        },
-        {
-          "anonymizer": "noise_methods",
-          "parameters": [
-            {
-              "keys": [
-                "glucose", "HbA1C"
-              ]
-            },
-            {
-              "noise": 0.2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "generalization_buckets",
-      "category": "TUPLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "bucketizing",
-          "parameters": [
-            {
-              "keys": [
-                "age"
-              ],
-              "bucketSize" : 10
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "applicationId": "generalization",
-      "category": "TUPLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "generalization",
-          "parameters": [
-            {
-              "keys": [
-                "zip"
-              ],
-              "generalizationMap": {
-                "0": "Sachsen, Sachsenanhalt",
-                "1": "Berlin, Brandenburg, MV",
-                "2": "Norddeutschland (¬Berlin)",
-                "3": "Niedersachsen, Bremen",
-                "4": "NRW",
-                "5": "Rheinland-Pfalz, Saarland",
-                "6": "Hessen",
-                "7": "Baden-Württemberg",
-                "8": "Südbayern",
-                "9": "Nordbayern"
+    "streamProperties": [
+      {
+        "applicationId": "baseline",
+        "category": "TUPLE_BASED",
+        "anonymizers": []
+      },
+      {
+        "applicationId": "aggregation_5ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 5,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
               }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "conditional_match",
-      "category": "TUPLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "conditional_substitution",
-          "parameters": [
-            {
-              "keys": [
-                "name"
-              ],
-              "conditionMap": {
-                "matchValue": "Henri Allgöwer"
-              },
-              "substitutionList": [
-                "Peter Müller"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "conditional_range",
-      "category": "TUPLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "conditional_substitution",
-          "parameters": [
-            {
-              "keys": [
-                "age"
-              ],
-              "conditionMap": {
-                "matchRange" : [18, 35.1]
-              },
-              "substitutionList": [
-                "young adult"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "conditional_regex",
-      "category": "TUPLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "conditional_substitution",
-          "parameters": [
-            {
-              "keys": [
-                "phone"
-              ],
-              "conditionMap": {
-                "matchRegex": "^\\d{5} \\d{6}$"
-              },
-              "substitutionList": [
-                "XXXX - XXXXXXXX"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "shuffling",
-      "category": "ATTRIBUTE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "shuffling",
-          "parameters": [
-            {
-              "windowSize": 1000,
-              "keys": [
-                "name", "phone"
-              ],
-              "shuffleIndividually": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "aggregation_average",
-      "category": "ATTRIBUTE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "aggregation",
-          "parameters": [
-            {
-              "windowSize": 1000,
-              "keys": [
-                "age"
-              ],
-              "aggregationMode" : "average"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "univariate_microaggregation",
-      "category": "ATTRIBUTE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "univariate_micro_aggregation",
-          "parameters": [
-            {
-              "windowSize": 1000,
-              "keys": [
-                "glucose"
-              ],
-              "k": 20
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "applicationId": "k_anonymization",
-      "category": "TABLE_BASED",
-      "anonymizers": [
-        {
-          "anonymizer": "k_anonymization",
-          "parameters": [
-            {
-              "keys": [
-                "id", "name", "address", "phone", "insurance_number"
-              ],
-              "k": 100,
-              "delta": 20000,
-              "mu": 100,
-              "beta": 50, 
-              "quasiIdentifiers": [
-                {
-                  "key": "zip",
-                  "bucketing": {
-                    "bucketSize": 500,
-                    "range": [0, 99999]
-                  }
-                },
-                {
-                  "key": "age",
-                  "bucketing": {
-                    "bucketSize": 3,
-                    "range": [0, 100]
-                  }
-                },
-                {
-                  "key": "height",
-                  "bucketing": {
-                    "bucketSize": 5,
-                    "range": [0, 225]
-                  }
-                },
-                {
-                  "key": "weight", 
-                  "bucketing": {
-                    "bucketSize": 5,
-                    "range": [0, 300]
-                  }
-                },
-                {
-                  "key": "gender",
-                  "hierarchy": {
-                    "value": "(Male, Female, Non-Binary)",
-                    "children": [
-                      { "value": "Male" },
-                      { "value": "Female" },
-                      { "value": "Non-Binary" }
-                    ]
-                  }
-                },
-                {
-                  "key": "insurance_company",
-                  "hierarchy": {
-                    "value": "Krankenkasse",
-                    "children": [
-                      {
-                        "value": "Ersatzkasse (EK) und Knappschaft",
-                        "children": [
-                          { "value": "104940005" },
-                          { "value": "103306961" },
-                          { "value": "104450915" },
-                          { "value": "109519176" },
-                          { "value": "103508742" },
-                          { "value": "101002659" },
-                          { "value": "101575519" }
-                        ]
-                      },
-                      {
-                        "value": "Innungskrankenkasse (IKK)",
-                        "children": [
-                          { "value": "109888001" },
-                          { "value": "108888888" },
-                          { "value": "109500787" },
-                          { "value": "109500044" },
-                          { "value": "109500490" },
-                          { "value": "109500398" }
-                        ]
-                      },
-                      {
-                        "value": "Allgemeine Ortskrankenkasse (AOK)",
-                        "children": [
-                          { "value": "108918320" },
-                          { "value": "108814099" },
-                          { "value": "108928697" },
-                          { "value": "108811072" },
-                          { "value": "108815718" }
-                        ]
-                      },
-                      {
-                        "value": "Betriebskrankenkasse (BKK)",
-                        "children": [
-                          { "value": "108313123" },
-                          { "value": "108918428" },
-                          { "value": "108817930" },
-                          { "value": "108811215" },
-                          { "value": "108334056" },
-                          { "value": "108815217" },
-                          { "value": "108312586" }
-                        ]
-                      },
-                      {
-                        "value": "Landwirtschaftliche Krankenkasse (LKK)",
-                        "children": [
-                          { "value": "109000051" }
-                        ]
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_10ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 10,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_25ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 25,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_50ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 50,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 100,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

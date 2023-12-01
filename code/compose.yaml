@@ -44,6 +44,8 @@ services:
       KAFKA_BROKER_ID: 1
     depends_on:
       - zookeeper
+    volumes: 
+      - kafka-logs1:/var/lib/kafka/data
 
   kafka2:
     image: confluentinc/cp-kafka:latest
@@ -60,6 +62,8 @@ services:
       KAFKA_BROKER_ID: 2
     depends_on:
       - zookeeper
+    volumes: 
+      - kafka-logs2:/var/lib/kafka/data
 
   kafka3:
     image: confluentinc/cp-kafka:latest
@@ -76,6 +80,8 @@ services:
       KAFKA_BROKER_ID: 3
     depends_on:
       - zookeeper
+    volumes: 
+      - kafka-logs3:/var/lib/kafka/data
 
   rbac:
     build: ./RBAC

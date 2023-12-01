@@ -50,14 +50,17 @@ public class AnonymizationStreamFactory {
                     source.groupByKey()
                             .windowedBy(timeWindow)
                             .aggregate(
-                                    ArrayList::new,
-                                    (key, value, aggregate) -> {
-                                        aggregate.add(value);
-                                        return aggregate;
-                                    },
-                                    Materialized.with(Serdes.String(), Serdes.ListSerde(ArrayList.class, structSerde))
+                                ArrayList::new,
+                                (key, value, aggregate) -> {
+                                    aggregate.add(value);
+                                    return aggregate;
+                                },
+                                Materialized.with(Serdes.String(), Serdes.ListSerde(ArrayList.class, structSerde))
                             )
-                            .toStream((KeyValueMapper<Windowed<String>, List<Struct>, String>) (key, value) -> key.key())
+                            .toStream((KeyValueMapper<Windowed<String>, List<Struct>, String>) (key, value) -> {
+                                System.out.println("Window: " + key.window().toString() + ", Data length:" + value.size() + " First ten data points: " + value.subList(0, Math.min(10, value.size())));
+                                return key.key();
+                            })
                             .flatMapValues((ValueMapper<List<Struct>, Iterable<Struct>>) values -> {
                                 for (Anonymizer anonymizer : anonymizers) {
                                     values = anonymizer.anonymize(values);

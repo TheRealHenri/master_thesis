@@ -30,6 +30,7 @@ public class CSVSourceTask extends SourceTask {
     public static final String FILENAME_FIELD = "filename";
     public static final String POSITION_FIELD = "position";
     public static final Schema VALUE_SCHEMA = SYNTHETIC_DATA_CSV_SCHEMA;
+    private static int eventCounter = 0;
     private String filePath;
     private String topic;
     private int batchSize;
@@ -191,7 +192,7 @@ public class CSVSourceTask extends SourceTask {
             return null;
         }
     }
-
+    
     @Override
     public  void stop() {
         log.info("Stopping CSV Source Task");

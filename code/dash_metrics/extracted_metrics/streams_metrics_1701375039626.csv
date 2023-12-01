@@ -1,0 +1,7 @@
+ID,StreamId,Timestamp,RecordSendRate,RecordsPerRequestAvg,ProcessLatencyAvg,ProcessRate,MessagesInPerSecond,BytesInPerSecond,BytesOutPerSecond,FetchRequestRate,ProduceRequestRate,RequestLatencyAvg,RequestLatencyMax,CommitLatencyAvg,CommitLatencyMax,RequestSizeAvg,RequestSizeMax,ResponseQueueTimeAvg,ResponseQueueTimeMax,ResponseSendTimeAvg,ResponseSendTimeMax
+1,aggregation_5ms_window,1701375040984,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+2,aggregation_10ms_window,1701375041105,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+3,aggregation_25ms_window,1701375041117,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+4,baseline,1701375041123,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+5,aggregation_100ms_window,1701375041131,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+6,aggregation_50ms_window,1701375041132,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
