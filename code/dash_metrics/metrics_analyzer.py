@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path = './extracted_metrics/streams_metrics_1701375093949.csv'  
+file_path = './extracted_metrics/ssh_streams_metrics_1701375093949.csv'  
 metrics_df = pd.read_csv(file_path)
 
 first_timestamp = metrics_df['Timestamp'].min()
