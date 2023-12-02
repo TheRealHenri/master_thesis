@@ -135,6 +135,7 @@ public class CSVSourceTask extends SourceTask {
                                     System.currentTimeMillis()
                             ));
                             if (records.size() >= batchSize) {
+                                this.wait(50);
                                 return records;
                             }
                         }
