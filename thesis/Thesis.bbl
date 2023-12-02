@@ -8,6 +8,9 @@ Amazon: Amazon kinesis (2023), \url{https://aws.amazon.com/kinesis/}, accessed: 
 \bibitem{amazon_redshift}
 Amazon: Amazon redshift (2023), \url{https://aws.amazon.com/redshift}, accessed: 2023-10-01
 
+\bibitem{aws_kafka_security}
+Amazon: Data protection in amazon managed streaming for apache kafka (2023), \url{https://docs.aws.amazon.com/msk/latest/developerguide/data-protection.html}, accessed: 2023-11-01
+
 \bibitem{kafka}
 {Apache Software Foundation}: Apache kafka (2023), \url{https://kafka.apache.org}, accessed: 2023-10-01
 
@@ -61,6 +64,15 @@ Foundation, A.S.: Apache pulsar (2023), \url{https://pulsar.apache.org/}, access
 
 \bibitem{HansenUnivariateMicroaggregation}
 Hansen, S.L., Mukherjee, S.: A polynomial algorithm for optimal univariate microaggregation. IEEE Transactions on Knowledge and Data Engineering  15,  1043--1044 (7 2003)
+
+\bibitem{confluent}
+Inc, C.: Confluent (2023), \url{https://www.confluent.io/}, accessed: 2023-11-01
+
+\bibitem{confluent_customers}
+Inc, C.: Confluent customers (2023), \url{https://www.confluent.io/customers/}, accessed: 2023-11-01
+
+\bibitem{confluent_privitar_summit}
+Inc, C.: Privacy engineering for the world of kafka (2023), \url{https://www.slideshare.net/ConfluentInc/privacy-engineering-for-the-world-of-kafka-alexander-cook-privitar-kafka-summit-london-2019}, accessed: 2023-11-01
 
 \bibitem{docker}
 Inc, D.: Docker (2023), \url{https://www.docker.com/}, accessed: 2023-11-01

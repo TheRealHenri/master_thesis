@@ -40,15 +40,13 @@
 \contentsline {subsection}{\numberline {4.4.3}Kafka Consumers}{69}{subsection.4.4.3}%
 \contentsline {section}{\numberline {4.5}Docker-based System Integration}{70}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Testing and Evaluation}{74}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Functional Requirements}{74}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Non-Functional Requirements}{74}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Experimental Setup}{74}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Experimental Design}{74}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Parameter Optimization}{74}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Interpretation of the Results}{74}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.1}Experimental Setup}{74}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Experimental Design}{74}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Parameter Optimization}{74}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Interpretation of the Results}{74}{subsection.5.2.1}%
 \contentsline {chapter}{\numberline {6}Related Work}{75}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion}{76}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Future Work}{76}{section.7.1}%
-\contentsline {chapter}{\nonumberline Appendix A. Further Details on the Solution Approach}{81}{chapter*.29}%
-\contentsline {chapter}{\nonumberline Appendix B. Extended Version of the Experimental Results}{85}{chapter*.30}%
+\contentsline {chapter}{\numberline {7}Conclusion}{77}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Future Work}{77}{section.7.1}%
+\contentsline {chapter}{\nonumberline Appendix A. Further Details on the Solution Approach}{82}{chapter*.29}%
+\contentsline {chapter}{\nonumberline Appendix B. Extended Version of the Experimental Results}{86}{chapter*.30}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

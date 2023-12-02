@@ -31,114 +31,6 @@
         "anonymizers": []
       },
       {
-        "applicationId": "aggregation_5ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 5,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_10ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 10,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_25ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 25,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_50ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 50,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_100ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 100,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_150ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 150,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "applicationId": "aggregation_200ms_window",
         "category": "ATTRIBUTE_BASED",
         "anonymizers": [
@@ -147,24 +39,6 @@
             "parameters": [
               {
                 "windowSize": 200,
-                "keys": [
-                  "age"
-                ],
-                "aggregationMode" : "average"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "applicationId": "aggregation_500ms_window",
-        "category": "ATTRIBUTE_BASED",
-        "anonymizers": [
-          {
-            "anonymizer": "aggregation",
-            "parameters": [
-              {
-                "windowSize": 500,
                 "keys": [
                   "age"
                 ],

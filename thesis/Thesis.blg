@@ -8,45 +8,45 @@ Database file #1: bibliography.bib
 Database file #2: mendeley_library.bib
 Warning--empty booktitle in Cao2008
 Warning--empty booktitle in Sandhu_Coyne_1994
-You've used 49 entries,
+You've used 53 entries,
             2785 wiz_defined-function locations,
-            856 strings with 10996 characters,
-and the built_in function-call counts, 23371 in all, are:
-= -- 1955
-> -- 553
+            868 strings with 11466 characters,
+and the built_in function-call counts, 24691 in all, are:
+= -- 2055
+> -- 581
 < -- 35
-+ -- 233
-- -- 182
-* -- 1394
-:= -- 2906
++ -- 245
+- -- 190
+* -- 1470
+:= -- 3074
 add.period$ -- 43
-call.type$ -- 49
-change.case$ -- 284
+call.type$ -- 53
+change.case$ -- 304
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 2081
-empty$ -- 2307
-format.name$ -- 200
-if$ -- 5235
+cite$ -- 55
+duplicate$ -- 2201
+empty$ -- 2455
+format.name$ -- 208
+if$ -- 5523
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 403
-newline$ -- 152
-num.names$ -- 98
-pop$ -- 853
+int.to.str$ -- 53
+missing$ -- 427
+newline$ -- 164
+num.names$ -- 106
+pop$ -- 917
 preamble$ -- 1
-purify$ -- 189
+purify$ -- 201
 quote$ -- 0
-skip$ -- 670
+skip$ -- 702
 stack$ -- 0
-substring$ -- 1397
-swap$ -- 1087
+substring$ -- 1457
+swap$ -- 1139
 text.length$ -- 35
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 190
+type$ -- 206
 warning$ -- 2
-while$ -- 205
-width$ -- 51
-write$ -- 481
+while$ -- 217
+width$ -- 55
+write$ -- 517
 (There were 2 warnings)

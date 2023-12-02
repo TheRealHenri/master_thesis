@@ -1,0 +1,179 @@
+{
+    "globalConfig": {
+      "bootstrapServer": "kafka1:19092,kafka2:19093,kafka3:19094",
+      "topic": "no-filter",
+      "dataSchema": {
+        "schemaType" : "KAFKA_STRUCT",
+        "name": "com.pipeline.kafka.connectors.SyntheticData",
+        "fields": [
+          {"name": "id", "type": "int32"},
+          {"name": "name", "type": "string"},
+          {"name": "address", "type": "string"},
+          {"name": "zip", "type": "int32"},
+          {"name": "phone", "type": "string"},
+          {"name": "gender", "type": "string"},
+          {"name": "height", "type": "int32"},
+          {"name": "weight", "type": "int32"},
+          {"name": "age", "type": "int32"},
+          {"name": "insurance_company", "type": "int32"},
+          {"name": "insurance_number", "type": "string"},
+          {"name": "diagnosis", "type": "string"},
+          {"name": "glucose", "type": "int32"},
+          {"name": "HbA1C", "type": "float32"},
+          {"name": "medication", "type": "string"}
+        ]
+      }
+    },
+    "streamProperties": [
+      {
+        "applicationId": "baseline",
+        "category": "TUPLE_BASED",
+        "anonymizers": []
+      },
+      {
+        "applicationId": "aggregation_5ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 5,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_10ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 10,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_25ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 25,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_50ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 50,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_100ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 100,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_150ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 150,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_200ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 200,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "applicationId": "aggregation_500ms_window",
+        "category": "ATTRIBUTE_BASED",
+        "anonymizers": [
+          {
+            "anonymizer": "aggregation",
+            "parameters": [
+              {
+                "windowSize": 500,
+                "keys": [
+                  "age"
+                ],
+                "aggregationMode" : "average"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

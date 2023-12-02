@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  30 NOV 2023 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  1 DEC 2023 18:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1210,7 +1210,7 @@ although it is yet undefined on input line 642.
  [32] [33] [34] [35] [36]
 
 pdfTeX warning: pdflatex (file ./img/Component_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Component_Diagram.pdf, id=731, 909.69861pt x 473.3685pt>
+<img/Component_Diagram.pdf, id=727, 909.69861pt x 473.3685pt>
 File: img/Component_Diagram.pdf Graphic file (type pdf)
 <use img/Component_Diagram.pdf>
 Package pdftex.def Info: img/Component_Diagram.pdf  used on input line 772.
@@ -1218,7 +1218,7 @@ Package pdftex.def Info: img/Component_Diagram.pdf  used on input line 772.
 [37] [38 <./img/Component_Diagram.pdf>]
 
 pdfTeX warning: pdflatex (file ./img/RBAC_Component_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/RBAC_Component_Diagram.pdf, id=789, 495.95288pt x 536.10284pt>
+<img/RBAC_Component_Diagram.pdf, id=784, 495.95288pt x 536.10284pt>
 File: img/RBAC_Component_Diagram.pdf Graphic file (type pdf)
 <use img/RBAC_Component_Diagram.pdf>
 Package pdftex.def Info: img/RBAC_Component_Diagram.pdf  used on input line 783.
@@ -1226,7 +1226,7 @@ Package pdftex.def Info: img/RBAC_Component_Diagram.pdf  used on input line 783.
 [39 <./img/RBAC_Component_Diagram.pdf>]
 
 pdfTeX warning: pdflatex (file ./img/Anon_Factory_Component_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Anon_Factory_Component_Diagram.pdf, id=846, 1077.02374pt x 775.09576pt>
+<img/Anon_Factory_Component_Diagram.pdf, id=842, 1077.02374pt x 775.09576pt>
 File: img/Anon_Factory_Component_Diagram.pdf Graphic file (type pdf)
 <use img/Anon_Factory_Component_Diagram.pdf>
 Package pdftex.def Info: img/Anon_Factory_Component_Diagram.pdf  used on input line 794.
@@ -1234,7 +1234,7 @@ Package pdftex.def Info: img/Anon_Factory_Component_Diagram.pdf  used on input l
 [40] [41 <./img/Anon_Factory_Component_Diagram.pdf>]
 
 pdfTeX warning: pdflatex (file ./img/DES_Component_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/DES_Component_Diagram.pdf, id=898, 1061.9675pt x 789.54973pt>
+<img/DES_Component_Diagram.pdf, id=894, 1061.9675pt x 789.54973pt>
 File: img/DES_Component_Diagram.pdf Graphic file (type pdf)
 <use img/DES_Component_Diagram.pdf>
 Package pdftex.def Info: img/DES_Component_Diagram.pdf  used on input line 807.
@@ -1247,7 +1247,7 @@ chapter 4.
 ]
 
 pdfTeX warning: pdflatex (file ./img/Kafka_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Kafka_Diagram.pdf, id=1013, 931.37965pt x 596.2275pt>
+<img/Kafka_Diagram.pdf, id=1009, 931.37965pt x 596.2275pt>
 File: img/Kafka_Diagram.pdf Graphic file (type pdf)
 <use img/Kafka_Diagram.pdf>
 Package pdftex.def Info: img/Kafka_Diagram.pdf  used on input line 14.
@@ -1296,7 +1296,7 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
  [59] [60] [61]
 
 pdfTeX warning: pdflatex (file ./img/Requirements_Parser_Class_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Requirements_Parser_Class_Diagram.pdf, id=1259, 1287.81125pt x 1090.0725pt>
+<img/Requirements_Parser_Class_Diagram.pdf, id=1255, 1287.81125pt x 1090.0725pt>
 File: img/Requirements_Parser_Class_Diagram.pdf Graphic file (type pdf)
 <use img/Requirements_Parser_Class_Diagram.pdf>
 Package pdftex.def Info: img/Requirements_Parser_Class_Diagram.pdf  used on input line 297.
@@ -1314,7 +1314,7 @@ Overfull \hbox (8.15857pt too wide) in paragraph at lines 346--346
 [63] [64]
 
 pdfTeX warning: pdflatex (file ./img/Stream_Config_Builder.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Stream_Config_Builder.pdf, id=1331, 1115.16624pt x 901.56827pt>
+<img/Stream_Config_Builder.pdf, id=1327, 1115.16624pt x 901.56827pt>
 File: img/Stream_Config_Builder.pdf Graphic file (type pdf)
 <use img/Stream_Config_Builder.pdf>
 Package pdftex.def Info: img/Stream_Config_Builder.pdf  used on input line 352.
@@ -1322,7 +1322,7 @@ Package pdftex.def Info: img/Stream_Config_Builder.pdf  used on input line 352.
 [65 <./img/Stream_Config_Builder.pdf>]
 
 pdfTeX warning: pdflatex (file ./img/Stream_Manager.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Stream_Manager.pdf, id=1376, 1249.66875pt x 687.4684pt>
+<img/Stream_Manager.pdf, id=1372, 1249.66875pt x 687.4684pt>
 File: img/Stream_Manager.pdf Graphic file (type pdf)
 <use img/Stream_Manager.pdf>
 Package pdftex.def Info: img/Stream_Manager.pdf  used on input line 366.
@@ -1342,18 +1342,23 @@ chapter 5.
 
 ]
 chapter 6.
-) (./chapters/7Conclusion.tex [75
+[75
+
+
+]) (./chapters/7Conclusion.tex [76]
+chapter 7.
+) (./Thesis.bbl [77
+
+
+] [78
 
 
 ]
-chapter 7.
-) (./Thesis.bbl [76
+Overfull \hbox (177.58798pt too wide) in paragraph at lines 75--76
+\OT1/cmtt/m/n/12 privacy-[]engineering-[]for-[]the-[]world-[]of-[]kafka-[]alexander-[]cook-[]privitar-[]kafka-[]summit-[]london-[]2019$[]\OT1/cmr/m/n/12 , 
+ []
 
-
-] [77
-
-
-] [78] [79]) (./misc/Annex.tex [80]
+[79] [80]) (./misc/Annex.tex [81]
 chapter without number
 
 Underfull \hbox (badness 10000) in alignment at lines 6--11
@@ -1383,7 +1388,7 @@ Underfull \hbox (badness 10000) in alignment at lines 24--69
 
 
 pdfTeX warning: pdflatex (file ./img/DASH_full_class_diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/DASH_full_class_diagram.pdf, id=1562, 4291.03125pt x 2258.4375pt>
+<img/DASH_full_class_diagram.pdf, id=1580, 4291.03125pt x 2258.4375pt>
 File: img/DASH_full_class_diagram.pdf Graphic file (type pdf)
 <use img/DASH_full_class_diagram.pdf>
 Package pdftex.def Info: img/DASH_full_class_diagram.pdf  used on input line 74.
@@ -1391,17 +1396,17 @@ Package pdftex.def Info: img/DASH_full_class_diagram.pdf  used on input line 74.
 
 
 pdfTeX warning: pdflatex (file ./img/Complete_Component_Diagram.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<img/Complete_Component_Diagram.pdf, id=1565, 2181.14874pt x 1458.44875pt>
+<img/Complete_Component_Diagram.pdf, id=1583, 2181.14874pt x 1458.44875pt>
 File: img/Complete_Component_Diagram.pdf Graphic file (type pdf)
 <use img/Complete_Component_Diagram.pdf>
 Package pdftex.def Info: img/Complete_Component_Diagram.pdf  used on input line 82.
 (pdftex.def)             Requested size: 591.5302pt x 395.52225pt.
-[81
+[82
 
 
-] [82] [83 <./img/DASH_full_class_diagram.pdf>] [84 <./img/Complete_Component_Diagram.pdf>]
+] [83] [84 <./img/DASH_full_class_diagram.pdf>] [85 <./img/Complete_Component_Diagram.pdf>]
 chapter without number
-) [85
+) [86
 
 
 ] (./Thesis.aux (./misc/Titlepage.aux) (./misc/Self-assertion.aux))
@@ -1409,18 +1414,18 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36766 strings out of 476025
- 750578 string characters out of 5779036
+ 36771 strings out of 476025
+ 750721 string characters out of 5779036
  2055388 words of memory out of 5000000
- 56127 multiletter control sequences out of 15000+600000
+ 56129 multiletter control sequences out of 15000+600000
  524879 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,20n,106p,10669b,2182s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (98 pages, 1031560 bytes).
+Output written on Thesis.pdf (99 pages, 1035426 bytes).
 PDF statistics:
- 2254 PDF objects out of 2487 (max. 8388607)
- 2048 compressed objects within 21 object streams
- 387 named destinations out of 1000 (max. 500000)
- 468 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2266 PDF objects out of 2487 (max. 8388607)
+ 2059 compressed objects within 21 object streams
+ 390 named destinations out of 1000 (max. 500000)
+ 452 words of extra memory for PDF output out of 10000 (max. 10000000)
 
