@@ -26,23 +26,120 @@
     },
     "streamProperties": [
       {
-        "applicationId": "baseline",
-        "category": "TUPLE_BASED",
-        "anonymizers": []
-      },
-      {
-        "applicationId": "aggregation_200ms_window",
-        "category": "ATTRIBUTE_BASED",
+        "applicationId": "k_anonymization",
+        "category": "TABLE_BASED",
         "anonymizers": [
           {
-            "anonymizer": "aggregation",
+            "anonymizer": "k_anonymization",
             "parameters": [
               {
-                "windowSize": 200,
                 "keys": [
-                  "age"
+                  "id", "name", "address", "phone", "insurance_number"
                 ],
-                "aggregationMode" : "average"
+                "k": 100,
+                "delta": 10000,
+                "mu": 50,
+                "beta": 100, 
+                "quasiIdentifiers": [
+                  {
+                    "key": "zip",
+                    "bucketing": {
+                      "bucketSize": 500,
+                      "range": [0, 99999]
+                    }
+                  },
+                  {
+                    "key": "age",
+                    "bucketing": {
+                      "bucketSize": 3,
+                      "range": [0, 100]
+                    }
+                  },
+                  {
+                    "key": "height",
+                    "bucketing": {
+                      "bucketSize": 5,
+                      "range": [0, 225]
+                    }
+                  },
+                  {
+                    "key": "weight", 
+                    "bucketing": {
+                      "bucketSize": 5,
+                      "range": [0, 300]
+                    }
+                  },
+                  {
+                    "key": "gender",
+                    "hierarchy": {
+                      "value": "(Male, Female, Non-Binary)",
+                      "children": [
+                        { "value": "Male" },
+                        { "value": "Female" },
+                        { "value": "Non-Binary" }
+                      ]
+                    }
+                  },
+                  {
+                    "key": "insurance_company",
+                    "hierarchy": {
+                      "value": "Krankenkasse",
+                      "children": [
+                        {
+                          "value": "Ersatzkasse (EK) und Knappschaft",
+                          "children": [
+                            { "value": "104940005" },
+                            { "value": "103306961" },
+                            { "value": "104450915" },
+                            { "value": "109519176" },
+                            { "value": "103508742" },
+                            { "value": "101002659" },
+                            { "value": "101575519" }
+                          ]
+                        },
+                        {
+                          "value": "Innungskrankenkasse (IKK)",
+                          "children": [
+                            { "value": "109888001" },
+                            { "value": "108888888" },
+                            { "value": "109500787" },
+                            { "value": "109500044" },
+                            { "value": "109500490" },
+                            { "value": "109500398" }
+                          ]
+                        },
+                        {
+                          "value": "Allgemeine Ortskrankenkasse (AOK)",
+                          "children": [
+                            { "value": "108918320" },
+                            { "value": "108814099" },
+                            { "value": "108928697" },
+                            { "value": "108811072" },
+                            { "value": "108815718" }
+                          ]
+                        },
+                        {
+                          "value": "Betriebskrankenkasse (BKK)",
+                          "children": [
+                            { "value": "108313123" },
+                            { "value": "108918428" },
+                            { "value": "108817930" },
+                            { "value": "108811215" },
+                            { "value": "108334056" },
+                            { "value": "108815217" },
+                            { "value": "108312586" }
+                          ]
+                        },
+                        {
+                          "value": "Landwirtschaftliche Krankenkasse (LKK)",
+                          "children": [
+                            { "value": "109000051" }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -50,4 +147,3 @@
       }
     ]
   }
-  

@@ -1,16 +1,20 @@
 \chapter{Conclusion\label{cha:chapter7}}
+In this thesis, we investigate techniques that can be effectively employed to ensure privacy and security measures, such as access control and data masking, in distributed event stores. This thesis evaluates the effectiveness of these techniques by quantifying the performance overhead incurred due to the implementation of additional privacy and security measures. In doing so we fill the gap in missing underlying infrastructure in distributed event stores to adequately support stringent data privacy regulations by governments worldwide \cite{Colombo2015}. Furthermore, this research identifies the intersection of database access control and privacy, an area previously explored by \cite{chaudhuri2011database}. \par
+We present a detailed model incorporating \ac{RBAC} and anonymization techniques in tandem within distributed event stores. We apply this model to Apache Kafka and build the abstraction of \acp{ACL} to \ac{RBAC} as well as the \acf{DASH}. \ac{DASH} is the first system that applies anonymization to data streams in real time for Apache Kafka. By coupling \ac{RBAC} with anonymized access control, our system attains a level of anonymization granularity for Apache Kafka that is unprecedented. \par
+With a comprehensive data pipeline, incorporating Kafka and its administrative component Zookeeper, deployable across various environments via Docker, we extensively test anonymization techniques and their impact on performance. These tests were performed using a mock dataset hosted on the \ac{DIMA} chair's server. \par
+We find that our categorization of anonymization techniques based on the scope of operation translates well to the performance impact. Our experiments show that value-based anonymization techniques have a negligible impact on performance. Even concatenating multiple anonymization techniques neither negatively impacts latency nor throughput significantly. Similar results were observed for tuple-based anonymization techniques.\par 
+Attribute-based anonymization techniques, however, proved to have a negative impact by increasing latency and significantly decreasing throughput. Our experiments showed that the optimal choice of window size for tuple aggregation has the most impact on the performance. Smaller window sizes showed significantly less overhead. This observation was visible in all attribute-based anonymization techniques we investigated. It was also observed that excessively large window sizes could overload Kafka, because of resulting disproportionately large message sizes. A user of attribute-based anonymization techniques must therefore pay close attention to the choice of window sizes for optimal results. \par
+As a staple in table-based anonymization techniques \ac{DASH} includes k-anonymization in its repertoire. However, our experiments show that the performance impact is likely too high for real-time data processing. In our experiments, we adjusted the parameters but did not find a configuration that even closely met the throughput and latency needs of modern database systems. Nevertheless, comparative analysis with other implementations of similar algorithms yielded comparable results, suggesting its applicability to data-at-rest scenarios. \par
+Independently of the anonymization technique employed, consideration must be given to the additional storage costs. Multiplying data streams necessitates increased storage. \par 
+In summary, this thesis represents a step towards enhancing data privacy in distributed event stores, through the integration of \ac{RBAC} and anonymization techniques creating granular anonymized access control. While acknowledging the challenges and complexities of modern database systems, our work demonstrates a viable pathway for achieving robust data security without compromising performance for masking functions with tuple-at-the-time semantics. As the landscape of data privacy continues to evolve, we believe the insights and methodologies developed during this thesis will contribute to more secure and privacy-conscious data management practices. We also believe this research can be expanded upon with the following future work:
 
-\section{Future Work}
+\begin{enumerate}
+\item \textbf{Graphical User Interface}\
+Adding a graphical user interface for the data officer holds the potential of improving the user experience threefold: First, it would lead to a more fault-tolerant and user-friendly configuration process as it abstracts away the necessity of writing the JSON file by hand. Second, it would simplify the process to no longer require a user with significant technical expertise when the configuration as well as the shell scripts become executable in a UI. This would open up the role of Data Officer to a broader user base. Third, it would truly unify the \ac{RBAC} system with \ac{DASH} as setting up the requirements for the anonymized streams could include the appropriate role-based access control setup. Both would then be achieved simultaneously under the hood.
+\item \textbf{Adaptability of DASH}\
+In this thesis, we have built a system and applied the model exclusively for Apache Kafka. We developed \ac{DASH} with adaptability in mind. It would be interesting to see how \ac{DASH} applies to other Distributed Event Stores, and if our findings for the anonymization techniques translate there as well. As anonymization techniques continue to evolve, it would be intriguing to observe their application to \ac{DASH} and the data streaming realm.
+\item \textbf{Parameter Optimization}\
+We found that the choice of parameters had a significant impact on the performance overhead of \ac{DASH}. We believe there is an optimum to be found for a given set of anonymization techniques and data. Taking into consideration information loss, performance overhead, and anonymization robustness, a neural net could be constructed to find the optimal configuration and provide this information to the user.
+\end{enumerate}
 
-... should include the following:
-\begin{itemize}
-
-\item problem restated and a brief summary of the methodology,
-\item student contributions (e.g., survey, open-source software, journal publication),
-\item a brief summary of the findings and results,
-\item limitations and generalizability of the findings and results.
-\item lessons learned,
-\item recommendations for future research.
-
-\end{itemize}
-
+As one can see, there are multiple different directions one could take to further improve the systems we have built. The improvements in mind provide increased user experience, fault-tolerance, versatility, and performance, making our systems even more potent in enhancing data privacy for distributed event stores.
