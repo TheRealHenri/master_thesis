@@ -20,11 +20,13 @@ public class CSVSourceConnector extends SourceConnector {
     public static final String TOPIC_CONFIG = "topic";
     public static final String FILE_CONFIG = "file";
     public static final String TASK_BATCH_SIZE_CONFIG = "batch.size";
+    public static final String TASK_LINGER_MS = "linger.ms";
 
     static final ConfigDef CONFIG_DEF = new ConfigDef()
             .define(TOPIC_CONFIG, ConfigDef.Type.STRING, DEFAULT_TOPIC, ConfigDef.Importance.HIGH, "Topic to write to")
             .define(FILE_CONFIG, ConfigDef.Type.STRING, PATH_TO_CSV, ConfigDef.Importance.HIGH, "File to read data from")
-            .define(TASK_BATCH_SIZE_CONFIG, ConfigDef.Type.INT, DEFAULT_BATCH_SIZE, ConfigDef.Importance.LOW, "Batch Size");
+            .define(TASK_BATCH_SIZE_CONFIG, ConfigDef.Type.INT, DEFAULT_BATCH_SIZE, ConfigDef.Importance.LOW, "Batch Size")
+            .define(TASK_LINGER_MS, ConfigDef.Type.INT, LINGER_MS, ConfigDef.Importance.LOW, "Linger time in ms");
     private Map<String, String> configProperties;
 
     @Override

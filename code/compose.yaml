@@ -121,6 +121,8 @@ services:
         condition: service_started
       data_generator: 
         condition: service_completed_successfully
+      simple_kafka_pipeline:
+        condition: service_completed_successfully
     volumes: 
       - ./dash_config/default_dash_config.json:/tmp/default_dash_config.json
       - ./dash_metrics/databases/:/tmp/metrics/
