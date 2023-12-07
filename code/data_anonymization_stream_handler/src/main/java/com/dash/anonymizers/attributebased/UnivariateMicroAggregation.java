@@ -193,13 +193,13 @@ public class UnivariateMicroAggregation implements AttributeBasedAnonymizer {
                     this.keysToAggregate = param.getKeys();
                     break;
                 case WINDOW_SIZE:
-                    this.windowSize = Duration.ofNanos(param.getWindowSize());
+                    this.windowSize = Duration.ofMillis(param.getWindowSize());
                     break;
                 case ADVANCE_TIME:
-                    this.advanceTime = Optional.of(Duration.ofNanos(param.getAdvanceTime()));
+                    this.advanceTime = Optional.of(Duration.ofMillis(param.getAdvanceTime()));
                     break;
                 case GRACE_PERIOD:
-                    this.gracePeriod = Optional.of(Duration.ofNanos(param.getGracePeriod()));
+                    this.gracePeriod = Optional.of(Duration.ofMillis(param.getGracePeriod()));
                 case K:
                     this.k = param.getK();
                     break;
