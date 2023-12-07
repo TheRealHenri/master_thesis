@@ -11,11 +11,13 @@
 \usepackage{rotating}
 \usepackage{float}
 %\usepackage{tabu}
+\usepackage{makecell}
 
 \usepackage[ngerman, english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx} 
 \usepackage{acronym}
+\usepackage{caption}
 \usepackage{url}           	 
 \usepackage{hyperref} 	
 \usepackage{listings, color}	% for source code
@@ -32,6 +34,8 @@
 \setlength{\parindent}{1em}
 \setlength{\parskip}{1ex plus 0.2ex}
 \usepackage{amssymb}
+
+
 \makeatletter
 \newcommand\notsotiny{\@setfontsize\notsotiny\@vipt\@viipt}
 \makeatother
@@ -58,9 +62,9 @@
    {"anonymizers"}{{{\color{yellow}{"anonymizers"}}}}{11}
     {"streamProperties"}{{{\color{orange}{"streamProperties"}}}}{16},
 }
-\newcommand\YAMLcolonstyle{\color{red}\mdseries}
-\newcommand\YAMLkeystyle{\color{black}\bfseries}
-\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+\newcommand\YAMLcolonstyle{\color{red}\mdseries\small}
+\newcommand\YAMLkeystyle{\color{black}\bfseries\small}
+\newcommand\YAMLvaluestyle{\color{blue}\mdseries\small}
 
 \makeatletter
 
@@ -75,8 +79,8 @@
   sensitive=false,
   comment=[l]{\#},
   morecomment=[s]{/*}{*/},
-  commentstyle=\color{green}\normalfont\ttfamily,
-  stringstyle=\YAMLvaluestyle\normalfont\ttfamily,
+  commentstyle=\color{green}\normalfont\ttfamily\small,
+  stringstyle=\YAMLvaluestyle\normalfont\ttfamily\small,
   moredelim=[l][\color{orange}]{\&},
   moredelim=[l][\color{magenta}]{*},
   moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},   
@@ -143,13 +147,13 @@
 \thispagestyle{empty}
 \cleardoublepage
 
-% Abstract in Deutsch
-\addchap*{Zusammenfassung}
-\input{misc/Abstract_deutsch}
-
 % Abstract
 \addchap*{Abstract}
 \input{misc/Abstract}
+
+% Abstract in Deutsch
+\addchap*{Zusammenfassung}
+\input{misc/Abstract_deutsch}
   
 % Acknowledgments  
 \addchap*{Acknowledgments}
@@ -158,7 +162,7 @@
 %table of contents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
 \tableofcontents
-\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 %footnote
 \newcommand\blfootnote[1]{%
@@ -173,34 +177,31 @@
 %list of tables
 \listoftables
 
-
-
-    
-
     
 
 % List of Abbreviations
 \onecolumn
 \addchap{List of Abbreviations}
-\begin{acronym}[Bash]   
-  \acro{ACL}{Access Control List}
-  \acro{CCPA}{California Consumer Privacy Act}
-  \acro{CLI}{Command Line Interface}
-  \acro{DASH}{Data Anonymization Stream Handler}
-  \acro{DIMA}{Database Systems and Information Management}
-  \acro{DAC}{Discretionary Access Control}
-  \acro{DES}{Distributed Event Store}
-  \acro{GDPR}{General Data Protection Regulation}
-  \acro{ICD}{International Statistical Classification of Diseases and Related Health Problems}
-  \acro{IoT}{Internet of Things}
-  \acro{JAAS}{Java Authentication and Authorization Service}
-  \acro{KNN}{K-Nearest Neighbors}
-  \acro{MAC}{Mandatory Access Control}
-  \acro{PII}{Personally Identifiable Information}
-  \acro{RBAC}{Role Based Access Control}
-  \acro{SSE}{Sum of Squared Errors}
-  \acro{SASL}{Simple Authentication and Security Layer}
-\end{acronym}
+
+  \begin{acronym}[RRRR]   
+    \acro{ACL}{Access Control List}
+    \acro{CCPA}{California Consumer Privacy Act}
+    \acro{CLI}{Command Line Interface}
+    \acro{DASH}{Data Anonymization Stream Handler}
+    \acro{DIMA}{Database Systems and Information Management}
+    \acro{DAC}{Discretionary Access Control}
+    \acro{DES}{Distributed Event Store}
+    \acro{GDPR}{General Data Protection Regulation}
+    \acro{ICD}{International Statistical Classification of Diseases and Related Health Problems}
+    \acro{IoT}{Internet of Things}
+    \acro{JAAS}{Java Authentication and Authorization Service}
+    \acro{KNN}{K-Nearest Neighbors}
+    \acro{MAC}{Mandatory Access Control}
+    \acro{PII}{Personally Identifiable Information}
+    \acro{RBAC}{Role Based Access Control}
+    \acro{SSE}{Sum of Squared Errors}
+    \acro{SASL}{Simple Authentication and Security Layer}
+  \end{acronym}
 \onecolumn
 \acrodefplural{ACL}{Access Control Lists}
 

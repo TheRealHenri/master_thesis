@@ -1,5 +1,15 @@
 \chapter{Theoretical Framework\label{cha:chapter3}}
-This chapter lays the theoretical foundation for addressing the challenges and intricacies of anonymized access control in distributed event stores. It begins with an exploration of managing different anonymization granularity. In this process, it describes one specific use case in detail, underscoring the necessity and practicality of various levels of anonymization, illustrated through a real-world scenario. The following section presents a categorical survey of anonymization techniques. This survey aims to provide a comprehensive overview of existing methods, structuring these techniques in a way that showcases their complexities as well as their potential applications. The focus here is on categorizing and understanding the broad spectrum of anonymization methods, setting a theoretical basis for their practical implementation. In the final section, we discuss a concrete theoretical model capable of fulfilling the requirements for varying levels of anonymization granularity for distributed event stores. It will go in-depth on the model architecture as well as its functional and non-functional requirements. 
+In existing systems, data streams are being consumed in the same form by their data users. It may be encrypted but not anonymized and in that way computers and people alike process the data. In this chapter, we lay the theoretical foundation for addressing the challenges and intricacies of anonymized access control in distributed event stores. Figure \ref{fig:theoretical_framework} shows the application of our solution. 
+
+\begin{figure}[ht]
+    \begin{adjustbox}{center}
+    \includegraphics[width=0.73\pdfpagewidth]{img/Theoretical_framework.pdf}
+    \end{adjustbox}
+    \caption[Big picture of our solution to anonymizing data streams for the different data needs of its users.] {Our solution involves incorporating an anonymization system that transforms the input data stream into multiple anonymized versions, tailored to the specific data requirements of its users. The red numbers indicate the sequence of steps to configure the system. The green braces detail where we go into more detail about its components. \label{fig:theoretical_framework}}
+\end{figure}
+
+In its essence, the idea is to take the underlying data stream and anonymize it to fit the needs of each individual user group that interacts with it. In Figure \ref{fig:theoretical_framework} we include two data user groups - stream processors and employees. We want to indicate that both systems and humans process the data, and they often have very different tasks to accomplish. Identifying these data requirements is the task of, what we call, the Data Officer. They are responsible for the data management for the organization. As such they are familiar with the data flowing through the system and how each user group interacts with them. \par
+Figure \ref{fig:theoretical_framework} includes a sequence of red numbers attached to the arrows originating from the Data Officer. They indicate the sequence of one-time actions that a Data Officer must perform to configure our proposed solution. First, 
 
 \section{Managing Different Anonymization Granularity\label{sec:anon_granularity}}
 When planning to integrate anonymization techniques into existing systems, there are many things to consider. First one must understand the data flowing through the system.
@@ -166,10 +176,10 @@ The quasi-indentifying attributes are \textit{zip}, \textit{sex}, \textit{age}, 
 While the aforementioned diabetes patient use case scenario may appear unique and specific, the aspects and nuances are applicable in numerous contexts. The distinct data requirements for doctors, nurses, administration, and research are anticipated to persist, albeit adapted, throughout the entire healthcare industry. 
 It is also viable in different sectors. Imagine security levels in government matters, trade secrets, and specific customer knowledge in corporations or secrecy of correspondence for the transportation industry. Distributed event stores are utilized across all of these sectors with major players relying on distributed event stores for their everyday needs \cite{kafka}. 
 
-\section{Categorical Survey of Anonymization Techniques\label{sec:anonymization_hierarchy}}
+\section{Anonymization Techniques Classification\label{sec:anonymization_hierarchy}}
 Data anonymization is a multifaceted process tailored to meet diverse application requirements and user needs. This section first categorizes the anonymization techniques based on their scope of operation, simultaneously setting them into context with each other through a hierarchical structure. It will then continue to go in-depth on each category, highlighting the intricacies of that category alone and providing insights, implementation considerations, and use cases to prominent examples. The aim is to provide a structured understanding of their application in various contexts.\par
 
-The categorization of anonymization techniques can be delineated as follows: 
+We delineate the categorization of anonymization techniques as follows: 
 
 \begin{itemize}
     \item \textbf{Value-Based} Handles one tuple at a time and replaces the values of attributes independently. 
@@ -244,6 +254,7 @@ To better illuminate the relationship and hierarchy of the aforementioned catego
         \path [line] (anonymizations) -- (table);
 
     \end{tikzpicture}
+    \vspace{-0.75cm}
     \caption{Hierarchy of masking functions}\label{fig:hierarchy_mf} 
 \end{figure}
 
@@ -562,90 +573,7 @@ Extending the scope of operation from individual attributes within a larger coll
     \caption{Working example for table-based anonymization containing a table with four attributes marked above with their corresponding category. Additionally, there is a leading column, which is not part of the data - but serves as reference.\label{table:WorkingExample}}
 \end{table}
 
-The most notable concept is \textbf{\textit{k}-anonymity}. In the definition by Sweeney from 2002 \cite{sweeney2002kanonymity} k-anonymity demands that any one entry in a table must be indistinguishable from $k - 1$ others regarding its quasi-identifiers. Table \ref{table:kanon} shows a 3-anonymized version of the working example. The entries were grouped into sizes of $k=3$ according to their similarity in quasi-identifiers. These then were generalized to encompass all values in a group making them indistinguishable. The \textit{name} was suppressed, while the \textit{diagnosis} remained unchanged. Now no individual can be reidentified given this table. Over the years several algorithms have emerged to efficiently transform a set of data to conform to k-anonymity. Notabely, this includes Datafly by Sweeney herself \cite{sweeney1997datafly} as well as Mondrian \cite{lefevre2006mondrian} and Incognito \cite{lefevre2005incognito} by LeFevre et al. Each of these algorithms has its computational complexity, quality of results, and applicability to different kinds of data. Datafly for example is more suited for categorical data, while Mondrian is more optimized for numerical data whereas Incognito focuses on the optimization for computational efficiency. As this thesis's focal point is streaming data another algorithm emerges as the most relevant - 'CASTLE: a $\delta$-constrained scheme for $k_s$-anonymizing data streams' by Cao et al. \cite{Cao2008}. 
-
-\subsubsection{CASTLE\label{lit:castle}}
-CASTLE stands for Continuously Anonymizing STreaming data via adaptive clustering. Streaming data differs from static databases in two key aspects: first, it is unbounded, necessitating an approach that can handle data of indeterminate size. The second distinction is that streaming data is append-only; that is, entries in a data stream are not modified or deleted once added. However, the significance of entries may diminish over time, a factor that the authors of CASTLE address by focusing on the \textit{freshness} of the data. They do this by defining a streaming variant of k-anonymity called $k_s$-anonymity. Each tuple $t$ of a stream $S$ consists, as always, of personally identying attributes $p_1, \dots, p_n$, quasi-identifiers $q_1, \dots, q_n$ and sensitive attributes $s_1,\dots, s_n$. Additionally, it is given another attribute, the position $p$ in $S$. The anonymized result of the stream $S$ is termed $S_{out}$. Given a position $P$, the authors consider $S_{out}$ \textit{$k_s$ anonymized up to P} if the collection of all tuples with $t.p \le P$ in $S_{out}$ is k-anonymized. To further facilitate the requirement of freshness they add a $\delta$-constraint to their scheme. It says that any such stream $S$ satisfied the $\delta$-constraint if all tuples with a position less than $t.p - \delta$ are already in $S_{out}$. Keep in mind that there is a time difference, the processing time, between $S$ and $S_{out}$. The algorithm consumes the plaintext stream $S$ one tuple at a time and produces the anonymized stream $S_{out}$ in batches. The $\delta$ constraint limits the number of tuples that are being processed by CASTLE at any one time and subsequently ensures that fresh data is produced to $S_{out}$. \par
-Minimizing information loss is important and for k-anonymity the only leeway lies within the quasi-identifiers as they are generalized. Sensitive attributes remain untouched and \ac{PII} is suppressed. To be able to minimize information loss, it first has to be quantified. For a numerical attribute $q_i$ and the generalization $g$ to the range $[l,u]$, from the domain $[L, U]$ of $q_i$, the corresponding information loss is defined by the authors as follows: 
-
-\begin{center}
-    $VInfoLoss(g) = \frac{u - l}{U - L}$
-\end{center}
-
-The information loss for categorical attributes is calculated according to their generalization hierarchy. Figure \ref{fig:residency_hierarchy} shows the generalization hierarchy of the attribute \textit{residency} used in the working example (Table \ref{table:WorkingExample})
-
-
-\begin{figure}[ht]
-    \begin{tikzpicture}[node distance=0.97cm]
-        \tikzstyle{line} = [draw, -latex']
-        \node (Berlin) {Berlin};
-        \node[right=of Berlin] (Stuttgart) {Stuttgart};
-        \node[below=of Berlin, yshift=0.5cm] at ($(Berlin)!0.5!(Stuttgart)$) (Munich) {Munich};
-        \node[right=of Stuttgart] (Madrid) {Madrid};
-        \node[right=of Madrid] (Bilbao) {Bilbao};
-        \node[below =of Madrid, yshift=0.5cm] at ($(Madrid)!0.5!(Bilbao)$) (Barcelona) {Barcelona};
-        \node[right=of Bilbao] (Glasgow) {Glasgow};
-        \node[right=of Glasgow] (London) {London};
-        \node[below =of Glasgow, yshift=0.5cm] at ($(Glasgow)!0.5!(London)$) (Manchester) {Manchester};
-
-        \node[above=of Berlin] at ($(Berlin)!0.5!(Stuttgart)$) (Germany) {Germany};
-        \node[above=of Madrid] at ($(Madrid)!0.5!(Bilbao)$) (Spain) {Spain};
-        \node[above=of Glasgow] at ($(Glasgow)!0.5!(London)$) (UK) {UK};
-
-        \node[above=of Germany] at ($(Germany)!0.5!(Spain)$) (EU) {EU};
-        
-        \node[above=of EU, yshift=0.25cm] at ($(EU)!0.5!(UK)$) (Europe) {Europe};
-
-        % Paths
-        \path [line] (Berlin) -- (Germany);
-        \path [line] (Munich) -- (Germany);
-        \path [line] (Stuttgart) -- (Germany);
-        \path [line] (Madrid) -- (Spain);
-        \path [line] (Barcelona) -- (Spain);
-        \path [line] (Bilbao) -- (Spain);
-        \path [line] (Glasgow) -- (UK);
-        \path [line] (Manchester) -- (UK);
-        \path [line] (London) -- (UK);
-
-        \path [line] (Germany) -- (EU);
-        \path [line] (Spain) -- (EU);
-
-        \path[line] (EU) -- (Europe);
-        \path[line] (UK) -- (Europe);
-
-
-    \end{tikzpicture}
-    \caption{Generalization hierarchy for the attribute \textit{residency}. \label{fig:residency_hierarchy}}
-\end{figure}
-
-The information loss for the generalization $g$ of a categorical attribute to a node $v$ in the categorical attribute's generalization hierarchy is defined as follows: 
-
-\begin{center}
-    $VInfoLoss(g) = \frac{|S_v| - 1}{|S| - 1}$
-\end{center}
-
-Here, $|S_v|$ is the number of leaf nodes of the subtree rooted at $v$ and $|S_v|$ is the overall number of leaf nodes in the generalization hierarchy. No generalization, e.g. the attribute remaining the value of a leaf node in its generalization hierarchy, would lead to $\frac{1-1}{|S| - 1} = 0$ no information loss. On the other hand, a generalization leading to complete information loss e.g. generalization to the root of the generalization tree is equal to $\frac{|S| - 1}{|S| - 1} = 1$. An example of the attribute \textit{residence} and its generalization hierarchy as it is shown in Figure \ref{fig:residency_hierarchy} would be the generalization to 'Germany' leading to an information loss of $\frac{3-1}{9-1} = \frac{2}{8}$. \\
-Overall, the information loss $G$ due to the generalization of its $n$ quasi-identifiers is defined as follows: 
-
-\begin{center}
-    $VInfoLoss(G) = \frac{1}{n}\sum_{i=1}^{n}VInfoLoss(g_i)$
-\end{center}
-
-The CASTLE scheme revolves around the clustering of data. Each cluster encompasses some tuples and is defined by the common generalization of the quasi-identifiers of its members. As mentioned before the algorithm consumes one tuple $t$ at a time from the input stream. Information loss is key to the assignment of $t$ to a cluster. For all clusters, the enlargement cost is determined. The enlargement cost is the additional information loss through further generalization of the cluster to include $t$. It is calculated for a cluster $C$ as follows: 
-
-\begin{center}
-    $Enlargement(C,t) = \sum_{i=1}^{n}(InfoLoss(\hat{g}_i) - InfoLoss(g_i))$
-\end{center}
-
-The current generalization of $C$ for the attribute $i$ is denoted as $g_i$ and the generalization to include $t_i$ as $\hat{g}_i$. Consider again the working example of Table \ref{table:WorkingExample}. The generalization of the quasi-identifier \textit{residency} is in accordance with Figure \ref{fig:residency_hierarchy} and for \textit{age} it is in buckets of size $5$ for the domain [0,100]. Imagine the tuples are consumed in order of their row index and the current tuple $t$ has position 6. At this point there are three Clusters, $C_1$, $C_2$ and $C_3$ with generalizations $G_1 = (Germany, [25,35])$, $G_2 = (UK, [20,45])$ and $G_3 = (Madrid,[55,60])$ respectively. To include $t$ the enlargement cost for $G_1$ is $Enlargement(G_1, t) = (2/8 - 2/8) + ((55-25) - (35-25))/ (100 - 0) = 0 + 20/100 = 0.2$. Intuitively,  this is to be expected as 'Stuttgart' is within the 'Germany' generalization and the age range has to be extended by 20 within a domain of 100. Similarly, the other enlargement costs are calculated: $Enlargement(G_2, t) = (1 - 2/8) + 10/100 = 0.85$; $Enlargement(G_3, t) = (5/8 - 0) + 5/100 = 0.675$. As $Enlargement(G_1, t) < Enlargement(G_3, t) < Enlargement(G_2, t)$, $t$ is assigned to $G_1$. \par
-
-\indent With every incoming tuple $t$ the freshness of the data already within the system is evaluated. This is enforced by the $\delta$ constraint. Should the system include a tuple with a position less than $t.p - \delta$ it is marked as expired. Before any new tuple is consumed, the expired tuple is subject to be output. To adhere to k-anonymity in the output stream at least $k-1$ other tuples must be indistinguishable from the expired tuple in the output. Therefore, not only the expired tuple itself - but its corresponding cluster is ejected with the generalization of the cluster. Here, the size of the cluster is essential to consider. It must be at least k to ensure k-anonymity. If the size of the expired cluster, however, is smaller than k it must be merged with another cluster. Again the information loss is the key metric. The merge of the expired cluster with all existing clusters is evaluated by its enlargement cost. This cost is calculated similarly as for the enlargement of a cluster to encompass a tuple. The cluster with the smallest enlargement cost is chosen and the merged cluster with their shared generalizations is subject to be output. Furthermore, a cluster should also not be too large, when it is output. The bigger the cluster the more generalization it is likely to have undertaken, and thus more information has been lost. Any cluster larger than 2k in size is therefore split. CASTLE reorganizes the cluster into subclusters with at least size k, whose generalizations lead to less information loss. It draws inspiration from \ac{KNN} algorithms to efficiently find dense subclusters. CASTLE then outputs the subclusters. Any output cluster is not deleted, it is emptied of its tuples (to save storage), but the generalizations can still be useful and are saved for reuse in a set of reused clusters $KC$. If a cluster is expired but is not of size k, its generalizations can be checked against the $KC$, should it fit any of the already output clusters it can be output with the generalizations of that cluster as it can be sure that at least k other tuples exist in the output with the same generalizations. The reuse technique mitigates the need for expensive cluster merges and splits. However, the authors of CASTLE realize that it also leaves the output open to attacks due to the overlapping of clusters. Say two clusters $C_1$ and $C_2$ were output with their only difference being the generalization of the \textit{age} interval being [25-35] and [20-35] respectively. If at a later stage, a single tuple is output with the gernalization of $C_2$ an attacker watching the output of the stream could infer, that the tuple's age is actually within the interval [20-25]. If the age was in [25-35] it would have been output with that generalization as the information loss of that cluster is lower. To avoid this, reused clusters are examined for overlap, and if it exists a random cluster's generalizations are chosen instead of the one with minimal information loss. \par 
-
-They optimize further by taking into consideration the unbound nature of data streams. It can be expected that the distribution of the data will not remain constant over time. Therefore, a fixed value $\tau$ for the maximum enlargement cost is not ideal. Instead, it reflects the information loss of the last $\mu$ output clusters, where $\mu$ is an input parameter. This will reflect the current expected variance of data and assist in maintaining a constant amount of clusters with ideally similar spread. They go even further with this concept by introducing another input parameter $\beta$ limiting the maximum amount of clusters at any one moment in the system. This not only prevents large numbers of clusters, which need storage as well as computation power to calculate enlargement costs every time a new tuple arrives. But also reduces the amount of small-sized clusters and subsequent expensive merge operations. If an incoming tuple would require a new cluster, but $\beta$ has been reached, it will instead be pushed to the existing cluster with minimal enlargement cost regardless of $\tau$. \par
-
-Another consideration they made is regarding outliers. In the context of CASTLE, an outlier can be understood as a cluster, with a small size (less than k) and a long lifetime. When a tuple in such a cluster expires, a merge of clusters would lead to potentially high information loss across multiple clusters. To avoid this the tuple is instead suppressed and output on its own. This of course means maximum information lost for that one tuple, but it is worth considering what the merge would have cost. \\ 
-We refer to the original paper CASTLE by Cao et al. \cite{Cao2008} for the pseudocode of the algorithm as it goes in-depth on its various components. For the working example, the output for a 3-anonymized version is shown in Table \ref{table:kanon}.
-
+The most notable concept is \textbf{\textit{k}-anonymity}. In the definition by Sweeney from 2002 \cite{sweeney2002kanonymity} k-anonymity demands that any one entry in a table must be indistinguishable from $k - 1$ others regarding its quasi-identifiers. Table \ref{table:kanon} shows a 3-anonymized version of the working example. The entries were grouped into sizes of $k=3$ according to their similarity in quasi-identifiers. These then were generalized to encompass all values in a group making them indistinguishable. The \textit{name} was suppressed, while the \textit{diagnosis} remained unchanged. Now no individual can be reidentified given this table. Over the years several algorithms have emerged to efficiently transform a set of data to conform to k-anonymity. Notabely, this includes Datafly by Sweeney herself \cite{sweeney1997datafly} as well as Mondrian \cite{lefevre2006mondrian} and Incognito \cite{lefevre2005incognito} by LeFevre et al. Each of these algorithms has its computational complexity, quality of results, and applicability to different kinds of data. Datafly for example is more suited for categorical data, while Mondrian is more optimized for numerical data whereas Incognito focuses on the optimization for computational efficiency. As this thesis's focal point is streaming data another algorithm emerges as the most relevant - 'CASTLE: a $\delta$-constrained scheme for $k_s$-anonymizing data streams' by Cao et al. \cite{Cao2008}. In Section \ref{lit:castle} in the Literature Review we have detailed this algorithm. 
 
 \begin{table}[ht]
     \begin{center}
@@ -679,6 +607,7 @@ We refer to the original paper CASTLE by Cao et al. \cite{Cao2008} for the pseud
     \end{center}
     \caption{3-anonymized version of the working example. Suppressed fields are in red cells, and generalized fields are in yellow. \label{table:kanon}}
 \end{table}
+
 
 While k-anonymity offers protection against identity disclosure, it is insufficient for guarding against attribute disclosure. Specifically, k-anonymity does not impose diversity on sensitive attributes within each equivalence class (i.e., a group of at least k elements indistinguishable concerning their quasi-identifiers). As a result, an attacker can still infer the sensitive attribute of an individual with a high degree of confidence if all k records in the same equivalence class share the same sensitive value. Recall the 3-anonymized version of the example in Table \ref{table:kanon}. All entries within the first group share the same value for the sensitive attribute \textit{diagnosis}. To mitigate this vulnerability, \mbox{\textbf{\textit{l}-diversity}} is introduced as an enhancement to k-anonymity. It requires that each equivalence class contain at least $l$ distinct values for the sensitive attributes, thereby adding a layer of protection against attribute disclosure. Concretely, Machanavajjhala et al. define the principle of l-diversity in their paper "l-Diversity: Privacy Beyond k-Anonymity" \cite{machanavajjhala2007ldiversity} as follows: "A $q^*$-block is $l$-diverse if it contains at least  well-represented values for the sensitive attribute S. A table is $l$-diverse if every $q^*$-block is $l$-diverse." In this context, a "$q^*$-block" refers to an equivalence class and, in its simplest form, "well-represented" is to be understood as \textit{distinct} values according to their definition. This is also the definition used by Cao et al. in CASTLE when illuminating their extension of the algorithm proposed by them to allow for the adherence of l-diversity. The extension refers only to a small change within the delta constraint logic of their algorithm as well as a renewed cluster splitting approach. Essentially, it ensures that clusters that are meant to be returned are certain to contain at least $l$ different values for the sensitive attributes. If this is not the case clusters are merged and subsequently bucketized following the values of the sensitive attributes. Should a bucket contain k elements it is ready to be split from the rest and output. Take a look at Table \ref{table:ldiversity}, which shows a 2-diverse version of the working example. The groups have been adjusted to ensure that they each contain at least two distinct sensitive values. This has come at the cost of generalizing the \textit{residency} attribute one more time. 
 
@@ -762,7 +691,7 @@ The opening chapters of this thesis underscored the rising ubiquity of distribut
 
 Addressing these questions requires a complex system that meets a comprehensive set of requirements, both functional and non-functional, which will be thoroughly examined in the subsequent subsections. 
 
-\subsection{Architecture\label{sec:model_architecture}}
+\subsection{Overview\label{sec:model_architecture}}
 Before getting into any specifics, let us first lay the foundation of the envisioned system architecture. Figure \ref{fig:componentDiagram} shows a high-level version of the UML Component Diagram, displaying the key components and their interactions. 
 
 \bigskip 

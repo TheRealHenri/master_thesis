@@ -289,13 +289,13 @@ public class Aggregation implements AttributeBasedAnonymizer {
                     this.mode = AggregationMode.getByName(param.getAggregationMode());
                     break;
                 case WINDOW_SIZE:
-                    this.windowSize = Duration.ofMillis(param.getWindowSize());
+                    this.windowSize = Duration.ofNanos(param.getWindowSize());
                     break;
                 case ADVANCE_TIME:
-                    this.advanceTime = Optional.of(Duration.ofMillis(param.getAdvanceTime()));
+                    this.advanceTime = Optional.of(Duration.ofNanos(param.getAdvanceTime()));
                     break;
                 case GRACE_PERIOD:
-                    this.gracePeriod = Optional.of(Duration.ofMillis(param.getGracePeriod()));
+                    this.gracePeriod = Optional.of(Duration.ofNanos(param.getGracePeriod()));
                     break;
             }
         }

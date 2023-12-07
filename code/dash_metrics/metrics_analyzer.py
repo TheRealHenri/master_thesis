@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file_path = './extracted_metrics/ssh_streams_metrics_1701097993333.csv'  
+file_path = './extracted_metrics/ssh_streams_metrics_1701614003314.csv'  
 metrics_df = pd.read_csv(file_path)
 
 first_timestamp = metrics_df['Timestamp'].min()
@@ -23,7 +23,3 @@ def plot_metric(dataframe, metric, title):
 
 plot_metric(metrics_df, 'RecordSendRate', 'Record Send Rate Over Time')
 plot_metric(metrics_df, 'ProcessLatencyAvg', 'Average Process Latency Over Time')
-plot_metric(metrics_df, 'RecordsPerRequestAvg', 'Average Records Per Request Over Time')
-plot_metric(metrics_df, 'ProcessRate', 'Process Rate Over Time')
-plot_metric(metrics_df, 'RequestLatencyAvg', 'Average Request Latency Over Time')
-plot_metric(metrics_df, 'RequestLatencyMax', 'Maximum Request Latency Over Time')

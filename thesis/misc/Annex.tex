@@ -3,8 +3,13 @@
 \begin{sidewaystable}
     \centering
     \tiny
+    \captionsetup{
+        font=normalsize,
+        singlelinecheck=off,
+        justification=raggedright
+    }
     \begin{longtable}{lllllllllllllll}
-        \caption{Extended table of patient data used. The table shows a part of the data used when testing the system. The attribute abbreviations correspond as follows: hgt - height; wgt - weight; ins.\_company - insurance\_company; ins.\_number - insurance\_number, diag. - diagnosis; gluc. - glucose.} \label{tab:patient_data}\\
+    \caption{Extended table of patient data used. The table shows a part of the data used when testing \\the system. The attribute abbreviations correspond as follows: hgt - height; wgt - weight;\\ ins.\_company - insurance\_company; ins.\_number - insurance\_number, diag. - diagnosis\\; gluc. - glucose.} \label{tab:patient_data}\\
     \toprule
     \textbf{id} & \textbf{name} & \textbf{address} & \textbf{zip} & \textbf{phone} & \textbf{gender} & \textbf{hgt} & \textbf{wgt} & \textbf{age} & \textbf{ins.\_company} & \textbf{ins.\_number} & \textbf{diag.} & \textbf{gluc.} & \textbf{hba1c} & \textbf{medication} \\
     \midrule
@@ -72,7 +77,7 @@
 \begin{sidewaysfigure}
     \centering
     \includegraphics[width=\linewidth]{img/DASH_full_class_diagram.pdf}
-    \caption{Full UML Class Diagram of \ac{DASH}.}
+    \caption{Full UML Class Diagram of \ac{DASH}. The image is a high-resolution vector graphic - zoom in for details. The components are described at length in Sections \ref{sec:json_loader}, \ref{sec:config_builder}, \ref{sec:stream_manager}}
     \label{fig:full_class_diagram}
 \end{sidewaysfigure}
 
@@ -80,7 +85,7 @@
 \begin{sidewaysfigure}
     \centering
     \includegraphics[width=\linewidth]{img/Complete_Component_Diagram.pdf}
-    \caption{Full UML Component Diagram for the system as a whole.}
+    \caption{Full UML Component Diagram for the system as a whole. }
     \label{app:component_diagram}
 \end{sidewaysfigure}
 

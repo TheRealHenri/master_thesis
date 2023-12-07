@@ -2,37 +2,38 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Example of suppression of an attribute.}}{9}{figure.2.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Example of blurring of an attribute.}}{10}{figure.2.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Example of substitution of an attribute.}}{10}{figure.2.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Example of tokenization of an attribute.}}{11}{figure.2.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Example of the generalization of an attribute.}}{11}{figure.2.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Example of bucketizing of an attribute.}}{11}{figure.2.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Example of adding noise.}}{12}{figure.2.7}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Apache Kafka Architecture and Terminology. The links between components have been enhanced with cardinalities to provide more context. \relax }}{8}{figure.caption.19}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Example of suppression of an attribute.\relax }}{12}{figure.caption.21}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Example of blurring of an attribute.\relax }}{13}{figure.caption.22}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Example of substitution of an attribute.\relax }}{13}{figure.caption.23}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Example of tokenization of an attribute.\relax }}{14}{figure.caption.24}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Example of the generalization of an attribute.\relax }}{14}{figure.caption.25}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Example of bucketizing of an attribute.\relax }}{15}{figure.caption.26}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Example of adding noise.\relax }}{15}{figure.caption.27}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Generalization hierarchy for the attribute \textit {residency}. \relax }}{17}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8}{\ignorespaces Hierarchy of masking functions}}{21}{figure.3.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Conditional substitution with a direct match condition taking the entire tuple into consideration.}}{22}{figure.3.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Substitution with a range condition on the basis of only a singular attribute in the tuple. }}{23}{figure.3.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Regular expression as a condition for the substitution as part of a tuple-based masking function. }}{23}{figure.3.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Aggregation operations on the "age" attribute.}}{25}{figure.3.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Arbitrary customer data where the values of the attribute "name" as well as "residency" are shuffled throughout the table. }}{28}{figure.3.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Generalization hierarchy for the attribute \textit {residency}. }}{31}{figure.3.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces UML Component Diagram of the anonymization system for distributed event stores. }}{38}{figure.3.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces UML Component Diagram of the component responsible for facilitating Role Based Access Control. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. }}{39}{figure.3.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces UML Component Diagram of the anonymization system for distributed event stores. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. }}{41}{figure.3.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Architecture of a Distributed Event Store illustrated with a UML Component Diagram. }}{43}{figure.3.18}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Big picture of our solution to anonymizing data streams for the different data needs of its users.}}{21}{figure.caption.30}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Hierarchy of masking functions\relax }}{27}{figure.caption.37}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Conditional substitution with a direct match condition taking the entire tuple into consideration.\relax }}{29}{figure.caption.38}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Substitution with a range condition on the basis of only a singular attribute in the tuple. \relax }}{30}{figure.caption.39}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Regular expression as a condition for the substitution as part of a tuple-based masking function. \relax }}{30}{figure.caption.40}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Aggregation operations on the "age" attribute.\relax }}{32}{figure.caption.41}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Arbitrary customer data where the values of the attribute "name" as well as "residency" are shuffled throughout the table. \relax }}{34}{figure.caption.44}%
+\contentsline {figure}{\numberline {17}{\ignorespaces UML Component Diagram of the anonymization system for distributed event stores. \relax }}{41}{figure.caption.49}%
+\contentsline {figure}{\numberline {18}{\ignorespaces UML Component Diagram of the component responsible for facilitating Role Based Access Control. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. \relax }}{42}{figure.caption.50}%
+\contentsline {figure}{\numberline {19}{\ignorespaces UML Component Diagram of the anonymization system for distributed event stores. Additionally, blue arrows have been added symbolizing data flowing. Dashed lines indicate simple response codes. \relax }}{44}{figure.caption.51}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Architecture of a Distributed Event Store illustrated with a UML Component Diagram. \relax }}{46}{figure.caption.52}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {19}{\ignorespaces Apache Kafka Architecture and Terminology. The links between components have been enhanced with cardinalities to provide more context. }}{47}{figure.4.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Example Avro (left) and Kafka Struct (right) schemas for the patient use case.}}{60}{figure.4.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Class Diagram of the JSON Loader responsible for parser the Data Officer's requirements.}}{62}{figure.4.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Class Diagram of the Stream Config Builder component and its corroborators responsible for validating (highlighted in teal) and instantiating (highlighted in red) individual anonymization stream configurations.}}{65}{figure.4.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces The central component of DASH illustrated in a UML Class Diagram. All green highlighted functionalities are directly administered by the Data Officer.}}{67}{figure.4.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Data Pipeline of the Implementation: The diagram shows the various components and their data flow, indicated by blue arrows, with references to the corresponding sections.}}{68}{figure.4.24}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {21}{\ignorespaces Code Examples for Avro (left) and Kafka Struct (right) schemas for the patient use case.\relax }}{60}{figure.caption.57}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Class diagram of the requirements parsing component of \ac {DASH}}}{62}{figure.caption.58}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Class diagram of the configuration builder component of \ac {DASH}}}{65}{figure.caption.60}%
+\contentsline {figure}{\numberline {24}{\ignorespaces The central component of DASH illustrated in a UML Class Diagram. All green highlighted functionalities are directly administered by the Data Officer. It connects at the top to the rest of the requirements parsing component, and to the right to the stream configuration building component. The full diagram can be found in the Appendix in Figure \ref {fig:full_class_diagram}\relax }}{67}{figure.caption.61}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Data Pipeline of the Implementation: The diagram shows the various components and their data flow, indicated by blue arrows, with references to the corresponding sections.\relax }}{68}{figure.caption.62}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {25}{\ignorespaces Full UML Class Diagram of \ac {DASH}.}}{86}{figure.7.25}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Full UML Component Diagram for the system as a whole.}}{87}{figure.7.26}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {26}{\ignorespaces Full UML Class Diagram of \ac {DASH}. The image is a high-resolution vector graphic - zoom in for details. The components are described at length in Sections \ref {sec:json_loader}, \ref {sec:config_builder}, \ref {sec:stream_manager}\relax }}{85}{figure.caption.68}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Full UML Component Diagram for the system as a whole. \relax }}{86}{figure.caption.69}%
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

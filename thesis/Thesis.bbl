@@ -8,9 +8,6 @@ Amazon: Amazon kinesis (2023), \url{https://aws.amazon.com/kinesis/}, accessed: 
 \bibitem{amazon_redshift}
 Amazon: Amazon redshift (2023), \url{https://aws.amazon.com/redshift}, accessed: 2023-10-01
 
-\bibitem{aws_kafka_security}
-Amazon: Data protection in amazon managed streaming for apache kafka (2023), \url{https://docs.aws.amazon.com/msk/latest/developerguide/data-protection.html}, accessed: 2023-11-01
-
 \bibitem{kafka}
 {Apache Software Foundation}: Apache kafka (2023), \url{https://kafka.apache.org}, accessed: 2023-10-01
 
@@ -83,6 +80,9 @@ Inc, D.: Docker hub (2023), \url{https://hub.docker.com/}, accessed: 2023-11-01
 \bibitem{mongo_db}
 Inc, M.: Mongodb (2023), \url{https://www.mongodb.com/}, accessed: 2023-10-01
 
+\bibitem{Intel2012BigData}
+{Intel Corporation}: Peer research: Big data analytics - intel's it manager survey on how organizations are using big data. Technical report, Intel IT Center (8 2012)
+
 \bibitem{jupyter_notebook}
 Jupyter, P.: Jupyter notebook (2023), \url{https://jupyter.org/}, accessed: 2023-11-01
 
@@ -118,6 +118,9 @@ Organization, W.H.: Diabetes fact sheet (2023), \url{ttps://www.who.int/news-roo
 
 \bibitem{anonymizing_IoT}
 Otgonbayar, A., Pervez, Z., Dahal, K.: Toward anonymizing iot data streams via partitioning. In: 2016 IEEE 13th International Conference on Mobile Ad Hoc and Sensor Systems (MASS). pp. 331--336 (2016)
+
+\bibitem{gdpr_recital_26}
+Parliament, E., of~the European~Union, C.: Recitral 26, not applicating to anonymous data (2016), \url{https://gdpr.eu/recital-26-not-applicable-to-anonymous-data/}, accessed: 2023-11-01
 
 \bibitem{sandhu1998role}
 Sandhu, R.S.: Role-based access control. In: Advances in computers, vol.~46, pp. 237--286. Elsevier (1998)

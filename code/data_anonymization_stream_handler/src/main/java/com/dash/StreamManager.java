@@ -99,7 +99,7 @@ public class StreamManager {
                 batch.add(databaseEntry);
             }
             databaseManager.executeBatchInserts(batch);
-        }, 0, 15, TimeUnit.SECONDS);
+        }, 0, 1, TimeUnit.SECONDS);
     }
 
     private DatabaseEntry createDatabaseEntry(String applicationId, Map<MetricName, ? extends Metric> metrics) {
@@ -111,8 +111,6 @@ public class StreamManager {
         databaseEntry.setProcessLatencyAvg(getMetricValue(metrics, "process-latency-avg"));
         databaseEntry.setProcessRate(getMetricValue(metrics, "process-rate"));
         databaseEntry.setMessagesInPerSecond(getMetricValue(metrics, "messages-in-per-second"));
-        databaseEntry.setBytesInPerSecond(getMetricValue(metrics, "bytes-in-per-second"));
-        databaseEntry.setBytesOutPerSecond(getMetricValue(metrics, "bytes-out-per-second"));
         databaseEntry.setFetchRequestRate(getMetricValue(metrics, "fetch-request-rate"));
         databaseEntry.setProduceRequestRate(getMetricValue(metrics, "produce-request-rate"));
         databaseEntry.setRequestLatencyAvg(getMetricValue(metrics, "request-latency-avg"));
